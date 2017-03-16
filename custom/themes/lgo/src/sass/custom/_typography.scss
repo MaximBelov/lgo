@@ -1,0 +1,112 @@
+@mixin fontFace($family,$src,$style: normal,$weight: normal) {
+    @font-face {
+        font-family: $family;
+        src: url('#{$src}.woff') format('woff'), // standards
+            url('#{$src}.ttf') format('truetype'); // Safari, Android, iOS
+        font-style: $style;
+        font-weight: $weight;
+    }
+}
+
+//@import 'fontFace';
+@include fontFace('TradeGothicLTCom-Light','dist/fonts/tradegothic/TradeGothicLTCom-Light');
+@include fontFace('TradeGothicLTCom-Bold','dist/fonts/tradegothic/TradeGothicLTCom-Bold');
+@include fontFace('TradeGothicLTCom-Italic-Bold','dist/fonts/tradegothic/TradeGothicLTCom-BdCn20Obl');
+@include fontFace('TradeGothicLTCom-Italic','dist/fonts/tradegothic/TradeGothicLTCom-Cn18Obl');
+
+$sans-serif-light: 'TradeGothicLTCom-Light', 'Calibri', 'Trebuchet', sans-serif;
+$sans-serif: 'TradeGothicLTCom-Light', 'Calibri', 'Trebuchet', sans-serif;
+
+//Modular Scale http://www.modularscale.com/?16,44&px&1.5&web&table
+
+html {
+    font-family: $sans-serif-light;
+    font-size: 16px;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+    @media #{$small-and-down} {
+        font-size: .9em;
+    }
+}
+
+.large-font {
+    font-size: 1.2em;
+}
+
+.about p {
+    font-size: 1.2em;
+    @media #{$small-and-down} {
+            font-size: 1.1em;
+        }
+    &:first-child {
+        font-size: 1.6em;
+        @media #{$small-and-down} {
+            font-size: 1.4em;
+        }
+        font-weight: bold;
+    }
+}
+
+.creds {
+    font-size: .5em;
+    margin-left: .7em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: TradeGothicLTCom-Bold;
+    line-height: 1.2em;
+}
+
+h1 {
+    font-size: 2.75em;
+    @media #{$small-and-down} {
+        font-size: 1.7em;
+    }
+}
+
+h2 {
+    font-size: 2.25em;
+    @media #{$small-and-down} {
+        font-size: 2em;
+    }
+}
+
+h3 {
+    font-size: 1.833em;
+    @media #{$small-and-down} {
+        font-size: 1.5em;
+    }
+}
+/*
+h3 {
+@media #{$small-and-down} {
+    font-size: 1.9em;
+}
+}*/
+
+h4 {
+    font-size: 1.5em;
+     @media #{$small-and-down} {
+        font-size: 1.3em;
+    }
+}
+
+h5 {
+    font-size: 1.222em;
+     @media #{$small-and-down} {
+        font-size: 1.2em;
+    }
+}
+
+h6 {
+    font-size: 1em;
+}
+
+small {
+    font-size: 0.667em;
+    font-family: $sans-serif;
+}

@@ -1,0 +1,40 @@
+.button-custom {
+    border-radius: 0.2em;
+    vertical-align: bottom;
+    height: 54px;
+    line-height: 54px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: .5px;
+    border: 2px solid white;
+    outline: 0;
+    padding: 1rem 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.2s all linear;
+    &:hover {
+    background: rgba(0, 0, 0, 0.7);
+   }
+}
+
+.button-collapse {
+    color: #26a69a;
+}
+
+.button-form {
+    border-radius: 0.2em;
+    height: 54px;
+    text-align: center;
+    padding: .5rem 1rem;
+    outline: 0;
+    border: 2px solid white;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.2s all linear;
+    color: #fff;
+    &:hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
+}

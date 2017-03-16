@@ -1,0 +1,40 @@
+form {
+   .input-field label {
+      color: darken($white, 10);
+    }
+    input[type=text],  textarea.materialize-textarea {
+        border-bottom: 1px solid white;
+        margin: 0;
+
+    }
+    input[type=email] {
+        border-bottom: 1px solid $white;
+        color: $white;
+        //margin: 0;
+    }
+
+   /* label focus color */
+   .input-field input[type=email]:focus + label, 
+   .input-field input[type=text]:focus + label,
+   textarea.materialize-textarea:focus:not([readonly]) {
+        color: $white;
+        border-bottom: 1px solid $white;
+     
+   }
+   .input-field input[type=email]:focus,
+   .input-field input[type=text]:focus,
+   textarea.materialize-textarea:focus {
+        border-bottom: 1px solid $white;
+        box-shadow: none;
+   }
+   .input-field input[type=email].valid,
+   .input-field input[type=text].valid,
+   textarea.materialize-textarea.valid {
+        border-bottom: 1px solid lighten($black, 70);
+        box-shadow: none;
+    }
+}
+
+div.wpcf7-mail-sent-ok {
+    border: none;
+}

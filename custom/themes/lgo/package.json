@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "gulp": "~3.9.1",
+    "gulp-imagemin": "~3.0.3",
+    "gulp-jshint": "~1.9.0",
+    "gulp-livereload": "~3.8.1",
+    "gulp-notify": "~2.2.0",
+    "gulp-plumber": "~1.1.0",
+    "gulp-ruby-sass": "^2.0.4",
+    "gulp-uglifyjs": "~0.5.0",
+    "imagemin-pngquant": "~5.0.0",
+    "gulp-rename": "~1.2.2"
+
+  }
+}

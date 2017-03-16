@@ -1,0 +1,24 @@
+.arrow {
+	position: absolute;  
+	bottom: 0%; 
+	left: 50%; 
+	transform: 
+	translate(-50%, -50%); 
+	color: white;
+	@media #{$small-and-down} {
+		display: none;
+	}
+}
+
+.fa {
+	padding-right: .2em; 
+	color: $white;
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+.avatar {
+	width: 80%; 
+	border: 2px solid white;
+}

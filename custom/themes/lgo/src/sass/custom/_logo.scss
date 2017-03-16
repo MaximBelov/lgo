@@ -1,0 +1,13 @@
+.brand-logo {
+ 	width: 300px;
+  	transition: 0.2s all linear;
+  	&.change-size {
+    	width: 220px;
+  	}
+  	@media #{$small-and-down} {
+  		width: 150px;
+  		&.change-size {
+    	width: 150px;
+  	}
+  	}
+}
