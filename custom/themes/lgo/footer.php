@@ -1,42 +1,32 @@
 <footer class="page-footer">
     <div class="container">
         <div class="row">
-            <div class="col s12 m5 white-text">
-                <h2>Contact Us</h2>
-                <p>T: 647-648-3969<br>
-                E: <a href="mailto:mreid@reviveng.com" class="white-text">Email Us</a>
-                </p>
-                <a href="https://www.instagram.com/msrpeng/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true" ></i></a>
-                <a href="https://www.facebook.com/ReviveEngineering/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
-                <a href="https://twitter.com/msrpeng" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+            <div class="col s12 m2">
+                <img src="<?php echo get_template_directory_uri();?>/dist/images/lgemblemwhite.svg">
             </div>
-            <div class="col s12 m7">
-                <h2 class="white-text">Join our monthly newsletter</h2>
-                <form action="//ReviveEngineering.us14.list-manage.com/subscribe/post?u=399348c1962fc618a42b72d19&amp;id=d41076aadd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="input-field inline">
-                                <input type="hidden" value="2" name="group[2][2]" id="mce-group[2]-2-1">
-                                <label for="email" data-error="wrong" data-success="right">YOU@YOUREMAIL.COM</label>
-                                <input name="EMAIL" type="email" id="email" value=""  class="validate" id="mce-EMAIL" required>
-                            </div>
-                        </div>
-                        <div class="col s12">
-                            <div id="mce-responses" class="clear">
-                                <div class="response" id="mce-error-response" style="display:none"></div>
-                                <div class="response" id="mce-success-response" style="display:none"></div>
-                            </div>
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_161ababe722ef78f40ab203a0_6bbf4149fe" tabindex="-1" value=""></div>
-                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button-form right"></div>
-                        </div>
-                    </div>
-                </form>
+
+            <div class="col s12 m3">
+                <p>Office of the Lieutenant<br>
+                Governor of Ontario</p>
+                <p>Queen's Park<br>
+                Toront, Ontario M74 1A1</p>
+            </div>
+            <div class="col s12 m4">
+                <p>Phone: 416-325-7780<br>
+                TTY: 416-325-5003<br>
+                Email: <a href="mailto:lt.gov@ontario.ca">lt.gov@ontario.ca</a><br>
+                Webmaster: <a href="mailto:lt.social@ontario.ca">lt.social@ontario.ca</a>*</p>
+                <p>*Note: This address is for technical enquiries only</p>
+            </div>
+
+            <div class="col s12 m3">
+               <h3>Got a question?</h3>
+               <button>Contact Us</button>
             </div>
         </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-        <small>&copy; Copyright <?php echo date("Y"); ?>. All Rights Reserved.</small>
+   
+        <div class="footer-copyright">
+            <small>&copy; Copyright <?php echo date("Y"); ?>. All Rights Reserved.</small>
         </div>
     </div>
 </footer>
