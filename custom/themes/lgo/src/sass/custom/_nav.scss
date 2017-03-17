@@ -6,7 +6,6 @@
     }
 }
 
-
 nav {
   	background: transparent;
   	border: none;
@@ -28,7 +27,7 @@ nav img {
 }
 
 nav.change-color {
-  	background-color: #37474f;
+  	background-color: $blue;
 }
 
 nav li a {

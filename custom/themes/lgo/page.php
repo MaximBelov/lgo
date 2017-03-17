@@ -5,10 +5,24 @@
 // Get meta content and assign to variable 
 $group_values = rwmb_meta( 'accordion_content' ); ?>
 
-<section class="container">
+<?php if ( has_post_thumbnail() ) : ?>
+	<div class="parallax-container valign-wrapper">
+		<div class="container">
+			<div class="col s12 m10 offset-m1">
+				<h1><?php the_title();?></h1>
+			</div>
+		</div>
+    	<div class="parallax overlay"><img src="<?php the_post_thumbnail_url(); ?>"></div>
+    </div>
+<?php elseif (!has_post_thumbnail() ) : ?>
+	<h4><?php the_title();?></h4>
+<?php endif; ?>
+
+
+<section class="container section">
 	<div class="row">
 		<div class="col s12 m8 offset-m2">
-	 		<h4><?php the_title();?></h4>
+	 		
             <?php the_content(); ?>
 
             <?php // Accordion
