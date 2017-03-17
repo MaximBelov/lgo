@@ -14,7 +14,7 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 				'clone'  => true,
 				'sort_clone' => true,
 				'collapsible' => true,
-				'group_title' => array( 'field' => 'title' ), // ID of the subfield
+				'group_title' => array( 'field' => $prefix . 'title' ), // ID of the subfield
 				'save_state' => true,
 				'fields' => array(
 					array(
