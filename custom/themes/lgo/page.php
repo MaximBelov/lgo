@@ -8,7 +8,7 @@ $group_values = rwmb_meta( 'accordion_content' ); ?>
 <?php if ( has_post_thumbnail() ) : ?>
 	<div class="parallax-container valign-wrapper">
 		<div class="container">
-			<div class="col s12 m10 offset-m1">
+			<div class="col s12 m8 offset-m2">
 				<h1><?php the_title();?></h1>
 			</div>
 		</div>
