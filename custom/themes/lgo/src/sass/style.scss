@@ -8,14 +8,17 @@ Version: 1.0
 */
 
 @import "materialize/materialize";
-@import "custom/_variables";
-@import "custom/_typography";
-@import "custom/_blockquote";
-@import "custom/_buttons";
-@import "custom/_form";
-@import "custom/_overlay";
-@import "custom/_logo";
-@import "custom/_layout";
-@import "custom/_parallax";
-@import "custom/_nav";
-@import "custom/_icons";
+
+@import "custom/base/_variables";
+@import "custom/base/_typography";
+@import "custom/base/_layout";
+
+@import "custom/components/_blockquote";
+@import "custom/components/_buttons";
+@import "custom/components/_form";
+@import "custom/components/_overlay";
+@import "custom/components/_logo";
+@import "custom/components/_parallax";
+@import "custom/components/_nav";
+@import "custom/components/_icons";
+@import "custom/components/_header";
