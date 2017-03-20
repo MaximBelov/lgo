@@ -33,7 +33,7 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	);
 
 	$meta_boxes[] = array(
-		'title'  => __( 'Call to Action' ),
+		'title'  => __( 'Call to Action Buttons' ),
 		'post_types' => array('page' ),
 		'fields' => array(
 			array(
@@ -59,6 +59,23 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 			),
 		),
 	);
+
+	$meta_boxes[] = array(
+        'title'      => __( 'Extra', 'textdomain' ),
+        'post_types' => array( 'page'),
+        'context'    => 'normal',
+        'priority'   => '',
+        'fields' => array(
+            array(
+                'name'  => __( 'Content', 'textdomain' ),
+                'desc'  => '',
+                'id'    => $prefix . 'extra_content',
+                'type'  => 'wysiwyg',
+                'clone' => false,
+            ),
+        )
+    );
+
 	return $meta_boxes;
 }
 ?>
