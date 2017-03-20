@@ -2,10 +2,6 @@
 
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
 
-<header>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="brand-logo" src="<?php echo get_template_directory_uri();?>/dist/images/lgemblemwhite.svg"></a>
-</header>
-
 <div class="container">
     <div class="section">
         <div class="row">

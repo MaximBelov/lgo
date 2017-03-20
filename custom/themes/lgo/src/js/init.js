@@ -5,6 +5,13 @@
     $('.parallax').parallax();
 
   }); // end of document ready
+
+  // Activate Mobile Nav
+  $('.nav-trigger').click(function(){
+    $( ".navbar-fixed" ).toggleClass( "nav-menu-open" );
+    $( "body" ).toggleClass( "no-scroll" );
+    $(this).toggleClass('open');
+  });
 })(jQuery); // end of jQuery name space
 
 //Init WOW.js with animate.css

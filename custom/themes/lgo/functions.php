@@ -9,9 +9,8 @@ require_once('includes/functions/posts-per-page.php');
 require_once('includes/functions/register-menu.php');
 require_once('includes/functions/remove-admin-bar.php');
 require_once('includes/functions/remove-header-meta.php');
-require_once('includes/functions/remove-menu-id.php');
+// require_once('includes/functions/remove-menu-id.php');
 require_once('includes/functions/remove-wp-version.php');
-
 require_once('includes/page-meta-fields.php');
 
 ?>

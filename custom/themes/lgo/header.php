@@ -17,24 +17,22 @@
 
 <?php include_once("analyticstracking.php") ?>
 
-<section class="navbar-fixed menu">
-    <nav role="navigation">
-        <div class="nav-wrapper">
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Menu</a></li>
-            </ul>
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Menu</a></li>
 
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons menu">menu</i></a>
+<div id="nav-icon3" class="nav-trigger">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <small>MENU</small>
+</div>
+
+<div class="navbar-fixed">
+    <nav role="navigation" >
+        <div class="nav-wrapper container">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand-logo-holder"><img class="brand-logo" src="<?php echo get_template_directory_uri();?>/dist/images/lgemblemwhite.svg"></a>
+            <?php wp_nav_menu();?>
         </div>
     </nav>
-</section>
+</div>
 
 
