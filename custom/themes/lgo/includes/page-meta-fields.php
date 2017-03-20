@@ -31,6 +31,34 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 			),
 		),
 	);
+
+	$meta_boxes[] = array(
+		'title'  => __( 'Call to Action' ),
+		'post_types' => array('page' ),
+		'fields' => array(
+			array(
+				'id'     => 'cta',
+				'type'   => 'group',
+				'clone'  => true,
+				'sort_clone' => true,
+				'collapsible' => true,
+				'group_title' => array( 'field' => $prefix . 'btn_label' ), // ID of the subfield
+				'save_state' => true,
+				'fields' => array(
+					array(
+						'name' => __( 'Label', 'rwmb' ),
+						'id'   => $prefix . 'btn_label',
+						'type' => 'text',
+					),
+					array(
+						'name' => __( 'URL', 'rwmb' ),
+						'id'   => $prefix . 'btn_url',
+						'type' => 'text',
+					),
+				),
+			),
+		),
+	);
 	return $meta_boxes;
 }
 ?>
