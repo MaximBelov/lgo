@@ -1,3 +1,34 @@
+.skip-to {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    // 
+    height: 1px;
+    width: 1px;
+    // 
+    background: darken($blue, 10);
+    overflow: hidden;
+    padding: 10px 15px;
+    transition: all 0.2s;
+    z-index: 1000;
+    // 
+    color: $white;
+    text-align: center;
+    text-decoration: underline;
+}
+    
+a.skip-to:active, 
+a.skip-to:focus, 
+a.skip-to:hover {
+    left: 0; 
+    top: 0;
+    // 
+    width: auto; 
+    height: auto; 
+    // 
+    overflow: visible; 
+}
+
 // Media Queries
 $large-display-width: 1300px;
 // $desktop-width: 1024px;
@@ -311,15 +342,9 @@ nav.change-color .button-collapse {
   transition: .5s ease-in-out;
   cursor: pointer;
   @media #{$medium-and-down} {
-    top: auto;
-    bottom: 0;
-    right: 0;
-  }
-  @media #{$small-and-down} {
     top: 0;
     bottom: auto;
     right: 0;
-    // border-left: 2px solid $white;
   }
 }
 

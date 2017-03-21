@@ -7988,12 +7988,38 @@ Picker.extend( 'pickadate', DatePicker )
 
   }); // end of document ready
 
-  // Activate Mobile Nav
-  $('.nav-trigger').click(function(){
-    $( ".navbar-fixed" ).toggleClass( "nav-menu-open" );
-    $( "body" ).toggleClass( "no-scroll" );
-    $(this).toggleClass('open');
-  });
+  // Activate Mobile Nav via click/enter
+    $('.nav-trigger').click(function(){
+        $( ".navbar-fixed" ).toggleClass( "nav-menu-open" );
+        $( "body" ).toggleClass( "no-scroll" );
+        $(this).toggleClass('open');
+    });
+
+    $('.nav-trigger').keypress(function(e){
+      if(e.which == 13){//Enter key pressed
+          $( ".navbar-fixed" ).toggleClass( "nav-menu-open" );
+          $( "body" ).toggleClass( "no-scroll" );
+          $(this).toggleClass('open');
+      }
+    });
+
+    $('.has-sub').click(function(){
+      if ($('body').hasClass('no-scroll')) {
+          $(this).children('ul').slideToggle();
+          $(this).children('i').toggleClass('fa-chevron-down fa-chevron-up');
+      }
+    });
+
+    $('.has-sub').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            if ($('body').hasClass('no-scroll')) {
+                $(this).children('ul').slideToggle();
+                $(this).children('i').toggleClass('fa-chevron-down fa-chevron-up');
+            }
+        }
+    });
+
+
 })(jQuery); // end of jQuery name space
 
 //Init WOW.js with animate.css

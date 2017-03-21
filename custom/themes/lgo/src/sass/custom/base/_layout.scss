@@ -3,6 +3,10 @@ header {
 	height: 220px;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 .no-pad-bottom {
     margin-bottom: 0;
 }

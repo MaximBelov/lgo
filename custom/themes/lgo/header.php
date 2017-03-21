@@ -15,6 +15,8 @@
 
 <body <?php body_class(); ?>>
 
+<a href="#skip-to-content" class="skip-to">Skip to content</a>
+
 <?php include_once("analyticstracking.php") ?>
 
 <div id="nav-header-logo">
@@ -94,7 +96,7 @@
     </svg>
 </div>
 
-<div id="nav-icon3" class="nav-trigger">
+<div tabindex="1" id="nav-icon3" class="nav-trigger">
   <span></span>
   <span></span>
   <span></span>
@@ -104,9 +106,19 @@
 
 <div class="navbar-fixed">
     <nav role="navigation" >
-        <div class="nav-wrapper container">
+        <div class="nav-wrapper container <?php if (wp_is_mobile()) {echo 'mobile-nav-selected';} else { echo 'desktop-nav-selected';} ?>">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand-logo-holder"><img class="brand-logo" src="<?php echo get_template_directory_uri();?>/dist/images/lgemblemwhite.svg"></a>
-            <?php wp_nav_menu();?>
+            <?php if (wp_is_mobile()) { ?>
+                <?php 
+                    wp_nav_menu(array(
+                    'menu' => 'Main Menu', 
+                    'container_id' => 'main-menu-ww', 
+                    'walker' => new Main_Menu_Walker()
+                    )); 
+                ?> 
+            <?php } else { ?>
+                <?php wp_nav_menu();?>
+            <?php } ?>                        
         </div>
     </nav>
 </div>

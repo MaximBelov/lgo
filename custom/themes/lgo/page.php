@@ -17,7 +17,9 @@ $group_values = rwmb_meta( 'accordion_content' ); ?>
     	<div class="parallax overlay"><img src="<?php the_post_thumbnail_url(); ?>"></div>
     </div>
 <?php elseif (!has_post_thumbnail() ) : ?>
-	<h4><?php the_title();?></h4>
+	<div id="skip-to-content">
+		<h4><?php the_title();?></h4>
+	</div>
 <?php endif; ?>
 
 
