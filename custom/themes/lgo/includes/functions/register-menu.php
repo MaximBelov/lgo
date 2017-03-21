@@ -66,10 +66,10 @@ class Main_Menu_Walker extends Walker {
     $children = get_posts(array('post_type' => 'nav_menu_item', 'nopaging' => true, 'numberposts' => 1, 'meta_key' => '_menu_item_menu_item_parent', 'meta_value' => $item->ID));
     if (!empty($children)) {
       $classes[] = 'has-sub';
-      $args = array('post_parent' => $item->ID);
-      if( !empty(get_children($args)) ) {
-        $classes[] = 'has-grandkids';
-      }
+      // $args = array('post_parent' => $item->ID);
+      // if( !empty(get_children($args)) ) {
+      //   $classes[] = 'has-grandkids';
+      // }
     }
     
     $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
@@ -79,7 +79,7 @@ class Main_Menu_Walker extends Walker {
     $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
     
     if (!empty($children)) {
-      $output .= $indent . '<li' . $id . $value . $class_names .'><i class="fa fa-chevron-down" aria-hidden="true"></i>';
+      $output .= $indent . '<li' . $id . $value . $class_names .'>';
     } else {
       $output .= $indent . '<li' . $id . $value . $class_names .'>';
     }
@@ -113,6 +113,12 @@ class Main_Menu_Walker extends Walker {
 	  	$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 	  	$item_output .= '</span></span><span class="menu-sub-item-blurb">'.$blurb[0].'</span></a>';
 	  	$item_output .= $args->after;
+    } else if (!empty($children)) { 
+    	$item_output = $args->before;
+    	$item_output .= '<a'. $attributes .'><span>';
+    	$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+    	$item_output .= '</span></a><span class="menu-after-dots"> ...</span>';
+    	$item_output .= $args->after;
     } else {
     	$item_output = $args->before;
     	$item_output .= '<a'. $attributes .'><span>';

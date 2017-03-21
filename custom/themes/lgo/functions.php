@@ -1,5 +1,4 @@
 <?php
-
 //Load custom functions
 require_once('includes/functions/enqueue-style.php');
 require_once('includes/functions/enqueue-script.php');
@@ -11,6 +10,6 @@ require_once('includes/functions/remove-admin-bar.php');
 require_once('includes/functions/remove-header-meta.php');
 // require_once('includes/functions/remove-menu-id.php');
 require_once('includes/functions/remove-wp-version.php');
-require_once('includes/page-meta-fields.php');
-
+// Metabox.io
+require_once('includes/metaboxio/page-meta-fields.php');
 ?>

@@ -1,5 +1,4 @@
 <?php
-
 add_filter( 'rwmb_meta_boxes', 'meta_box_group_accordion_register' );
 function meta_box_group_accordion_register( $meta_boxes ) {
 
