@@ -29,26 +29,6 @@ a.skip-to:hover {
     overflow: visible; 
 }
 
-// Media Queries
-$large-display-width: 1300px;
-// $desktop-width: 1024px;
-
-// @mixin tablet {
-//   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
-//     @content;
-//   }
-// }
-
-@mixin xlarge {
-  @media (min-width: #{$large-display-width}) {
-    @content;
-  }
-}
-
-@include xlarge {
-  
-}
-
 @media #{$large-and-up} { 
   #menu-main-menu,
   #menu-main-menu-container {
@@ -80,18 +60,12 @@ nav {
   @media #{$large-and-up} {
     display: block;
     nav ul#menu-main-menu > li {
-      // margin-top: 10px;
-      // padding-bottom: 10px;
       > a,
       > a:hover {
         position: relative;
-        // bottom: 10px;
-        // margin-top: 10px;
         height: 40px;
-        // margin-top: -10px;
         span {
           position: relative;
-          top: -11px;
         }
       }
     }
@@ -136,12 +110,11 @@ nav {
         display: block;
         width: 100%;
         a {
-          font-size: 25px;
-          padding: 10px 30px;
-          border-bottom: 1px solid rgba(255,255,255,0.3);
+          display: inline-block;
+          font-size: 18px;
+          padding: 0px 10px 0px 30px;
           color: $white;
           @media #{$large-and-up} {
-            border-bottom: 1px solid grey;
           }
         }
       }
@@ -165,8 +138,13 @@ nav.change-color {
     img {
       margin-top: 10px;
       display: block;
-      height: 45px;
+      height: 50px;
       width: auto;
+      @media #{$small-and-down} {
+        // height: 80px;
+        // left: 60px;
+        // top: 20px
+      }
     }
   }
 }
@@ -188,7 +166,6 @@ nav .brand-logo {
     text-transform: uppercase;
     font-weight: 700;
     color: white;
-    // height: 50px;
     display: block;
     position: absolute;
     z-index: 10;
@@ -217,20 +194,13 @@ nav.change-color .button-collapse {
     color: $black;
 }
 
-#nav-mobile li a {
-  font-size: 16px;
-  border-bottom: 1px solid $black;
-}
-
-
-
 .menu-main-menu-container {
   float: right;
 }
 
 #menu-main-menu {
   > li:first-child {
-    border-top: 1px solid #eee;
+    // border-top: 1px solid #eee;
     @media #{$large-and-up} {
       // display: none;
       border-top: none;
@@ -319,5 +289,27 @@ nav.change-color .button-collapse {
       height: 100%;
       width: 100%;
     }
+  }
+}
+
+.nav-wrapper {
+  // line-height: normal;
+}
+
+.menu-item-has-children {
+  > ul {
+    margin-left: 20px;
+    border-left: 4px solid rgba(255,255,255,0.6);
+  }
+}
+
+.menu-after-dots {
+  color: #1aceaa;
+  font-size: 30px;
+  &:hover {
+    cursor: pointer;
+  }
+  @media #{$large-and-up} {
+    display: none;
   }
 }

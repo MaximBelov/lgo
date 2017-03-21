@@ -16,3 +16,16 @@ footer.page-footer {
   	margin: 0;
     background-color: $blue;
 }
+
+// Media Queries
+$large-display-width: 1300px;
+
+@mixin xlarge {
+  @media (min-width: #{$large-display-width}) {
+    @content;
+  }
+}
+
+@include xlarge {
+  
+}

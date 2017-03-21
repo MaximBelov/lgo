@@ -1,80 +1,80 @@
 <?php
-add_filter( 'rwmb_meta_boxes', 'lgo_register_list' );
-function lgo_register_list( $meta_boxes ) {
+// add_filter( 'rwmb_meta_boxes', 'lgo_register_list' );
+// function lgo_register_list( $meta_boxes ) {
 
-	$prefix = 'rw_';
-	$meta_boxes[] = array(
-		'title'  => __( 'More Info - Accordion Format' ),
-		'post_types' => array('lg-list' ),
-		'fields' => array(
-			array(
-				'id'     => 'accordion_content',
-				'type'   => 'group',
-				'clone'  => true,
-				'sort_clone' => true,
-				'collapsible' => true,
-				'group_title' => array( 'field' => $prefix . 'title' ), // ID of the subfield
-				'save_state' => true,
-				'fields' => array(
-					array(
-						'name' => __( 'Title', 'rwmb' ),
-						'id'   => $prefix . 'title',
-						'type' => 'text',
-					),
-					array(
-						'name' => __( 'Content', 'rwmb' ),
-						'id'   => $prefix . 'content',
-						'type' => 'wysiwyg',
-					),
-				),
-			),
-		),
-	);
+// 	$prefix = 'rw_';
+// 	$meta_boxes[] = array(
+// 		'title'  => __( 'More Info - Accordion Format' ),
+// 		'post_types' => array('lg-list' ),
+// 		'fields' => array(
+// 			array(
+// 				'id'     => 'accordion_content',
+// 				'type'   => 'group',
+// 				'clone'  => true,
+// 				'sort_clone' => true,
+// 				'collapsible' => true,
+// 				'group_title' => array( 'field' => $prefix . 'title' ), // ID of the subfield
+// 				'save_state' => true,
+// 				'fields' => array(
+// 					array(
+// 						'name' => __( 'Title', 'rwmb' ),
+// 						'id'   => $prefix . 'title',
+// 						'type' => 'text',
+// 					),
+// 					array(
+// 						'name' => __( 'Content', 'rwmb' ),
+// 						'id'   => $prefix . 'content',
+// 						'type' => 'wysiwyg',
+// 					),
+// 				),
+// 			),
+// 		),
+// 	);
 
-	$meta_boxes[] = array(
-		'title'  => __( 'Call to Action Buttons' ),
-		'post_types' => array('lg-list' ),
-		'fields' => array(
-			array(
-				'id'     => 'cta',
-				'type'   => 'group',
-				'clone'  => true,
-				'sort_clone' => true,
-				'collapsible' => true,
-				'group_title' => array( 'field' => $prefix . 'btn_label' ), // ID of the subfield
-				'save_state' => true,
-				'fields' => array(
-					array(
-						'name' => __( 'Label', 'rwmb' ),
-						'id'   => $prefix . 'btn_label',
-						'type' => 'text',
-					),
-					array(
-						'name' => __( 'URL', 'rwmb' ),
-						'id'   => $prefix . 'btn_url',
-						'type' => 'text',
-					),
-				),
-			),
-		),
-	);
+// 	$meta_boxes[] = array(
+// 		'title'  => __( 'Call to Action Buttons' ),
+// 		'post_types' => array('lg-list' ),
+// 		'fields' => array(
+// 			array(
+// 				'id'     => 'cta',
+// 				'type'   => 'group',
+// 				'clone'  => true,
+// 				'sort_clone' => true,
+// 				'collapsible' => true,
+// 				'group_title' => array( 'field' => $prefix . 'btn_label' ), // ID of the subfield
+// 				'save_state' => true,
+// 				'fields' => array(
+// 					array(
+// 						'name' => __( 'Label', 'rwmb' ),
+// 						'id'   => $prefix . 'btn_label',
+// 						'type' => 'text',
+// 					),
+// 					array(
+// 						'name' => __( 'URL', 'rwmb' ),
+// 						'id'   => $prefix . 'btn_url',
+// 						'type' => 'text',
+// 					),
+// 				),
+// 			),
+// 		),
+// 	);
 
-	$meta_boxes[] = array(
-        'title'      => __( 'Extra', 'textdomain' ),
-        'post_types' => array( 'lg-list'),
-        'context'    => 'normal',
-        'priority'   => '',
-        'fields' => array(
-            array(
-                'name'  => __( 'Content', 'textdomain' ),
-                'desc'  => '',
-                'id'    => $prefix . 'extra_content',
-                'type'  => 'wysiwyg',
-                'clone' => false,
-            ),
-        )
-    );
+// 	$meta_boxes[] = array(
+//         'title'      => __( 'Extra', 'textdomain' ),
+//         'post_types' => array( 'lg-list'),
+//         'context'    => 'normal',
+//         'priority'   => '',
+//         'fields' => array(
+//             array(
+//                 'name'  => __( 'Content', 'textdomain' ),
+//                 'desc'  => '',
+//                 'id'    => $prefix . 'extra_content',
+//                 'type'  => 'wysiwyg',
+//                 'clone' => false,
+//             ),
+//         )
+//     );
 
-	return $meta_boxes;
-}
+// 	return $meta_boxes;
+// }
 ?>

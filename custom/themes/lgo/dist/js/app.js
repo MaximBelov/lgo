@@ -8003,18 +8003,16 @@ Picker.extend( 'pickadate', DatePicker )
       }
     });
 
-    $('.has-sub').click(function(){
+    $('.menu-after-dots').click(function(){
       if ($('body').hasClass('no-scroll')) {
-          $(this).children('ul').slideToggle();
-          $(this).children('i').toggleClass('fa-chevron-down fa-chevron-up');
+          $(this).next('ul').slideToggle();
       }
     });
 
-    $('.has-sub').keypress(function(e){
+    $('.menu-after-dots').keypress(function(e){
         if(e.which == 13){//Enter key pressed
             if ($('body').hasClass('no-scroll')) {
-                $(this).children('ul').slideToggle();
-                $(this).children('i').toggleClass('fa-chevron-down fa-chevron-up');
+                $(this).next('ul').slideToggle();
             }
         }
     });
