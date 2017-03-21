@@ -12,4 +12,5 @@ require_once('includes/functions/remove-header-meta.php');
 require_once('includes/functions/remove-wp-version.php');
 // Metabox.io
 require_once('includes/metaboxio/page-meta-fields.php');
+require_once('includes/metaboxio/lg-meta-fields.php');
 ?>

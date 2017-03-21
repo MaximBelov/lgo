@@ -120,6 +120,6 @@
     </nav>
 </div>
 
-<?php print_r(wp_get_nav_menu_items('Main Menu')); ?>
+<?php //print_r(wp_get_nav_menu_items('Main Menu')); ?>
 
 
