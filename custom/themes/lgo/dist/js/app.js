@@ -7988,6 +7988,13 @@ Picker.extend( 'pickadate', DatePicker )
 
   }); // end of document ready
 
+
+  // Materialize modal triggers
+  $('.modal-trigger-general').click(function() {
+    var address = $(this).attr("href");
+    $(address).openModal();
+  });
+
   // Activate Mobile Nav via click/enter
     $('.nav-trigger').click(function(){
         $( ".navbar-fixed" ).toggleClass( "nav-menu-open" );
@@ -8005,7 +8012,8 @@ Picker.extend( 'pickadate', DatePicker )
 
     $('.menu-after-dots').click(function(){
       if ($('body').hasClass('no-scroll')) {
-          $(this).next('ul').slideToggle();
+            $('#menu-main-menu >li ul').removeClass('active-menu-screen');
+            $(this).next('ul').toggleClass('active-menu-screen');
       }
     });
 

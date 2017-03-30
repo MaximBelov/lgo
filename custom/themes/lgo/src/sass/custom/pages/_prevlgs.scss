@@ -1,3 +1,8 @@
+.page-previous-lgs {
+	background-color: lightgrey;
+	text-align: center;
+}
+
 .previous-lgs-list {
 	padding-bottom: 50px;
 	.row {
@@ -12,5 +17,19 @@
 				// margin: 20px;
 			}
 		}
+	}
+}
+
+.single-lg-portrait {
+	background-size: cover;
+	height: 200px;
+}
+
+.single-lg-content {
+	padding: 20px;
+	background: $blue;
+	color: $white;
+	p {
+		margin-top: 0;
 	}
 }

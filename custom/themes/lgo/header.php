@@ -104,10 +104,10 @@
   <small>MENU</small>
 </div>
 
-<div class="navbar-fixed">
-    <nav role="navigation" >
-        <div class="nav-wrapper container">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand-logo-holder"><img class="brand-logo" src="<?php echo get_template_directory_uri();?>/dist/images/lgemblemwhite.svg"></a>
+<div class="left-panel__navigation">
+    <nav>
+        <div class="nav-holder">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo-link"><img class="nav-logo" src="<?php echo get_template_directory_uri();?>/dist/images/lgemblemwhite.svg"></a>
             <?php // wp_nav_menu();?>
             <?php 
                 wp_nav_menu(array(
@@ -121,5 +121,3 @@
 </div>
 
 <?php //print_r(wp_get_nav_menu_items('Main Menu')); ?>
-
-

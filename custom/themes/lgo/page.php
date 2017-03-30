@@ -1,5 +1,11 @@
 <?php get_header(); ?>
 
+<div class="left-panel__background">
+	
+</div>
+
+<div class="right-panel">
+
 <?php if(have_posts()): while(have_posts()): the_post();
 
 // Get meta content and assign to variable 

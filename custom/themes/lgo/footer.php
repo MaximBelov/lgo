@@ -31,6 +31,9 @@
     </div>
 </footer>
 
+</div> 
+<!-- END OF RIGHT PANEL -->
+
 <?php wp_footer(); ?> 
 
 </body>
