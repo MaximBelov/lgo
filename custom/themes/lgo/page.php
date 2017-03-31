@@ -28,15 +28,15 @@ $group_values = rwmb_meta( 'accordion_content' ); ?>
 	</div>
 <?php endif; ?>
 
-<section class="container">
+<section class="container base-padding no-pad-bottom">
 	<div class="row">
-		<div class="col s12 m10 offset-m1">
+		<div class="col s12">
 			<?php the_content(); ?>
 		</div>
 	</div>
 </section>
 
-<section class="accordion-section">
+<section class="accordion-section base-padding no-padding-top">
     <?php // Accordion
     	if ( ! empty( $group_values ) ) { ?>
 		<ul class="collapsible" data-collapsible="accordion">
