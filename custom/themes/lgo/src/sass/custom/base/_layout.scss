@@ -31,14 +31,14 @@ header {
   width: 50%;
   height: 100%;
   z-index: 10;
-  background: $white;
+  background: $body-bg;
   float: right;
 }
 
 footer.page-footer {
 	color: $white;
-  	margin: 0;
-    background-color: $blue;
+  margin: 0;
+  background-color: $blue;
 }
 
 // Media Queries

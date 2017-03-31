@@ -1,8 +1,11 @@
 //Modular Scale http://www.modularscale.com/?16,44&px&1.5&web&table
-
 html {
     //font-family: $sans-serif-light;
-    font-size: 16px;
+    font-size: 18px;
+}
+
+body {
+    font-family: 'Rasa', serif;
 }
 
 p {
@@ -16,9 +19,20 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.2em;
+    font-family: 'Rasa', serif;
+}
+
+nav {
+    ul {
+        a {
+            font-family: 'Dosis', sans-serif;
+            color: $nav-links;
+        }
+    }
 }
 
 h1 {
+    font-family: 'Dosis', sans-serif;
     font-size: 2.75em;
     @media #{$small-and-down} {
         font-size: 1.7em;

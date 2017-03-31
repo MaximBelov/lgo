@@ -1,0 +1,11 @@
+.accordion-section {
+	ul {
+		box-shadow: none;
+		border: none;
+	}
+	.collapsible-header {
+		background-color: $accordion-headers;
+		border: none;
+		margin-bottom: 5px;
+	}
+}
