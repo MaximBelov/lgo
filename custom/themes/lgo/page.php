@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="left-panel__background">
+<div class="left-panel__background" style="background-image: url(<?php echo get_template_directory_uri();?>/dist/images/installation_speech-splash.jpg);">
 	
 </div>
 
