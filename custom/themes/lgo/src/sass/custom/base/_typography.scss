@@ -27,6 +27,31 @@ nav {
         a {
             font-family: 'Dosis', sans-serif;
             color: $nav-links;
+            text-transform: uppercase;
+        }
+    }
+}
+
+nav #menu-main-menu >li {
+    margin: 10px 0;
+    >a {
+        font-size: 22px;
+        font-weight: 700;
+    }
+    >ul {
+        margin: 10px 0 10px 20px;
+        >li {
+            margin: 10px 0;
+            >a {
+                font-size: 16px;
+                font-weight: 500;
+            }
+            >ul {
+                >li >a {
+                    font-size: 14px;
+                    font-weight: 300;
+                }
+            }
         }
     }
 }
