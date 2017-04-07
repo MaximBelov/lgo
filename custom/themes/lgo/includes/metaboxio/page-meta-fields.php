@@ -3,6 +3,24 @@ add_filter( 'rwmb_meta_boxes', 'meta_box_group_accordion_register' );
 function meta_box_group_accordion_register( $meta_boxes ) {
 
 	$prefix = 'rw_';
+
+	$meta_boxes[] = array(
+	    'title'      => __( 'Banner', 'textdomain' ),
+	    'post_types' => array( 'page'),
+	    'fields' => array(
+	        array(
+	           'id'   => $prefix . 'banner_heading',
+	           'name' => __( 'Heading', 'textdomain' ),
+	           'type' => 'text',
+	        ),
+	        array(
+	           'id'   => $prefix . 'banner_subheading',
+	           'name' => __( 'Subheading', 'textdomain' ),
+	           'type' => 'wysiwyg',
+	        ),
+	    ),
+	);
+
 	$meta_boxes[] = array(
 		'title'  => __( 'More Info - Accordion Format' ),
 		'post_types' => array('page' ),

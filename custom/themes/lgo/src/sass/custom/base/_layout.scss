@@ -30,11 +30,12 @@ header {
 .left-panel__background {
   z-index: 5;
   background: darkgrey;
-  position: fixed;
+  position: absolute;
   width: 100vw;
   height: 100vh;
-  background-size: contain;
+  background-size: cover;
   background-position: left center;
+  top: 100vh;
   &:after {
     display: block;
     position: relative;
@@ -53,6 +54,7 @@ header {
   z-index: 10;
   background: $body-bg;
   float: right;
+  top: 100%;
 }
 
 footer.page-footer {

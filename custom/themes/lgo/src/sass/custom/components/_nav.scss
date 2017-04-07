@@ -35,6 +35,9 @@ a.skip-to:hover {
   height: 100vh;
   padding: 50px 20px 50px 50px;
   z-index: 1000;
+  @media #{$small-and-down} {
+    display: none;
+  }
 }
 
 nav {
