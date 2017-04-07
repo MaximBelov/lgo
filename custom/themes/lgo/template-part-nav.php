@@ -1,4 +1,4 @@
-<div class="left-panel__navigation">
+<div class="left-panel__navigation <?php if (is_page_template( 'template-home.php')) { echo 'large-logo'; }?>">
     <nav>
         <div class="nav-holder">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo-link"><img class="nav-logo" src="<?php echo get_template_directory_uri();?>/dist/images/lgemblemwhite.svg"></a>

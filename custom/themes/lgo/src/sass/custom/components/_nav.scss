@@ -40,6 +40,14 @@ a.skip-to:hover {
   }
 }
 
+.left-panel__navigation.large-logo {
+  padding: 20px 20px 50px 50px;
+  .nav-logo {
+    width: 165px;
+    height: auto;
+  }
+}
+
 nav {
   background: transparent;
   box-shadow: none;
