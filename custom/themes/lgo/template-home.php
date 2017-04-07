@@ -27,7 +27,7 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 	</div>
 </div>
 
-<div class="left-panel__background" style="background-image: url(<?php echo get_template_directory_uri();?>/dist/images/installation_speech-splash.jpg);">
+<div class="left-panel__background left-panel__background---down">
 	
 </div>
 

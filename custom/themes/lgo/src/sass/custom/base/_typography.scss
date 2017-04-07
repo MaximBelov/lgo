@@ -33,10 +33,11 @@ nav {
 }
 
 nav #menu-main-menu >li {
-    margin: 10px 0;
+    margin: 10px 0 15px;
     >a {
         font-size: 22px;
         font-weight: 700;
+        letter-spacing: 1.1px;
     }
     >ul {
         margin: 10px 0 10px 20px;

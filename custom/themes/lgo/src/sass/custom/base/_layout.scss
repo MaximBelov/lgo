@@ -30,6 +30,25 @@ header {
 .left-panel__background {
   z-index: 5;
   background: darkgrey;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: left center;
+  &:after {
+    display: block;
+    position: relative;
+    background-image: linear-gradient(to top, transparent 0%, black 110%);
+    height: 100%;
+    width: 100%;
+    content: '';
+    z-index: 6;
+  }
+}
+
+.left-panel__background.left-panel__background---down {
+  z-index: 5;
+  background: darkgrey;
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -37,13 +56,13 @@ header {
   background-position: left center;
   top: 100vh;
   &:after {
-    display: block;
-    position: relative;
-    background-image: linear-gradient(to bottom, transparent 0%, black 100%);
-    height: 100%;
-    width: 100%;
-    content: '';
-    z-index: 6;
+    display: none;
+    // position: relative;
+    // background-image: linear-gradient(to bottom, transparent 0%, black 100%);
+    // height: 100%;
+    // width: 100%;
+    // content: '';
+    // z-index: 6;
   }
 }
 
@@ -55,6 +74,11 @@ header {
   background: $body-bg;
   float: right;
   top: 100%;
+  transition: all 0.5s ease;
+}
+
+.right-panel.right-panel--70 {
+  width: 75%;
 }
 
 footer.page-footer {

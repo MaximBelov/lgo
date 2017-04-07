@@ -5,19 +5,17 @@
 
 .previous-lgs-list {
 	padding-bottom: 50px;
-	.row {
-		margin: 0;
-		.col {
-			background: red !important;
-			// min-height: 200px;
-			padding: 0;
-			> div {
-				background: white;
-				// padding: 20px;
-				// margin: 20px;
-			}
-		}
+	@media #{$medium-and-up} {
+	    -moz-column-gap: 1em;
+	    -webkit-column-gap: 1em;
+	    column-gap: 1em;
+	    column-count: 4;
 	}
+}
+
+.single-lg--former {
+
+	display: inline-block;
 }
 
 .single-lg-portrait {
@@ -26,10 +24,10 @@
 }
 
 .single-lg-content {
-	padding: 20px;
-	background: $blue;
-	color: $white;
+	padding: 15px;
+	color: $black;
+	text-align: center;
 	p {
-		margin-top: 0;
+		margin: 0;
 	}
 }

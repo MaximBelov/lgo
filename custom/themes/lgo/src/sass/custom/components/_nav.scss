@@ -40,8 +40,13 @@ a.skip-to:hover {
   }
 }
 
+.left-panel__navigation.small-nav {
+    width: 300px;
+}
+
+
 .left-panel__navigation.large-logo {
-  padding: 20px 20px 50px 50px;
+  padding: 20px 20px 30px 50px;
   .nav-logo {
     width: 165px;
     height: auto;
@@ -59,7 +64,7 @@ nav {
 }
 
 .nav-logo {
-  width: 120px;
+  width: 80px;
   height: auto;
 }
 
@@ -72,6 +77,7 @@ nav {
 
 .menu-item-has-children {
   > ul {
+    display: none;
     margin-left: 20px;
     // border-left: 4px solid rgba(255,255,255,0.6);
     li {

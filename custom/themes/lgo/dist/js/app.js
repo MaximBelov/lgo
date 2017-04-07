@@ -7991,7 +7991,7 @@ Picker.extend( 'pickadate', DatePicker )
 
   // Materialize modal triggers
   $('.modal-trigger-general').click(function() {
-    var address = $(this).attr("href");
+    var address = $(this).attr("data-modalnum");
     $(address).openModal();
   });
 
