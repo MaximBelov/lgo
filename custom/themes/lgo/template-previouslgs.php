@@ -24,7 +24,7 @@ $group_values = rwmb_meta( 'accordion_content' );
     </div>
 </section>
 
-<section class="current-lgs">
+<section class="current-lg">
     <?php
      // Check if there are any team members
     $args = array(
@@ -42,7 +42,10 @@ $group_values = rwmb_meta( 'accordion_content' );
             $role         = rwmb_meta( 'rw_tm_role' );
             $email         = rwmb_meta( 'rw_tm_email' );
             $count++;
+            // print_r($count);
         ?>
+
+        <?php if ($count == 1) { ?>
 
         <div class="single-lg--current">
           <div>
@@ -62,6 +65,8 @@ $group_values = rwmb_meta( 'accordion_content' );
               </div>
           </div>
         </div>
+
+        <?php } ?>
 
         <?php endwhile; wp_reset_postdata(); ?>
     <?php } ?>
