@@ -11,26 +11,10 @@
 // Get meta content and assign to variable 
 $group_values = rwmb_meta( 'accordion_content' ); ?>
 
-<?php if ( has_post_thumbnail() ) : ?>
-	<div class="parallax-container valign-wrapper">
-		<div class="container">
-			<div class="row">
-				<div class="col s12 m8 offset-m2">
-					<h1><?php the_title();?></h1>
-				</div>
-			</div>
-		</div>
-    	<div class="parallax overlay"><img src="<?php the_post_thumbnail_url(); ?>"></div>
-    </div>
-<?php elseif (!has_post_thumbnail() ) : ?>
-	<div id="skip-to-content">
-		<h4><?php the_title();?></h4>
-	</div>
-<?php endif; ?>
-
 <section class="container base-padding no-pad-bottom">
 	<div class="row">
 		<div class="col s12">
+			<h2><?php the_title();?></h2>
 			<?php the_content(); ?>
 		</div>
 	</div>
@@ -39,16 +23,16 @@ $group_values = rwmb_meta( 'accordion_content' ); ?>
 <section class="accordion-section base-padding no-padding-top">
     <?php // Accordion
     	if ( ! empty( $group_values ) ) { ?>
-		<ul class="collapsible" data-collapsible="accordion">
+		<div class="js-accordion" data-accordion-prefix-classes="animated-accordion">
 		<?php foreach ( $group_values as $group_value ) {
 			$title 		= isset( $group_value['rw_title'] ) ? $group_value['rw_title'] : '';
 			$content 	= wpautop(isset( $group_value['rw_content'] ) ? $group_value['rw_content'] : ''); ?>
-			<li>
-				<div class="collapsible-header"><i class="material-icons right">add_circle_outline</i><?php echo $title; ?></div>
-				<div class="collapsible-body"><span><?php echo $content; ?></span></div>
-			</li>
+			<div class="js-accordion__panel">
+				<h3 class="js-accordion__header"><?php echo $title;?></h3>
+				<div class="js-accordion__content"><span><?php echo $content; ?></span></div>
+			</div>
 			<?php } //endforeach ?>
-		</ul>
+		</div>
 		<?php }; //endif !empty 
 	// end accordion ?>
 			

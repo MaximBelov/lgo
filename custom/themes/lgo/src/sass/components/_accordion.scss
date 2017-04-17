@@ -1,11 +1,67 @@
-.accordion-section {
-	ul {
-		box-shadow: none;
-		border: none;
-	}
-	.collapsible-header {
-		background-color: $accordion-headers;
-		border: none;
+.js-accordion {
+	button.js-accordion__header {
+		border:none;
+		border-radius: 0;
+		background: $l-green;
+		color: $black;
+		width: 100%;
+		text-align: left;
 		margin-bottom: 5px;
+		position: relative;
+		&:after {
+			position: absolute;
+			top: 35%;
+			right: 10px;
+			font-family: FontAwesome;
+			content: "\f0d7";
+		}
+		&:focus {
+			outline:none;
+		    border-color:#000;
+		    box-shadow:0 0 10px #000;
+		}
 	}
+	.button.js-accordion__header[aria-expanded=true] {
+		&:after {
+			position: absolute;
+			top: 35%;
+			right: 10px;
+			font-family: FontAwesome;
+			content: "\f0d8";
+		}
+	}
+	.js-accordion__panel {
+		padding: 0 40px;
+		h3 {
+			// background: none;
+		}
+	}
+}
+
+.animated-accordion__panel[aria-hidden=true] {
+  display: none;
+  padding: 0 40px;
+}
+
+.animated-accordion__panel {
+ display: block;
+ overflow: hidden;
+ opacity: 1;
+ transition: visibility 0s ease, max-height 1s ease, opacity 1s ease ;
+ max-height: 100em;
+ /* magic number for max-height = enough height */
+ visibility: visible;
+ transition-delay: 0s;
+ margin: 0;
+ padding: 0;
+}
+/* This is the hidden state */
+[aria-hidden=true].animated-accordion__panel {
+ display: block;
+ max-height: 0;
+ opacity: 0;
+ visibility: hidden;
+ transition-delay: 1s, 0s, 0s;
+ margin: 0;
+ padding: 0;
 }

@@ -67,9 +67,9 @@ header {
 }
 
 .right-panel {
+  background: $white;
   position: relative;
   width: 50%;
-  height: 100%;
   z-index: 10;
   background: $body-bg;
   float: right;

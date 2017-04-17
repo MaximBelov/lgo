@@ -34,9 +34,9 @@ gulp.task('sass', function() {
 // Scripts
 var scriptList = [
     'src/js/wow.js',
-    'src/js/materialize.js',
+        'src/js/components/jquery-accessible-accordion-aria.js',
+    // 'src/js/components/jquery-accessible-accordion-aria-edit.js',
     'src/js/init.js',
-    
 ];
 
 gulp.task('js', function() {

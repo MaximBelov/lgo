@@ -1,11 +1,6 @@
 (function($){
-  $(function(){
 
-    $('.button-collapse').sideNav();
-    $('.parallax').parallax();
-
-  }); // end of document ready
-
+  $('.js-accordion').accordion();
 
   // Materialize modal triggers
   $('.modal-trigger-general').click(function() {
@@ -79,9 +74,9 @@ jQuery(document).ready(function($) {
 
 //ScrollSpy
 jQuery(document).ready(function($){
-    $('.scrollspy').scrollSpy({
-        scrollOffset: 80
-    });
+    // $('.scrollspy').scrollSpy({
+    //     scrollOffset: 80
+    // });
 });
 
 //Menu Highlight
