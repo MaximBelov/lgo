@@ -81,8 +81,8 @@ jQuery(document).ready(function($){
 
 //Menu Highlight
 jQuery(document).ready(function($){
-    var sections = $('section')
-  , nav = $('.menu')
+    var sections = $('.child-page-content')
+  , nav = $('#menu-item-66')
   , nav_height = nav.outerHeight();
 
 $(window).on('scroll', function () {
@@ -92,11 +92,11 @@ $(window).on('scroll', function () {
             bottom = top + $(this).outerHeight();
     
         if (cur_pos >= top && cur_pos <= bottom) {
-            nav.find('a').removeClass('active');
-            sections.removeClass('active');
+            nav.find('a').removeClass('menu-item-active');
+            sections.removeClass('menu-item-active');
       
-            $(this).addClass('active');
-            nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+            $(this).addClass('menu-item-active');
+            nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
             }
         });
     });

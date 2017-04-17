@@ -89,18 +89,28 @@ class Main_Menu_Walker extends Walker {
     $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
     $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
     
-    if(in_array('menu-item-object-service', $classes) && in_array('active', $classes)) {
-    	$serviceid= get_post_meta( $item->ID, '_menu_item_object_id', true );
-    	$inactive = get_post_meta( $serviceid, 'rw_menu_inactive', false );
-    	$inactiveurl = wp_get_attachment_url( $inactive[0] );
-    	$active = get_post_meta( $serviceid, 'rw_menu_active', false );
-    	$activeurl = wp_get_attachment_url( $active[0] );
-    	$blurb = get_post_meta( $serviceid, 'rw_menu_blurb', false );
-      	$item_output = $args->before;
-      	$item_output .= '<a'. $attributes .' class="active-service" data-active="'.$activeurl.'" data-inactive="'.$inactiveurl.'"><img src="'.$activeurl.'"><span class="menu-sub-item-title"><span class="menu-title-highlight"></span><span class="the-sub-item-title">';
-      	$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-      	$item_output .= '</span></span><span class="menu-sub-item-blurb">'.$blurb[0].'</span></a>';
-      	$item_output .= $args->after;
+
+    $ancestors = get_post_ancestors($item->ID);
+    $ancestors_count = count($ancestors);
+    if($item->post_parent && $ancestors_count > 1) {
+      // print_r($ancestors);
+      if ( !is_page( $item->post_parent ) ) {
+        $parent_url = get_permalink($item->post_parent);
+        $the_hash = get_post_field( 'post_name', $item->ID );
+        $item_output = $args->before;
+        $item_output .= '<a href="#'. $the_hash .'" data-post-parent="'. $parent_url .'" data-hey="BOOOM">';
+        $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+        $item_output .= '</a>';
+        $item_output .= $args->after;
+      } else {
+        $parent_url = get_permalink($item->post_parent);
+        $the_hash = get_post_field( 'post_name', $item->ID );
+        $item_output = $args->before;
+        $item_output .= '<a href="#'. $the_hash .'" data-post-parent="'. $parent_url .'">';
+        $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+        $item_output .= '</a>';
+        $item_output .= $args->after;
+      }
     } else if (in_array('menu-item-object-service', $classes)) {
 		$serviceid= get_post_meta( $item->ID, '_menu_item_object_id', true );
 		$inactive = get_post_meta( $serviceid, 'rw_menu_inactive', false );

@@ -66,6 +66,32 @@ nav {
   }
 }
 
+nav {
+  ul {
+    margin: 0;
+    li {
+      padding: 0;
+    }
+  }
+}
+
+#menu-main-menu {
+  padding: 0;
+  padding-left: 20px;
+  >li {
+    >ul {
+      padding: 0;
+      margin: 0;
+      > li {
+        >ul {
+          margin: 0;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}
+
 .nav-logo {
   width: 80px;
   height: auto;
@@ -80,13 +106,17 @@ nav {
 
 .menu-item-has-children {
   > ul {
-    display: none;
+    // display: none;
     margin-left: 20px;
     // border-left: 4px solid rgba(255,255,255,0.6);
     li {
       display: block;
       float: none;
     }
+  }
+  .menu-item-active {
+    color: $white;
+    font-weight: bold;
   }
 }
 
@@ -100,8 +130,6 @@ nav {
     display: none;
   }
 }
-
-
 
 .active-menu-screen {
   height: 100%;
