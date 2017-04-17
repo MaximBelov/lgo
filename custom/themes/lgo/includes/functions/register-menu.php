@@ -89,16 +89,18 @@ class Main_Menu_Walker extends Walker {
     $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
     $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
     
-
+    // Get the item's parents
     $ancestors = get_post_ancestors($item->ID);
+    // Count how many parents an item has
     $ancestors_count = count($ancestors);
+    // Check if menu item is in the third level (would have two parents)
     if($item->post_parent && $ancestors_count > 1) {
-      // print_r($ancestors);
+      // If we're not on the parent page, print out the full URL, otherwise just print the hash
       if ( !is_page( $item->post_parent ) ) {
         $parent_url = get_permalink($item->post_parent);
         $the_hash = get_post_field( 'post_name', $item->ID );
         $item_output = $args->before;
-        $item_output .= '<a href="#'. $the_hash .'" data-post-parent="'. $parent_url .'" data-hey="BOOOM">';
+        $item_output .= '<a href="'. $parent_url . '#' . $the_hash .'" data-post-parent="'. $parent_url .'">';
         $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
         $item_output .= '</a>';
         $item_output .= $args->after;
