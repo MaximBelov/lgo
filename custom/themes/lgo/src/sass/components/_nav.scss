@@ -60,6 +60,9 @@ nav {
     display: block;
     float: none !important;
     line-height: 20px;
+    a {
+      text-decoration: none;
+    }
   }
 }
 

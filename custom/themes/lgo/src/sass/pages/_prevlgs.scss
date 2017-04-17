@@ -20,7 +20,12 @@
 
 .single-lg-portrait {
 	background-size: cover;
-	height: 200px;
+	text-align: center;
+	img {
+		width: 200px;
+		height: 200px;
+	}
+	.svg-clipped{-webkit-clip-path:url(#svgFramePath);clip-path:url(#svgFramePath);}
 }
 
 .single-lg-content {

@@ -7,24 +7,26 @@ Author URI: http://wordpress.org/
 Version: 1.0
 */
 
-@import "materialize/materialize";
+// @import "materialize/materialize";
 
-@import "custom/base/_variables";
-@import "custom/base/_typography";
-@import "custom/base/_layout";
+@import "base/_normalize";
+@import "base/_grid";
+@import "base/_variables";
+@import "base/_typography";
+@import "base/_layout";
 
-@import "custom/components/_blockquote";
-@import "custom/components/_buttons";
-@import "custom/components/_form";
-@import "custom/components/_overlay";
-@import "custom/components/_logo";
-@import "custom/components/_parallax";
-@import "custom/components/_nav";
-@import "custom/components/_nav-trigger";
-@import "custom/components/_icons";
-@import "custom/components/_accordion";
-@import "custom/components/_header";
-@import "custom/components/_footer";
+@import "components/_blockquote";
+@import "components/_buttons";
+@import "components/_form";
+@import "components/_overlay";
+@import "components/_logo";
+@import "components/_parallax";
+@import "components/_nav";
+@import "components/_nav-trigger";
+@import "components/_icons";
+@import "components/_accordion";
+@import "components/_header";
+@import "components/_footer";
 
-@import "custom/pages/_home";
-@import "custom/pages/_prevlgs";
+@import "pages/_home";
+@import "pages/_prevlgs";
