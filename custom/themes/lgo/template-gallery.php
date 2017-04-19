@@ -6,9 +6,6 @@ get_header(); ?>
 
 <div id="columns">
   
-	
-	
-
 <?php $args = array(
     'post_type' => 'lg-list',
     'posts_per_page' =>100,
@@ -24,7 +21,7 @@ get_header(); ?>
     //$team_image_id      = get_post_meta($post->ID,'_team_image', true);
     //$team_image_url     = wp_get_attachment_image_src($team_image_id,'medium', true); ?>
 
-<figure>
+<figure class="element">
   	<img src="<?php the_post_thumbnail_url(); ?>">
 	<figcaption><?php echo the_title();?></figcaption>
 </figure>

@@ -21,6 +21,12 @@ div#columns figure img {
   margin-bottom: 5px;
 }
 
+.element {
+  display:inline-block;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
 div#columns figure figcaption {
   font-size: .9rem;
   color: #444;
