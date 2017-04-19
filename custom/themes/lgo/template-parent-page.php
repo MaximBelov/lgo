@@ -21,11 +21,8 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 	</div>
 </div>
 
-<div class="left-panel__background left-panel__background---down">
-	
-</div>
-
-<div class="right-panel">
+<div class="page page__bg__fixed" style="background-image: url(<?php echo get_template_directory_uri();?>/dist/images/music_room.jpg);">
+<div class="right-compartment">
 
     <div class="parent-page-content">
     	<?php the_content(); ?>

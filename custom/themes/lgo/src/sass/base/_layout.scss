@@ -73,7 +73,7 @@ header {
   z-index: 10;
   background: $body-bg;
   float: right;
-  top: 100%;
+  // top: 100%;
   transition: all 0.5s ease;
 }
 
@@ -85,6 +85,59 @@ footer.page-footer {
 	color: $white;
   margin: 0;
   background-color: $blue;
+}
+
+// Panel Animations
+.scene {
+    position: relative;
+    z-index: 2;
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    z-index: 100;
+}
+
+.right-compartment {
+    width: 50%;
+    float: right;
+    background: $white;
+    overflow-y: scroll;
+}
+
+.right-compartment__filler {
+    height: 500px;
+}
+
+.effect-fixed--on {
+
+}
+
+.page__bg__fixed {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: all 0.5s ease;
+    // 
+    height: 100vh;
+    overflow-y:scroll;
+}
+
+.page__bg__fixed.affix {
+    position:fixed;
+    top:0;
+    right:0;
+}
+
+.page__bg {
+  position: absolute;
+  top:0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width:100%;
+  z-index: 1;
 }
 
 // Media Queries

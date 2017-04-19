@@ -32,25 +32,32 @@ nav {
     }
 }
 
-nav #menu-main-menu >li {
-    margin: 10px 0 15px;
-    >a {
-        font-size: 22px;
-        font-weight: 700;
-        letter-spacing: 1.1px;
+nav #menu-main-menu {
+    .menu-item-active,
+    .current_page_item >a {
+      color: $white;
+      font-weight: bold;
     }
-    >ul {
-        margin: 10px 0 10px 20px;
-        >li {
-            margin: 10px 0;
-            >a {
-                font-size: 16px;
-                font-weight: 500;
-            }
-            >ul {
-                >li >a {
-                    font-size: 14px;
-                    font-weight: 300;
+    >li {
+        margin: 10px 0 15px;
+        >a {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1.1px;
+        }
+        >ul {
+            margin: 10px 0 10px 20px;
+            >li {
+                margin: 0 0 5px;
+                >a {
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+                >ul {
+                    >li >a {
+                        font-size: 14px;
+                        font-weight: 300;
+                    }
                 }
             }
         }

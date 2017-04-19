@@ -72,32 +72,40 @@ jQuery(document).ready(function($) {
     });
 });
 
-//ScrollSpy
 jQuery(document).ready(function($){
-    // $('.scrollspy').scrollSpy({
-    //     scrollOffset: 80
-    // });
+  var stickySidebar = $('.page__bg__fixed').offset().top;
+
+  $(window).scroll(function() {  
+      if ($(window).scrollTop() > stickySidebar) {
+          $('.page__bg__fixed').addClass('affix');
+          // console.log('booo')
+      }
+      else {
+          // $('.page__bg__fixed').removeClass('affix');
+          // console.log('YESSS')
+      }  
+  });
 });
 
 //Menu Highlight
 jQuery(document).ready(function($){
     var sections = $('.child-page-content')
-  , nav = $('#menu-item-66')
+  , nav = $('#main-menu-ww')
   , nav_height = nav.outerHeight();
 
 $(window).on('scroll', function () {
-    var cur_pos = $(this).scrollTop();
-    sections.each(function() {
-        var top = $(this).offset().top - nav_height,
-            bottom = top + $(this).outerHeight();
+  var cur_pos = $(this).scrollTop();
+  sections.each(function() {
+      var top = $(this).offset().top - nav_height,
+          bottom = top + $(this).outerHeight();
+  
+      if (cur_pos >= top && cur_pos <= bottom) {
+          nav.find('a').removeClass('menu-item-active');
+          sections.removeClass('menu-item-active');
     
-        if (cur_pos >= top && cur_pos <= bottom) {
-            nav.find('a').removeClass('menu-item-active');
-            sections.removeClass('menu-item-active');
-      
-            $(this).addClass('menu-item-active');
-            nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
-            }
-        });
-    });
+          $(this).addClass('menu-item-active');
+          nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
+          }
+      });
+  });
 });
