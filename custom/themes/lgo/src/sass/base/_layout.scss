@@ -93,17 +93,30 @@ footer.page-footer {
     z-index: 2;
 }
 
-.page {
+.page-panel {
     position: relative;
     width: 100%;
     z-index: 100;
+  
 }
 
 .right-compartment {
-    width: 50%;
+  position: relative;
+  z-index: 500;
+  @media #{$large-and-up} {
+    width: 70%;
     float: right;
     background: $white;
     overflow-y: scroll;
+    // padding: 100px;
+  }
+}
+
+.right-compartment-inner-wrapper {
+  padding: 20px;
+  @media #{$large-and-up} { 
+    padding: 20px 60px 60px;
+  }
 }
 
 .right-compartment__filler {
@@ -122,6 +135,21 @@ footer.page-footer {
     // 
     height: 100vh;
     overflow-y:scroll;
+    position: relative;
+    .dark-overlay {
+      z-index: 200;
+      &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          // height: 100%;
+          background-color: rgba(0,0,0,0.5);
+          z-index: 1;
+      }
+    }
 }
 
 .page__bg__fixed.affix {

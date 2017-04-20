@@ -844,58 +844,29 @@ y),b(document.body).on("sticky_kit:recalc",y),a.on("sticky_kit:detach",H),setTim
 //Init WOW.js with animate.css
 new WOW().init();
 
-//Nav bar change color on scroll
+
 jQuery(document).ready(function($) {
     $(window).scroll(function() {
-        var scrollPos = $(window).scrollTop(),
-            navbar = $('nav');
+      //Nav logo change color on scroll
+      var scrollPos = $(window).scrollTop(),
+          navbar = $('#nav-logo');
 
-        if (scrollPos > 50) {
-            navbar.addClass('change-color');
-        } else {
-            navbar.removeClass('change-color');
-        }
-    });
-});
+      var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      console.log(h);
 
-//Logo change color on scroll
-jQuery(document).ready(function($) {
-    $(window).scroll(function() {
-        var scrollPos = $(window).scrollTop(),
-            logo = $('.brand-logo');
-
-        if (scrollPos > 50) {
-            logo.addClass('change-size');
-        } else {
-            logo.removeClass('change-size');
-        }
-    });
-});
-
-jQuery(document).ready(function($){
-  var stickySidebar = $('.page__bg__fixed').offset().top;
-
-  $(window).scroll(function() {  
-      if ($(window).scrollTop() > stickySidebar) {
-          $('.page__bg__fixed').addClass('affix');
-          // console.log('booo')
+      if (scrollPos > (h-100)) {
+          navbar.addClass('change-logo-size');
+      } else {
+          navbar.removeClass('change-logo-size');
       }
-      else {
-          // $('.page__bg__fixed').removeClass('affix');
-          // console.log('YESSS')
-      }  
-  });
-});
 
-//Menu Highlight
-jQuery(document).ready(function($){
-    var sections = $('.child-page-content')
-  , nav = $('#main-menu-ww')
-  , nav_height = nav.outerHeight();
+      // Active nav items
+        var sections = $('.child-page-content')
+      , nav = $('#main-menu-ww')
+      , nav_height = nav.outerHeight();
 
-$(window).on('scroll', function () {
-  var cur_pos = $(this).scrollTop();
-  sections.each(function() {
+      var cur_pos = $(this).scrollTop();
+      sections.each(function() {
       var top = $(this).offset().top - nav_height,
           bottom = top + $(this).outerHeight();
   
@@ -907,5 +878,21 @@ $(window).on('scroll', function () {
           nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
           }
       });
-  });
+
+    });
 });
+
+// jQuery(document).ready(function($){
+//   var stickySidebar = $('.page__bg__fixed').offset().top;
+
+//   $(window).scroll(function() {  
+//       if ($(window).scrollTop() > stickySidebar) {
+//           $('.page__bg__fixed').addClass('affix');
+//           // console.log('booo')
+//       }
+//       else {
+//           $('.page__bg__fixed').removeClass('affix');
+//           // console.log('YESSS')
+//       }  
+//   });
+// });

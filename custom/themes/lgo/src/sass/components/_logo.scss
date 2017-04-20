@@ -1,14 +1,9 @@
-.brand-logo {
-  padding: 1em;
- 	width: 200px;
-  	transition: 0.2s all linear;
-  	&.change-size {
-    	width: 220px;
-  	}
-  	@media #{$small-and-down} {
-  		width: 150px;
-  		&.change-size {
-    	width: 150px;
-  	}
-  	}
+#nav-logo {
+  transition: 0.2s all linear;
+  width: 165px;
+  height: auto;
+}
+
+#nav-logo.change-logo-size {
+  width: 100px;
 }
