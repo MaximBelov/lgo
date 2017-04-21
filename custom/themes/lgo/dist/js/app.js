@@ -882,33 +882,46 @@ jQuery(document).ready(function($) {
 
     });
 
-    $('#scroll-panel').scroll(function() {
+    if( $('.parent-page-layout').length ) {
 
-     // Active nav items
-       var sections = $('.child-page-content')
-     , nav = $('#main-menu-ww')
-     , nav_height = nav.outerHeight();
+      $('#scroll-panel').scroll(function() {
 
-     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+       // Active nav items
+      var sections = $('.child-page')
+        nav = $('#main-menu-ww')
+        nav_height = nav.outerHeight();
 
-     var cur_pos = $(this).scrollTop();
-     sections.each(function() {
-     var top = $(this).offset().top - nav_height,
-         bottom = top + $(this).outerHeight();
+      var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-    console.log( cur_pos + ' ' + top );
-     
-     if (cur_pos >= top && cur_pos <= bottom) {
-         nav.find('a').removeClass('menu-item-active');
-         sections.removeClass('menu-item-active');
-         // console.log('blurp');
-     
-         $(this).addClass('menu-item-active');
-         nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
-         }
-     });
+      var cur_pos = $(this).scrollTop();
 
-    });
+      var parentH = $('.right-compartment').offset().top;
+      
+      // console.log( parentH );
+      // console.log('-----');
+
+        sections.each(function() {
+          var top = $(this).offset().top - parentH - 99 
+            bottom = top + $(this).outerHeight()
+            childH = $(this).height();
+
+          var theID = $(this).attr('id');
+          // console.log(theID + ' ' + cur_pos + ' ' + top + ' ' + bottom );
+
+          if (cur_pos >= top && cur_pos <= bottom) {
+            // console.log(theID);
+             nav.find('a').removeClass('menu-item-active');
+             sections.removeClass('menu-item-active');
+             // console.log('blurp');
+         
+             $(this).addClass('menu-item-active');
+             nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
+          }
+        }); //ends for each
+
+      }); //ends check for scrolling of #scroll-panel
+    } //ends check for Parent template
+
 });
 
 // jQuery(document).ready(function($){

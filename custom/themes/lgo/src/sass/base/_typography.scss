@@ -98,8 +98,7 @@ nav {
 }
 
 nav #menu-main-menu {
-    .menu-item-active,
-    .current_page_item >a {
+    .menu-item-active {
       color: $white;
       font-weight: bold;
     }
