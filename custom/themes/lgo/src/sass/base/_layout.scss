@@ -27,6 +27,16 @@ header {
   padding-top: 0;
 }
 
+.top-page-panel {
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 200;
+}
+
+.top-page-panel.shrink-banner {
+  height: 1px !important;
+}
+
 .left-panel__background {
   z-index: 5;
   background: darkgrey;
@@ -94,10 +104,9 @@ footer.page-footer {
 }
 
 .page-panel {
-    position: relative;
-    width: 100%;
-    z-index: 100;
-  
+  position: relative;
+  width: 100%;
+  z-index: 100;
 }
 
 .right-compartment {
@@ -115,7 +124,7 @@ footer.page-footer {
 .right-compartment-inner-wrapper {
   padding: 20px;
   @media #{$large-and-up} { 
-    padding: 20px 60px 60px;
+    padding: 50px 100px 60px;
   }
 }
 
@@ -138,9 +147,10 @@ footer.page-footer {
     position: relative;
     .dark-overlay {
       z-index: 200;
+      position: relative;
       &:after {
           content: '';
-          position: absolute;
+          position: fixed;
           left: 0;
           right: 0;
           top: 0;

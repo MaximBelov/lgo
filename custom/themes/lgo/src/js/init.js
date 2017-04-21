@@ -46,19 +46,48 @@ new WOW().init();
 
 
 jQuery(document).ready(function($) {
+
+    function scrollTo(element, to, duration) {
+        if (duration <= 0) return;
+        var difference = to - element.scrollTop;
+        var perTick = difference / duration * 10;
+
+        setTimeout(function() {
+            element.scrollTop = element.scrollTop + perTick;
+            if (element.scrollTop === to) return;
+            scrollTo(element, to, duration - 10);
+        }, 10);
+    }
+
     $(window).scroll(function() {
       //Nav logo change color on scroll
       var scrollPos = $(window).scrollTop(),
           navbar = $('#nav-logo');
+          topPanel = $('.top-page-panel');
+
+      var banner = document.getElementById("scroll-header");
+      var panel = document.getElementById("scroll-panel");
 
       var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-      console.log(h);
+      console.log(scrollPos);
 
       if (scrollPos > (h-100)) {
           navbar.addClass('change-logo-size');
       } else {
           navbar.removeClass('change-logo-size');
       }
+
+      // if (scrollPos > 100) {
+      //     navbar.addClass('change-logo-size');
+      //     // topPanel.addClass('shrink-banner');
+      //     scrollTo(document.body, panel.offsetTop, 1000);
+      // } else if (scrollPos ) {
+      //     navbar.removeClass('change-logo-size');
+      //     // topPanel.removeClass('shrink-banner');
+      //     scrollTo(document.body, banner.offsetTop, 1000);
+      // } else {
+
+      // }            
 
       // Active nav items
         var sections = $('.child-page-content')

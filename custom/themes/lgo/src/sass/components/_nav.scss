@@ -31,7 +31,7 @@ a.skip-to:hover {
 
 .left-panel__navigation {
   position: fixed;
-  width: 50%;
+  width: 310px;
   height: 100vh;
   padding: 50px 20px 50px 50px;
   z-index: 1000;
@@ -117,13 +117,13 @@ nav {
 }
 
 .menu-after-dots {
-  color: #1aceaa;
+  color: $green;
   font-size: 30px;
   &:hover {
     cursor: pointer;
   }
   @media #{$large-and-up} {
-    display: none;
+    // display: none;
   }
 }
 

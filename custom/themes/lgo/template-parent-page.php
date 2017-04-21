@@ -8,7 +8,7 @@ $heading   = rwmb_meta( 'rw_banner_heading' );
 $subhead   = rwmb_meta( 'rw_banner_subheading' );
 ?>
 
-<div class="top-page-panel" style="background-image: url(<?php echo get_template_directory_uri();?>/dist/images/installation_speech-splash.jpg);">
+<div id="scroll-header" class="top-page-panel" style="background-image: url(<?php echo get_template_directory_uri();?>/dist/images/installation_speech-splash.jpg);">
 	<div class="grad-overlay"></div>
 	<div class="container">
 		<div>
@@ -20,7 +20,7 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 	</div>
 </div>
 
-<div class="page-panel page__bg__fixed <?php if (is_page_template( 'template-parent-page.php')) { echo 'parent-page-layout'; }?>" style="background-image: url(<?php echo get_template_directory_uri();?>/dist/images/music_room.jpg);">
+<div id="scroll-panel" class="page-panel page__bg__fixed <?php if (is_page_template( 'template-parent-page.php')) { echo 'parent-page-layout'; }?>" style="background: url(<?php echo get_template_directory_uri();?>/dist/images/music_room.jpg);">
 	<div class="dark-overlay"></div>
 	<div class="right-compartment">
 		<div class="right-compartment-inner-wrapper">
