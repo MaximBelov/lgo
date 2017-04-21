@@ -870,7 +870,7 @@ jQuery(document).ready(function($) {
       var panel = document.getElementById("scroll-panel");
 
       var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-      console.log(scrollPos);
+      // console.log(scrollPos);
 
       if (scrollPos > (h-100)) {
           navbar.addClass('change-logo-size');
@@ -878,38 +878,35 @@ jQuery(document).ready(function($) {
       } else {
           navbar.removeClass('change-logo-size');
           slimNav.removeClass('compress-slim-nav');
-      }
+      }        
 
-      // if (scrollPos > 100) {
-      //     navbar.addClass('change-logo-size');
-      //     // topPanel.addClass('shrink-banner');
-      //     scrollTo(document.body, panel.offsetTop, 1000);
-      // } else if (scrollPos ) {
-      //     navbar.removeClass('change-logo-size');
-      //     // topPanel.removeClass('shrink-banner');
-      //     scrollTo(document.body, banner.offsetTop, 1000);
-      // } else {
+    });
 
-      // }            
+    $('#scroll-panel').scroll(function() {
 
-      // Active nav items
-        var sections = $('.child-page-content')
-      , nav = $('#main-menu-ww')
-      , nav_height = nav.outerHeight();
+     // Active nav items
+       var sections = $('.child-page-content')
+     , nav = $('#main-menu-ww')
+     , nav_height = nav.outerHeight();
 
-      var cur_pos = $(this).scrollTop();
-      sections.each(function() {
-      var top = $(this).offset().top - nav_height,
-          bottom = top + $(this).outerHeight();
-  
-      if (cur_pos >= top && cur_pos <= bottom) {
-          nav.find('a').removeClass('menu-item-active');
-          sections.removeClass('menu-item-active');
-    
-          $(this).addClass('menu-item-active');
-          nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
-          }
-      });
+     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+     var cur_pos = $(this).scrollTop();
+     sections.each(function() {
+     var top = $(this).offset().top - nav_height,
+         bottom = top + $(this).outerHeight();
+
+    console.log( cur_pos + ' ' + top );
+     
+     if (cur_pos >= top && cur_pos <= bottom) {
+         nav.find('a').removeClass('menu-item-active');
+         sections.removeClass('menu-item-active');
+         // console.log('blurp');
+     
+         $(this).addClass('menu-item-active');
+         nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
+         }
+     });
 
     });
 });

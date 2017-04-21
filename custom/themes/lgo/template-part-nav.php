@@ -20,7 +20,6 @@
                 </g>
             </g>
         </svg>
-        </svg>
         <span>MENU</span>
     </div>
     <nav>

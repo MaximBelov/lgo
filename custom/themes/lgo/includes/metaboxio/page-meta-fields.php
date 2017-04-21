@@ -50,6 +50,39 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	);
 
 	$meta_boxes[] = array(
+		'title'  => __( 'Photo/Content Slider' ),
+		'post_types' => array('page'),
+		'fields' => array(
+			array(
+				'id'     => 'slider_content',
+				'type'   => 'group',
+				'clone'  => true,
+				'sort_clone' => true,
+				'collapsible' => true,
+				'group_title' => array( 'field' => $prefix . 'stitle' ), // ID of the subfield
+				'save_state' => true,
+				'fields' => array(
+					array(
+						'name' => __( 'Title', 'rwmb' ),
+						'id'   => $prefix . 'stitle',
+						'type' => 'text',
+					),
+					array(
+						'name' => __( 'Image', 'rwmb' ),
+						'id'   => $prefix . 'sphoto',
+						'type' => 'file_input',
+					),
+					array(
+						'name' => __( 'Content', 'rwmb' ),
+						'id'   => $prefix . 'scontent',
+						'type' => 'wysiwyg',
+					),
+				),
+			),
+		),
+	);
+
+	$meta_boxes[] = array(
 		'title'  => __( 'Call to Action Buttons' ),
 		'post_types' => array('page' ),
 		'fields' => array(
