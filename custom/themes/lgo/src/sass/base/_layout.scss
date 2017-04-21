@@ -178,6 +178,10 @@ footer.page-footer {
   z-index: 1;
 }
 
+.full-width-panel {
+  min-height: 100vh;
+}
+
 // Media Queries
 $large-display-width: 1300px;
 
