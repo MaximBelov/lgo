@@ -64,6 +64,7 @@ jQuery(document).ready(function($) {
       var scrollPos = $(window).scrollTop(),
           navbar = $('#nav-logo');
           topPanel = $('.top-page-panel');
+          slimNav = $('.slim-nav-transition');
 
       var banner = document.getElementById("scroll-header");
       var panel = document.getElementById("scroll-panel");
@@ -73,8 +74,10 @@ jQuery(document).ready(function($) {
 
       if (scrollPos > (h-100)) {
           navbar.addClass('change-logo-size');
+          slimNav.addClass('compress-slim-nav');
       } else {
           navbar.removeClass('change-logo-size');
+          slimNav.removeClass('compress-slim-nav');
       }
 
       // if (scrollPos > 100) {

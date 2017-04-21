@@ -44,6 +44,43 @@ a.skip-to:hover {
     width: 300px;
 }
 
+.left-panel__navigation.slim-nav-transition {
+  transition: all 0.5s ease;
+}
+
+.slim-nav-label {
+  transition: all 0.5s ease;
+  display: none;
+}
+
+.left-panel__navigation.slim-nav-transition.compress-slim-nav {
+  background: $d-grey;
+  transform: translateX(-340px);
+  &:hover {
+    transform: translateX(0);
+    .slim-nav-label {
+      opacity: 0;
+    }
+  }
+  .slim-nav-label {
+    opacity: 1;
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: -15px;
+    transform: rotate(90deg);
+
+    color: $green;
+    font-family: $sans-serif-font;
+    span {
+      letter-spacing: 1px;
+    }
+    svg {
+      width: 25px;
+      height: auto;
+    }
+  }
+}
 
 .left-panel__navigation.large-logo {
   padding: 20px 20px 30px 50px;
