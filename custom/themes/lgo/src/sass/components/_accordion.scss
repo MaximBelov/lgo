@@ -1,3 +1,7 @@
+.js-acc--child-page {
+	padding-top: 30px;
+}
+
 .js-accordion {
 	button.js-accordion__header {
 		border:none;
@@ -31,7 +35,7 @@
 		}
 	}
 	.js-accordion__panel {
-		padding: 0 40px;
+		// padding: 0 40px;
 		h3 {
 			// background: none;
 		}

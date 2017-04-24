@@ -1,6 +1,7 @@
 body {
   position: relative;
   height: 100%;
+  overflow-x: hidden;
 }
 
 header {
@@ -180,7 +181,73 @@ footer.page-footer {
 
 .full-width-panel {
   min-height: 100vh;
+  width: calc(100% - 40px);
+  transform: translateX(40px);
+  transition: all 0.5s ease;
+
+  // background: red;
 }
+
+.full-width-inner-wrapper {
+  //Same as .right-compartment-inner-wrapper?
+  padding: 20px;
+  @media #{$large-and-up} { 
+    padding: 50px 100px 60px;
+  }
+}
+
+.full-width-panel.full-width-panel--pushed {
+  transform: translateX(360px);
+  width: calc(100% - 340px);
+}
+
+// MASONRY
+
+.masonry-grid {
+  margin: 50px 0;
+  text-align: center;
+} 
+
+.grid-item {
+  display: inline-block;
+  height: 130px;
+  width: 130px;
+  float: left;
+  position: relative;
+}
+
+.grid-item--4x2:first-child {
+  float: none;
+}
+
+.grid-item--4x2 {
+  background: red;
+  border: 1px solid $white;
+  width: 64.4%;
+  height: 260px; 
+}
+
+.grid-item--2x1 {
+  background: yellow;
+  border: 1px solid $white;
+  width: 33.2%;
+  height: 130px;
+}
+
+.grid-item--2x2 {
+  background: blue;
+  border: 1px solid $white;
+  width: 33.2%;
+  height: 260px;
+}
+
+.grid-item--1x1 {
+  background: green;
+  border: 1px solid $white;
+  width: 16.6%;
+  height: 130px;
+}
+
 
 // Media Queries
 $large-display-width: 1300px;

@@ -6,7 +6,7 @@
     height: 1px;
     width: 1px;
     // 
-    // background: darken($blue, 10);
+    background: darken($black, 10);
     overflow: hidden;
     padding: 10px 15px;
     transition: all 0.2s;
@@ -153,14 +153,40 @@ nav {
 }
 
 .menu-item-has-children {
+  ul {
+    transition: all 0.2s ease;
+  }
   > ul {
-    // display: none;
+    
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+
     margin-left: 20px;
     // border-left: 4px solid rgba(255,255,255,0.6);
     li {
       display: block;
       float: none;
     }
+  }
+}
+
+.menu-item-has-children {
+  // background: white;
+  // &:hover {
+  //   > ul {
+  //     opacity: 1;
+  //     visibility: visible;
+  //     position: static;
+  //   }
+  // }
+}
+
+.menu-item-has-children {
+  ul.open-dropdown {
+    opacity: 1;
+    visibility: visible;
+    position: static;
   }
 }
 

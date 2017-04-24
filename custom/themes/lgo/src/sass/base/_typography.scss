@@ -27,16 +27,33 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Rasa', serif;
 }
 
+// FULL-WIDTH PAGE
+.full-width-panel {
+    h2 {
+        text-align: center;
+        margin-top: 0;
+    }
+}
+
+
 // PARENT PAGE CONTENT 
 
-.child-page {
+.child-page,
+.full-width-panel {
     color: $body-copy;
+    .child-page-content {
+        margin-bottom: 100px;
+    }
     h2 {
         font-family: $sans-serif-font;
         text-transform: uppercase;
         font-size: 60px;
         line-height: 70px;
         font-weight: 300;
+        margin-bottom: 0px;
+    }
+    .child-page-content >*:first-child {
+        margin-top: 25px;
     }
     h3 {
         font-weight: 400;
@@ -112,7 +129,7 @@ nav #menu-main-menu {
         >ul {
             margin: 10px 0 10px 20px;
             >li {
-                margin: 0 0 5px;
+                // margin: 0 0 5px;
                 >a {
                     font-size: 16px;
                     font-weight: 500;

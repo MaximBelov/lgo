@@ -20,7 +20,6 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 				<?php echo $subhead;?>
 			</div>
 			<svg width="80px" height="45px" viewBox="508 585 80 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
 			    <desc>Created with Sketch.</desc>
 			    <defs></defs>
 			    <polyline id="Path-2" stroke="#FFFFFF" stroke-width="3" fill="none" points="510 589.199219 546.746094 627.386719 586.171875 587"></polyline>
@@ -31,7 +30,25 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 
 <div class="full-width-panel">
 <div> <!-- Start of RP -->
-<div> <!-- Start of RP inner -->
-
+<div class="full-width-inner-wrapper"> <!-- Start of RP inner -->
+	<h2>Ontario's Storyteller in chief</h2>
+	
+	<div class="masonry-grid">
+		<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
+		<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
+		<div class="grid-item grid-item--2x1 wow fadeInUp"></div>
+		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+		<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
+		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+		<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
+		<div class="grid-item grid-item--2x1 wow fadeInUp"></div>
+		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+		<div class="grid-item grid-item--2x1 wow fadeInUp"></div>
+		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+		<div class="grid-item grid-item--2x2 wow fadeInUp"></div>
+	</div>
 
 <?php get_footer(); ?>
