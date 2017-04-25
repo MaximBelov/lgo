@@ -93,14 +93,6 @@ a.skip-to:hover {
   }
 }
 
-.left-panel__navigation.large-logo {
-  padding: 20px 20px 30px 50px;
-  .nav-logo {
-    width: 165px;
-    height: auto;
-  }
-}
-
 nav {
   background: transparent;
   box-shadow: none;
@@ -140,11 +132,6 @@ nav {
   }
 }
 
-.nav-logo {
-  width: 80px;
-  height: auto;
-}
-
 #main-menu-ww {
   top: 0;
   overflow: scroll;
@@ -179,6 +166,9 @@ nav {
     li {
       display: block;
       float: none;
+      >ul {
+        padding-bottom: 10px;
+      }
     }
     li.current_page_item {
       >ul {

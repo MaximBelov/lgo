@@ -46,10 +46,6 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 	    			$the_query->the_post(); 
 
 	    		$thumb = $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' );
-
-	    		$accordions = rwmb_meta( 'accordion_content' );
-	    		$sliders = rwmb_meta( 'slider_content' );
-
 	    		?>
 	    		
 				<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb;?>">
@@ -58,36 +54,9 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 
 				    	<?php the_content(); ?>
 
-			    	    <?php // Accordion
-			    	    	if ( ! empty( $accordions ) ) { ?>
-			    			<div class="js-accordion js-accordion-<?php echo $post->ID;?> js-acc--child-page" data-accordion-prefix-classes="acc-prefix-<?php echo $post->ID;?> animated-accordion">
-			    			<?php foreach ( $accordions as $accordion ) {
-			    				$title 		= isset( $accordion['rw_title'] ) ? $accordion['rw_title'] : '';
-			    				$content 	= wpautop(isset( $accordion['rw_content'] ) ? $accordion['rw_content'] : ''); ?>
-			    				<div class="js-accordion__panel">
-			    					<h3 class="js-accordion__header"><?php echo $title;?></h3>
-			    					<div class="js-accordion__content"><span><?php echo $content; ?></span></div>
-			    				</div>
-			    				<?php } //endforeach ?>
-			    			</div>
-			    			<?php }; //endif !empty 
-			    		// end accordion ?>
+				    	<?php get_template_part( 'template-part-accordion' ); ?>
 
-		    		    <?php // Slider
-		    		    	if ( ! empty( $sliders) ) { ?>
-		    				<div class="js-slider">
-		    				<?php foreach ( $sliders as $slider ) {
-		    					$title 		= isset( $slider['rw_stitle'] ) ? $slider['rw_stitle'] : '';
-		    					$image = isset( $slider['rw_sphoto'] ) ? $slider['rw_sphoto'] : '';
-		    					$content 	= wpautop(isset( $slider['rw_scontent'] ) ? $slider['rw_scontent'] : ''); ?>
-		    					<div class="js-slider__panel">
-		    						<h3 class="js-slider__header"><?php echo $title;?></h3>
-		    						<div class="js-slider__content"><span><?php echo $content; ?></span></div>
-		    					</div>
-		    					<?php } //endforeach ?>
-		    				</div>
-		    				<?php }; //endif !empty 
-		    			// end slider ?>
+				    	<?php get_template_part( 'template-part-slider' ); ?>
 
 				    </div>
 				</div>
