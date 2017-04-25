@@ -110,6 +110,9 @@ nav {
             font-family: 'Dosis', sans-serif;
             color: $nav-links;
             text-transform: uppercase;
+            &:hover {
+                color: $white;
+            }
         }
     }
 }

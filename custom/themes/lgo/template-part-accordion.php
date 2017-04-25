@@ -1,6 +1,16 @@
 <?php // Accordion
     $accordions = rwmb_meta( 'accordion_content' );
-    if ( ! empty( $accordions ) ) { ?>
+    // $test = $accordions[0]['rw_title'];
+
+    if ( ! empty( $accordions) ) { 
+        if (array_key_exists('rw_title' , $accordions[0] )) {
+            $test = true;
+        } else {
+            $test = false;
+        }
+    }
+
+    if ( ! empty( $accordions ) && $test == true ) { ?>
     <div class="js-accordion js-accordion-<?php echo $post->ID;?> js-acc--child-page" data-accordion-prefix-classes="acc-prefix-<?php echo $post->ID;?> animated-accordion">
     <?php foreach ( $accordions as $accordion ) {
         $title      = isset( $accordion['rw_title'] ) ? $accordion['rw_title'] : '';
