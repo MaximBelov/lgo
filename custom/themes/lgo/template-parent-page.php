@@ -48,18 +48,18 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 	    		$thumb = $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' );
 	    		?>
 	    		
-				<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb;?>">
-				    <h2 class="child-title"><?php echo $post->post_title; ?></h2>
-				    <div class="child-page-content">
+			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb;?>">
+			    <h2 class="child-title"><?php echo $post->post_title; ?></h2>
+			    <div class="child-page-content">
 
-				    	<?php the_content(); ?>
+			    	<?php the_content(); ?>
 
-				    	<?php get_template_part( 'template-part-accordion' ); ?>
+			    	<?php get_template_part( 'template-part-accordion' ); ?>
 
-				    	<?php get_template_part( 'template-part-slider' ); ?>
+			    	<?php get_template_part( 'template-part-slider' ); ?>
 
-				    </div>
-				</div>
+			    </div>
+			</div>
 
 	    	<?php }
 	    		wp_reset_postdata();
