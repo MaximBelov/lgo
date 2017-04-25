@@ -7,7 +7,7 @@ get_header(); ?>
 <div id="columns">
   
 <?php $args = array(
-    'post_type' => 'lg-list',
+    'post_type' => 'lg',
     'posts_per_page' =>100,
     'orderby' => 'title', 
     'order' => 'ASC'
