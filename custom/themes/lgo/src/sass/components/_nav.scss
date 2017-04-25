@@ -171,15 +171,23 @@ nav {
   }
 }
 
-.menu-item-has-children {
-  // background: white;
-  // &:hover {
-  //   > ul {
-  //     opacity: 1;
-  //     visibility: visible;
-  //     position: static;
-  //   }
-  // }
+.menu-item-has-children.current-menu-parent {
+  > ul {
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    li {
+      display: block;
+      float: none;
+    }
+    li.current_page_item {
+      >ul {
+        opacity: 1;
+        visibility: visible;
+        position: static;
+      }
+    }
+  }
 }
 
 .menu-item-has-children {

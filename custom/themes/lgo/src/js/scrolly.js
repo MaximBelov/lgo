@@ -1,3 +1,18 @@
+$(window).on('mousewheel.initMouseScroll DOMMouseScroll.initMouseScroll', function (e) {
+
+    var direction = 'down';
+    if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
+        direction = 'up';
+    }
+    next(direction);
+
+    if (!enableAuto) {
+        return false;
+    }
+
+
+});
+
 //auto scroll to next scene when at edge
 this.initMouseScroll = function () {
   var enableAuto = true;

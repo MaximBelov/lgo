@@ -7,14 +7,19 @@
 		border:none;
 		border-radius: 0;
 		background: $l-green;
-		color: $black;
 		width: 100%;
 		text-align: left;
 		margin-bottom: 5px;
 		position: relative;
+		// 
+		color: $alt-black;
+		text-transform: none;
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 28px;
 		&:after {
 			position: absolute;
-			top: 35%;
+			top: 25%;
 			right: 10px;
 			font-family: FontAwesome;
 			content: "\f0d7";

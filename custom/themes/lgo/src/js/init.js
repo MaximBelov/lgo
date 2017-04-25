@@ -27,6 +27,13 @@ jQuery(document).ready(function($) {
 
     // MENU-BASED CODE
 
+    // if($('li.current_page_item.menu-item-has-children')) {
+    //   $('li.current_page_item').
+    //   console.log('hey');
+    // } else {
+
+    // }
+
     $('.menu-after-dots').click(function(){
       $(this).next('ul').toggleClass( "open-dropdown" );
     });
@@ -88,6 +95,11 @@ jQuery(document).ready(function($) {
     var topof = $('#skip-to-content').offset().top;
     var y = $(window).scrollTop(); 
 
+    // element to detect scroll direction of
+    var el = $(window),
+      // initialize last scroll position
+      lastY = el.scrollTop();
+
     $(window).scroll(function() {
       //Nav logo change color on scroll
       var scrollPos = $(window).scrollTop(),
@@ -99,12 +111,25 @@ jQuery(document).ready(function($) {
       var panel = document.getElementById("scroll-panel");
 
       var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-      // console.log(scrollPos);
 
-      // if (scrollPos > 50) {
-      //     $('html, body').animate({ scrollTop: $(window).height()}, 1000);
+      // SMOOTH SCROLL UP OR DOWN
+      // get current scroll position
+      // var currY = el.scrollTop(),
+      //     // determine current scroll direction
+      //     scrollDirection = (currY > lastY) ? 'down' : ((currY === lastY) ? 'none' : 'up');
+      // // do something here…
+      // console.log(scrollDirection + ' ' + scrollPos);
+      // if ( (scrollPos >= 50 && scrollPos <= 55) && scrollDirection == 'down' ) {
+      //   $('html, body').animate({ scrollTop: $(window).height()}, 1000);
+      // } else if ( scrollPos >= h+50 && scrollDirection == 'up' ) {
+      //   $('html, body').animate({ scrollTop: 0}, 1000);
+      // } else {
+      //   // nothing
       // }
-      
+
+      // lastY = currY;
+
+      // SHRINK LOGO
       if (scrollPos > (h-100)) {
           navbar.addClass('change-logo-size');
           slimNav.addClass('compress-slim-nav');
@@ -115,6 +140,7 @@ jQuery(document).ready(function($) {
 
     });
 
+    // SCROLL EVENTS FOR RIGHT COMPARTMENT
     if( $('.parent-page-layout').length ) {
 
       $('.scroll-panel').scroll(function() {
