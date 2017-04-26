@@ -85,5 +85,6 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 	    		wp_reset_postdata();
 	    	} else { ?>
 	    	<?php } ?>
-
+   	</div> <!-- END OF RIGHT COMPARTMENT -->
+</div> <!-- END OF .page -->
 <?php get_footer(); ?>
