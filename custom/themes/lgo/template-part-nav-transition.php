@@ -1,3 +1,9 @@
+<?php
+/**
+* Transition Navigation
+* This nav goes from an expanded menu, to a compressed menu once scrolled past the banner image.
+*/
+?>
 <div class="left-panel__navigation slim-nav-transition">
     <div class="slim-nav-label">
         <svg viewBox="0 0 19 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

@@ -122,10 +122,11 @@ footer.page-footer {
   }
 }
 
-.right-compartment-inner-wrapper {
+.right-compartment-inner-wrapper,
+.child-page-content {
   padding: 20px;
   @media #{$large-and-up} { 
-    padding: 50px 100px 60px;
+    padding: 50px 60px 60px;
   }
 }
 

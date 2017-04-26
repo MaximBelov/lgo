@@ -25,7 +25,7 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 <div id="skip-to-content" class="scroll-panel page-panel page__bg__fixed <?php if (is_page_template( 'template-parent-page.php')) { echo 'parent-page-layout'; }?>" style="background: url(<?php echo get_template_directory_uri();?>/dist/images/music_room.jpg);">
 	<div class="dark-overlay"></div>
 	<div class="right-compartment">
-		<div class="right-compartment-inner-wrapper">
+		
 	    	<div class="parent-page-content">
 	    	<?php the_content(); ?>
 	    	</div>
@@ -49,21 +49,37 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 
 	    		$thumb = $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' );
 	    		?>
-	    		
-			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb;?>">
-			    <h2 class="child-title"><?php echo $post->post_title; ?></h2>
-			    <div class="child-page-content">
 
-			    	<?php the_content(); ?>
+	    		<?php if ($post->ID == 15) { ?>
+
+				<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb;?>">
+			        <div class="child-page-content">
+			    		<h2 class="child-title"><?php echo $post->post_title; ?></h2>
+
+			        	<?php the_content(); ?>
+
+			        </div>
+				    
+				    <?php get_template_part( 'template-part-gallery' ); ?>
+				</div>
+
+	    		<?php } else { ?>
+				
+				<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb;?>">
+				    <div class="child-page-content">
+						<h2 class="child-title"><?php echo $post->post_title; ?></h2>
+
+				    	<?php the_content(); ?>
+
+				    </div>
 
 			    	<?php get_template_part( 'template-part-accordion' ); ?>
 
 			    	<?php get_template_part( 'template-part-slider' ); ?>
+				    
+				</div>
 
-
-
-			    </div>
-			</div>
+	    		<?php } ?>
 
 	    	<?php }
 	    		wp_reset_postdata();
