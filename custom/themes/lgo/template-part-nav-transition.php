@@ -1,4 +1,4 @@
-<div class="left-panel__navigation">
+<div class="left-panel__navigation slim-nav-transition">
     <div class="slim-nav-label">
         <svg viewBox="0 0 19 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
@@ -41,7 +41,7 @@
                 'container_id' => 'main-menu-ww', 
                 'walker' => new Main_Menu_Walker()
                 )); 
-            ?>
+            ?> 
         </div>
     </nav>
 </div>

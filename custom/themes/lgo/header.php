@@ -104,5 +104,3 @@
   <span></span>
   <small>MENU</small>
 </div>
-
-<?php get_template_part( 'template-part-nav' ); ?>

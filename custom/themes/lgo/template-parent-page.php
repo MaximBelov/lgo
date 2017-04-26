@@ -8,6 +8,8 @@ $heading   = rwmb_meta( 'rw_banner_heading' );
 $subhead   = rwmb_meta( 'rw_banner_subheading' );
 ?>
 
+<?php get_template_part( 'template-part-nav' ); ?>
+
 <div id="scroll-header" class="top-page-panel" style="background-image: url(<?php echo get_template_directory_uri();?>/dist/images/installation_speech-splash.jpg);">
 	<div class="grad-overlay"></div>
 	<div class="container">
@@ -57,6 +59,8 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 			    	<?php get_template_part( 'template-part-accordion' ); ?>
 
 			    	<?php get_template_part( 'template-part-slider' ); ?>
+
+
 
 			    </div>
 			</div>

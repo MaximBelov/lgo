@@ -10,6 +10,8 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
 ?>
 
+<?php get_template_part( 'template-part-nav-transition' ); ?>
+
 <div id="skip-to-content" class="top-page-panel" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().'/src/images/background_default.svg'; } ?>);">
 	<div class="grad-overlay"></div>
 	<div class="container">
