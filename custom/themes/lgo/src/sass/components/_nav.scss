@@ -33,7 +33,7 @@ a.skip-to:hover {
   position: fixed;
   width: 310px;
   height: 100vh;
-  padding: 50px 20px 50px 50px;
+  padding: 50px 20px 50px 20px;
   z-index: 1000;
   @media #{$small-and-down} {
     display: none;
@@ -55,7 +55,7 @@ a.skip-to:hover {
 
 .left-panel__navigation.slim-nav-transition.compress-slim-nav {
   background: $black;
-  transform: translateX(-340px);
+  transform: translateX(-310px);
   &:hover {
     transform: translateX(0);
     background: $white;
@@ -81,7 +81,7 @@ a.skip-to:hover {
     right: -15px;
     transform: rotate(90deg);
 
-    color: $green;
+    color: $nav-links;
     font-family: $sans-serif-font;
     span {
       letter-spacing: 1px;
@@ -189,7 +189,7 @@ nav {
 }
 
 .menu-after-dots {
-  color: $green;
+  color: $nav-links;
   font-size: 30px;
   &:hover {
     cursor: pointer;

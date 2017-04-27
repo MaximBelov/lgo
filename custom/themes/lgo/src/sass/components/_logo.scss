@@ -2,6 +2,14 @@
   transition: 0.2s all linear;
   width: 130px;
   height: auto;
+  margin-left: 10px;
+  .st0{
+    fill: $white;
+  }
+  .st1{
+    fill:none;
+    stroke: $white;
+  }
 }
 
 #nav-logo.change-logo-size {

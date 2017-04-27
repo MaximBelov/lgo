@@ -114,7 +114,7 @@ footer.page-footer {
   position: relative;
   z-index: 500;
   @media #{$large-and-up} {
-    width: 70%;
+    width: 75%;
     float: right;
     background: $white;
     overflow-y: scroll;
@@ -182,8 +182,8 @@ footer.page-footer {
 
 .full-width-panel {
   min-height: 100vh;
-  width: calc(100% - 40px);
-  transform: translateX(40px);
+  width: calc(100% - 50px);
+  transform: translateX(50px);
   transition: all 0.5s ease;
 
   // background: red;

@@ -111,7 +111,31 @@ nav {
             color: $nav-links;
             text-transform: uppercase;
             &:hover {
-                color: $white;
+                // color: $blue;
+                font-weight: bold !important;
+            }
+        }
+    }
+}
+
+.left-panel__navigation.slim-nav-transition.compress-slim-nav {
+    #nav-logo {
+      .st0{
+        fill: $blue;
+      }
+      .st1{
+        fill:none;
+        stroke: $blue;
+      }
+    }
+    nav {
+        ul {
+            a {
+                color: $blue;
+                text-transform: uppercase;
+                &:hover {
+                    color: $blue;
+                }
             }
         }
     }
