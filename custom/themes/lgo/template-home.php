@@ -31,28 +31,28 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 </div>
 
 <div class="full-width-panel">
-<div> <!-- Start of RP -->
-<div class="full-width-inner-wrapper"> <!-- Start of RP inner -->
-	<h2>Ontario's Storyteller in chief</h2>
-	
-	<div class="masonry-grid">
-		<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
-		<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
-		<div class="grid-item grid-item--2x1 wow fadeInUp"></div>
-		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-		<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
-		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-		<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
-		<div class="grid-item grid-item--2x1 wow fadeInUp"></div>
-		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-		<div class="grid-item grid-item--2x1 wow fadeInUp"></div>
-		<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-		<div class="grid-item grid-item--2x2 wow fadeInUp"></div>
-	</div>
-	</div> <!-- End of RP inner -->
-   	</div> <!-- END OF RIGHT PANEL -->
+	<div> <!-- Start of RP -->
+		<div class="full-width-inner-wrapper"> <!-- Start of RP inner -->
+			<h2>Ontario's Storyteller in chief</h2>
+			
+			<div class="masonry-grid">
+				<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
+				<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
+				<div class="grid-item grid-item--2x1 wow fadeInUp"></div>
+				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+				<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
+				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+				<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
+				<div class="grid-item grid-item--2x1 wow fadeInUp"></div>
+				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+				<div class="grid-item grid-item--2x1 wow fadeInUp"></div>
+				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
+				<div class="grid-item grid-item--2x2 wow fadeInUp"></div>
+			</div>
+		</div> <!-- End of RP inner -->
+	</div> <!-- END OF RIGHT PANEL -->
 </div> <!-- END OF .page -->
 <?php get_footer(); ?>

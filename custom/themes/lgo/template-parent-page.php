@@ -26,65 +26,63 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 	<div class="dark-overlay"></div>
 	<div class="right-compartment">
 		
-	    	<div class="parent-page-content">
-	    	<?php the_content(); ?>
-	    	</div>
+		<div class="parent-page-content">
+		<?php the_content(); ?>
+		</div>
 
-	    	<?php
-	    	$theID = get_the_ID();
-	    	// print_r($theID);
-    		$args = array(
-    			'post_type'      => 'page',
-    			'post_parent' => $theID,
-    		    'order' => 'ASC',
-    		    'orderby' => 'menu_order'
-    		);
-	    	// The Query
-	    	$the_query = new WP_Query( $args );
+		<?php
+		$theID = get_the_ID();
+		// print_r($theID);
+		$args = array(
+			'post_type'      => 'page',
+			'post_parent' => $theID,
+		    'order' => 'ASC',
+		    'orderby' => 'menu_order'
+		);
+		// The Query
+		$the_query = new WP_Query( $args );
 
-	    	// The Loop
-	    	if ( $the_query->have_posts() ) {
-	    		while ( $the_query->have_posts() ) {
-	    			$the_query->the_post(); 
+		// The Loop
+		if ( $the_query->have_posts() ) {
+			while ( $the_query->have_posts() ) {
+				$the_query->the_post(); 
 
-	    		$thumb = $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' );
-	    		?>
+			$thumb = $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' );
+			?>
 
-	    		<?php if ($post->ID == 15) { ?>
+			<?php if ($post->ID == 15) { ?>
 
-				<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb;?>">
-			        <div class="child-page-content">
-			    		<h2 class="child-title"><?php echo $post->post_title; ?></h2>
+			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb;?>">
+		        <div class="child-page-content">
+		    		<h2 class="child-title"><?php echo $post->post_title; ?></h2>
 
-			        	<?php the_content(); ?>
+		        	<?php the_content(); ?>
 
-			        </div>
-				    
-				    <?php get_template_part( 'template-part-gallery' ); ?>
-				</div>
+		        </div>
+			    
+			    <?php get_template_part( 'template-part-gallery' ); ?>
+			</div>
 
-	    		<?php } else { ?>
-				
-				<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb;?>">
-				    <div class="child-page-content">
-						<h2 class="child-title"><?php echo $post->post_title; ?></h2>
+			<?php } else { ?>
+			
+			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb;?>">
+			    <div class="child-page-content">
+					<h2 class="child-title"><?php echo $post->post_title; ?></h2>
 
-				    	<?php the_content(); ?>
+			    	<?php the_content(); ?>
 
-				    </div>
+		    	<?php get_template_part( 'template-part-accordion' ); ?>
 
-			    	<?php get_template_part( 'template-part-accordion' ); ?>
+		    	<?php get_template_part( 'template-part-slider' ); ?>
+			    </div>
+			</div>
 
-			    	<?php get_template_part( 'template-part-slider' ); ?>
-				    
-				</div>
+			<?php } ?>
 
-	    		<?php } ?>
-
-	    	<?php }
-	    		wp_reset_postdata();
-	    	} else { ?>
-	    	<?php } ?>
+		<?php }
+			wp_reset_postdata();
+		} else { ?>
+		<?php } ?>
    	</div> <!-- END OF RIGHT COMPARTMENT -->
 </div> <!-- END OF .page -->
 <?php get_footer(); ?>

@@ -929,28 +929,32 @@ jQuery(document).ready(function($) {
       // });
 
     // SCROLL-BASED CODE
+    var sections = $('.child-page')
+      nav = $('.current-menu-item')
+      nav_height = nav.outerHeight();
 
-    function scrollTo(element, to, duration) {
-        if (duration <= 0) return;
-        var difference = to - element.scrollTop;
-        var perTick = difference / duration * 10;
-
-        setTimeout(function() {
-            element.scrollTop = element.scrollTop + perTick;
-            if (element.scrollTop === to) return;
-            scrollTo(element, to, duration - 10);
-        }, 10);
-    }
-
-    var topof = $('#skip-to-content').offset().top;
-    var y = $(window).scrollTop(); 
-
-    // element to detect scroll direction of
-    var el = $(window),
-      // initialize last scroll position
-      lastY = el.scrollTop();
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
     $(window).scroll(function() {
+
+      // Change NAV active item CSS on scroll
+      if( $('.parent-page-layout').length ) {
+        var cur_pos = $(this).scrollTop();
+        sections.each(function() {
+          var top = $(this).offset().top - 200,
+            bottom = top + $(this).outerHeight() - (h/2);
+
+          if (cur_pos >= top && cur_pos <= bottom) {
+            console.log($(this).attr('id'));
+            nav.find('a').removeClass('menu-item-active');
+            sections.removeClass('menu-item-active');
+
+            $(this).addClass('menu-item-active');
+            nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
+          }
+        });
+      }
+
       //Nav logo change color on scroll
       var scrollPos = $(window).scrollTop(),
           navbar = $('#nav-logo');
@@ -960,25 +964,6 @@ jQuery(document).ready(function($) {
       var banner = document.getElementById("scroll-header");
       var panel = document.getElementById("scroll-panel");
 
-      var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-      // SMOOTH SCROLL UP OR DOWN
-      // get current scroll position
-      // var currY = el.scrollTop(),
-      //     // determine current scroll direction
-      //     scrollDirection = (currY > lastY) ? 'down' : ((currY === lastY) ? 'none' : 'up');
-      // // do something here…
-      // console.log(scrollDirection + ' ' + scrollPos);
-      // if ( (scrollPos >= 50 && scrollPos <= 55) && scrollDirection == 'down' ) {
-      //   $('html, body').animate({ scrollTop: $(window).height()}, 1000);
-      // } else if ( scrollPos >= h+50 && scrollDirection == 'up' ) {
-      //   $('html, body').animate({ scrollTop: 0}, 1000);
-      // } else {
-      //   // nothing
-      // }
-
-      // lastY = currY;
-
       // SHRINK LOGO
       if (scrollPos > (h-100)) {
           navbar.addClass('change-logo-size');
@@ -986,49 +971,8 @@ jQuery(document).ready(function($) {
       } else {
           navbar.removeClass('change-logo-size');
           slimNav.removeClass('compress-slim-nav');
-      }        
+      } 
 
     });
-
-    // SCROLL EVENTS FOR RIGHT COMPARTMENT
-    if( $('.parent-page-layout').length ) {
-
-      $('.scroll-panel').scroll(function() {
-
-       // Active nav items
-      var sections = $('.child-page')
-        nav = $('#main-menu-ww')
-        nav_height = nav.outerHeight();
-
-      var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-      var cur_pos = $(this).scrollTop();
-
-      var parentH = $('.right-compartment').offset().top;
-      
-      // console.log( parentH );
-      // console.log('-----');
-
-        sections.each(function() {
-          var top = $(this).offset().top - parentH - 99 - (h/2)
-            bottom = top + $(this).outerHeight()
-            // childH = $(this).height();
-
-          var theID = $(this).attr('id');
-          // console.log(theID + ' ' + cur_pos + ' ' + top + ' ' + bottom );
-
-          if (cur_pos >= top && cur_pos <= bottom) {
-            // console.log(theID);
-             nav.find('a').removeClass('menu-item-active');
-             sections.removeClass('menu-item-active');
-             // console.log('blurp');
-         
-             $(this).addClass('menu-item-active');
-             nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
-          }
-        }); //ends for each
-
-      }); //ends check for scrolling of #scroll-panel
-    } //ends check for Parent template
 
 });
