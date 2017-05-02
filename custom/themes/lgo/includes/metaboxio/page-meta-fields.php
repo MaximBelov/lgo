@@ -23,7 +23,7 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 
 	$meta_boxes[] = array(
 		'title'  => __( 'More Info - Accordion Format' ),
-		'post_types' => array('page' ),
+		'post_types' => array('page', 'post' ),
 		'fields' => array(
 			array(
 				'id'     => 'accordion_content',
@@ -51,7 +51,7 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 
 	$meta_boxes[] = array(
 		'title'  => __( 'Photo/Content Slider' ),
-		'post_types' => array('page'),
+		'post_types' => array('page', 'post'),
 		'fields' => array(
 			array(
 				'id'     => 'slider_content',

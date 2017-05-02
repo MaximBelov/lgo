@@ -12,6 +12,8 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 		<section class="news-banner" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().'/src/images/background_default.svg'; } ?>);">
 		</section>
 
+		<?php get_template_part( 'template-part-social-share' ); ?>
+
 		<section class="news-content">
 			<div class="news-content__titles">
 				<p><?php the_time('F j, Y'); ?></p>
@@ -19,6 +21,10 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 			</div>
 			<div class="news-content__body">
 				<?php the_content();?>
+
+				<?php get_template_part( 'template-part-accordion' ); ?>
+
+				<?php get_template_part( 'template-part-slider' ); ?>
 			</div>
 		</section>
 

@@ -64,6 +64,15 @@ jQuery(document).ready(function($) {
       }
     );
 
+    $(".slim-nav-transition-static").hover(
+      function () {
+        $( ".full-width-panel" ).addClass("full-width-panel--pushed");
+      },
+      function () {
+        $( ".full-width-panel" ).removeClass("full-width-panel--pushed");
+      }
+    );
+
     // MENU-BASED CODE
 
     // if($('li.current_page_item.menu-item-has-children')) {
