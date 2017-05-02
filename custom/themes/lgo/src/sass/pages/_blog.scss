@@ -1,0 +1,76 @@
+.masonry-grid {
+  margin: 50px 0;
+  text-align: center;
+} 
+
+.grid-item {
+  text-align: left;
+
+  p, a {
+    margin: 0;
+    color: $white;
+  }
+  .post-icon {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+  }
+  .post {
+    padding: 20px;
+  }
+  .title {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.grid-item--4x2:first-child {
+  float: none;
+}
+
+.grid-item--4x2 {
+
+}
+
+.grid-item--2x1 {
+}
+
+.grid-item--2x2 {
+
+}
+
+.grid-item--1x1 {
+
+}
+
+// SINGLE
+.news-banner {
+  width: 100%;
+  min-height: 400px;
+  background: $grey;
+}
+
+.news-content__titles {
+  // padding: 10%;
+  // text-align: center;
+  h1 {
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+}
+
+.news-content__body {
+
+}
+
+.news-content {
+  background: $white;
+  padding: 20px;
+  width: 90%;
+  margin: -100px auto 0;
+  @media #{$medium-and-up} {
+    width: 60%;
+    padding: 50px 100px;
+    margin: -200px auto 0;
+  }
+}

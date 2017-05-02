@@ -182,8 +182,8 @@ footer.page-footer {
 
 .full-width-panel {
   min-height: 100vh;
-  width: calc(100% - 50px);
-  transform: translateX(50px);
+  width: calc(100% - 40px);
+  transform: translateX(40px);
   transition: all 0.5s ease;
 
   // background: red;
@@ -229,14 +229,14 @@ footer.page-footer {
 }
 
 .grid-item--2x1 {
-  background: yellow;
+  background: $blue;
   border: 1px solid $white;
   width: 33.2%;
   height: 130px;
 }
 
 .grid-item--2x2 {
-  background: blue;
+  background: yellow;
   border: 1px solid $white;
   width: 33.2%;
   height: 260px;
