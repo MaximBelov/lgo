@@ -17,12 +17,14 @@ body {
 p {
     font-size: 24px;
     line-height: 32px;
+    color: $body-copy;
     @media #{$small-and-down} {
         font-size: .9em;
     }
 }
 
 h1, h2, h3, h4, h5, h6 {
+    color: $body-copy;
     line-height: 1.2em;
     font-family: 'Rasa', serif;
 }
@@ -118,7 +120,8 @@ nav {
     }
 }
 
-.left-panel__navigation.slim-nav-transition.compress-slim-nav {
+.left-panel__navigation.slim-nav-transition.compress-slim-nav,
+.left-panel__navigation.slim-nav-transition-static.compress-slim-nav {
     #nav-logo {
       .st0{
         fill: $blue;

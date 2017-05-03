@@ -6,11 +6,13 @@ get_header();
 
 $heading   = rwmb_meta( 'rw_banner_heading' );
 $subhead   = rwmb_meta( 'rw_banner_subheading' );
+
+$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
 ?>
 
 <?php get_template_part( 'template-part-nav' ); ?>
 
-<div id="scroll-header" class="top-page-panel" style="background-image: url(<?php echo get_template_directory_uri();?>/dist/images/installation_speech-splash.jpg);">
+<div id="scroll-header" class="top-page-panel" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().'/src/images/background_default.svg'; } ?>);">
 	<div class="grad-overlay"></div>
 	<div class="container">
 		<div>
@@ -22,7 +24,9 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 	</div>
 </div>
 
-<div id="skip-to-content" class="scroll-panel page-panel page__bg__fixed <?php if (is_page_template( 'template-parent-page.php')) { echo 'parent-page-layout'; }?>" style="background: url(<?php echo get_template_directory_uri();?>/dist/images/music_room.jpg);">
+<div id="skip-to-content" class="scroll-panel page-panel page__bg__fixed <?php if (is_page_template( 'template-parent-page.php')) { echo 'parent-page-layout'; }?>">
+	<div class="left-compartment__bg" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().'/src/images/background_default.svg'; } ?>);">
+	</div>
 	<div class="dark-overlay"></div>
 	<div class="right-compartment">
 		
@@ -47,12 +51,12 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post(); 
 
-			$thumb = $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' );
+			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' );
 			?>
 
 			<?php if ($post->ID == 15) { ?>
 
-			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb;?>">
+			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb[0];?>">
 		        <div class="child-page-content">
 		    		<h2 class="child-title"><?php echo $post->post_title; ?></h2>
 
@@ -65,7 +69,7 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 
 			<?php } else { ?>
 			
-			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb;?>">
+			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb[0];?>">
 			    <div class="child-page-content">
 					<h2 class="child-title"><?php echo $post->post_title; ?></h2>
 

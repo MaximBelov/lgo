@@ -129,7 +129,8 @@ jQuery(document).ready(function($) {
     // SCROLL-BASED CODE
     var sections = $('.child-page')
       nav = $('.current-menu-item')
-      nav_height = nav.outerHeight();
+      nav_height = nav.outerHeight()
+      leftBg = $('.left-compartment__bg');
 
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
@@ -149,6 +150,9 @@ jQuery(document).ready(function($) {
 
             $(this).addClass('menu-item-active');
             nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
+            var theBG = $(this).attr('data-child-bg');
+            // console.log(theBG);
+            $('.left-compartment__bg').css({'backgroundImage': 'url('+theBG+')'});
           }
         });
       }

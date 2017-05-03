@@ -28,11 +28,45 @@
 	.svg-clipped{-webkit-clip-path:url(#svgFramePath);clip-path:url(#svgFramePath);}
 }
 
-.single-lg-content {
-	padding: 15px;
-	color: $black;
-	text-align: center;
-	p {
-		margin: 0;
+
+.single-lg {
+	.left-panel {
+		position: fixed;
+		left: 0;
+		right: 50%;
+		top: 0;
+		bottom: 0;
+	}
+	.right-panel {
+		// overflow-y: scroll;
+		// max-height: 100vh;
+	}
+	.single-lg__content {
+		padding: 20% 100px 50px;
 	}
 }
+
+.frame-btn {
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	font-family: $sans-serif-font;
+	text-align: center;
+	text-transform: uppercase;
+	display: block;
+	width: 100px;
+	height: 33px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding: 10px 10px 10px 10px;
+	color: $blue;
+}
+
+.single-lg__prev-next-links {
+	a {
+		font-family: $sans-serif-font;
+		text-transform: uppercase;
+		color: $blue;
+	}
+}
+
