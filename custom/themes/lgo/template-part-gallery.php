@@ -10,7 +10,7 @@
     'post_type' => 'lg',
     'posts_per_page' =>100,
     'orderby' => 'menu_order', 
-    'order' => 'ASC'
+    'order' => 'DESC'
     );
 
     $loop = new WP_Query($args); ?>
@@ -19,8 +19,8 @@
 ?>
 
 <figure class="element">
-    <img src="<?php the_post_thumbnail_url(); ?>">
-    <figcaption><?php echo the_title();?></figcaption>
+    <a href="<?php echo the_permalink();?>"><img src="<?php the_post_thumbnail_url(); ?>"></a>
+    <figcaption><a href="<?php echo the_permalink();?>"><?php echo the_title();?></a></figcaption>
 </figure>
 <?php endwhile; ?>
 
