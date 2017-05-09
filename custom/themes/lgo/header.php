@@ -22,9 +22,7 @@
 
 <div id="nav-header-logo">
     <svg viewBox="0 0 413 385" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-        <title>Artboard</title>
-        <desc>Created with Sketch.</desc>
+        <desc>Lieutenant Governor Emblem</desc>
         <defs></defs>
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="Artboard">

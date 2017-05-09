@@ -22,7 +22,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 				<?php echo $subhead;?>
 			</div>
 			<svg width="80px" height="45px" viewBox="508 585 80 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			    <desc>Created with Sketch.</desc>
+			    <desc>Lieutenant Governor Emblem</desc>
 			    <defs></defs>
 			    <polyline id="Path-2" stroke="#FFFFFF" stroke-width="3" fill="none" points="510 589.199219 546.746094 627.386719 586.171875 587"></polyline>
 			</svg>
