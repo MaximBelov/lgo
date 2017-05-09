@@ -6,7 +6,6 @@ html {
 
 a {
     text-decoration: none;
-    color: $grey;
 }
 
 body {
@@ -45,6 +44,11 @@ h1, h2, h3, h4, h5, h6 {
     color: $body-copy;
     .child-page-content {
         // margin-bottom: 100px;
+        a {
+            color: $blue;
+            // color: $alt-black;
+            border-bottom: 1px solid $blue;
+        }
     }
     h2 {
         font-family: $sans-serif-font;
