@@ -6,13 +6,14 @@
 	button.js-accordion__header {
 		border:none;
 		border-radius: 0;
-		background: $l-green;
+		background: $blue;
 		width: 100%;
 		text-align: left;
 		margin-bottom: 5px;
 		position: relative;
 		// 
-		color: $alt-black;
+		// color: $alt-black;
+		color: $white;
 		text-transform: none;
 		font-weight: 400;
 		font-size: 24px;
@@ -23,10 +24,11 @@
 			right: 10px;
 			font-family: FontAwesome;
 			content: "\f0d7";
+			color: $white;
 		}
 		&:focus {
 			outline:none;
-		    border-color:#000;
+		    border-color:#fff;
 		    box-shadow:0 0 10px #000;
 		}
 	}
