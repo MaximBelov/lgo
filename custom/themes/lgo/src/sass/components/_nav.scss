@@ -80,7 +80,7 @@ a.skip-to:hover {
     display: block;
     position: absolute;
     top: 40px;
-    right: -15px;
+    right: -20px;
     transform: rotate(90deg);
 
     color: $nav-links;
@@ -91,6 +91,7 @@ a.skip-to:hover {
     svg {
       width: 25px;
       height: auto;
+      transform: rotate(-90deg);
     }
   }
 }

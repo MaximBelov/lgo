@@ -210,7 +210,8 @@ footer.page-footer {
   }
 }
 
-.full-width-panel.full-width-panel--pushed {
+.full-width-panel.full-width-panel--pushed,
+.single-push-panel.single-push-panel--pushed {
   transform: translateX(350px);
   // width: calc(100% - 340px); 
     //this compresses the container

@@ -921,6 +921,16 @@ jQuery(document).ready(function($) {
       }
     );
 
+    // SINGLE LG PAGE
+    $(".slim-nav-transition-static").hover(
+      function () {
+        $( ".single-push-panel" ).addClass("single-push-panel--pushed");
+      },
+      function () {
+        $( ".single-push-panel" ).removeClass("single-push-panel--pushed");
+      }
+    );
+
     // MENU-BASED CODE
 
     // if($('li.current_page_item.menu-item-has-children')) {
@@ -992,7 +1002,7 @@ jQuery(document).ready(function($) {
             bottom = top + $(this).outerHeight() - (h/2);
 
           if (cur_pos >= top && cur_pos <= bottom) {
-            console.log($(this).attr('id'));
+            // console.log($(this).attr('id'));
             nav.find('a').removeClass('menu-item-active');
             sections.removeClass('menu-item-active');
 

@@ -6,14 +6,15 @@
 	button.js-accordion__header {
 		border:none;
 		border-radius: 0;
-		background: $main-accent;
+		// background: $main-accent;
+		background: $ll-grey;
 		width: 100%;
 		text-align: left;
 		margin-bottom: 5px;
 		position: relative;
 		// 
-		// color: $alt-black;
-		color: $white;
+		color: $alt-black;
+		// color: $white;
 		text-transform: none;
 		font-weight: 400;
 		font-size: 24px;
@@ -24,10 +25,10 @@
 			right: 10px;
 			font-family: FontAwesome;
 			content: "\f0d7";
-			color: $white;
+			// color: $white;
 		}
 		&:focus {
-			background: darken($main-accent, 10);
+			background: darken($ll-grey, 10);
 			// outline:none;
 		    // border-color:#fff;
 		    // box-shadow:0 0 10px #fff;

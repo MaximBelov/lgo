@@ -6,7 +6,7 @@
 $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
 ?>
 
-<div id="skip-to-content" class="scroll-panel page-panel page__bg__fixed single-lg">
+<div id="skip-to-content" class="scroll-panel page-panel page__bg__fixed single-lg single-push-panel">
 
 	<div class="left-panel" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().'/src/images/background_default.svg'; } ?>);background-size: cover;">
 	</div><div class="right-panel">
