@@ -1,3 +1,4 @@
+// BLOG FEED
 .masonry-grid {
   margin: 50px 0;
   text-align: center;
@@ -76,6 +77,7 @@
   width: 100%;
   min-height: 400px;
   background: $grey;
+  background-size: cover;
 }
 
 .news-content__titles {

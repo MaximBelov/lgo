@@ -28,6 +28,64 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Rasa', serif;
 }
 
+h1 {
+    font-family: 'Dosis', sans-serif;
+    font-size: 2.75em;
+    @media #{$small-and-down} {
+        font-size: 1.7em;
+    }
+}
+
+h2 {
+    font-size: 2.25em;
+    @media #{$small-and-down} {
+        font-size: 2em;
+    }
+}
+
+h3 {
+    font-size: 1.833em;
+    @media #{$small-and-down} {
+        font-size: 1.5em;
+    }
+}
+
+h4 {
+    font-size: 1.5em;
+     @media #{$small-and-down} {
+        font-size: 1.3em;
+    }
+}
+
+h5 {
+    font-size: 1.222em;
+     @media #{$small-and-down} {
+        font-size: 1.2em;
+    }
+}
+
+h6 {
+    font-size: 1em;
+}
+
+small {
+    font-size: 0.667em;
+}
+
+abbr[title] {
+    border-bottom: none;
+}
+
+// LINKS
+.inner-wrapper-blog,
+.child-page-content {
+    a {
+        color: $body-links;
+        // color: $alt-black;
+        border-bottom: 1px solid $body-links-underline;
+    }
+}
+
 // FULL-WIDTH PAGE
 .full-width-panel {
     h2 {
@@ -38,16 +96,15 @@ h1, h2, h3, h4, h5, h6 {
 
 
 // PARENT PAGE CONTENT 
-
 .child-page,
 .full-width-panel {
     color: $body-copy;
     .child-page-content {
         // margin-bottom: 100px;
         a {
-            color: $blue;
+            color: $body-links;
             // color: $alt-black;
-            border-bottom: 1px solid $blue;
+            border-bottom: 1px solid $body-links-underline;
         }
     }
     h2 {
@@ -128,20 +185,20 @@ nav {
 .left-panel__navigation.slim-nav-transition-static.compress-slim-nav {
     #nav-logo {
       .st0{
-        fill: $blue;
+        fill: $slim-nav-links;
       }
       .st1{
         fill:none;
-        stroke: $blue;
+        stroke: $slim-nav-links;
       }
     }
     nav {
         ul {
             a {
-                color: $blue;
+                color: $slim-nav-links;
                 text-transform: uppercase;
                 &:hover {
-                    color: $blue;
+                    color: $slim-nav-links;
                 }
             }
         }
@@ -179,46 +236,3 @@ nav #menu-main-menu {
     }
 }
 
-h1 {
-    font-family: 'Dosis', sans-serif;
-    font-size: 2.75em;
-    @media #{$small-and-down} {
-        font-size: 1.7em;
-    }
-}
-
-h2 {
-    font-size: 2.25em;
-    @media #{$small-and-down} {
-        font-size: 2em;
-    }
-}
-
-h3 {
-    font-size: 1.833em;
-    @media #{$small-and-down} {
-        font-size: 1.5em;
-    }
-}
-
-h4 {
-    font-size: 1.5em;
-     @media #{$small-and-down} {
-        font-size: 1.3em;
-    }
-}
-
-h5 {
-    font-size: 1.222em;
-     @media #{$small-and-down} {
-        font-size: 1.2em;
-    }
-}
-
-h6 {
-    font-size: 1em;
-}
-
-small {
-    font-size: 0.667em;
-}

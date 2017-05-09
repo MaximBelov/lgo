@@ -212,7 +212,9 @@ footer.page-footer {
 
 .full-width-panel.full-width-panel--pushed {
   transform: translateX(350px);
-  width: calc(100% - 340px);
+  // width: calc(100% - 340px); 
+    //this compresses the container
+    // instead of just pushing it
 }
 
 // MASONRY

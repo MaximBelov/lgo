@@ -31,7 +31,7 @@
     <nav>
         <div class="nav-holder">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="Logo. Links to home page."> 
-                <?php get_template_part( 'template-part-logo' ); ?>
+                <?php //get_template_part( 'template-part-logo' ); ?>
             </a>
             <?php 
                 wp_nav_menu(array(

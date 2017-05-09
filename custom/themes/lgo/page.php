@@ -1,42 +1,36 @@
 <?php get_header(); ?>
 
-<div class="left-panel__background" style="background-image: url(<?php echo get_template_directory_uri();?>/dist/images/installation_speech-splash.jpg);">
-	
-</div>
+<?php get_template_part( 'template-part-nav-narrow' ); ?>
 
-<div class="right-panel">
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 
-<?php if(have_posts()): while(have_posts()): the_post();
+$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+?>
+<div class="full-width-panel">
+	<div class="inner-wrapper-blog">
 
-// Get meta content and assign to variable 
-$group_values = rwmb_meta( 'accordion_content' ); ?>
+		<section class="news-banner" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().'/src/images/background_default.svg'; } ?>);">
+		</section>
 
-<section class="container base-padding no-pad-bottom">
-	<div class="row">
-		<div class="col s12">
-			<h2><?php the_title();?></h2>
-			<?php the_content(); ?>
-		</div>
-	</div>
-</section>
+		<?php get_template_part( 'template-part-social-share' ); ?>
 
-<section class="accordion-section base-padding no-padding-top">
-    <?php // Accordion
-    	if ( ! empty( $group_values ) ) { ?>
-		<div class="js-accordion" data-accordion-prefix-classes="animated-accordion">
-		<?php foreach ( $group_values as $group_value ) {
-			$title 		= isset( $group_value['rw_title'] ) ? $group_value['rw_title'] : '';
-			$content 	= wpautop(isset( $group_value['rw_content'] ) ? $group_value['rw_content'] : ''); ?>
-			<div class="js-accordion__panel">
-				<h3 class="js-accordion__header"><?php echo $title;?></h3>
-				<div class="js-accordion__content"><span><?php echo $content; ?></span></div>
+		<section class="news-content">
+			<div class="news-content__titles">
+				<h1><?php the_title();?></h1>
 			</div>
-			<?php } //endforeach ?>
-		</div>
-		<?php }; //endif !empty 
-	// end accordion ?>
-			
-</section>
+			<div class="news-content__body">
+				<?php the_content();?>
 
-<?php endwhile; endif;  ?>
+				<?php get_template_part( 'template-part-accordion' ); ?>
+
+				<?php get_template_part( 'template-part-slider' ); ?>
+			</div>
+		</section>
+
+	</div>
+</div>
+<?php endwhile; else : ?>
+	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?>
+
 <?php get_footer(); ?>
