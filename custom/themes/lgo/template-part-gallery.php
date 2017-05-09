@@ -43,9 +43,8 @@
 
 <figure class="element">
     <a href="<?php echo the_permalink();?>">
-    	<div class="clip-svg <?php echo $countCheck;?>" style="background-image: url(<?php the_post_thumbnail_url('medium'); ?>);">
+    	<div class="clip-svg <?php echo $countCheck;?>" style="background-image: url(<?php the_post_thumbnail_url('medium'); ?>);" alt="Portrait of <?php echo the_title();?>">
     	</div>
-    	<!-- <img class="clip-svg" src="<?php //the_post_thumbnail_url(); ?>"> -->
     </a>
 
     <figcaption><a href="<?php echo the_permalink();?>"><?php echo the_title();?></a></figcaption>

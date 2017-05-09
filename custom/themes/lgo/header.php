@@ -11,14 +11,12 @@
 <meta property="og:description" content="<?php bloginfo('description'); ?>">
 
 <?php wp_head(); ?>
-
+<?php include_once("analyticstracking.php") ?>
 </head>
 
 <body <?php body_class(); ?>>
 
 <a href="#skip-to-content" class="skip-to">Skip to content</a>
-
-<?php include_once("analyticstracking.php") ?>
 
 <div id="nav-header-logo">
     <svg viewBox="0 0 413 385" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
