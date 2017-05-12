@@ -1,0 +1,16 @@
+.cta-container {
+	position: absolute;
+	color: $white;
+	z-index: 500;
+	max-width: 300px;
+	left: 270px;
+	top: 180px;
+	p {
+		color: $white;
+		font-size: 18px;
+		line-height: 22px;
+	}
+	a.btn {
+		margin-bottom: 15px;
+	}
+}

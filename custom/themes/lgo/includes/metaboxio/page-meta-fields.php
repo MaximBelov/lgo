@@ -83,9 +83,14 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	);
 
 	$meta_boxes[] = array(
-		'title'  => __( 'Call to Action Buttons' ),
+		'title'  => __( 'Call to Action Section' ),
 		'post_types' => array('page' ),
 		'fields' => array(
+			array(
+			   'id'   => $prefix . 'cta_blurb',
+			   'name' => __( 'CTA Intro', 'textdomain' ),
+			   'type' => 'wysiwyg',
+			),
 			array(
 				'id'     => 'cta',
 				'type'   => 'group',

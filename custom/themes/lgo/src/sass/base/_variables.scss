@@ -1,37 +1,39 @@
 
 // Primary Colours
-$white: 	rgba(255,255,255,1);
-$ll-grey: 	rgba(240,240,240,1);
-$grey: 		rgba(109,109,109,1);
-$d-grey:	#4e4e4e;
-$alt-black: rgba(74,74,74,1);
-$black: 	rgba(0,0,0,1);
-// $blue: 		rgba(51,104,152,1);
-$blue: 		#214ab7;
-$l-green: 	rgba(218,241,229,1);
-$green: 	rgba(148,217,180,1);
+$white: 		rgba(255,255,255,1);
+$ll-grey: 		rgba(240,240,240,1);
+$grey: 			rgba(109,109,109,1);
+$d-grey:		#4e4e4e;
+$alt-black: 	rgba(74,74,74,1);
+$black: 		rgba(0,0,0,1);
+$blue: 			rgba(33,74,183,1);
+$blue-trans:	rgba(33,74,183,0.3);
+$l-green: 		rgba(218,241,229,1);
+$green: 		rgba(148,217,180,1);
+$green-trans: 	rgba(148,217,180,0.7);
 
 
-$body-copy: $alt-black;
-$accordion-headers: $l-green;
-$body-bg: $ll-grey;
-$nav-links: $white;
-$main-accent: $blue;
-$body-links: $main-accent;
-$body-links-underline: $main-accent;
-$slim-nav-links: $main-accent;
+$body-copy: 			$alt-black;
+$accordion-headers: 	$l-green;
+$body-bg: 				$ll-grey;
+$nav-links: 			$white;
+$main-accent: 			$green;
+$main-accent-trans: 	$green-trans;
+$body-links: 			$main-accent;
+$body-links-underline: 	$main-accent-trans;
+$slim-nav-links: 		$main-accent;
 
 // Font
-$serif-font: 'Rasa', serif;
-$sans-serif-font: 'Dosis', sans-serif;
+$serif-font: 		'Rasa', serif;
+$sans-serif-font: 	'Dosis', sans-serif;
 
 // Media Query Ranges
-$small-screen-up: 601px !default;
-$medium-screen-up: 993px !default;
-$large-screen-up: 1201px !default;
-$small-screen: 600px !default;
-$medium-screen: 992px !default;
-$large-screen: 1200px !default;
+$small-screen-up: 	601px !default;
+$medium-screen-up: 	993px !default;
+$large-screen-up: 	1201px !default;
+$small-screen: 		600px !default;
+$medium-screen: 	992px !default;
+$large-screen: 		1200px !default;
 
 $medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
 $large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;

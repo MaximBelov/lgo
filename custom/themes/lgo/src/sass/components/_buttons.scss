@@ -21,3 +21,17 @@ button {
 .button-collapse {
     color: #26a69a;
 }
+
+.btn {
+    color: $white;
+    text-transform: uppercase;
+    display: inline-block;
+    font-family: $sans-serif-font;
+    border: 2px solid $white;
+    border-radius: 4px;
+    padding: 15px 20px;
+    &:hover {
+        color: $main-accent;
+        border: 2px solid $main-accent;
+    }
+}

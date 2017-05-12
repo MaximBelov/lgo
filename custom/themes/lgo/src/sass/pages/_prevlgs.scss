@@ -29,27 +29,7 @@
 }
 
 
-.single-lg {
-	.left-panel {
-		position: relative;
-		width: 100%;
-		height: 60vh;
-		@media #{$large-and-up} {
-		    position: fixed;
-		    width: auto;
-		    height: auto;
-		    left: 0;
-		    right: 50%;
-		    top: 0;
-		    bottom: 0;
-		}
-	}
-	.right-panel {
-		width: 100%;
-		@media #{$large-and-up} {
-		    width: 50%;
-		}
-	}
+.scroll-panel {
 	.single-lg__content {
 		padding: 20px 30px 150px;
 		@media #{$large-and-up} {

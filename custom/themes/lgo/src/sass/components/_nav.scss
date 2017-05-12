@@ -61,6 +61,7 @@ a.skip-to:hover {
   &:hover {
     transform: translateX(0);
     background: $white;
+    // background: $grey;
     box-shadow: 10px 0 20px -2px rgba(0,0,0,0.1);
     nav {
       transform: translateX(0);

@@ -6,6 +6,7 @@ html {
 
 a {
     text-decoration: none;
+    color: $alt-black;
 }
 
 body {
@@ -175,7 +176,8 @@ nav {
             text-transform: uppercase;
             &:hover {
                 // color: $blue;
-                font-weight: bold !important;
+                // font-weight: bold !important;
+
             }
         }
     }

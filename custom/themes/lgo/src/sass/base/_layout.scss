@@ -136,7 +136,8 @@ footer.page-footer {
 }
 
 .right-compartment-inner-wrapper,
-.child-page-content {
+.child-page-content,
+.single-page__content {
   padding: 20px;
   @media #{$large-and-up} { 
     padding: 50px 60px 60px;
@@ -214,9 +215,77 @@ footer.page-footer {
 .single-push-panel.single-push-panel--pushed {
   transform: translateX(350px);
   // width: calc(100% - 340px); 
-    //this compresses the container
+    //this compresses  the container
     // instead of just pushing it
 }
+
+.single-page-container--half,
+.single-page-container--whole {
+  h2 {
+    font-family: $sans-serif-font;
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 300;
+    margin-bottom: 0px;
+    margin-top: 0;
+  }
+  .right-panel {
+    background: $white;
+  }
+  .left-panel {
+    &:after {
+        content: '';
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        // height: 100%;
+        background-color: rgba(0,0,0,0.7);
+        z-index: 1;
+    }
+    // &:after {
+    //   display: block;
+    //   position: relative;
+    //   background-image: linear-gradient(to top, transparent 0%, black 110%);
+    //   height: 100%;
+    //   width: 100%;
+    //   content: '';
+    //   z-index: 6;
+    // }
+  }
+}
+
+.single-page-container--whole {
+  .right-compartment {
+    min-height: 100vh;
+  }
+}
+
+.scroll-panel {
+  .left-panel {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    @media #{$large-and-up} {
+        position: fixed;
+        width: auto;
+        height: auto;
+        left: 0;
+        right: 50%;
+        top: 0;
+        bottom: 0;
+    }
+  }
+  .right-panel {
+    width: 100%;
+    @media #{$large-and-up} {
+        width: 50%;
+    }
+  }
+}
+
 
 // MASONRY
 
