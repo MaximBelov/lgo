@@ -169,6 +169,9 @@ abbr[title] {
 // NAVIGATION
 
 nav {
+    .current_page_item a {
+        font-weight: 700;
+    }
     ul {
         a {
             font-family: 'Dosis', sans-serif;

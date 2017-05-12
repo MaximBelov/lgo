@@ -48,11 +48,11 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 		<div class="single-page__content">
 		<h2><?php the_title();?></h2>
 		<?php the_content(); ?>
-		</div>
-			
+
 		<?php get_template_part( 'template-part-accordion' ); ?>
 
 		<?php get_template_part( 'template-part-slider' ); ?>
+		</div>
 		
    	</div> <!-- END OF RIGHT COMPARTMENT -->
 </div> <!-- END OF .page -->

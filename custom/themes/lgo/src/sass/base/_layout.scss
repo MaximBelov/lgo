@@ -8,6 +8,12 @@ body {
   overflow-x: hidden;
 }
 
+iframe,
+twitterwidget,
+.site-center-aligned {
+  margin: 0 auto;
+}
+
 header {
 	background-color: $blue;
 	height: 220px;
