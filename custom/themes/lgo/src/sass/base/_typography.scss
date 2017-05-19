@@ -19,7 +19,8 @@ p {
     line-height: 32px;
     color: $body-copy;
     @media #{$small-and-down} {
-        font-size: .9em;
+        font-size: 18px;
+        line-height: 24px;
     }
 }
 
@@ -111,10 +112,14 @@ abbr[title] {
     h2 {
         font-family: $sans-serif-font;
         text-transform: uppercase;
-        font-size: 60px;
-        line-height: 70px;
+        font-size: 40px;
+        line-height: 50px;
         font-weight: 300;
         margin-bottom: 0px;
+        @media #{$medium-and-up} {
+          font-size: 60px;
+          line-height: 70px;
+        }
     }
     .child-page-content >*:first-child {
         margin-top: 25px;
@@ -124,6 +129,10 @@ abbr[title] {
         font-size: 36px;
         line-height: 40px;
         margin-bottom: 0;
+        @media #{$small-and-down} {
+            font-size: 25px;
+            line-height: 30px;
+        }
     }
     h3 + p {
         margin-top: 15px;
@@ -144,6 +153,10 @@ abbr[title] {
             font-size: 21px;
             line-height: 25px;
             margin-bottom: 8px;
+            @media #{$small-and-down} {
+                font-size: 16px;
+                line-height: 22px;
+            }
         }
     }
     blockquote {

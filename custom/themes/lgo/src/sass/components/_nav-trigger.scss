@@ -9,9 +9,9 @@
 #nav-icon3 {
   // border-left: 2px solid $white;
   padding: 15px;
-  background: $blue;
-  min-width: 120px;
-  min-height: 70px;
+  background: $main-accent;
+  min-width: 80px;
+  min-height: 35px;
   position: fixed;
   // bottom: 0;
   // right: 0;
@@ -37,6 +37,7 @@
   top: 35%;
   left: 10%;
   font-weight: bold;
+  font-family: $sans-serif-font;
   font-size: 80%;
   color: white;
 }

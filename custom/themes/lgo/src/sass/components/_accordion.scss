@@ -17,8 +17,12 @@
 		// color: $white;
 		text-transform: none;
 		font-weight: 400;
-		font-size: 24px;
-		line-height: 28px;
+		font-size: 16px;
+		line-height: 18px;
+		@media #{$medium-and-up} {
+		    font-size: 24px;
+		    line-height: 28px;
+		}
 		&:after {
 			position: absolute;
 			top: 25%;
