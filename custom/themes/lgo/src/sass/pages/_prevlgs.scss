@@ -59,7 +59,7 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 	padding: 10px 10px 10px 10px;
-	color: $blue;
+	color: $main-accent;
 	@media #{$large-and-up} {
 		bottom: auto;
 	    top: 50px;
@@ -70,7 +70,7 @@
 .single-lg__prev-next-links {
 	// text-align: center;
 	#arrow-body {
-		fill: $blue;
+		fill: $main-accent;
 	}
 	#prev-link-arrow {
 		margin-right: 10px;
@@ -82,7 +82,7 @@
 		font-family: $sans-serif-font;
 		font-size: 14px;
 		text-transform: uppercase;
-		color: $blue;
+		color: $main-accent;
 	}
 	.single-lg__next-link {
 		margin-left: 40px;

@@ -3,6 +3,14 @@
 }
 
 .js-accordion {
+	.js-accordion__content {
+		iframe {
+			@media #{$small-and-down} {
+			    width: 300px !important;
+			   	height: 210px !important;
+			}
+		}
+	}
 	button.js-accordion__header {
 		border:none;
 		border-radius: 0;
@@ -52,6 +60,9 @@
 	.js-accordion__panel {
 		.js-accordion__panel-wrapper {
 			padding: 0 40px;
+			@media #{$small-and-down} {
+			    padding: 0 10px;
+			}
 		}
 		h3 {
 			// background: none;
