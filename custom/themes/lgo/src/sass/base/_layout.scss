@@ -121,6 +121,8 @@ footer.page-footer {
 }
 
 .left-compartment__bg {
+  background-size: cover;
+  background-repeat: no-repeat;
   position: fixed;
   left: 0;
   right: 0;
@@ -430,7 +432,12 @@ h3.grid-item--2x2--label {
 }
 
 
-
+// Gallery 
+.preload-background {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
 
 // Media Queries
 $large-display-width: 1300px;

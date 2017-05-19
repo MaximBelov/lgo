@@ -64,6 +64,8 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' );
 			?>
 
+			<div class="preload-background" style="background-image: url(<?php echo $thumb[0];?>);"></div>
+
 			<?php if ($post->ID == 15) { ?>
 
 			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb[0];?>">
