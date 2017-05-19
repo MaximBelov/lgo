@@ -38,6 +38,9 @@ a.skip-to:hover {
   @media #{$small-and-down} {
     display: none;
   }
+  @media print {
+    display: none;
+  }
 }
 
 .left-panel__navigation.small-nav {
@@ -214,7 +217,7 @@ nav {
 
 .translation-widget {
   // height: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   // background: $white;
   a {
     color: $white;

@@ -353,6 +353,9 @@ footer.page-footer {
   }
   h3 {
     color: $white;
+    @media print {
+      color: $black;
+    }
   }
 }
 
@@ -375,6 +378,9 @@ footer.page-footer {
   h3 {
     color: $white;
     font-size: 32px;
+    @media print {
+      color: $black;
+    }
   }
   p {
     font-size: 14px;
@@ -407,6 +413,9 @@ h3.grid-item--1x1--label {
     bottom: 20px; 
     max-width: 80%;
   }
+  @media print {
+    color: $black;
+  }
 }
 
 .grid-item--2x2 {
@@ -428,6 +437,9 @@ h3.grid-item--2x2--label {
     max-width: 80%;
     font-size: 24px;
     line-height: 26px;
+  }
+  @media print {
+    color: $black;
   }
 }
 

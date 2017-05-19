@@ -30,6 +30,9 @@
     bottom: auto;
     right: 0;
   }
+  @media print {
+    display: none;
+  }
 }
 
 #nav-icon3 small {
