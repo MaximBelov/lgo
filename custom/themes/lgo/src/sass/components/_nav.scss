@@ -222,16 +222,26 @@ nav {
     text-transform: uppercase;
     font-weight: 300px;
     position: relative;
+    padding: 0;
+    padding-bottom: 3px;
+    margin: 5px 10px;
   }
   ul {
+    li.wpml-ls-current-language {
+      a{
+        font-weight: bold;
+        border-bottom: 1px solid rgba(255,255,255,0.5);
+        // text-decoration: underline;
+      }
+    }
     >li:first-child a {
       &:after {
           content: '';
           position: absolute;
           width: 2px;
           height: 17px;
-          right: -1px;
-          top: 5px;
+          right: -11px;
+          top: 0px;
           background: $white;
       }
     }
