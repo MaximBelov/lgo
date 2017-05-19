@@ -28,6 +28,9 @@
         </svg>
         <span>MENU</span>
     </div>
+    
+    
+
     <nav>
         <div class="nav-holder">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="Logo. Links to home page."> 
@@ -40,6 +43,7 @@
                 'walker' => new Main_Menu_Walker()
                 )); 
             ?> 
+            
         </div>
     </nav>
 </div>
