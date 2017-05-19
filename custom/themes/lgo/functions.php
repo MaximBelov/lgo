@@ -6,6 +6,7 @@ require_once('includes/functions/image-support.php');
 require_once('includes/functions/page-excerpts.php');
 require_once('includes/functions/posts-per-page.php');
 require_once('includes/functions/register-menu.php');
+require_once('includes/functions/register-sidebar.php');
 require_once('includes/functions/custom-admin-branding.php');
 require_once('includes/functions/remove-admin-bar.php');
 require_once('includes/functions/remove-header-meta.php');

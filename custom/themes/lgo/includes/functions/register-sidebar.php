@@ -4,14 +4,21 @@
 * Register Wordpress sidebar widget
 */
 
-register_sidebar(array(
- 	'name' => __( 'Homepage Testimonial' ),
- 	'id' => 'homepage-testimonial',
- 	'description' => __( 'Widgets in this area will be shown on the homepage in the customer experience section.' ),
-  	'before_widget' => '',
-  	'after_widget' => '',
-  	'before_title' => '<span class="hidden" style="display: none;">',
-  	'after_title' => '</span>'
-));
+function translation_widgets_init() {
+
+	register_sidebar(
+		array(
+	 	'name' => __( 'Translation' ),
+	 	'id' => 'translation-widget',
+	 	'description' => __( 'This contains the translation switcher.' ),
+	  	'before_widget' => '',
+	  	'after_widget' => '',
+	  	'before_title' => '',
+	  	'after_title' => '')
+	);
+}
+
+add_action( 'widgets_init', 'translation_widgets_init' );
+
 
 ?>

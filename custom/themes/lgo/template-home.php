@@ -19,9 +19,9 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 			<?php get_template_part( 'template-part-logo' ); ?>
 			<h1><?php echo $heading;?></h1>
 			<div class="separator"></div>
-			<h2 class="home-subhead">
+			<div class="home-subhead">
 				<?php echo $subhead;?>
-			</h2>
+			</div>
 			<a href="#top-of-content"><svg width="16px" height="29px" viewBox="0 0 16 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 				    <desc>Scroll Down</desc>
 				    <defs></defs>

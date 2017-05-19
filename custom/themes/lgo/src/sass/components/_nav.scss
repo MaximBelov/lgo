@@ -211,3 +211,29 @@ nav {
   width: 100%;
   display: block !important;
 }
+
+.translation-widget {
+  height: 50px;
+  // background: $white;
+  a {
+    color: $white;
+    font-family: $sans-serif-font;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 300px;
+    position: relative;
+  }
+  ul {
+    >li:first-child a {
+      &:after {
+          content: '';
+          position: absolute;
+          width: 2px;
+          height: 17px;
+          right: -1px;
+          top: 5px;
+          background: $white;
+      }
+    }
+  }
+}
