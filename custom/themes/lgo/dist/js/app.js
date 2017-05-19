@@ -1025,7 +1025,7 @@ jQuery(document).ready(function($) {
       var panel = document.getElementById("scroll-panel");
 
       // SHRINK LOGO
-      if (scrollPos > (h-100)) {
+      if (scrollPos > (100)) {
           navbar.addClass('change-logo-size');
           slimNav.addClass('compress-slim-nav');
       } else {

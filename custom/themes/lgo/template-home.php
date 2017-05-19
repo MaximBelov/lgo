@@ -19,9 +19,9 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 			<?php get_template_part( 'template-part-logo' ); ?>
 			<h1><?php echo $heading;?></h1>
 			<div class="separator"></div>
-			<div class="home-subhead">
+			<h2 class="home-subhead">
 				<?php echo $subhead;?>
-			</div>
+			</h2>
 			<a href="#top-of-content"><svg width="16px" height="29px" viewBox="0 0 16 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 				    <desc>Scroll Down</desc>
 				    <defs></defs>
@@ -41,22 +41,94 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 			<h2>Ontario's Storyteller in chief</h2>
 			
 			<div class="masonry-grid">
-				<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
-				<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
-				<div class="grid-item grid-item--2x1 wow fadeInUp"></div>
-				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-				<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
-				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-				<div class="grid-item grid-item--4x2 wow fadeInUp"></div>
-				<div class="grid-item grid-item--2x1 wow fadeInUp"></div>
-				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-				<div class="grid-item grid-item--2x1 wow fadeInUp"></div>
-				<div class="grid-item grid-item--1x1 wow fadeInUp"></div>
-				<div class="grid-item grid-item--2x2 wow fadeInUp"></div>
+				<div class="grid-item grid-item--4x2 wow fadeInUp">
+					<div class="grid-item__wrapper">
+						<div class="grid-item--4x2--content">
+							<h3>Use this tile style for featured static content</h3>
+						</div>
+					</div>
+				</div>
+				<div class="grid-item grid-item--4x2 wow fadeInUp">
+					<div class="grid-item__wrapper">
+						<p class="grid-item--4x2--label"><span>About</span></p>
+						<div class="grid-item--4x2--content">
+							<h3>Areas of Focus</h3>
+							<p>Blurb about Her Honour’s special focus. 5-8 words. (this is a hover preview)</p>
+						</div>
+					</div>
+				</div>
+				<div class="grid-item grid-item--2x1 wow fadeInUp">
+					<div class="grid-item__wrapper">
+						<h3 class="grid-item--2x1--label">Use this tile style for blog posts with no picture.</h3>
+					</div>
+				</div>
+				<div class="grid-item grid-item--1x1 grid-item grid-item--accent wow fadeInUp">
+					<div class="grid-item__wrapper">
+						<h3 class="grid-item--1x1--label">Use this tile syle for CTAs like Book a tour.</h3>
+					</div>
+				</div>
+				<div class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp">
+					<div class="grid-item__wrapper">
+						<h3 class="grid-item--1x1--label">Find us on Facebook</h3>
+					</div>
+				</div>
+				<div class="grid-item grid-item--1x1 wow fadeInUp">
+					<div class="grid-item__wrapper">
+						<i class="fa fa-twitter" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="grid-item grid-item--4x2 wow fadeInUp">
+					<div class="grid-item__wrapper">
+						<div class="grid-item--4x2--content">
+							<h3>Use this tile style for LG exhibitions</h3>
+						</div>
+					</div>
+				</div>
+				<div class="grid-item grid-item--1x1 wow fadeInUp">
+					<div class="grid-item__wrapper">
+						<i class="fa fa-twitter" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="grid-item grid-item--4x2 wow fadeInUp">
+					<div class="grid-item__wrapper">
+						<p class="grid-item--4x2--label">Current Exhibit</p>
+						<div class="grid-item--4x2--content">
+							<h3>Canada 150</h3>
+							<p>Each story recalls an experience that has left an impression—one of happiness or tragedy, of humour, or of insight. Collectively these myriad diverse stories give us meaning, through which our personal, family, and community identities are formed.</p>
+						</div>
+					</div>
+				</div>
+				<div class="grid-item grid-item--2x1 wow fadeInUp">
+					<div class="grid-item__wrapper">
+						<h3 class="grid-item--2x1--label">Long news/ event/ article/ headline goes here, posted from the blog</h3>
+					</div>
+				</div>
+				<div class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp">
+					<div class="grid-item__wrapper">
+						<h3 class="grid-item--1x1--label">Find us on Twitter</h3>
+					</div>
+				</div>
+				<div class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
+					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label">Invite The LG</h3> </div>
+				</div>
+				<div class="grid-item grid-item--2x1 wow fadeInUp">
+					<div class="grid-item__wrapper">
+						<h3 class="grid-item--2x1--label">Long news/ event/ article/ headline goes here, posted from the blog</h3>
+					</div>
+				</div>
+				<div class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
+					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label">Nonimate someone for an award</h3> </div>
+				</div>
+				<div class="grid-item grid-item--2x2 wow fadeInUp">
+					<div class="grid-item--overlay"></div>
+					<div class="grid-item__wrapper">
+						<h3 class="grid-item--2x2--label">Use this tile style for blog posts with a picture.</h3>
+					</div>
+
+				</div>
 			</div>
+
+
 		</div> <!-- End of RP inner -->
 	</div> <!-- END OF RIGHT PANEL -->
 </div> <!-- END OF .page -->

@@ -306,6 +306,32 @@ footer.page-footer {
   width: 130px;
   float: left;
   position: relative;
+  background: $grey;
+}
+
+.grid-item__wrapper {
+  padding: 15px;
+  position: relative;
+  z-index: 10;
+  height: calc(100% - 30px);
+  i {
+    position: absolute; 
+    bottom: 15px; 
+    right: 15px;
+  }
+}
+
+.grid-item--overlay {
+  position: relative;
+  z-index: 8;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 100%);
 }
 
 .grid-item--4x2:first-child {
@@ -313,32 +339,97 @@ footer.page-footer {
 }
 
 .grid-item--4x2 {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.3);
   border: 1px solid $white;
   width: 64.4%;
-  height: 260px; 
+  height: 260px;
+  h3 {
+    color: $white;
+  }
+}
+
+.grid-item--4x2--label {
+  text-transform: uppercase;
+  font-size: 16px;
+  span {
+    border-top: 2px solid $white;
+  } 
+}
+
+.grid-item--4x2--content {
+  vertical-align: bottom;
+  bottom: 0;
+  position: absolute; 
+  bottom: 15px; 
+  max-width: 90%;
+  h3 {
+    color: $white;
+    font-size: 32px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 0 !important;
+  }
 }
 
 .grid-item--2x1 {
-  background: rgba(0,0,0,0.5);
+  background: #4A4A4A;
   border: 1px solid $white;
   width: 33.2%;
   height: 130px;
 }
 
+h3.grid-item--2x1--label,
+h3.grid-item--1x1--label {
+  color: $white;
+  font-size: 24px;
+  line-height: 26px;
+  vertical-align: text-bottom;
+  margin: 0;
+  // position:relative;
+  bottom: 0;
+  position: absolute; 
+  bottom: 15px; 
+  max-width: 80%;
+}
+
 .grid-item--2x2 {
-  background: rgba(0,0,0,0.3);
+  // background: rgba(0,0,0,0.3);
   border: 1px solid $white;
   width: 33.2%;
   height: 260px;
 }
 
+h3.grid-item--2x2--label {
+  color: $white;
+  bottom: 0;
+  position: absolute; 
+  bottom: 15px; 
+  max-width: 80%;
+  font-size: 24px;
+  line-height: 26px;
+}
+
 .grid-item--1x1 {
-  background: rgba(0,0,0,0.1);
+  // background: rgba(0,0,0,0.1);
   border: 1px solid $white;
   width: 16.6%;
   height: 130px;
 }
+
+.grid-item.grid-item--accent {
+  background: $main-accent;
+}
+
+.grid-item.grid-item--llgrey {
+  background: #f5f5f5;
+  h3 {
+    color: $body-copy;
+  }
+}
+
+
 
 
 // Media Queries

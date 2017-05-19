@@ -80,8 +80,8 @@ a.skip-to:hover {
     opacity: 1;
     display: block;
     position: absolute;
-    top: 40px;
-    right: -20px;
+    top: 60px;
+    right: -5px;
     transform: rotate(90deg);
 
     color: $nav-links;
@@ -93,6 +93,9 @@ a.skip-to:hover {
       width: 25px;
       height: auto;
       transform: rotate(-90deg);
+      // left: -50px;
+      position: absolute;
+      left: -30px;
     }
   }
 }
