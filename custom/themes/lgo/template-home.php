@@ -127,8 +127,10 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 
 				</div>
 			</div>
-			
-			<a href="#" class="btn">More news & events</a>
+
+			<div class="load-more-container">
+				<a align="center" href="#" class="btn btn--accent">More news & events</a>
+			</div>
 
 		</div> <!-- End of RP inner -->
 	</div> <!-- END OF RIGHT PANEL -->

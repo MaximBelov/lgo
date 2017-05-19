@@ -16,8 +16,10 @@
         $title      = isset( $accordion['rw_title'] ) ? $accordion['rw_title'] : '';
         $content    = wpautop(isset( $accordion['rw_content'] ) ? $accordion['rw_content'] : ''); ?>
         <div class="js-accordion__panel">
-            <h3 class="js-accordion__header"><?php echo $title;?></h3>
-            <div class="js-accordion__content"><span><?php echo $content; ?></span></div>
+            <div class="js-accordion__panel-wrapper">
+                <h3 class="js-accordion__header"><?php echo $title;?></h3>
+                <div class="js-accordion__content"><span><?php echo $content; ?></span></div>
+            </div>
         </div>
         <?php } //endforeach ?>
     </div>

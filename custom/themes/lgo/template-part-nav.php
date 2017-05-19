@@ -27,14 +27,14 @@
         </svg>
         <span>MENU</span>
     </div>
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="Logo. Links to home page."> 
+        <?php get_template_part( 'template-part-logo' ); ?>
+    </a>
     <div class="translation-widget">
         <?php dynamic_sidebar( 'translation-widget' ); ?>
     </div>
     <nav>
         <div class="nav-holder">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="Logo. Links to home page."> 
-                <?php get_template_part( 'template-part-logo' ); ?>
-            </a>
             <?php 
                 wp_nav_menu(array(
                 'menu' => 'Main Menu', 

@@ -33,7 +33,7 @@ a.skip-to:hover {
   position: fixed;
   width: 310px;
   height: 100vh;
-  padding: 50px 20px 50px 20px;
+  padding: 15px 20px 50px 20px;
   z-index: 1000;
   @media #{$small-and-down} {
     display: none;
@@ -213,7 +213,8 @@ nav {
 }
 
 .translation-widget {
-  height: 50px;
+  // height: 50px;
+  margin-bottom: 50px;
   // background: $white;
   a {
     color: $white;
@@ -234,7 +235,7 @@ nav {
         // text-decoration: underline;
       }
     }
-    >li:last-child a {
+    >li.wpml-ls-item-fr a {
       &:after {
           content: '';
           position: absolute;
