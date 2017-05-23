@@ -160,22 +160,32 @@ abbr[title] {
         }
     }
     blockquote {
-        font-family: $sans-serif-font;
-        font-weight: 400;
-        color: $grey;
-        text-align: left;
-        font-size: 30px;
-        line-height: 43px;
+        font-family: 'Merriweather', serif;
+        font-style: italic;
         position: relative;
         &:before {
+            display: block;
             position: absolute;
-            top: 50px;
-            left: 0;
-            opacity: 0.3;
+            z-index: -1;
+            content: '';
+            background-image: url('../lgo/src/images/quotation-mark.svg');
+            background-size: 100px 100px;
+            height: 100px;
+            width: 100px;
+            top: -20px;
+            left: -20px;
+            opacity: 1;
         }
-        &:after {
-            display: none;
-        }
+    }
+
+    blockquote p {
+        position: relative;
+        font-family: 'Merriweather', serif;
+        font-style: italic;
+        color: $blockquote;
+        font-size: 25px;
+        line-height: 35px;
+        z-index: 5;
     }
 }
 

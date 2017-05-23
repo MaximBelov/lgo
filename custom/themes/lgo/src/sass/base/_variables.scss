@@ -2,7 +2,8 @@
 // Primary Colours
 $white: 		rgba(255,255,255,1);
 $ll-grey: 		rgba(240,240,240,1);
-$grey: 			rgba(109,109,109,1);
+// $grey: 			rgba(109,109,109,1);
+$grey: 			rgba(155,155,155,1);
 $d-grey:		#4e4e4e;
 $alt-black: 	rgba(74,74,74,1);
 $black: 		rgba(0,0,0,1);
@@ -16,6 +17,7 @@ $red-trans:		rgba(199,0,0,0.7);
 
 
 $body-copy: 			$alt-black;
+$blockquote:			$grey;
 $accordion-headers: 	$l-green;
 $body-bg: 				$ll-grey;
 $nav-links: 			$white;
