@@ -90,17 +90,25 @@
 }
 
 .clip-svg.even-lg {
-  clip-path: url(#frame-path-1);
+  clip-path: url(#frame-path-1-sm);
   width: 100%;
   height: 205px;
   background-size: cover; 
+  -webkit-transform:translateZ(1px);
+  @media #{$large-and-up} {
+  	// clip-path: url(#frame-path-1);
+  }
 }
 
 .clip-svg.odd-lg {
-  clip-path: url(#frame-path-2);
+  clip-path: url(#frame-path-2-sm);
   width: 100%;
   height: 205px;
   background-size: cover; 
+  -webkit-transform:translateZ(1px);
+  @media #{$large-and-up} {
+  	// clip-path: url(#frame-path-2);
+  }
 }
 
 .clip-svg.frame3-lg {
@@ -108,8 +116,9 @@
   width: 100%;
   height: 205px;
   background-size: cover; 
+  -webkit-transform:translateZ(1px);
   @media #{$large-and-up} {
-  	clip-path: url(#frame-path-3);
+  	// clip-path: url(#frame-path-3);
   }
 }
 
