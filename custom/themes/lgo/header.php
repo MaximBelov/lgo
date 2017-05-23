@@ -6,9 +6,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=1.0"/>
 <meta name="description" content="<?php bloginfo('description'); ?>" />
+<!-- FB Meta Tags -->
+<!-- CREATE/REPLACE FB APP ID -->
+<meta property="fb:app_id" content="123456789" />
 <meta property="og:site_name" content="<?php bloginfo('name') ?>">
 <meta property="og:title" content="<?php bloginfo('name') ?>">
 <meta property="og:description" content="<?php bloginfo('description'); ?>">
+<meta property="og:image" content="<?php if (has_post_thumbnail()) { echo the_post_thumbnail_url('medium');} ?>">
+<meta property="og:url" content="">
+<!-- Twitter Meta Tags -->
+<meta name="twitter:title" content="European Travel Destinations ">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="<?php if (has_post_thumbnail()) { echo the_post_thumbnail_url('medium');} ?>">
+<meta name="twitter:card" content="summary_large_image">
 
 <?php wp_head(); ?>
 <?php include_once("analyticstracking.php") ?>

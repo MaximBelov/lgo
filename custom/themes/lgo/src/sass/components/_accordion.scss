@@ -58,6 +58,11 @@
 		}
 	}
 	.js-accordion__panel {
+		@media print {
+			visibility: visible !important;
+			max-height: auto !important;
+			opacity: 1 !important;
+		}
 		.js-accordion__panel-wrapper {
 			padding: 0 40px;
 			@media #{$small-and-down} {
