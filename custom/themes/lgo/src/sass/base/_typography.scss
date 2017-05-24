@@ -22,8 +22,8 @@ p {
     line-height: 32px;
     color: $body-copy;
     @media #{$small-and-down} {
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 22px;
+        line-height: 30px;
     }
 }
 
@@ -37,7 +37,7 @@ h1 {
     font-family: 'Dosis', sans-serif;
     font-size: 2.75em;
     @media #{$small-and-down} {
-        font-size: 1.7em;
+        font-size: 2em;
     }
 }
 
@@ -192,8 +192,24 @@ abbr[title] {
     }
 }
 
-// NAVIGATION
+// BLOG
+.news-content__body {
+  >p:first-child:first-letter {
+    // color: red;
+    float: left;
+    font-size: 500%;
+    // line-height: 80%;
+    padding: 30px 10px 5px 0;
+    // margin: 0 20px 20px 20px;
+    // width: 100px;
+    // border: 4px solid $alt-black;
+    @media #{$medium-and-up} {
+      padding: 35px 15px 5px 0;
+    }
+  }
+}
 
+// NAVIGATION
 nav {
     .current_page_item a {
         font-weight: 700;

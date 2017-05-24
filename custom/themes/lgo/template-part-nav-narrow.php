@@ -5,7 +5,7 @@
 */
 ?>
 <div class="left-panel__navigation slim-nav-transition-static compress-slim-nav">
-    <div class="slim-nav-label">
+    <div class="slim-nav-label" tabindex="0">
         <svg viewBox="0 0 19 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
                 <polygon id="path-1" points="0.0882808116 0.53453125 5.04329975 21.0821875 20.6371396 21.8917187 22.8111365 1.2959375"></polygon>

@@ -95,20 +95,31 @@ jQuery(document).ready(function($) {
     $(".slim-nav-transition").hover(
       function () {
         $( ".full-width-panel" ).addClass("full-width-panel--pushed");
+        $( ".left-panel__navigation" ).addClass("on-hover");
       },
       function () {
         $( ".full-width-panel" ).removeClass("full-width-panel--pushed");
+        $( ".left-panel__navigation" ).removeClass("on-hover");
       }
     );
 
     $(".slim-nav-transition-static").hover(
       function () {
         $( ".full-width-panel" ).addClass("full-width-panel--pushed");
+        $( ".left-panel__navigation" ).addClass("on-hover");
       },
       function () {
         $( ".full-width-panel" ).removeClass("full-width-panel--pushed");
+        $( ".left-panel__navigation" ).removeClass("on-hover");
       }
     );
+
+    $('.slim-nav-label').keypress(function(e){
+      if(e.which == 13){//Enter key pressed
+        $( ".full-width-panel" ).addClass("full-width-panel--pushed");
+        $( ".left-panel__navigation" ).addClass("on-hover");
+      }
+    });
 
     // SINGLE LG PAGE
     $(".slim-nav-transition-static").hover(
@@ -144,11 +155,12 @@ jQuery(document).ready(function($) {
     });
 
     // Activate Mobile Nav via click/enter
-      $('.nav-trigger').click(function(){
-          $( ".navbar-fixed" ).toggleClass( "nav-menu-open" );
-          $( "body" ).toggleClass( "no-scroll" );
-          $(this).toggleClass('open');
-      });
+    $('.nav-trigger').click(function(){
+      $( ".navbar-fixed" ).toggleClass( "nav-menu-open" );
+      $( "body" ).toggleClass( "no-scroll" );
+      $(this).toggleClass('open');
+      $( ".left-panel__navigation" ).toggleClass( "open-navigation" );
+    });
 
       // $('.nav-trigger').keypress(function(e){
       //   if(e.which == 13){//Enter key pressed
