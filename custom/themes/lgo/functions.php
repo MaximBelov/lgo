@@ -22,4 +22,6 @@ require_once('includes/metaboxio/lg-meta-fields.php');
 // require_once('includes/functions/add-settings.php');
 // Adds Modification Column to Page admin
 require_once('includes/functions/add-admin-columns.php');
+// Adds WPML language class to body
+require_once('includes/functions/add-language-class.php');
 ?>

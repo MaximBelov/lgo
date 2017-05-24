@@ -169,7 +169,7 @@ abbr[title] {
         &:before {
             display: block;
             position: absolute;
-            z-index: -1;
+            // z-index: -1;
             content: '';
             background-image: url('../lgo/src/images/quotation-mark.svg');
             background-size: 100px 100px;

@@ -1,0 +1,15 @@
+// BLOG
+.lang-fr .news-content__date {
+  text-transform: lowercase !important;
+}
+
+// TYPE
+.lang-fr .child-page,
+.lang-fr .full-width-panel {
+    blockquote {
+        &:before {
+            background-image: url('../lgo/src/images/guillemet.svg');
+            opacity: 0.6;
+        }
+    }
+}
