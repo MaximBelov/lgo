@@ -239,9 +239,7 @@ nav {
 }
 
 .translation-widget {
-  // height: 50px;
   margin-bottom: 20px;
-  // background: $white;
   a {
     color: $white;
     font-family: $sans-serif-font;
@@ -258,7 +256,6 @@ nav {
       a{
         font-weight: bold;
         border-bottom: 1px solid rgba(255,255,255,0.5);
-        // text-decoration: underline;
       }
     }
     >li.wpml-ls-item-fr a {
