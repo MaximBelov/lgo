@@ -99,6 +99,10 @@
  padding: 0;
 }
 
+.js-accordion button.js-accordion__header:after {
+    content: "\f0d9";
+}
+
 .js-accordion button.js-accordion__header[aria-expanded="true"]:after {
     content: "\f0d7";
 }
