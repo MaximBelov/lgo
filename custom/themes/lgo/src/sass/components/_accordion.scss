@@ -64,23 +64,24 @@
 			opacity: 1 !important;
 		}
 		.js-accordion__panel-wrapper {
-			padding: 0 40px;
+			padding: 40px;
 			@media #{$small-and-down} {
 			    padding: 0 10px;
 			}
 		}
-		h3 {
-			// background: none;
+		h3:first-child {
+			margin-top: 0;
 		}
 	}
 }
 
 .animated-accordion__panel {
  display: block;
- overflow: hidden;
+ // overflow: hidden;
+ background: rgba(0,0,0,0.015);
  opacity: 1;
- transition: visibility 0s ease, max-height 1s ease, opacity 1s ease ;
- max-height: 100em;
+ transition: visibility 0s ease, max-height 1s ease;
+ // max-height: 100em;
  /* magic number for max-height = enough height */
  visibility: visible;
  transition-delay: 0s;
@@ -96,4 +97,8 @@
  transition-delay: 1s, 0s, 0s;
  margin: 0;
  padding: 0;
+}
+
+.js-accordion button.js-accordion__header[aria-expanded="true"]:after {
+    content: "\f0d7";
 }
