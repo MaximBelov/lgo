@@ -90,6 +90,11 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 		    	<?php get_template_part( 'template-part-accordion' ); ?>
 
 		    	<?php get_template_part( 'template-part-slider' ); ?>
+				
+				<?php if ($post->ID == 60) { ?>
+					<?php gravity_form(2, false, false, false, '', true, 12);?>
+				<?php } ?>
+
 			    </div>
 			</div>
 

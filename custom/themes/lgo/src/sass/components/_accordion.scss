@@ -77,11 +77,11 @@
 
 .animated-accordion__panel {
  display: block;
- // overflow: hidden;
+ overflow: hidden;
  background: rgba(0,0,0,0.015);
  opacity: 1;
  transition: visibility 0s ease, max-height 1s ease;
- // max-height: 100em;
+ max-height: 1000vh;
  /* magic number for max-height = enough height */
  visibility: visible;
  transition-delay: 0s;

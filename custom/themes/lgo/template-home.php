@@ -101,10 +101,10 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label">Invite The LG</h3> </div>
 				</div><div class="grid-item grid-item--2x1 wow fadeInUp">
 					<div class="grid-item__wrapper">
-						<h3 class="grid-item--2x1--label">Long news/ event/ article/ headline goes here, posted from the blog</h3>
+						<h3 class="grid-item--2x1--label">Long news/event/article/headline goes here, posted from the blog</h3>
 					</div>
 				</div><div class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
-					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label">Nonimate someone for an award</h3> </div>
+					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label">Nominate someone for an award</h3> </div>
 				</div><div class="grid-item grid-item--2x2 wow fadeInUp">
 					<div class="grid-item--overlay"></div>
 					<div class="grid-item__wrapper">
