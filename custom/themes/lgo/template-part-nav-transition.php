@@ -43,7 +43,10 @@
                 'walker' => new Main_Menu_Walker()
                 )); 
             ?> 
+            <?php get_search_form(); ?>
             
         </div>
+
+
     </nav>
 </div>

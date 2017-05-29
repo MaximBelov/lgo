@@ -7,7 +7,7 @@
                 <?php if ( have_posts() ) : ?>
 
             <header class="page-header">
-                <p><?php printf( __( 'Search Results for: %s', 'twentyfourteen' ), get_search_query() ); ?></p>
+                <p><?php printf( __( 'Search Results for: %s', 'lgo' ), get_search_query() ); ?></p>
             </header><!-- .page-header -->
 
                         <?php
