@@ -38,7 +38,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 <div id="top-of-content" class="full-width-panel">
 	<div> <!-- Start of RP -->
 		<div class="full-width-inner-wrapper"> <!-- Start of RP inner -->
-			<h2>Ontario's Storyteller in chief</h2>
+			<!-- <h2>Ontario's Storyteller in chief</h2> -->
 			
 			<div class="masonry-grid">
 				<div class="grid-item grid-item--4x2 wow fadeInUp">

@@ -18,10 +18,6 @@ button {
    }
 }
 
-.button-collapse {
-    color: #26a69a;
-}
-
 .btn {
     color: $white;
     text-transform: uppercase;
@@ -57,5 +53,46 @@ button {
     a {
         display: block;
         margin-top: 50px;
+    }
+}
+
+.child-page {
+    position: relative;
+    #edit-child-section {
+        padding: 5px;
+        background: $main-accent;
+        color: $white;
+        &:hover {
+            color: $main-accent;
+            border: 2px solid $main-accent;
+            background: $white;
+        }
+        @media #{$medium-and-up} {
+          position: absolute;
+          top: 90px;
+          left: 25px;
+        }
+    }
+    .child-page-content {
+        position: relative;
+    }
+    #edit-gallery-section {
+        padding: 5px;
+        background: $main-accent;
+        color: $white;
+        &:hover {
+            color: $main-accent;
+            border: 2px solid $main-accent;
+            background: $white;
+        }
+        @media #{$medium-and-up} {
+          position: absolute;
+          bottom: 0px;
+          left: 25px;
+        }
+    }
+    #edit-child-section,
+    #edit-gallery-section {
+     z-index: 5;   
     }
 }

@@ -69,11 +69,19 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 			<?php if ($post->ID == 15) { ?>
 
 			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb[0];?>">
+				<?php
+				if ( current_user_can('administrator') ) { ?>
+					<a href="<?php echo get_edit_post_link( $post->ID );?>" class="btn btn--accent" id="edit-child-section">Edit</a>
+				<?php } ?>
 		        <div class="child-page-content">
 		    		<h2 class="child-title"><?php echo $post->post_title; ?></h2>
 
 		        	<?php the_content(); ?>
-
+					
+					    <?php
+						if ( current_user_can('administrator') ) { ?>
+							<a href="<?php echo get_edit_post_link( $post->ID );?>" class="btn btn--accent" id="edit-gallery-section">View LG List</a>
+						<?php } ?>
 		        </div>
 			    
 			    <?php get_template_part( 'template-part-gallery' ); ?>
@@ -82,6 +90,10 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 			<?php } else { ?>
 			
 			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb[0];?>">
+				<?php
+				if ( current_user_can('administrator') ) { ?>
+					<a href="<?php echo get_edit_post_link( $post->ID );?>" class="btn btn--accent" id="edit-child-section">Edit</a>
+				<?php } ?>
 			    <div class="child-page-content"> 
 					<h2 class="child-title"><?php echo $post->post_title; ?></h2>
 

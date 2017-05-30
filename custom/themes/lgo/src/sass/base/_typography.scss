@@ -263,6 +263,9 @@ nav #menu-main-menu {
             font-size: 22px;
             font-weight: 700;
             letter-spacing: 1.1px;
+            &:hover {
+                // cursor: default;
+            }
         }
         >ul {
             margin: 10px 0 10px 10px;
