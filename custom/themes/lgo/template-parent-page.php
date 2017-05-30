@@ -42,6 +42,10 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 		
 		<div class="parent-page-content">
 		<?php the_content(); ?>
+
+		<?php get_template_part( 'template-part-accordion' ); ?>
+
+		<?php get_template_part( 'template-part-slider' ); ?>
 		</div>
 
 		<?php

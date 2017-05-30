@@ -148,7 +148,8 @@ footer.page-footer {
 
 .right-compartment-inner-wrapper,
 .child-page-content,
-.single-page__content {
+.single-page__content,
+.parent-page-content {
   padding: 20px;
   @media #{$large-and-up} { 
     padding: 50px 100px 60px;
