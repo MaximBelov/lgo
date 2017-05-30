@@ -1,3 +1,27 @@
+.site-wide-search {
+  margin-left: 20px;
+  form {
+    input {
+      font-family: $sans-serif-font;
+      text-transform: uppercase;
+      vertical-align: top;
+    }
+    input[type=search] {
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid $white;
+      color: $white;
+      &::placeholder {
+        color: $white;
+      }
+    }
+    #searchsubmit {
+      color: $white;
+      margin-left: 5px;
+    }
+  }
+}
+
 form {
    .input-field label {
       color: darken($white, 10);

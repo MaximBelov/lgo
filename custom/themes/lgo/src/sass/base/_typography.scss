@@ -248,6 +248,9 @@ nav {
                 &:hover {
                     color: $slim-nav-links;
                 }
+                i {
+                    color: $slim-nav-links;
+                }
             }
         }
     }
