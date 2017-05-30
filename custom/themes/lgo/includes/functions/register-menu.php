@@ -130,7 +130,7 @@ class Main_Menu_Walker extends Walker {
     	$item_output = $args->before;
     	$item_output .= '<a'. $attributes .'><span>';
     	$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-    	$item_output .= '</span></a><a alt="Dropdown. Press enter to activate." href="#" class="menu-after-dots"> ...</a>';
+    	$item_output .= '</span></a>';
     	$item_output .= $args->after;
     } else {
     	$item_output = $args->before;

@@ -82,7 +82,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 			<?php } else { ?>
 			
 			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb[0];?>">
-			    <div class="child-page-content">
+			    <div class="child-page-content"> 
 					<h2 class="child-title"><?php echo $post->post_title; ?></h2>
 
 			    	<?php the_content(); ?>

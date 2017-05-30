@@ -22,4 +22,8 @@ figure.staff {
 	vertical-align: top;
 	text-align: center;
 	align: center;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 }
