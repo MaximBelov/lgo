@@ -62,15 +62,15 @@ function array_multi_unique($multiArray){
 function fetch_twitter_feed() {
 	// Set here your twitter application tokens
 	$settings = array(
-	    'oauth_access_token' => "16689920-YVf29NrOQi3JqFI63TD0nvOhP3A4cLtAZWu2MBjJH",
-	    'oauth_access_token_secret' => "LUtvdM5ZpKU89gja9DayOLOcsHmtqcrq7G7IAckzt3nMx",
-	    'consumer_key' => "U5BM089jNyV3M2VMP7SBkpRht",
-	    'consumer_secret' => "uzs5pzHfx0uEknLzh969EGDNcY31letfCA78vVjKoylxNRXZrZ"
+	    'oauth_access_token' => "820535006-0V86v99PWXBfuxgDYm66bIzYHHTFNC8TVV1rL3QK",
+	    'oauth_access_token_secret' => "uw9kQgPJXLQCJ5orvltrSothRegISwzocIaPYCYlPGhmX",
+	    'consumer_key' => "ZNYPD1TPavCJYGJk7fKDYf6Pm",
+	    'consumer_secret' => "QKRuCRAzKRXUjoqClsRPXFpPbb2QyzX8qIaWaFpyTaB6321xGF"
 	);
 
 	// Get timeline using TwitterAPIExchange
 	$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-	$getfield = '?screen_name=hypenotic&exclude_replies=true';
+	$getfield = '?screen_name=LGLizDowdeswell&exclude_replies=true';
 	$requestMethod = 'GET';
 
 	$twitter = new TwitterAPIExchange($settings);
@@ -93,7 +93,7 @@ function fetch_twitter_feed() {
 			$img = $result[$i]['user']['profile_background_image_url'];
 			$date = date("d-m-Y H:i:s", strtotime($result[$i]['created_at']));
 			$title = $result[$i]['text'];
-			$fulllink = "https://twitter.com/hypenotic/status/".$result[$i]['id_str'];
+			$fulllink = "https://twitter.com/LGLizDowdeswell/status/".$result[$i]['id_str'];
 			$author=$result[$i]['user']['name'];
 			$results[]=array('title'=>$title,'author'=>$author,'link'=>$fulllink,'img'=>$img,'date'=>$date,'label'=>'twitter','filter'=>'social');
 		}

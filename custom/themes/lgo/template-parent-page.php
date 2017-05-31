@@ -39,14 +39,17 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 	</div>
 	<div class="dark-overlay"></div>
 	<div class="right-compartment">
-		
-		<div class="parent-page-content">
-		<?php the_content(); ?>
 
-		<?php get_template_part( 'template-part-accordion' ); ?>
+		<?php
+		if( '' !== get_post()->post_content ) { ?>
+			<div class="parent-page-content">
+			<?php the_content(); ?>
 
-		<?php get_template_part( 'template-part-slider' ); ?>
-		</div>
+			<?php get_template_part( 'template-part-accordion' ); ?>
+
+			<?php get_template_part( 'template-part-slider' ); ?>
+			</div>
+		<?php } ?>
 
 		<?php
 		$theID = get_the_ID();
