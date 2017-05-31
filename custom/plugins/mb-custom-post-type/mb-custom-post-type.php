@@ -3,9 +3,9 @@
  * Plugin Name: MB Custom Post Type
  * Plugin URI: https://metabox.io/plugins/custom-post-type/
  * Description: Create custom post types and custom taxonomies with easy-to-use UI
- * Version: 1.3.1
- * Author: Rilwis & Duc Doan
- * Author URI: http://www.deluxeblogtips.com
+ * Version: 1.4
+ * Author: MetaBox.io
+ * Author URI: https://metabox.io
  * License: GPL-2.0+
  * Text Domain: mb-custom-post-type
  *
@@ -40,16 +40,24 @@ function mb_cpt_load() {
 	require plugin_dir_path( __FILE__ ) . 'inc/base/register.php';
 	require plugin_dir_path( __FILE__ ) . 'inc/post-type/register.php';
 	require plugin_dir_path( __FILE__ ) . 'inc/taxonomy/register.php';
-	new MB_CPT_Post_Type_Register;
-	new MB_CPT_Taxonomy_Register;
+
+	$cpt_register = new MB_CPT_Post_Type_Register;
+	$tax_register = new MB_CPT_Taxonomy_Register;
 
 	if ( is_admin() ) {
 		require plugin_dir_path( __FILE__ ) . 'inc/helper.php';
 		require plugin_dir_path( __FILE__ ) . 'inc/base/edit.php';
 		require plugin_dir_path( __FILE__ ) . 'inc/post-type/edit.php';
 		require plugin_dir_path( __FILE__ ) . 'inc/taxonomy/edit.php';
-		new MB_CPT_Post_Type_Edit( 'mb-post-type' );
-		new MB_CPT_Taxonomy_Edit( 'mb-taxonomy' );
+		require_once plugin_dir_path( __FILE__ ) . 'inc/interfaces/encoder.php';
+		require_once plugin_dir_path( __FILE__ ) . 'inc/encoders/post-type-encoder.php';
+		require_once plugin_dir_path( __FILE__ ) . 'inc/encoders/taxonomy-encoder.php';
+
+		$post_type_encoder = new MB_CPT_Post_Type_Encoder();
+		new MB_CPT_Post_Type_Edit( 'mb-post-type', $cpt_register, $post_type_encoder );
+
+		$tax_encoder = new MB_CPT_Taxonomy_Encoder();
+		new MB_CPT_Taxonomy_Edit( 'mb-taxonomy', $tax_register, $tax_encoder );
 	}
 }
 
