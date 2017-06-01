@@ -41,13 +41,13 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 			<!-- <h2>Ontario's Storyteller in chief</h2> -->
 			
 			<div class="masonry-grid">
-				<div class="grid-item grid-item--4x2 wow fadeInUp">
+				<a href="#" class="grid-item grid-item--4x2 wow fadeInUp">
 					<div class="grid-item__wrapper">
 						<div class="grid-item--4x2--content">
 							<h3>Use this tile style for featured static content</h3>
 						</div>
 					</div>
-				</div><div class="grid-item grid-item--4x2 wow fadeInUp">
+				</a><a href="#" class="grid-item grid-item--4x2 wow fadeInUp">
 					<div class="grid-item__wrapper">
 						<p class="grid-item--4x2--label"><span>About</span></p>
 						<div class="grid-item--4x2--content">
@@ -55,33 +55,30 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 							<p>Blurb about Her Honour’s special focus. 5-8 words. (this is a hover preview)</p>
 						</div>
 					</div>
-				</div><div class="grid-item grid-item--2x1 wow fadeInUp">
+				</a><a href="#" class="grid-item grid-item--2x1 wow fadeInUp">
 					<div class="grid-item__wrapper">
 						<h3 class="grid-item--2x1--label">Use this tile style for blog posts with no picture.</h3>
 					</div>
-				</div><div class="grid-item grid-item--1x1 grid-item grid-item--accent wow fadeInUp">
+				</a><a href="#" class="grid-item grid-item--1x1 grid-item grid-item--accent wow fadeInUp">
 					<div class="grid-item__wrapper">
-						<h3 class="grid-item--1x1--label">Use this tile syle for CTAs like Book a tour.</h3>
+						<h3 class="grid-item--1x1--label">Book a tour</h3>
 					</div>
-				</div><div class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp">
+				</a><a href="http://facebook.com/LGLizDowdeswell" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp grid-item--facebook grid-item--social-link">
 					<div class="grid-item__wrapper">
-						<h3 class="grid-item--1x1--label">Find us on Facebook</h3>
+						<i class="fa fa-facebook" aria-hidden="true"></i>
+						<h3 class="grid-item--1x1--label">Facebook</h3>
 					</div>
-				</div><div class="grid-item grid-item--1x1 wow fadeInUp">
+				</a><a href="#" class="grid-item grid-item--2x1 wow fadeInUp grid-item--twitter">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-twitter" aria-hidden="true"></i>
 					</div>
-				</div><div class="grid-item grid-item--4x2 wow fadeInUp">
+				</a><a href="#" class="grid-item grid-item--4x2 wow fadeInUp">
 					<div class="grid-item__wrapper">
 						<div class="grid-item--4x2--content">
 							<h3>Use this tile style for LG exhibitions</h3>
 						</div>
 					</div>
-				</div><div class="grid-item grid-item--1x1 wow fadeInUp">
-					<div class="grid-item__wrapper">
-						<i class="fa fa-twitter" aria-hidden="true"></i>
-					</div>
-				</div><div class="grid-item grid-item--4x2 wow fadeInUp">
+				</a><a href="#" class="grid-item grid-item--4x2 wow fadeInUp">
 					<div class="grid-item__wrapper">
 						<p class="grid-item--4x2--label"><span>Current Exhibit</span></p>
 						<div class="grid-item--4x2--content">
@@ -89,32 +86,37 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 							<p>Each story recalls an experience that has left an impression—one of happiness or tragedy, of humour, or of insight. Collectively these myriad diverse stories give us meaning, through which our personal, family, and community identities are formed.</p>
 						</div>
 					</div>
-				</div><div class="grid-item grid-item--2x1 wow fadeInUp">
+				</a><a href="#" class="grid-item grid-item--2x1 wow fadeInUp">
 					<div class="grid-item__wrapper">
 						<h3 class="grid-item--2x1--label">Long news/ event/ article/ headline goes here, posted from the blog</h3>
 					</div>
-				</div><div class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp">
+				</a><a href="http://twitter.com/LGLizDowdeswell" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp grid-item--twitter grid-item--social-link">
 					<div class="grid-item__wrapper">
-						<h3 class="grid-item--1x1--label">Find us on Twitter</h3>
+						<i class="fa fa-twitter" aria-hidden="true"></i>
+						<h3 class="grid-item--1x1--label">Twitter</h3>
 					</div>
-				</div><div class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
+				</a><a href="#" class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
 					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label">Invite The LG</h3> </div>
-				</div><div class="grid-item grid-item--2x1 wow fadeInUp">
+				</a><a href="#" class="grid-item grid-item--2x1 wow fadeInUp">
 					<div class="grid-item__wrapper">
 						<h3 class="grid-item--2x1--label">Long news/event/article/headline goes here, posted from the blog</h3>
 					</div>
-				</div><div class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
+				</a><a href="#" class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
 					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label">Nominate someone for an award</h3> </div>
-				</div><div class="grid-item grid-item--2x2 wow fadeInUp">
+				</a><a href="#" class="grid-item grid-item--2x2 wow fadeInUp">
 					<div class="grid-item--overlay"></div>
 					<div class="grid-item__wrapper">
 						<h3 class="grid-item--2x2--label">Use this tile style for blog posts with a picture.</h3>
 					</div>
-				</div>
+				</a>
 			</div>
 
 			<div class="load-more-container">
-				<a align="center" href="#" class="btn btn--accent">More news & events</a>
+				<a align="center" href="<?php if(ICL_LANGUAGE_CODE=='fr'){
+						echo esc_url( get_permalink(478) );
+					} else { 
+						echo esc_url( get_permalink(353) );
+					} ?>" class="btn btn--accent">More news & events</a>
 			</div>
 
 		</div> <!-- End of RP inner -->

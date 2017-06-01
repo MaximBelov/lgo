@@ -1,0 +1,112 @@
+/* Admin Page CSS */
+
+.twitter-importer p, .twitter-importer .form-table {
+	width: auto;
+	max-width: 660px;
+}
+.twitter-importer .form-table {
+	margin-top: 0;
+	background: transparent;
+	border-collapse: separate;
+	border-spacing: 0 10px;
+}
+.twitter-importer .form-table th {
+	width: 410px;
+	padding: 10px;
+	font-weight: normal;
+}
+.twitter-importer .form-table td {
+	max-width: 230px;
+	margin-bottom: 9px;
+	padding: 8px 10px;
+	line-height: 1.666666667em;
+
+}
+.twitter-importer .form-table th, .twitter-importer .form-table td {
+	background: #E8F0F3;
+}
+.twitter-importer .form-table tr {
+	background: #E8F0F3;
+	border: none;
+	border-bottom: 10px solid #fff;
+}
+.twitter-importer .form-table tr.info {
+	background: transparent;
+	border: none;
+	border-bottom: 10px solid #fff;
+}
+.twitter-importer .form-table tr.info th {
+	padding: 0;
+}
+.twitter-importer .form-table tr.info th, .twitter-importer .form-table tr.info td {
+	background: transparent;
+	border-bottom: 1px solid transparent;
+}
+
+
+#contextual-help-wrap {
+	min-height: 236px;
+}
+#contextual-help-back {
+	right: 220px;
+}
+.contextual-help-sidebar {
+	width: 200px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.contextual-help-tabs h2 {
+	padding-left: 12px;
+}
+#screen-options-link-wrap, #contextual-help-link-wrap, #screen-meta {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+}
+#screen-meta {
+	margin: 10px 15px 0 5px;
+	border-width: 1px;
+	border-style: solid;
+}
+.contextual-help-tabs-wrap {
+	position: relative;
+	padding: 0 220px 0 20px;
+}
+
+.jtsocial a {
+	display: block;
+	margin-bottom: 10px;
+	text-align: right;
+	font-size: 90%;
+}
+.jtsocial a span {
+	background: url(../images/social.png) no-repeat top left;
+	display: inline-block;
+	width: 64px;
+	height: 64px;
+	vertical-align: middle;
+	margin: 0 8px 0 5px;
+}
+.jtsocial .jtemail span {
+	background-position: -64px 0;
+}
+.jtsocial .jttwitter span {
+	background-position: -128px 0;
+}
+
+.submit {
+	padding-top: 5px;
+}
+.dw-pw-form {
+	position: absolute;
+	bottom: 28px;
+	left: 85px;
+}
+
+.atsymbol {
+	font-size: 15px;
+	vertical-align: middle;
+	color: #E0522E;
+}
