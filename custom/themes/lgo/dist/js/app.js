@@ -896,13 +896,6 @@ jQuery(document).ready(function($) {
 
     // LAYOUT-BASED CODE 
 
-    // $('.masonry-grid').masonry({
-    //   // options
-    //   itemSelector: '.grid-item',
-    //   columnWidth: 130,
-    //   horizontalOrder: true
-    // });
-
     $(".slim-nav-transition").hover(
       function () {
         $( ".full-width-panel" ).addClass("full-width-panel--pushed");
@@ -944,13 +937,6 @@ jQuery(document).ready(function($) {
 
     // MENU-BASED CODE
 
-    // if($('li.current_page_item.menu-item-has-children')) {
-    //   $('li.current_page_item').
-    //   console.log('hey');
-    // } else {
-
-    // }
-
     $('.menu-after-dots').click(function(){
       $(this).next('ul').toggleClass( "open-dropdown" );
     });
@@ -973,29 +959,6 @@ jQuery(document).ready(function($) {
       $( ".left-panel__navigation" ).toggleClass( "open-navigation" );
     });
 
-      // $('.nav-trigger').keypress(function(e){
-      //   if(e.which == 13){//Enter key pressed
-      //       $( ".navbar-fixed" ).toggleClass( "nav-menu-open" );
-      //       $( "body" ).toggleClass( "no-scroll" );
-      //       $(this).toggleClass('open');
-      //   }
-      // });
-
-      // $('.menu-after-dots').click(function(){
-      //   if ($('body').hasClass('no-scroll')) {
-      //         $('#menu-main-menu >li ul').removeClass('active-menu-screen');
-      //         $(this).next('ul').toggleClass('active-menu-screen');
-      //   }
-      // });
-
-      // $('.menu-after-dots').keypress(function(e){
-      //     if(e.which == 13){//Enter key pressed
-      //         if ($('body').hasClass('no-scroll')) {
-      //             $(this).next('ul').slideToggle();
-      //         }
-      //     }
-      // });
-
     // SCROLL-BASED CODE
     var sections = $('.child-page')
       nav = $('.current-menu-item')
@@ -1005,27 +968,6 @@ jQuery(document).ready(function($) {
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
     $(window).scroll(function() {
-
-      // Change NAV active item CSS on scroll
-      if( $('.parent-page-layout').length ) {
-        var cur_pos = $(this).scrollTop();
-        sections.each(function() {
-          var top = $(this).offset().top - 200,
-            bottom = top + $(this).outerHeight() - (h/2);
-
-          if (cur_pos >= top && cur_pos <= bottom) {
-            // console.log($(this).attr('id'));
-            nav.find('a').removeClass('menu-item-active');
-            sections.removeClass('menu-item-active');
-
-            $(this).addClass('menu-item-active');
-            nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
-            var theBG = $(this).attr('data-child-bg');
-            // console.log(theBG);
-            $('.left-compartment__bg').css({'backgroundImage': 'url('+theBG+')'});
-          }
-        });
-      }
 
       //Nav logo change color on scroll
       var scrollPos = $(window).scrollTop(),

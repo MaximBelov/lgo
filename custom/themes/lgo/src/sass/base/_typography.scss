@@ -256,7 +256,8 @@ nav {
     }
 }
 
-nav #menu-main-menu {
+nav #menu-main-menu,
+nav #menu-menu-principal {
     .menu-item-active {
       color: $white;
       font-weight: bold;
@@ -274,10 +275,11 @@ nav #menu-main-menu {
         >ul {
             margin: 10px 0 10px 10px;
             >li {
-                // margin: 0 0 5px;
-                >a {
+                padding: 3px 0;
+                >a,
+                >a span {
                     font-size: 16px;
-                    // line-height: 20px;
+                    line-height: 14px;
                     font-weight: 500;
                 }
                 >ul {

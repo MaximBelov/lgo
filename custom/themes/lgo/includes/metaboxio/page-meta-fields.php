@@ -18,6 +18,11 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	           'name' => __( 'Subheading', 'textdomain' ),
 	           'type' => 'wysiwyg',
 	        ),
+	        array(
+	           'id'   => $prefix . 'banner_sidebar_bg',
+	           'name' => __( 'Sidebar Background', 'textdomain' ),
+	           'type' => 'file_input',
+	        ),
 	    ),
 	);
 

@@ -148,7 +148,8 @@ nav {
   }
 }
 
-#menu-main-menu {
+#menu-main-menu,
+#menu-menu-principal {
   padding: 0;
   padding-left: 20px;
   >li {
@@ -192,25 +193,25 @@ nav {
 }
 
 .menu-item-has-children.current-menu-parent {
-  > ul {
-    opacity: 1;
-    visibility: visible;
-    position: static;
-    li {
-      display: block;
-      float: none;
-      >ul {
-        padding-bottom: 10px;
-      }
-    }
-    li.current_page_item {
-      >ul {
-        opacity: 1;
-        visibility: visible;
-        position: static;
-      }
-    }
-  }
+  // > ul {
+  //   opacity: 1;
+  //   visibility: visible;
+  //   position: static;
+  //   li {
+  //     display: block;
+  //     float: none;
+  //     >ul {
+  //       padding-bottom: 10px;
+  //     }
+  //   }
+  //   li.current_page_item {
+  //     >ul {
+  //       opacity: 1;
+  //       visibility: visible;
+  //       position: static;
+  //     }
+  //   }
+  // }
 }
 
 .menu-item-has-children {
