@@ -215,6 +215,10 @@ function searchwp_set_setting( $setting, $value, $group = false ) {
 		// it's an indexer setting
 		$indexer_settings = get_option( SEARCHWP_PREFIX . 'indexer' );
 
+		if ( ! is_array( $indexer_settings ) ) {
+			$indexer_settings = array();
+		}
+
 		// set the setting locally and in the singleton
 		if ( false !== $group ) {
 			// make sure the group exists

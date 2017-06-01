@@ -1,3 +1,20 @@
+### 2.8.9
+- **[Fix]** Fix PHP Fatal Error with `$wp_query`
+- **[Fix]** Fix regression introduced in 2.8.8 that prevented admin searches from working properly in some cases
+
+### 2.8.8
+- **[New]** New filter `searchwp_pre_set_post` allowing for filtration of each post object prior to indexing
+- **[Fix]** Better interoperation with Widgets
+- **[Fix]** Prevent double search logs in certain cases
+- **[Fix]** Properly cancel native search SQL when performing admin search (props Jim)
+- **[Fix]** Repaired application of 'Remove all traces' feature on Advanced settings page
+- **[Fix]** Fixed an issue where incorrect total results counts were logged
+- **[Improvement]** PHP Warning cleanup
+- **[Improvement]** Better accommodation for customization during import routines
+- **[Improvement]** Better accommodation of engine configuration and exclusions when performing AND logic pass
+- **[Change]** Update to `SWP_Query`: `post__in` and `post__not_in` parameters are now explicit (previously behaved like hooks)
+- **[Update]** Updated updater
+
 ### 2.8.7
 - **[Fix]** Fixed missing tooltip content
 - **[Improvement]** Using `searchwp_admin_bar` now applies to search modification notices

@@ -3,7 +3,7 @@
 Plugin Name: SearchWP
 Plugin URI: https://searchwp.com/
 Description: The best WordPress search you can find
-Version: 2.8.7
+Version: 2.8.9
 Author: SearchWP, LLC
 Author URI: https://searchwp.com/
 Text Domain: searchwp
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SEARCHWP_VERSION', '2.8.7' );
+define( 'SEARCHWP_VERSION', '2.8.9' );
 define( 'SEARCHWP_PREFIX', 'searchwp_' );
 define( 'SEARCHWP_DBPREFIX', 'swp_' );
 define( 'SEARCHWP_EDD_STORE_URL', 'https://searchwp.com' );
@@ -392,17 +392,6 @@ class SearchWP {
 			self::$instance = new SearchWP;
 			self::$instance->init();
 
-			// we want to purge a post from the index when comments are manipulated
-			add_action( 'comment_post',   array( self::$instance, 'purge_post_via_comment' ) );
-			add_action( 'edit_comment',   array( self::$instance, 'purge_post_via_comment' ) );
-			add_action( 'trash_comment',  array( self::$instance, 'purge_post_via_comment' ) );
-			add_action( 'delete_comment', array( self::$instance, 'purge_post_via_comment' ) );
-
-			add_action( 'delete_attachment', array( self::$instance, 'purge_post_via_edit' ), 999 );
-
-			// purge a post from the index when a related term is deleted
-			add_action( 'set_object_terms', array( self::$instance, 'purge_post_via_term' ), 10, 6 );
-
 			// process the purge queue once everything is said and done
 			add_action( 'shutdown', array( self::$instance, 'setup_purge_queue' ) );
 
@@ -470,6 +459,12 @@ class SearchWP {
 
 		// append our indexer-specific settings since they're stored separately
 		if ( $indexer_settings = get_option( SEARCHWP_PREFIX . 'indexer' ) ) {
+
+			if ( ! is_array( $indexer_settings ) ) {
+				$this->trigger_forced_indexer_chunk();
+				$indexer_settings = get_option( SEARCHWP_PREFIX . 'indexer' );
+			}
+
 			$this->settings = array_merge( $this->settings, $indexer_settings );
 		}
 
@@ -498,7 +493,7 @@ class SearchWP {
 		add_action( 'pre_get_posts',                array( $this, 'check_for_main_query' ), 0 );
 		add_action( 'pre_get_posts',                array( $this, 'impose_engine_config' ), 20 );
 		add_filter( 'the_posts',                    array( $this, 'wp_search' ), 0, 2 );
-		add_filter( 'posts_request',                array( $this, 'maybe_cancel_wp_query' ) );
+		add_filter( 'posts_request',                array( $this, 'maybe_cancel_wp_query' ), 10, 2 );
 		add_action( 'add_meta_boxes',               array( $this, 'document_content_meta_box' ) );
 		add_action( 'edit_attachment',              array( $this, 'document_content_save' ) );
 		add_action( 'wp_before_admin_bar_render',   array( $this, 'admin_bar_menu' ) );
@@ -737,7 +732,13 @@ class SearchWP {
 	 * @since 1.8
 	 */
 	function set_index_update_triggers() {
-		// index update triggers
+
+		$prevent_triggers = searchwp_get_option( 'prevent_delta_triggers' );
+		if ( ! empty( $prevent_triggers ) ) {
+			do_action( 'searchwp_log', 'Skipping index update triggers' );
+			return;
+		}
+
 		if ( is_admin() && current_user_can( 'edit_posts' ) ) {
 			add_action( 'save_post', array( $this, 'purge_post_via_edit' ), 999 );
 			add_action( 'add_attachment', array( $this, 'purge_post_via_edit' ), 999 );
@@ -751,6 +752,17 @@ class SearchWP {
 		} elseif ( is_admin() ) {
 			do_action( 'searchwp_log', 'User cannot delete_posts, delta hooks omitted' );
 		}
+
+		// we want to purge a post from the index when comments are manipulated
+		add_action( 'comment_post',   array( $this, 'purge_post_via_comment' ) );
+		add_action( 'edit_comment',   array( $this, 'purge_post_via_comment' ) );
+		add_action( 'trash_comment',  array( $this, 'purge_post_via_comment' ) );
+		add_action( 'delete_comment', array( $this, 'purge_post_via_comment' ) );
+
+		add_action( 'delete_attachment', array( $this, 'purge_post_via_edit' ), 999 );
+
+		// purge a post from the index when a related term is deleted
+		add_action( 'set_object_terms', array( $this, 'purge_post_via_term' ), 10, 6 );
 	}
 
 
@@ -1480,12 +1492,6 @@ if ( is_array( $diagnostics['posts'] ) && isset( $diagnostics['posts'][0] ) ) {
 				do_action( 'searchwp_log', 'check_for_main_query(): It is the main query' );
 			}
 			$this->isMainQuery = true;
-
-			// plugin compat
-			if ( $query->is_search() ) {
-				do_action( 'searchwp_log', 'It is a search' );
-				remove_filter( 'pre_get_posts', 'CPTO_pre_get_posts' );   // Post Types Order
-			}
 		}
 
 		return $query;
@@ -1963,11 +1969,11 @@ if ( is_array( $diagnostics['posts'] ) && isset( $diagnostics['posts'][0] ) ) {
 	 * @return bool|string
 	 * @since 1.1.2
 	 */
-	function maybe_cancel_wp_query( $query ) {
+	function maybe_cancel_wp_query( $sql, $query ) {
 		global $wpdb, $wp_query;
 
-		if ( empty( $wp_query ) ) {
-			return $query;
+		if ( empty( $query ) || empty( $wp_query ) ) {
+			return $sql;
 		}
 
 		$proceedIfInAdmin = apply_filters( 'searchwp_in_admin', false );
@@ -1985,15 +1991,15 @@ if ( is_array( $diagnostics['posts'] ) && isset( $diagnostics['posts'][0] ) ) {
 				)
 				&& ! is_feed()
 				&& is_search()
-				&& $this->isMainQuery
+				&& $query->is_main_query()
 			)
 		) {
 			// prevent the original search query from running with something that has the least impact
-			$query = "SELECT * FROM $wpdb->posts WHERE 1=0";
+			$sql = "SELECT * FROM $wpdb->posts WHERE 1=0";
 			do_action( 'searchwp_log', 'maybe_cancel_wp_query() canceled the query ' );
 		}
 
-		return $query;
+		return $sql;
 	}
 
 
@@ -2198,6 +2204,26 @@ if ( is_array( $diagnostics['posts'] ) && isset( $diagnostics['posts'][0] ) ) {
 	 */
 	function wp_search( $posts ) {
 		global $wp_query;
+
+		// Short circuit if it's not the main query
+        // The main query check is a bit weird, returns a false positive if in Widget context
+        // so that's why we're checking both. On the other hand if you have admin searches enabled
+        // and manually enter in a page number in Media, our main query check fails. Check both.
+        // TODO: this logic check is ridiculous
+        if (
+                ! is_admin() &&
+                (
+                    (
+                        'object' === strtolower( gettype( $wp_query ) )
+                        && method_exists( $wp_query, 'is_main_query' )
+                        && ! $wp_query->is_main_query()
+                    )
+                    || ! $this->isMainQuery
+                )
+                && ! $this->force_run
+                ) {
+            return $posts;
+        }
 
 		if ( ! $this->force_run ) {
 			// make sure we're not in the admin, that we are searching, that it is the main query, and that SearchWP is not active
@@ -2633,7 +2659,10 @@ if ( is_array( $diagnostics['posts'] ) && isset( $diagnostics['posts'][0] ) ) {
 		$wpdb->delete( $wpdb->prefix . 'postmeta', array( 'meta_key' => '_' . SEARCHWP_PREFIX . 'skip_doc_processing' ) );
 		$wpdb->delete( $wpdb->prefix . 'postmeta', array( 'meta_key' => '_' . SEARCHWP_PREFIX . 'review' ) );
 
-		if ( apply_filters( 'searchwp_purge_pdf_content', false ) ) {
+		// Don't use this filter anymore, use searchwp_purge_document_content
+		$_legacy_purge_pdf_content = apply_filters( 'searchwp_purge_pdf_content', false );
+
+		if ( apply_filters( 'searchwp_purge_document_content', $_legacy_purge_pdf_content, array() ) ) {
 			$wpdb->delete( $wpdb->prefix . 'postmeta', array( 'meta_key' => SEARCHWP_PREFIX . 'content' ) );
 		}
 		$wpdb->delete( $wpdb->prefix . 'postmeta', array( 'meta_key' => SEARCHWP_PREFIX . 'pdf_metadata' ) );
@@ -3483,6 +3512,52 @@ if ( is_array( $diagnostics['posts'] ) && isset( $diagnostics['posts'][0] ) ) {
 		}
 	}
 
+	/**
+     *
+     * !!!!!!!!!!!!!!!!!! NOT USABLE AT THIS TIME
+	 * Purge a post from the index when its metadata is edited
+	 *
+	 * @param $meta_id
+	 * @param $object_id
+	 * @param $meta_key
+	 * @param $_meta_value
+	 *
+	 * @return void
+	 */
+	private function _purge_post_via_update_post_metadata( $meta_id, $object_id, $meta_key, $_meta_value ) {
+
+	    if ( true ) {
+		    return;
+	    }
+
+	    // There are certain meta keys we don't want to consider, else we'd be constantly purging posts
+		if ( in_array( $meta_key, array(
+			'_edit_lock',
+			'_edit_last',
+			'_wp_old_slug',
+		) ) ) {
+		    return;
+	    }
+
+	    // Prevent redundancy; this hook is fired for each meta record for a post
+		remove_filter( 'update_post_metadata', array( $this, 'purge_post_via_update_post_metadata' ), 999, 5 );
+
+	    // Extracted document content is a special case
+		if ( apply_filters( 'searchwp_purge_document_content', false, array( 'post_id' => $object_id ) ) ) {
+			delete_post_meta( $object_id, SEARCHWP_PREFIX . 'content' );
+			delete_post_meta( $object_id, SEARCHWP_PREFIX . 'pdf_metadata' );
+		}
+
+		// We need to manually force the purge of this post because many times shutdown is not fired
+		if ( ! isset( $this->purgeQueue[ $object_id ] ) ) {
+			$this->purgeQueue[ $object_id ] = $object_id;
+			do_action( 'searchwp_log', 'purge_post_via_edit_meta() ' . $object_id );
+			$this->setup_purge_queue();
+		}
+
+		return;
+	}
+
 
 	/**
 	 * Removes all record of a post and it's content from the index and triggers a reindex
@@ -3510,6 +3585,11 @@ if ( is_array( $diagnostics['posts'] ) && isset( $diagnostics['posts'][0] ) ) {
 		delete_post_meta( $post_id, '_' . SEARCHWP_PREFIX . 'skip' );
 		delete_post_meta( $post_id, '_' . SEARCHWP_PREFIX . 'review' );
 		delete_post_meta( $post_id, '_' . SEARCHWP_PREFIX . 'terms' );
+
+		if ( apply_filters( 'searchwp_purge_document_content', false, array( 'post_id' => $post_id ) ) ) {
+			delete_post_meta( $post_id, '_' . SEARCHWP_PREFIX . 'content' );
+			delete_post_meta( $post_id, '_' . SEARCHWP_PREFIX . 'pdf_metadata' );
+		}
 
 		return true;
 	}

@@ -411,7 +411,7 @@ class SearchWPIndexer {
 	 * @since 1.0
 	 */
 	function set_post( $post ) {
-		$this->post = $post;
+		$this->post = apply_filters( 'searchwp_pre_set_post', $post );
 
 		// append Custom Field data
 		$this->post->custom = get_post_custom( $post->ID );

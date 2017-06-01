@@ -16,8 +16,15 @@ function searchwp_maybe_nuke() {
 	global $wpdb;
 
 	// maybe nuke all data and settings
-	$swp_live_settings = get_option( SEARCHWP_PREFIX . 'settings' );
-	$swp_nuke_on_delete = isset( $swp_live_settings['nuke_on_delete'] ) ? $swp_live_settings['nuke_on_delete'] : false;
+	$swp_live_settings = searchwp_get_option( 'advanced' );
+	$swp_nuke_on_delete = isset( $swp_live_settings['nuke_on_delete'] ) && ! empty( $swp_live_settings['nuke_on_delete'] );
+
+	// Check for legacy nuke on delete option
+	if ( empty( $swp_nuke_on_delete ) ) {
+		$swp_live_settings = get_option( SEARCHWP_PREFIX . 'settings' );
+		$swp_nuke_on_delete = isset( $swp_live_settings['nuke_on_delete'] ) ? $swp_live_settings['nuke_on_delete'] : false;
+	}
+
 	$swp_multisite = is_multisite() && function_exists( 'get_current_site' ) ? get_current_site() : null;
 
 	if ( ! empty( $swp_nuke_on_delete ) || get_option( SEARCHWP_PREFIX . 'nuke_on_delete' ) || apply_filters( 'searchwp_nuke_on_delete', false, $swp_multisite ) ) {

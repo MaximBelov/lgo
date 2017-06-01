@@ -376,8 +376,15 @@ class SWP_Query {
 	 */
 	function searchwp_include( $ids, $engine, /** @noinspection PhpUnusedParameterInspection */ $terms ) {
 		if ( $this->engine === $engine && ! empty( $this->post__in ) && is_array( $this->post__in ) ) {
-			$ids = array_merge( $ids, $this->post__in );
-			$ids = array_unique( $ids );
+
+			// Assume post__in overrides other filters expicitly
+			if ( apply_filters( 'searchwp_swp_query_post__in_explicit', true ) ) {
+				$ids = $this->post__in;
+			} else {
+				$ids = array_merge( $ids, $this->post__in );
+				$ids = array_unique( $ids );
+			}
+
 		}
 
 		return $ids;
@@ -432,8 +439,15 @@ class SWP_Query {
 	 */
 	function searchwp_exclude( $ids, $engine, /** @noinspection PhpUnusedParameterInspection */ $terms ) {
 		if ( $this->engine === $engine && ! empty( $this->post__not_in ) && is_array( $this->post__not_in ) ) {
-			$ids = array_merge( $ids, $this->post__not_in );
-			$ids = array_unique( $ids );
+
+			// Assume post__not_in overrides other filters expicitly
+			if ( apply_filters( 'searchwp_swp_query_post__not_in_explicit', true ) ) {
+				$ids = $this->post__not_in;
+			} else {
+				$ids = array_merge( $ids, $this->post__not_in );
+				$ids = array_unique( $ids );
+			}
+
 		}
 
 		return $ids;

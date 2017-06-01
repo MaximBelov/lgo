@@ -327,7 +327,7 @@ class SearchWPSearch {
 				$this->posts = $this->query();
 
 				// log this
-				if ( ! empty( $pre_search_original_terms ) && apply_filters( 'searchwp_log_search', true, $engine, $pre_search_original_terms, count( $this->posts ) ) ) {
+				if ( ! empty( $pre_search_original_terms ) && apply_filters( 'searchwp_log_search', true, $engine, $pre_search_original_terms, absint( $this->foundPosts ) ) ) {
 
 					$pre_search_original_terms = sanitize_text_field( $pre_search_original_terms );
 					$pre_search_original_terms = trim( $pre_search_original_terms );
@@ -344,7 +344,7 @@ class SearchWPSearch {
 							array(
 								'event'    => 'search',
 								'query'    => $pre_search_original_terms,
-								'hits'     => count( $this->posts ),
+								'hits'     => absint( $this->foundPosts ),
 								'engine'   => $engine,
 								'wpsearch' => 0,
 							),
@@ -642,6 +642,56 @@ class SearchWPSearch {
 	private function get_and_fields() {
 		// allow devs to filter which fields should be included for AND checks
 		$andFieldsDefaults = array( 'title', 'content', 'slug', 'excerpt', 'comment', 'tax', 'meta' );
+
+		// If we're doing a search any default AND field has a weight of zero, it doesn't apply
+		if ( did_action( 'searchwp_before_query_index' ) ) {
+			foreach ( $andFieldsDefaults as $key => $val ) {
+				foreach ( $this->settings['engines'][ $this->engine ] as $engine_post_type => $post_type_settings ) {
+
+					// If the post type is enabled, it doesn't matter
+					if ( empty( $post_type_settings['enabled'] ) ) {
+						continue;
+					}
+
+					switch ( $val ) {
+						case 'title':
+						case 'content':
+						case 'slug':
+						case 'excerpt':
+						case 'comment':
+							if ( empty( $post_type_settings['weights'][ $val ] ) ) {
+								unset( $andFieldsDefaults[ $key ] );
+							}
+							break;
+
+						// If all the taxonomies are zero, remove this
+						case 'tax':
+						    if ( isset( $post_type_settings['weights'][ $val ] ) && ! empty( $post_type_settings['weights'][ $val ] ) ) {
+							    $enabled_taxonomies = array_filter( $post_type_settings['weights'][ $val ] );
+							    if ( empty( $enabled_taxonomies ) ) {
+								    unset( $andFieldsDefaults[ $key ] );
+							    }
+						    }
+							break;
+
+						case 'meta':
+							$engine_custom_fields = isset( $post_type_settings['weights']['cf'] ) ? $post_type_settings['weights']['cf'] : false;
+							if ( empty( $engine_custom_fields ) ) {
+								unset( $andFieldsDefaults[ $key ] );
+								break;
+							}
+
+							// If Custom Fields were added but with a zero weight?
+							$weighted_engine_custom_fields = wp_list_pluck( $engine_custom_fields, 'weight' );
+							if ( empty( $weighted_engine_custom_fields ) ) {
+								unset( $andFieldsDefaults[ $key ] );
+							}
+							break;
+					}
+				}
+			}
+		}
+
 		$andFields = apply_filters( 'searchwp_and_fields', $andFieldsDefaults );
 
 		// validate AND fields
@@ -649,7 +699,7 @@ class SearchWPSearch {
 			$strtolower_function = function_exists( 'mb_strtolower' ) ? 'mb_strtolower' : 'strtolower';
 			$andFields = array_map( $strtolower_function, $andFields );
 			foreach ( $andFields as $andFieldKey => $andField ) {
-				if ( ! in_array( $andField, $andFieldsDefaults ) ) {
+				if ( ! in_array( $andField, $andFieldsDefaults, true ) ) {
 					// invalid field, kill it
 					unset( $andFields[ $andFieldKey ] );
 				}
@@ -808,6 +858,9 @@ class SearchWPSearch {
 		if ( is_array( $postsWithTermPresent ) && ! empty( $postsWithTermPresent ) ) {
 			$postsWithTermPresent = array_unique( $postsWithTermPresent );
 		}
+
+		// Make sure to take into account excluded IDs
+        $postsWithTermPresent = array_diff( $postsWithTermPresent, $this->excluded );
 
 		return $postsWithTermPresent;
 	}
@@ -1914,17 +1967,19 @@ class SearchWPSearch {
 			return false;
 		}
 
+		// allow devs to filter excluded IDs
+		$this->excluded = apply_filters( 'searchwp_exclude', $this->excluded, $this->engine, $this->terms );
+		if ( is_array( $this->excluded ) ) {
+			$this->excluded = array_map( 'absint', $this->excluded );
+		}
+
 		// perform our AND logic before getting started
 		// e.g. we're going to limit to posts that have all of the search terms
 		$this->maybe_do_and_logic();
 
 		$this->exclude_posts_by_weight();
 
-		// allow devs to filter excluded IDs
-		$this->excluded = apply_filters( 'searchwp_exclude', $this->excluded, $this->engine, $this->terms );
-		if ( is_array( $this->excluded ) ) {
-			$this->excluded = array_map( 'absint', $this->excluded );
-		}
+		// Build exclusion SQL
 		$this->sql_exclude = ( ! empty( $this->excluded ) ) ? " AND {$wpdb->prefix}posts.ID NOT IN (" . implode( ',', $this->excluded ) . ') ' : '';
 
 		// if there's an insane number of posts returned, we're dealing with a site with a lot of similar content

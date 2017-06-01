@@ -53,7 +53,7 @@ class SearchWP_Settings_Implementation_License {
 		if ( ( false !== $searchwp->license && '' !== $searchwp->license ) && 'valid' !== $searchwp->status ) : ?>
 			<div id="setting-error-settings_updated" class="error settings-error updated notice">
 				<p><?php echo wp_kses( __( 'A license key was found, but it is <strong>inactive</strong>. Automatic updates <em>will not be available</em> until your license is activated.', 'searchwp' ), array( 'strong' => array(), 'em' => array() ) ); ?> <a href="<?php echo esc_url( add_query_arg( array( 'page' => 'searchwp', 'tab' => 'license' ), admin_url( 'options-general.php' ) ) ); ?>"><?php esc_html_e( 'Manage License', 'searchwp' ); ?> &raquo;</a></p>
-				<p><?php echo wp_kses( sprintf( __( 'Having trouble activating your license? Please see <a href="%s">this KB article &raquo;</a>' , 'searchwp' ), 'https://searchwp.com/?p=29213' ), array( 'a', array( 'href' => array() ) ) ); ?></p>
+				<p><?php echo wp_kses( sprintf( __( 'Having trouble activating your license? Please see <a href="%s">this KB article &raquo;</a>' , 'searchwp' ), 'https://searchwp.com/?p=29213' ), array( 'a' => array( 'href' => array() ) ) ); ?></p>
 			</div>
 		<?php endif;
 	}
