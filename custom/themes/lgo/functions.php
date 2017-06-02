@@ -25,6 +25,6 @@ require_once('includes/functions/add-language-class.php');
 require_once('includes/metaboxio/page-meta-fields.php');
 require_once('includes/metaboxio/lg-meta-fields.php');
 // Adds General Settings Fields
-// require_once('includes/functions/add-settings.php');
+require_once('includes/functions/add-settings.php');
 
 ?>

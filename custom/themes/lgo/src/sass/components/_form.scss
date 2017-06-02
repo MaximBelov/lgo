@@ -19,16 +19,16 @@
       border-bottom: 2px solid rgba(255,255,255,0.3);
       color: $white;
       transition: all 0.5s ease;
-      width: 0;
-      opacity: 0;
+      // width: 0;
+      // opacity: 0;
       &::placeholder {
         color: $white;
       }
-      &:focus {
-        width: auto;
-        opacity: 1;
-        outline: none;
-      }
+      // &:focus {
+      //   width: auto;
+      //   opacity: 1;
+      //   outline: none;
+      // }
     }
     #searchsubmit {
       color: $white;
