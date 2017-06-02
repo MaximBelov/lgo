@@ -8,8 +8,8 @@
     <div class="dark-overlay"></div>
     <div class="right-compartment">
         
-        <div class="single-page__content">
-        <h5>Search - <?php echo $wp_query->found_posts; ?> <?php _e( 'results for', 'locale' ); ?>: "<?php the_search_query(); ?>"</h5>
+        <div class="single-page__content search-results-page">
+        <h1 class="search-result-text">Search - <?php echo $wp_query->found_posts; ?> <?php _e( 'results for', 'locale' ); ?>: "<?php the_search_query(); ?>"</h1>
         <?php // Loop starts
         $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
         $s = get_search_query();
@@ -23,8 +23,10 @@
 
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-        <h4><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
-        <p><?php echo wp_trim_words( get_the_content(), 30, '...' );?><a href="<?php the_permalink(); ?>">read more</a></p>
+        <div class="search-results__single">
+            <h2><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+            <p><?php echo wp_trim_words( get_the_content(), 30, '...' );?><a href="<?php the_permalink(); ?>" class="read-more-link"><i class="fa fa-link" aria-hidden="true"></i></a></p>
+        </div>
     
     <?php endwhile; else: ?>
 
@@ -34,6 +36,7 @@
     <?php endif;  ?>
 
     <?php //pagination(); ?>
+    <div class="search-pagination"><?php echo paginate_links( $args ); ?></div>
 
         </div>
         

@@ -8,11 +8,28 @@ $heading   = rwmb_meta( 'rw_banner_heading' );
 $subhead   = rwmb_meta( 'rw_banner_subheading' );
 
 $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+$sidebar   = rwmb_meta( 'rw_banner_sidebar_bg' );
+
+$random = rand(1,5);
+if ($random == 1) {
+    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+} else if ($random == 2) {
+    $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+} else if ($random == 3) {
+    $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+} else if ($random == 4) {
+    $imgPath = '/src/images/banners/banner_staircase.jpg';
+} else if ($random == 5) {
+    $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+} else {
+    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+}
+
 ?>
 
 <?php get_template_part( 'template-part-nav' ); ?>
 
-<div id="scroll-header" class="top-page-panel parent-template" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().'/src/images/background_default.svg'; } ?>);">
+<div id="scroll-header" class="top-page-panel parent-template" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);">
 	<div class="grad-overlay"></div>
 	<div class="container">
 		<div>
@@ -35,7 +52,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 </div>
 
 <div id="skip-to-content" class="scroll-panel page-panel page__bg__fixed <?php if (is_page_template( 'template-parent-page.php')) { echo 'parent-page-layout'; }?>">
-	<div class="left-compartment__bg" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().'/src/images/background_default.svg'; } ?>);">
+	<div class="left-compartment__bg" style="background-image: url(<?php if ($sidebar) { ?><?php echo $sidebar; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);">
 	</div>
 	<div class="dark-overlay"></div>
 	<div class="right-compartment">
