@@ -80,6 +80,7 @@ button {
         padding: 5px;
         background: $main-accent;
         color: $white;
+        font-size: 14px;
         &:hover {
             color: $main-accent;
             border: 2px solid $main-accent;
@@ -87,7 +88,7 @@ button {
         }
         @media #{$medium-and-up} {
           position: absolute;
-          bottom: 0px;
+          bottom: -40px;
           left: 25px;
         }
     }
