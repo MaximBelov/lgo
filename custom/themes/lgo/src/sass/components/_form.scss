@@ -73,3 +73,38 @@ form {
         box-shadow: none;
     }
 }
+
+.left-panel__navigation.slim-nav-transition.compress-slim-nav,
+.left-panel__navigation.slim-nav-transition-static.compress-slim-nav {
+  .site-wide-search {
+    margin-left: 20px;
+    form {
+      input[type=text] {
+        border: none;
+        background: transparent;
+        border-bottom: 2px solid $main-accent-trans;
+        color: $slim-nav-links;
+        transition: all 0.5s ease;
+        width: 0;
+        opacity: 0;
+        &::placeholder {
+          color: $slim-nav-links;
+        }
+        &:focus {
+          width: auto;
+          opacity: 1;
+          outline: none;
+        }
+      }
+      #searchsubmit {
+        color: $slim-nav-links;
+        margin-left: 5px;
+      }
+      #search-trigger,
+      #search-trigger i {
+        color: $slim-nav-links;
+      }
+    }
+  }
+  
+}
