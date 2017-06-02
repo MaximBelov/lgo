@@ -816,6 +816,17 @@ jQuery(document).ready(function($) {
 
     $('.js-accordion').accordion();
 
+    $('#search-trigger').click(
+      function(event) {
+        event.preventDefault();
+        $('#s').focus();
+      }
+    );
+
+    $('#search-trigger').on('focus', function(e){
+      $('#s').focus();
+    });
+
     // Smooth Scroll
     $('a[href*="#"]')
       // Remove links that don't actually link to anything

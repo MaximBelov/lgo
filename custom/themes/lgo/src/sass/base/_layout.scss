@@ -144,6 +144,7 @@ footer.page-footer {
     min-height: 100vh;
     // overflow-y: scroll;
     // padding: 100px;
+    padding-bottom: 50px;
   }
 }
 
@@ -153,7 +154,7 @@ footer.page-footer {
 .parent-page-content {
   padding: 20px;
   @media #{$large-and-up} { 
-    padding: 50px 100px 60px;
+    padding: 50px 100px 0px;
   }
   iframe {
     @media #{$small-and-down} {

@@ -27,7 +27,7 @@
         </svg>
         <span>MENU</span>
     </div>
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="Logo. Links to home page."> 
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="Official Emblem/L'écu Officiel" title="Official Emblem/L'écu Officiel"> 
         <?php get_template_part( 'template-part-logo' ); ?>
     </a>
     <div class="translation-widget">

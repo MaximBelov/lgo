@@ -1,3 +1,10 @@
+#search-placeholder-text {
+  font-family: $sans-serif-font;
+  text-transform: uppercase;
+  // color: rgba(255,255,255,0.7);
+  color: $white;
+}
+
 .site-wide-search {
   margin-left: 20px;
   form {
@@ -9,10 +16,18 @@
     input[type=text] {
       border: none;
       background: transparent;
-      border-bottom: 2px solid $white;
+      border-bottom: 2px solid rgba(255,255,255,0.3);
       color: $white;
+      transition: all 0.5s ease;
+      width: 0;
+      opacity: 0;
       &::placeholder {
         color: $white;
+      }
+      &:focus {
+        width: auto;
+        opacity: 1;
+        outline: none;
       }
     }
     #searchsubmit {

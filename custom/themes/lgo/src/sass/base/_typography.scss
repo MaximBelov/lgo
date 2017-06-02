@@ -123,6 +123,7 @@ abbr[title] {
         @media #{$medium-and-up} {
           font-size: 60px;
           line-height: 70px;
+          // margin-top: 0;
         }
     }
     .child-page-content >*:first-child {
