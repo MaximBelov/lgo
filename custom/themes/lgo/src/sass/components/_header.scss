@@ -87,6 +87,9 @@
 			padding: 15% 0% 5%;
 			@media #{$medium-and-up} {
 			    padding: 10% 10% 5%;
+			    p {
+			    	padding: 0 15%;
+			    }
 			}
 		}
 	}
