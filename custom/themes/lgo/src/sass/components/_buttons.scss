@@ -56,6 +56,29 @@ button {
     }
 }
 
+.top-page-panel.splash-page {
+    .splash-page-buttons {
+        .btn.splash-page__en {
+            @media #{$medium-and-up} {
+              margin-right: 10px;
+            }
+        }
+        .btn.splash-page__fr {
+            @media #{$medium-and-up} {
+              margin-left: 10px;
+            }
+        }
+        .btn.splash-page__fr,
+        .btn.splash-page__en {
+            &:hover {
+                color: $main-accent;
+                background: $white;
+                border: 2px solid $white;
+            }
+        }
+    }
+}
+
 .child-page {
     position: relative;
     #edit-child-section {
