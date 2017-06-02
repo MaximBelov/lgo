@@ -27,3 +27,34 @@ figure.staff {
 		height: auto;
 	}
 }
+
+.splash-page__logo {
+	#nav-logo {
+		margin: 0;
+		margin-bottom: 30px;
+	}
+}
+
+.top-page-panel.splash-page .splash-section__EN,
+.top-page-panel.splash-page .splash-section__FR {
+	@media #{$medium-and-up} {
+	  display: inline-block;
+	  width: 49%;
+	  h1 {
+	  	font-size: 30px;
+	  	line-height: 40px;
+	  }
+	}
+}
+
+.top-page-panel.splash-page .splash-section__EN {
+	@media #{$medium-and-up} {
+	  border-right: 1px solid $white;
+	}
+}
+
+.top-page-panel.splash-page .splash-section__FR {
+	@media #{$medium-and-up} {
+	  border-left: 1px solid $white;
+	}
+}

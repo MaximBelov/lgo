@@ -23,19 +23,30 @@ if ($random == 1) {
     $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
 }
 
-$subhead   = rwmb_meta( 'rw_banner_subheading' );
+$subhead   	= rwmb_meta( 'rw_banner_subheading' );
+$eng   		= rwmb_meta( 'rw_splash_en_heading' );
+$engCopy   	= rwmb_meta( 'rw_splash_en_copy' );
+$fr   		= rwmb_meta( 'rw_splash_fr_heading' );
+$frCopy   	= rwmb_meta( 'rw_splash_fr_copy' );
 ?>
 
 <section class="splash-page top-page-panel" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);">
 	<div class="grad-overlay"></div>
 	<div class="container">
 		<div>
-			<?php get_template_part( 'template-part-logo' ); ?>
-			<h1><?php if($heading) { echo $heading; } else {echo get_the_title();} ?></h1>
-			<div class="separator"></div>
-			<div class="splash-page-buttons">
-				<a href="/en" class="btn splash-page__en">English</a>
-				<a href="/fr" class="btn splash-page__fr">FRANÇAIS</a>
+			<div class="splash-page__logo"><?php get_template_part( 'template-part-logo' ); ?></div>
+			<div class="splash-section__EN">
+				<h1><?php if($eng) { echo $eng; } else {echo get_the_title();} ?></h1>
+				<p><?php echo $engCopy;?></p>
+				<div class="splash-page-buttons">
+					<a href="/en" class="btn splash-page__en">English</a>
+				</div>
+			</div><div class="splash-section__FR">
+				<h1><?php if($fr) { echo $fr; } else {echo get_the_title();} ?></h1>
+				<p><?php echo $frCopy;?></p>
+				<div class="splash-page-buttons">
+					<a href="/fr" class="btn splash-page__fr">FRANÇAIS</a>
+				</div>
 			</div>
 		</div>
 	</div>

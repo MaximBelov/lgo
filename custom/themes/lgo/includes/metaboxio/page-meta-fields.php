@@ -7,6 +7,10 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	$meta_boxes[] = array(
 	    'title'      => __( 'Banner', 'textdomain' ),
 	    'post_types' => array( 'page'),
+	    'exclude' => array(
+	    	'relation'        => 'OR',
+	    	'template'        => array( 'template-splash-page.php' ),
+	    ),
 	    'fields' => array(
 	        array(
 	           'id'   => $prefix . 'banner_heading',
@@ -27,8 +31,44 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	);
 
 	$meta_boxes[] = array(
+		'title'   => 'Welcome Page Options',
+		'post_types' => array( 'page'),
+		'include' => array(
+			'relation'        => 'OR',
+			'template'        => array( 'template-splash-page.php' ),
+		),
+
+		'fields' => array(
+			array(
+			   'id'   => $prefix . 'splash_en_heading',
+			   'name' => __( 'EN Heading', 'textdomain' ),
+			   'type' => 'text',
+			),
+			array(
+			   'id'   => $prefix . 'splash_en_copy',
+			   'name' => __( 'EN Copy', 'textdomain' ),
+			   'type' => 'wysiwyg',
+			),
+			array(
+			   'id'   => $prefix . 'splash_fr_heading',
+			   'name' => __( 'FR Heading', 'textdomain' ),
+			   'type' => 'text',
+			),
+			array(
+			   'id'   => $prefix . 'splash_fr_copy',
+			   'name' => __( 'FR Copy', 'textdomain' ),
+			   'type' => 'wysiwyg',
+			)
+		),
+	);
+
+	$meta_boxes[] = array(
 		'title'  => __( 'More Info - Accordion Format' ),
 		'post_types' => array('page', 'post' ),
+		'exclude' => array(
+			'relation'        => 'OR',
+			'template'        => array( 'template-splash-page.php' ),
+		),
 		'fields' => array(
 			array(
 				'id'     => 'accordion_content',
@@ -57,6 +97,10 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	$meta_boxes[] = array(
 		'title'  => __( 'Photo/Content Slider' ),
 		'post_types' => array('page', 'post'),
+		'exclude' => array(
+			'relation'        => 'OR',
+			'template'        => array( 'template-splash-page.php' ),
+		),
 		'fields' => array(
 			array(
 				'id'     => 'slider_content',
@@ -90,6 +134,10 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	$meta_boxes[] = array(
 		'title'  => __( 'Call to Action Section' ),
 		'post_types' => array('page' ),
+		'exclude' => array(
+			'relation'        => 'OR',
+			'template'        => array( 'template-splash-page.php' ),
+		),
 		'fields' => array(
 			array(
 			   'id'   => $prefix . 'cta_blurb',
@@ -123,6 +171,10 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	$meta_boxes[] = array(
         'title'      => __( 'Extra', 'textdomain' ),
         'post_types' => array( 'page'),
+        'exclude' => array(
+			'relation'        => 'OR',
+			'template'        => array( 'template-splash-page.php' ),
+		),
         'context'    => 'normal',
         'priority'   => '',
         'fields' => array(

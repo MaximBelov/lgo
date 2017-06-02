@@ -58,6 +58,7 @@ button {
 
 .top-page-panel.splash-page {
     .splash-page-buttons {
+        margin-top: 30px;
         .btn.splash-page__en {
             @media #{$medium-and-up} {
               margin-right: 10px;
