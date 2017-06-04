@@ -304,3 +304,9 @@ nav {
 div#main-menu-ww::-webkit-scrollbar {
   display: none;
 }
+
+div#main-menu-ww {
+  -ms-overflow-style: none;
+}
+
+
