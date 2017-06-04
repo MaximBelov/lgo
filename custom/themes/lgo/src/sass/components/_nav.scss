@@ -300,3 +300,7 @@ nav {
     padding: 0 3px;
   }
 }
+
+div#main-menu-ww::-webkit-scrollbar {
+  display: none;
+}
