@@ -13,8 +13,8 @@ require_once('includes/functions/custom-admin-branding.php');
 // require_once('includes/functions/remove-menu-id.php');
 // require_once('includes/functions/remove-wp-version.php');
 require_once('includes/functions/grabfirstimage.php');
-require_once('includes/functions/TwitterAPIExchange.php');
-require_once('includes/functions/social-feed.php');
+// require_once('includes/functions/TwitterAPIExchange.php');
+// require_once('includes/functions/social-feed.php');
 // Adds Modification Column to Page admin
 require_once('includes/functions/add-admin-columns.php');
 // Adds Buttons to Admin Toolbar

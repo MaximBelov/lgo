@@ -37,6 +37,31 @@
   }
 }
 
+.left-panel__navigation.slim-nav-transition.compress-slim-nav nav ,
+.left-panel__navigation.slim-nav-transition-static.compress-slim-nav nav {
+  .site-wide-search {
+    form {
+      input[type=text] {
+        border: none;
+        background: transparent;
+        border-bottom: 2px solid $main-accent-trans;
+        color: $main-accent;
+        transition: all 0.5s ease;
+        &::placeholder {
+          color: $main-accent;
+        }
+      }
+      i {
+        color: $main-accent;
+      }
+      #searchsubmit {
+        color: $main-accent;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
 form {
    .input-field label {
       color: darken($white, 10);
@@ -74,37 +99,37 @@ form {
     }
 }
 
-.left-panel__navigation.slim-nav-transition.compress-slim-nav,
-.left-panel__navigation.slim-nav-transition-static.compress-slim-nav {
-  .site-wide-search {
-    margin-left: 20px;
-    form {
-      input[type=text] {
-        border: none;
-        background: transparent;
-        border-bottom: 2px solid $main-accent-trans;
-        color: $slim-nav-links;
-        transition: all 0.5s ease;
-        width: 0;
-        opacity: 0;
-        &::placeholder {
-          color: $slim-nav-links;
-        }
-        &:focus {
-          width: auto;
-          opacity: 1;
-          outline: none;
-        }
-      }
-      #searchsubmit {
-        color: $slim-nav-links;
-        margin-left: 5px;
-      }
-      #search-trigger,
-      #search-trigger i {
-        color: $slim-nav-links;
-      }
-    }
-  }
+// .left-panel__navigation.slim-nav-transition.compress-slim-nav,
+// .left-panel__navigation.slim-nav-transition-static.compress-slim-nav {
+//   .site-wide-search {
+//     margin-left: 20px;
+//     form {
+//       input[type=text] {
+//         border: none;
+//         background: transparent;
+//         border-bottom: 2px solid $main-accent-trans;
+//         color: $slim-nav-links;
+//         transition: all 0.5s ease;
+//         width: 0;
+//         opacity: 0;
+//         &::placeholder {
+//           color: $slim-nav-links;
+//         }
+//         &:focus {
+//           width: auto;
+//           opacity: 1;
+//           outline: none;
+//         }
+//       }
+//       #searchsubmit {
+//         color: $slim-nav-links;
+//         margin-left: 5px;
+//       }
+//       #search-trigger,
+//       #search-trigger i {
+//         color: $slim-nav-links;
+//       }
+//     }
+//   }
   
-}
+// }

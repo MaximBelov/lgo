@@ -8,6 +8,21 @@ $heading   = rwmb_meta( 'rw_banner_heading' );
 $subhead   = rwmb_meta( 'rw_banner_subheading' );
 
 $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+
+if(get_option('lgo_option_name')){
+    $options = get_option( 'lgo_option_name' );
+} else {
+	$options = array(
+		"lgo_twitter" => "twitterusername",
+		"lgo_facebook" => "facebooklink",
+		"lgo_instagram" => "instagramusername",
+		"lgo_youtube" => "youtubelink"
+	);
+}
+$twitter = $options['lgo_twitter'];
+$facebook = $options['lgo_facebook'];
+$instagram = $options['lgo_instagram'];
+$youtube = $options['lgo_youtube'];
 ?>
 
 <?php get_template_part( 'template-part-nav-transition' ); ?>
@@ -39,7 +54,6 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 	<div> <!-- Start of RP -->
 		<div class="full-width-inner-wrapper"> <!-- Start of RP inner -->
 			<!-- <h2>Ontario's Storyteller in chief</h2> -->
-			
 			<div class="masonry-grid">
 				<a href="#" class="grid-item grid-item--4x2 wow fadeInUp">
 					<div class="grid-item__wrapper">
@@ -68,11 +82,40 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ban
 						<i class="fa fa-facebook" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Facebook</h3>
 					</div>
-				</a><a href="#" class="grid-item grid-item--2x1 wow fadeInUp grid-item--twitter">
-					<div class="grid-item__wrapper">
-						<i class="fa fa-twitter" aria-hidden="true"></i>
-					</div>
-				</a><a href="#" class="grid-item grid-item--4x2 wow fadeInUp">
+				</a>
+				<?php 
+				// the Twitter query
+				$args = array(
+					'post_type' => 'tweet',
+					'posts_per_page' => 1,
+					// 'nopaging' => true
+				);
+				$the_query = new WP_Query( $args ); ?>
+
+				<?php if ( $the_query->have_posts() ) : ?>
+
+					<!-- pagination here -->
+
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
+					?>
+						<a href="https://twitter.com/LGLizDowdeswell/status/<?php echo $tweetURL;?>" class="grid-item grid-item--2x1 wow fadeInUp grid-item--twitter">
+							<div class="grid-item__wrapper">
+								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</div>
+						</a>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+
+					<!-- pagination here -->
+
+					<?php wp_reset_postdata(); ?>
+
+				<?php else : ?>
+				<?php endif; ?>
+				<a href="#" class="grid-item grid-item--4x2 wow fadeInUp">
 					<div class="grid-item__wrapper">
 						<div class="grid-item--4x2--content">
 							<h3>Use this tile style for LG exhibitions</h3>
