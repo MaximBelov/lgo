@@ -3,7 +3,7 @@
 <?php get_template_part( 'template-part-nav' ); ?>
 
 <?php if(have_posts()): while(have_posts()): the_post(); 
-$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); 
 
 $cta_copy   = rwmb_meta( 'rw_cta_blurb' );
 $cta_btns   = rwmb_meta( 'cta' );
