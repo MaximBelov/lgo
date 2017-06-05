@@ -45,6 +45,20 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 			   'type' => 'post',
 			   'post_type' => 'page',
 			   'field_type' => 'select'
+			),
+			array(
+			   'id'   => $prefix . 'featured_page_2',
+			   'name' => __( 'Featured Page #2', 'textdomain' ),
+			   'type' => 'post',
+			   'post_type' => 'page',
+			   'field_type' => 'select'
+			),
+			array(
+			   'id'   => $prefix . 'featured_page_3',
+			   'name' => __( 'Featured Page #3', 'textdomain' ),
+			   'type' => 'post',
+			   'post_type' => 'page',
+			   'field_type' => 'select'
 			)
 		),
 	);
