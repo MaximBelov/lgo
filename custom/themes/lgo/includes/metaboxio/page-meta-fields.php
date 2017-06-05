@@ -31,7 +31,26 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	);
 
 	$meta_boxes[] = array(
-		'title'   => 'Home Page Options',
+		'title'   => 'Home Feed Posts/Pages',
+		'post_types' => array( 'page'),
+		'include' => array(
+			'relation'        => 'OR',
+			'template'        => array( 'template-home.php' ),
+		),
+
+		'fields' => array(
+			array(
+			   'id'   => $prefix . 'featured_page_1',
+			   'name' => __( 'Featured Page #1', 'textdomain' ),
+			   'type' => 'post',
+			   'post_type' => 'page',
+			   'field_type' => 'select'
+			)
+		),
+	);
+
+	$meta_boxes[] = array(
+		'title'   => 'Home Feed CTAs',
 		'post_types' => array( 'page'),
 		'include' => array(
 			'relation'        => 'OR',

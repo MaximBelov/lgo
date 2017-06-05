@@ -24,6 +24,10 @@ $facebook = $options['lgo_facebook'];
 $instagram = $options['lgo_instagram'];
 $youtube = $options['lgo_youtube'];
 
+$feat1 = rwmb_meta( 'rw_featured_page_1' );
+// $feat1ID = $feat1[0];
+// print_r($feat1);
+
 $cta1 = rwmb_meta( 'rw_cta_1_title' );
 $cta2 = rwmb_meta( 'rw_cta_2_title' );
 $cta3 = rwmb_meta( 'rw_cta_3_title' );
@@ -69,15 +73,50 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 							<h3>Use this tile style for featured static content</h3>
 						</div>
 					</div>
-				</a><a href="#" class="grid-item grid-item--4x2 wow fadeInUp">
-					<div class="grid-item__wrapper">
-						<p class="grid-item--4x2--label"><span>About</span></p>
-						<div class="grid-item--4x2--content">
-							<h3>Areas of Focus</h3>
-							<p>Blurb about Her Honour’s special focus. 5-8 words. (this is a hover preview)</p>
-						</div>
-					</div>
 				</a>
+				<?php 
+				$args = array( 
+					'page_id' => $feat1
+				);
+				// the query
+				$the_query = new WP_Query( $args ); ?>
+
+				<?php if ( $the_query->have_posts() ) : ?>
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					$random = rand(1,5);
+
+					if ($random == 1) {
+					    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+					} else if ($random == 2) {
+					    $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+					} else if ($random == 3) {
+					    $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+					} else if ($random == 4) {
+					    $imgPath = '/src/images/banners/banner_staircase.jpg';
+					} else if ($random == 5) {
+					    $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+					} else {
+					    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+					}
+					?>
+						<a href="#" class="grid-item grid-item--4x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+							<div class="grid-item--overlay"></div>
+							<div class="grid-item__wrapper">
+								<p class="grid-item--4x2--label"><span>About</span></p>
+								<div class="grid-item--4x2--content">
+									<h3><?php the_title();?></h3>
+									<p><?php the_excerpt();?></p>
+								</div>
+							</div>
+						</a>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+					<?php wp_reset_postdata(); ?>
+
+				<?php else : ?>
+				<?php endif; ?>
 				<?php
 					$args = array( 
 						'post_type' => 'post',
