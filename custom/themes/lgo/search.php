@@ -25,7 +25,10 @@ if ($random == 1) {
     <div class="right-compartment">
         
         <div class="single-page__content search-results-page">
-        <h1 class="search-result-text">Search - <?php echo $wp_query->found_posts; ?> <?php _e( 'results for', 'locale' ); ?>: "<?php the_search_query(); ?>"</h1>
+        <h1 class="search-result-text"><?php echo $wp_query->found_posts; ?> 
+            <?php 
+            if(ICL_LANGUAGE_CODE=='fr'){ $resultTXT = 'résultats pour'; } else { echo 'results for'; }
+            _e( $resultTXT, 'locale' ); ?>: "<?php the_search_query(); ?>"</h1>
         <?php // Loop starts
         $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
         $s = get_search_query();

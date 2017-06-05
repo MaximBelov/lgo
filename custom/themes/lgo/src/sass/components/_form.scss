@@ -99,37 +99,37 @@ form {
     }
 }
 
-// .left-panel__navigation.slim-nav-transition.compress-slim-nav,
-// .left-panel__navigation.slim-nav-transition-static.compress-slim-nav {
-//   .site-wide-search {
-//     margin-left: 20px;
-//     form {
-//       input[type=text] {
-//         border: none;
-//         background: transparent;
-//         border-bottom: 2px solid $main-accent-trans;
-//         color: $slim-nav-links;
-//         transition: all 0.5s ease;
-//         width: 0;
-//         opacity: 0;
-//         &::placeholder {
-//           color: $slim-nav-links;
-//         }
-//         &:focus {
-//           width: auto;
-//           opacity: 1;
-//           outline: none;
-//         }
-//       }
-//       #searchsubmit {
-//         color: $slim-nav-links;
-//         margin-left: 5px;
-//       }
-//       #search-trigger,
-//       #search-trigger i {
-//         color: $slim-nav-links;
-//       }
-//     }
-//   }
-  
-// }
+.gform_wrapper {
+  .gfield.gsection {
+    margin-top: 0;
+  }
+  label {
+    // font-family: $sans-serif-font;
+  }
+  input[type=email],
+  input[type=text],
+  textarea {
+    border: 1px solid lighten($black, 70);
+    box-shadow: none;
+  }
+  input[type=submit] {
+    color: $white;
+    text-transform: uppercase;
+    display: inline-block;
+    font-family: $sans-serif-font;
+    border: 2px solid $main-accent;
+    border-radius: 4px;
+    padding: 15px 20px;
+    background: $white;
+    color: $main-accent;
+    &:hover {
+        color: $white;
+        background: $main-accent;
+        border: 2px solid $main-accent;
+    }
+  }
+}
+
+
+
+

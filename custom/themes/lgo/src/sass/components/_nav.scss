@@ -193,25 +193,35 @@ nav {
 }
 
 .menu-item-has-children.current-menu-parent {
-  // > ul {
-  //   opacity: 1;
-  //   visibility: visible;
-  //   position: static;
-  //   li {
-  //     display: block;
-  //     float: none;
-  //     >ul {
-  //       padding-bottom: 10px;
-  //     }
-  //   }
-  //   li.current_page_item {
-  //     >ul {
-  //       opacity: 1;
-  //       visibility: visible;
-  //       position: static;
-  //     }
-  //   }
-  // }
+  > ul {
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    li {
+      display: block;
+      float: none;
+      // margin-bottom: 8px;
+      a {
+        // background: rgba(255,255,255,0.8);
+        // color: $main-accent;
+        // padding: 3px 8px;
+      }
+      >ul {
+        padding-bottom: 10px;
+      }
+    }
+    li.current_page_item {
+      a span {
+        font-weight: bold !important;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+      }
+      >ul {
+        opacity: 1;
+        visibility: visible;
+        position: static;
+      }
+    }
+  }
 }
 
 .menu-item-has-children {

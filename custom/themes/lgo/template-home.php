@@ -343,11 +343,14 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 			</div>
 
 			<div class="load-more-container">
-				<a align="center" href="<?php if(ICL_LANGUAGE_CODE=='fr'){
+				<a align="center" href="<?php 
+					if(ICL_LANGUAGE_CODE=='fr'){
 						echo esc_url( get_permalink(478) );
+						$moretext = "Plus d'activités";
 					} else { 
 						echo esc_url( get_permalink(353) );
-					} ?>" class="btn btn--accent">More news & events</a>
+						$moretext = 'More news & events';
+					} ?>" class="btn btn--accent"><?php echo $moretext;?></a>
 			</div>
 
 		</div> <!-- End of RP inner -->

@@ -488,7 +488,7 @@ h3.grid-item--2x2--label {
 .grid-item--1x1 {
   // background: rgba(0,0,0,0.1);
   border: 1px solid $white;
-  width: 48%;
+  width: 49.4%;
   height: 150px;
   @media #{$large-and-up} {
     width: 16.4%;
@@ -529,14 +529,20 @@ h3.grid-item--2x2--label {
 .grid-item.grid-item--social-link {
   .grid-item__wrapper {
     i {
-      position: absolute;
-      right: auto;
-      left: 15px;
-      bottom: 50px;
       font-size: 50px;
+      @media #{$large-and-up} {
+        position: absolute;
+        right: auto;
+        left: 15px;
+        bottom: 50px;
+        font-size: 50px;
+      }
     }
     h3 {
       color: $white;
+      @media #{$small-and-down} {
+        margin-top: 0;
+      }
     }
   }
 }
