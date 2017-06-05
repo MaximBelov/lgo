@@ -101,7 +101,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
 					}
 					?>
-						<a href="#" class="grid-item grid-item--4x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--4x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--4x2--label"><span>About</span></p>
