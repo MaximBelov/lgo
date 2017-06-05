@@ -7,7 +7,7 @@ get_header();
 $heading   = rwmb_meta( 'rw_banner_heading' );
 $subhead   = rwmb_meta( 'rw_banner_subheading' );
 
-$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); 
 $sidebar   = rwmb_meta( 'rw_banner_sidebar_bg' );
 $accordions = rwmb_meta( 'accordion_content' );
 

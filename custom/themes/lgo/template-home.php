@@ -7,7 +7,7 @@ get_header();
 $heading   = rwmb_meta( 'rw_banner_heading' );
 $subhead   = rwmb_meta( 'rw_banner_subheading' );
 
-$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); 
 
 if(get_option('lgo_option_name')){
     $options = get_option( 'lgo_option_name' );
