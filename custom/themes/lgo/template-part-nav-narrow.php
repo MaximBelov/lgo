@@ -45,6 +45,7 @@
             ?> 
             <div class="site-wide-search"><?php get_search_form(); ?></div>
             <?php get_template_part( 'template-part-nav-social' ); ?>
+            <footer class="navigation-footer">© Queen's Printer for Ontario, 2017</footer>
         </div>
     </nav>
 </div>
