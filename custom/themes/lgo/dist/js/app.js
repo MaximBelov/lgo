@@ -992,10 +992,10 @@ jQuery(document).ready(function($) {
 
       // SHRINK LOGO
       if (scrollPos > (100)) {
-          navbar.addClass('change-logo-size');
+          // navbar.addClass('change-logo-size');
           slimNav.addClass('compress-slim-nav');
       } else {
-          navbar.removeClass('change-logo-size');
+          // navbar.removeClass('change-logo-size');
           slimNav.removeClass('compress-slim-nav');
       }
 

@@ -1,9 +1,29 @@
 footer {
-	background: grey;
-	padding: 30px;
-	margin-top: 50px;
 }
 
 .mini-footer {
 	
+}
+
+footer.navigation-footer {
+	margin-top: 15px;
+	color: $white;
+	margin-left: 20px;
+	font-size: 12px;
+	font-family: $sans-serif-font;
+	text-transform: uppercase;
+	opacity: 0.7;
+	position: absolute;
+	bottom: 80px;
+	z-index: 6000000;
+}
+
+.left-panel__navigation.slim-nav-transition.compress-slim-nav,
+.left-panel__navigation.slim-nav-transition-static.compress-slim-nav {
+	footer.navigation-footer {
+		color: $main-accent;
+		// bottom: 80px;
+		position: relative;
+		bottom: 0;
+	}
 }

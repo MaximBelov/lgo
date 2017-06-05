@@ -9,6 +9,7 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 
 $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
 $sidebar   = rwmb_meta( 'rw_banner_sidebar_bg' );
+$accordions = rwmb_meta( 'accordion_content' );
 
 $random = rand(1,5);
 if ($random == 1) {
@@ -58,7 +59,7 @@ if ($random == 1) {
 	<div class="right-compartment">
 
 		<?php
-		if( '' !== get_post()->post_content ) { ?>
+		if( '' !== get_post()->post_content || ! empty( $accordions) ) { ?>
 			<div class="parent-page-content">
 			<?php the_content(); ?>
 

@@ -34,13 +34,13 @@ a.skip-to:hover {
 
 .left-panel__navigation {
   position: fixed;
-  width: 310px;
+  width: 280px;
   height: 100vh;
   padding: 15px 20px 50px 20px;
   z-index: 1000;
   @media #{$small-and-down} {
     display: none;
-  }
+  } 
   @media print {
     display: none;
   }
@@ -69,7 +69,7 @@ a.skip-to:hover {
 .left-panel__navigation.slim-nav-transition.compress-slim-nav,
 .left-panel__navigation.slim-nav-transition-static.compress-slim-nav {
   background: $black;
-  transform: translateX(-310px);
+  transform: translateX(-285px);
   // &:hover {
   //   transform: translateX(0);
   //   background: $white;
@@ -82,6 +82,10 @@ a.skip-to:hover {
   //     opacity: 0;
   //   }
   // }
+
+  .nav-holder {
+    position: relative;
+  }
 
   nav {
     transition: all 0.7s ease;
@@ -129,6 +133,9 @@ a.skip-to:hover {
 nav {
   background: transparent;
   box-shadow: none;
+  min-height: 350px;
+  max-height: 400px;
+  overflow: scroll;
   li {
     display: block;
     float: none !important;
