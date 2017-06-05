@@ -41,7 +41,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 
 <?php get_template_part( 'template-part-nav-transition' ); ?>
 
-<div id="skip-to-content" class="top-page-panel home-template" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } ?>);">
+<div id="skip-to-content" class="top-page-panel home-template" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } ?>);background-position: center center;">
 	<div class="grad-overlay"></div>
 	<div class="container">
 		<div>

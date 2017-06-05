@@ -358,7 +358,8 @@ footer.page-footer {
     width: 66%;
     transition: all 0.5s ease;
     overflow:hidden;
-    &:hover .grid-item--4x2--content{
+    &:hover .grid-item--4x2--content,
+    &:focus .grid-item--4x2--content {
       h3 {
         position: relative;
       }
@@ -426,7 +427,8 @@ footer.page-footer {
   border: 1px solid $white;
   width: 100%;
   height: 150px;
-  &:hover {
+  &:hover,
+  &:focus {
     background: darken(#4A4A4A, 5);
   }
   @media #{$large-and-up} {
@@ -495,7 +497,8 @@ h3.grid-item--2x2--label {
 
 .grid-item.grid-item--accent {
   background: $main-accent;
-  &:hover {
+  &:hover,
+  &:focus {
     background: darken($main-accent, 5);
   }
 }
@@ -509,14 +512,16 @@ h3.grid-item--2x2--label {
 
 .grid-item.grid-item--facebook {
   background: $facebook-blue;
-  &:hover {
+  &:hover,
+  &:focus {
     background: darken($facebook-blue, 5);
   }
 }
 
 .grid-item.grid-item--twitter {
   background: $twitter-blue;
-  &:hover {
+  &:hover,
+  &:focus {
     background: darken($twitter-blue, 5);
   }
 }
