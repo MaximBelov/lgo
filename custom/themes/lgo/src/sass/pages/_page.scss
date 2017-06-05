@@ -28,6 +28,15 @@ figure.staff {
 	}
 }
 
+figure.staff.staff--center {
+	margin: 0 auto;
+	display: block;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
 .splash-page__logo {
 	#nav-logo {
 		margin: 0;
