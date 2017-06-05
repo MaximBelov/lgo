@@ -31,6 +31,48 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	);
 
 	$meta_boxes[] = array(
+		'title'   => 'Home Page Options',
+		'post_types' => array( 'page'),
+		'include' => array(
+			'relation'        => 'OR',
+			'template'        => array( 'template-home.php' ),
+		),
+
+		'fields' => array(
+			array(
+			   'id'   => $prefix . 'cta_1_title',
+			   'name' => __( 'CTA #1 Title', 'textdomain' ),
+			   'type' => 'text',
+			),
+			array(
+			   'id'   => $prefix . 'cta_1_link',
+			   'name' => __( 'CTA #1 Link', 'textdomain' ),
+			   'type' => 'text',
+			),
+			array(
+			   'id'   => $prefix . 'cta_2_title',
+			   'name' => __( 'CTA #2 Title', 'textdomain' ),
+			   'type' => 'text',
+			),
+			array(
+			   'id'   => $prefix . 'cta_1_link',
+			   'name' => __( 'CTA #2 Link', 'textdomain' ),
+			   'type' => 'text',
+			),
+			array(
+			   'id'   => $prefix . 'cta_3_title',
+			   'name' => __( 'CTA #3 Title', 'textdomain' ),
+			   'type' => 'text',
+			),
+			array(
+			   'id'   => $prefix . 'cta_3_link',
+			   'name' => __( 'CTA #3 Link', 'textdomain' ),
+			   'type' => 'text',
+			)
+		),
+	);
+
+	$meta_boxes[] = array(
 		'title'   => 'Welcome Page Options',
 		'post_types' => array( 'page'),
 		'include' => array(

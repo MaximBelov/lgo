@@ -45,7 +45,55 @@ $twitter = $options['lgo_twitter'];
 		<div class="full-width-inner-wrapper"> <!-- Start of RP inner -->
 			
 			<div class="masonry-grid" id="activities-feed">
+				<?php 
+				// the Post query
+				$args = array(
+					'post_type' => array('post'),
+					'posts_per_page' => 30,
+					// 'nopaging' => true
+				);
+				$the_query = new WP_Query( $args ); ?>
 
+				<?php if ( $the_query->have_posts() ) : ?>
+
+					<!-- pagination here -->
+
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
+						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+						$random = rand(1,5);
+
+						if ($random == 1) {
+						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+						} else if ($random == 2) {
+						    $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+						} else if ($random == 3) {
+						    $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+						} else if ($random == 4) {
+						    $imgPath = '/src/images/banners/banner_staircase.jpg';
+						} else if ($random == 5) {
+						    $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+						} else {
+						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+						}
+					?>
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);">
+							<div class="grid-item--overlay"></div>
+							<div class="grid-item__wrapper">
+								<h3 class="grid-item--2x2--label"><?php the_title();?></h3>
+							</div>
+						</a>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+
+					<!-- pagination here -->
+
+					<?php wp_reset_postdata(); ?>
+
+				<?php else : ?>
+					<!-- <p><?php //_e( 'Sorry, no posts matched your criteria.' ); ?></p> -->
+				<?php endif; ?>
 				<?php 
 				// the Twitter query
 				$args = array(
@@ -63,7 +111,7 @@ $twitter = $options['lgo_twitter'];
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
 					?>
-						<a href="https://twitter.com/LGLizDowdeswell/status/<?php echo $tweetURL;?>" class="grid-item grid-item--2x1 wow fadeInUp grid-item--twitter">
+						<a href="https://twitter.com/LGLizDowdeswell/status/<?php echo $tweetURL;?>" target="_blank" class="grid-item grid-item--2x1 wow fadeInUp grid-item--twitter">
 							<div class="grid-item__wrapper">
 								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 								<i class="fa fa-twitter" aria-hidden="true"></i>

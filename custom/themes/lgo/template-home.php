@@ -23,6 +23,14 @@ $twitter = $options['lgo_twitter'];
 $facebook = $options['lgo_facebook'];
 $instagram = $options['lgo_instagram'];
 $youtube = $options['lgo_youtube'];
+
+$cta1 = rwmb_meta( 'rw_cta_1_title' );
+$cta2 = rwmb_meta( 'rw_cta_2_title' );
+$cta3 = rwmb_meta( 'rw_cta_3_title' );
+$cta1L = rwmb_meta( 'rw_cta_1_link' );
+$cta2L = rwmb_meta( 'rw_cta_2_link' );
+$cta3L = rwmb_meta( 'rw_cta_3_link' );
+
 ?>
 
 <?php get_template_part( 'template-part-nav-transition' ); ?>
@@ -69,13 +77,28 @@ $youtube = $options['lgo_youtube'];
 							<p>Blurb about Her Honour’s special focus. 5-8 words. (this is a hover preview)</p>
 						</div>
 					</div>
-				</a><a href="#" class="grid-item grid-item--2x1 wow fadeInUp">
+				</a>
+				<?php
+					$args = array( 
+						'post_type' => 'post',
+						'numberposts' => '1', 
+						'suppress_filters' => false,
+						'post_status' => 'publish'
+					);
+					$recent_posts = wp_get_recent_posts( $args );
+					foreach( $recent_posts as $recent ){
+					$postTitle = get_the_title($recent['ID']); ?>
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1 wow fadeInUp">
+							<div class="grid-item__wrapper">
+								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
+							</div>
+						</a>
+					<?php }
+					wp_reset_query();
+				?>
+				<a href="<?php echo $cta1L;?>" class="grid-item grid-item--1x1 grid-item grid-item--accent wow fadeInUp">
 					<div class="grid-item__wrapper">
-						<h3 class="grid-item--2x1--label">Use this tile style for blog posts with no picture.</h3>
-					</div>
-				</a><a href="#" class="grid-item grid-item--1x1 grid-item grid-item--accent wow fadeInUp">
-					<div class="grid-item__wrapper">
-						<h3 class="grid-item--1x1--label">Book a tour</h3>
+						<h3 class="grid-item--1x1--label"><?php echo $cta1;?></h3>
 					</div>
 				</a><a href="http://facebook.com/LGLizDowdeswell" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp grid-item--facebook grid-item--social-link">
 					<div class="grid-item__wrapper">
@@ -100,7 +123,7 @@ $youtube = $options['lgo_youtube'];
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
 					?>
-						<a href="https://twitter.com/LGLizDowdeswell/status/<?php echo $tweetURL;?>" class="grid-item grid-item--2x1 wow fadeInUp grid-item--twitter">
+						<a href="https://twitter.com/LGLizDowdeswell/status/<?php echo $tweetURL;?>" target="_blank" class="grid-item grid-item--2x1 wow fadeInUp grid-item--twitter">
 							<div class="grid-item__wrapper">
 								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 								<i class="fa fa-twitter" aria-hidden="true"></i>
@@ -129,29 +152,61 @@ $youtube = $options['lgo_youtube'];
 							<p>Each story recalls an experience that has left an impression—one of happiness or tragedy, of humour, or of insight. Collectively these myriad diverse stories give us meaning, through which our personal, family, and community identities are formed.</p>
 						</div>
 					</div>
-				</a><a href="#" class="grid-item grid-item--2x1 wow fadeInUp">
-					<div class="grid-item__wrapper">
-						<h3 class="grid-item--2x1--label">Long news/ event/ article/ headline goes here, posted from the blog</h3>
-					</div>
-				</a><a href="http://twitter.com/LGLizDowdeswell" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp grid-item--twitter grid-item--social-link">
+				</a>
+				<?php
+					$args = array( 
+						'post_type' => 'post',
+						'numberposts' => '1', 
+						'suppress_filters' => false,
+						'offset' => 1,
+						'post_status' => 'publish'
+					);
+					$recent_posts = wp_get_recent_posts( $args );
+					foreach( $recent_posts as $recent ){
+					$postTitle = get_the_title($recent['ID']); ?>
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1 wow fadeInUp">
+							<div class="grid-item__wrapper">
+								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
+							</div>
+						</a>
+					<?php }
+					wp_reset_query();
+				?>
+				<a href="http://twitter.com/LGLizDowdeswell" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp grid-item--twitter grid-item--social-link">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-twitter" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Twitter</h3>
 					</div>
-				</a><a href="#" class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
-					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label">Invite The LG</h3> </div>
-				</a><a href="#" class="grid-item grid-item--2x1 wow fadeInUp">
-					<div class="grid-item__wrapper">
-						<h3 class="grid-item--2x1--label">Long news/event/article/headline goes here, posted from the blog</h3>
-					</div>
-				</a><a href="#" class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
-					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label">Nominate someone for an award</h3> </div>
-				</a><a href="#" class="grid-item grid-item--2x2 wow fadeInUp">
+				</a><a href="<?php echo $cta2L;?>" class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
+					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label"><?php echo $cta2;?></h3> </div>
+				</a>
+				<?php
+					$args = array( 
+						'post_type' => 'post',
+						'numberposts' => '1', 
+						'suppress_filters' => false,
+						'post_status' => 'publish',
+						'offset' => 2,
+					);
+					$recent_posts = wp_get_recent_posts( $args );
+					foreach( $recent_posts as $recent ){
+					$postTitle = get_the_title($recent['ID']); ?>
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1 wow fadeInUp">
+							<div class="grid-item__wrapper">
+								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
+							</div>
+						</a>
+					<?php }
+					wp_reset_query();
+				?>
+				<a href="<?php echo $cta3L;?>" class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
+					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label"><?php echo $cta3;?></h3> </div>
+				</a><!-- <a href="#" class="grid-item grid-item--2x2 wow fadeInUp">
 					<div class="grid-item--overlay"></div>
 					<div class="grid-item__wrapper">
 						<h3 class="grid-item--2x2--label">Use this tile style for blog posts with a picture.</h3>
 					</div>
-				</a>
+				</a> -->
 			</div>
 
 			<div class="load-more-container">
