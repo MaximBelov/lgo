@@ -956,6 +956,10 @@ jQuery(document).ready(function($) {
       $(this).children('ul').toggleClass( "open-dropdown" );
     });
 
+    $('.menu-item-has-children >a').focus(function(){
+      $(this).siblings('ul').toggleClass( "open-dropdown" );
+    });
+
     $('.menu-after-dots').keypress(function(e){
       if(e.which == 13){//Enter key pressed
         $(this).next('ul').toggleClass( "open-dropdown" );

@@ -49,8 +49,14 @@ if ($random == 1) {
     
     <?php endwhile; else: ?>
 
-        <h4>No Results</h4>
-        <p>Please feel free try again!</p>
+        <?php 
+        if(ICL_LANGUAGE_CODE=='fr'){ 
+            $another = 'Essayez une autre recherche'; 
+
+        } else { 
+            $another = 'Please try another search.';
+        } ?>
+        <p><?php echo $another;?></p>
        
     <?php endif;  ?>
 
