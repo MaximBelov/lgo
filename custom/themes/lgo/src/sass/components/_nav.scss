@@ -243,6 +243,17 @@ nav {
   }
 }
 
+#menu-item-790 {
+  >ul li:last-child {
+    visibility: hidden !important;
+  }
+}
+
+// .menu-item-has-children.current-menu-parent>ul li {
+//   visibility: hidden !important;
+// }
+
+
 .menu-item-has-children {
   ul.open-dropdown {
     opacity: 1;
