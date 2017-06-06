@@ -32,6 +32,7 @@
 .scroll-panel {
 	.single-lg__content {
 		padding: 20px 30px 150px;
+		min-height: 100vh;
 		@media #{$large-and-up} {
 		    padding: 20% 100px 50px;
 		}
@@ -69,6 +70,7 @@
 
 .single-lg__prev-next-links {
 	// text-align: center;
+	margin-top: 50px;
 	#arrow-body {
 		fill: $main-accent;
 	}
@@ -85,7 +87,7 @@
 		color: $main-accent;
 	}
 	.single-lg__next-link {
-		margin-left: 40px;
+		margin-left: 35px;
 	}
 }
 

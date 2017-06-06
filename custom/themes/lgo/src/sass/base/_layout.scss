@@ -216,8 +216,8 @@ footer.page-footer {
 .full-width-panel {
   min-height: 100vh;
   @media #{$large-and-up} { 
-    width: calc(100% - 40px);
-    transform: translateX(40px);
+    width: calc(100% - 20px);
+    transform: translateX(30px);
     transition: all 0.5s ease;
   }
 }
@@ -232,7 +232,7 @@ footer.page-footer {
 
 .full-width-panel.full-width-panel--pushed,
 .single-push-panel.single-push-panel--pushed {
-  transform: translateX(350px);
+  transform: translateX(320px);
   // width: calc(100% - 340px); 
     //this compresses  the container
     // instead of just pushing it

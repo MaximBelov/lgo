@@ -957,7 +957,17 @@ jQuery(document).ready(function($) {
     });
 
     $('.menu-item-has-children >a').focus(function(){
-      $(this).siblings('ul').toggleClass( "open-dropdown" );
+      $(this).siblings('ul').addClass( "open-dropdown" );
+    });
+
+    $('.menu-item-has-children >ul >li:last-child a').focusout(function(){
+      $('.menu-item-has-children ul').removeClass( "open-dropdown" );
+      console.log('heyyy');
+    });
+
+    $('#menu-item-790 >ul >li:nth-last-child(2) a').focusout(function(){
+      $('.menu-item-has-children ul').removeClass( "open-dropdown" );
+      console.log('heyyy');
     });
 
     $('.menu-after-dots').keypress(function(e){
