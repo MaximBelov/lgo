@@ -14,9 +14,9 @@
 <meta property="og:title" content="<?php bloginfo('name') ?>">
 <meta property="og:description" content="<?php bloginfo('description'); ?>">
 <meta property="og:image" content="<?php if (has_post_thumbnail()) { echo the_post_thumbnail_url('medium');} ?>">
-<meta property="og:url" content="">
+<meta property="og:url" content="http://www.lgontario.ca">
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="European Travel Destinations ">
+<meta name="twitter:title" content="<?php bloginfo('name') ?>">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="<?php if (has_post_thumbnail()) { echo the_post_thumbnail_url('medium');} ?>">
 <meta name="twitter:card" content="summary_large_image">
