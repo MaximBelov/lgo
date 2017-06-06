@@ -6,7 +6,12 @@ get_header(); ?>
 
 <?php if(have_posts()): while(have_posts()): the_post();
 
+if (wp_is_mobile()) {
+$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' ); 
+} else {
 $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); 
+}
+
 $random = rand(1,5);
 
 if ($random == 1) {
@@ -36,13 +41,13 @@ $frCopy   	= rwmb_meta( 'rw_splash_fr_copy' );
 		<div>
 			<div class="splash-page__logo"><?php get_template_part( 'template-part-logo' ); ?></div>
 			<div class="splash-section__EN">
-				<h1><?php if($eng) { echo $eng; } else {echo get_the_title();} ?></h1>
+				<h1><span><?php if($eng) { echo $eng; } else {echo get_the_title();} ?></span></h1>
 				<p><?php echo $engCopy;?></p>
 				<div class="splash-page-buttons">
 					<a href="/en" class="btn splash-page__en">English</a>
 				</div>
 			</div><div class="splash-section__FR">
-				<h1><?php if($fr) { echo $fr; } else {echo get_the_title();} ?></h1>
+				<h1><span><?php if($fr) { echo $fr; } else {echo get_the_title();} ?></span></h1>
 				<p><?php echo $frCopy;?></p>
 				<div class="splash-page-buttons">
 					<a href="/fr" class="btn splash-page__fr">FRANÇAIS</a>

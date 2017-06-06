@@ -45,7 +45,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 	<div class="grad-overlay"></div>
 	<div class="container">
 		<div>
-			<?php get_template_part( 'template-part-logo' ); ?>
+			<?php //get_template_part( 'template-part-logo' ); ?>
 			<h1><?php echo $heading;?></h1>
 			<div class="separator"></div>
 			<div class="home-subhead">

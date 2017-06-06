@@ -146,6 +146,15 @@ nav {
   }
 }
 
+nav::-webkit-scrollbar {
+  display: none;
+}
+
+nav {
+  -ms-overflow-style: none;
+}
+
+
 nav {
   ul {
     margin: 0;
