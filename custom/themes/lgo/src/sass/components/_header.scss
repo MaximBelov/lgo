@@ -28,6 +28,15 @@
 			font-weight: 300;
 			text-transform: uppercase;
 			padding: 0;
+			// span {
+			// 	background: rgba(255,255,255,0.9);
+			// 	color: $black;
+			// 	position: relative;
+			//     left: 0.25em;
+			//     padding-left: 0;
+			//     box-shadow: 0.25em 0 0 rgba(255,255,255,0.9),  
+			//                 0.25em*-1 0 0 rgba(255,255,255,0.9);
+			// }
 			@media #{$medium-and-up} {
 			    font-size: 60px;
 			    line-height: 70px;

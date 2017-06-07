@@ -46,7 +46,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 	<div class="container">
 		<div>
 			<?php //get_template_part( 'template-part-logo' ); ?>
-			<h1><?php echo $heading;?></h1>
+			<h1><span><?php echo $heading;?></span></h1>
 			<div class="separator"></div>
 			<div class="home-subhead">
 				<?php echo $subhead;?>

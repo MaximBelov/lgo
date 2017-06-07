@@ -40,7 +40,7 @@ if ($random == 1) {
 	<div class="grad-overlay"></div>
 	<div class="container">
 		<div>
-			<h1><?php if($heading) { echo $heading; } else {echo get_the_title();} ?></h1>
+			<h1><span><?php if($heading) { echo $heading; } else {echo get_the_title();} ?></span></h1>
 			<div class="separator"></div>
 			<div class="home-subhead">
 				<?php echo $subhead;?>

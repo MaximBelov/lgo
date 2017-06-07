@@ -17,8 +17,8 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 		<div class="cta__content">
 			<?php echo $cta_copy; ?>
 			<?php if ( ! empty( $cta_btns ) ) { foreach ( $cta_btns as $cta_btn ) {
-                    $label     = $cta_btn['rw_btn_label'];
-                    $url     = $cta_btn['rw_btn_url'];
+                    $label 	= $cta_btn['rw_btn_label'];
+                    $url    = $cta_btn['rw_btn_url'];
                     ?>
                     <a href="<?php echo $url; ?>" class="btn"><?php echo $label; ?></a>
                 <?php }

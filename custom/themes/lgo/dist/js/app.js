@@ -948,13 +948,20 @@ jQuery(document).ready(function($) {
 
     // MENU-BASED CODE
 
-    $('.menu-after-dots').click(function(){
-      $(this).next('ul').toggleClass( "open-dropdown" );
+    // $('.menu-after-dots').click(function(event){
+    //   event.preventDefault();
+    //   $(this).next('ul').toggleClass( "open-dropdown" );
+    // });
+
+    $('.menu-after-dots').keypress(function(e){
+      if(e.which == 13){//Enter key pressed
+        $(this).next('ul').toggleClass( "open-dropdown" );
+      }
     });
 
-    $('.menu-item-has-children').hover(function(){
-      $(this).children('ul').toggleClass( "open-dropdown" );
-    });
+    // $('.menu-item-has-children').hover(function(){
+    //   $(this).children('ul').toggleClass( "open-dropdown" );
+    // });
 
     $('.menu-item-has-children >a').focus(function(){
       $(this).siblings('ul').addClass( "open-dropdown" );
@@ -970,11 +977,7 @@ jQuery(document).ready(function($) {
       console.log('heyyy');
     });
 
-    $('.menu-after-dots').keypress(function(e){
-      if(e.which == 13){//Enter key pressed
-        $(this).next('ul').toggleClass( "open-dropdown" );
-      }
-    });
+    
 
     // Activate Mobile Nav via click/enter
     $('.nav-trigger').click(function(){
@@ -994,6 +997,27 @@ jQuery(document).ready(function($) {
 
     $(window).scroll(function() {
 
+      // Change NAV active item CSS on scroll
+      if( $('.parent-page-layout').length ) {
+        var cur_pos = $(this).scrollTop();
+        sections.each(function() {
+          var top = $(this).offset().top - 200,
+            bottom = top + $(this).outerHeight() - (h/2);
+
+          if (cur_pos >= top && cur_pos <= bottom) {
+            // console.log($(this).attr('id'));
+            nav.find('a').removeClass('menu-item-active');
+            sections.removeClass('menu-item-active');
+
+            $(this).addClass('menu-item-active');
+            nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
+            // var theBG = $(this).attr('data-child-bg');
+            // // console.log(theBG);
+            // $('.left-compartment__bg').css({'backgroundImage': 'url('+theBG+')'});
+          }
+        });
+      }
+
       //Nav logo change color on scroll
       var scrollPos = $(window).scrollTop(),
           navbar = $('#nav-logo');
@@ -1004,7 +1028,7 @@ jQuery(document).ready(function($) {
       var banner = document.getElementById("scroll-header");
       var panel = document.getElementById("scroll-panel");
 
-      // SHRINK LOGO
+      // SHRINK LOGO + NAV COMPRESS 
       if (scrollPos > (100)) {
           // navbar.addClass('change-logo-size');
           slimNav.addClass('compress-slim-nav');

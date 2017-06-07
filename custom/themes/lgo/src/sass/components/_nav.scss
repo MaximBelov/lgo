@@ -245,7 +245,7 @@ nav {
 
 #menu-item-790 {
   >ul li:last-child {
-    visibility: hidden !important;
+    // visibility: hidden !important;
   }
 }
 
@@ -255,7 +255,7 @@ nav {
 
 
 .menu-item-has-children {
-  ul.open-dropdown {
+  > ul.open-dropdown {
     opacity: 1;
     visibility: visible;
     position: static;
