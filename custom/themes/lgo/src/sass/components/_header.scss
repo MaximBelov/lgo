@@ -16,6 +16,10 @@
 			padding: 15% 0% 5%;
 			@media #{$medium-and-up} {
 			    padding: 10% 10% 5%;
+
+			}
+			@media #{$xlarge-and-up} {
+			    padding: 20% 10% 5%;
 			}
 			.home-subhead {
 				margin-bottom: 40px;
@@ -40,6 +44,14 @@
 			@media #{$medium-and-up} {
 			    font-size: 60px;
 			    line-height: 70px;
+			}
+			@media #{$large-and-up} {
+			    font-size: 60px;
+			    line-height: 70px;
+			}
+			@media #{$xlarge-and-up} {
+			    font-size: 90px;
+			    line-height: 100px;
 			}
 		}
 		.separator {
@@ -111,6 +123,9 @@
 			    .home-subhead {
 			    	padding: 0 15%;
 			    }
+			}
+			@media #{$large-and-up} {
+			    padding: 20% 10% 5%;
 			}
 		}
 	}

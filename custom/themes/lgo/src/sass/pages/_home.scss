@@ -21,6 +21,9 @@
 			    max-width: 625px;
 			    margin: 0 auto;
 			}
+			@media #{$xlarge-and-up} {
+			    padding: 15% 10% 5%;
+			}
 		}
 	}
 }

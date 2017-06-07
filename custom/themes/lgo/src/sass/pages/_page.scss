@@ -57,8 +57,10 @@ figure.staff.staff--center {
 }
 
 .top-page-panel.splash-page .splash-section__EN {
+	margin-bottom: 30px;
 	@media #{$medium-and-up} {
-	  border-right: 1px solid $white;
+		margin-bottom: 0;
+		border-right: 1px solid $white;
 	}
 }
 

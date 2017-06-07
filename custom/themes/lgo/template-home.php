@@ -76,7 +76,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 						</div>
 					</div>
 				</a>
-				<?php 
+				<?php if ($feat1) {
 				$args = array( 
 					'page_id' => $feat1
 				);
@@ -124,7 +124,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					<?php wp_reset_postdata(); ?>
 
 				<?php else : ?>
-				<?php endif; ?>
+				<?php endif; } ?>
 				<?php
 					$args = array( 
 						'post_type' => 'post',
@@ -186,7 +186,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 
 				<?php else : ?>
 				<?php endif; ?>
-				<?php 
+				<?php if ($feat2) {
 				$args = array( 
 					'page_id' => $feat2
 				);
@@ -234,8 +234,8 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					<?php wp_reset_postdata(); ?>
 
 				<?php else : ?>
-				<?php endif; ?>
-				<?php 
+				<?php endif; } ?>
+				<?php if ($feat3) {
 				$args = array( 
 					'page_id' => $feat3
 				);
@@ -283,7 +283,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					<?php wp_reset_postdata(); ?>
 
 				<?php else : ?>
-				<?php endif; ?>
+				<?php endif; } ?>
 				<?php
 					$args = array( 
 						'post_type' => 'post',
