@@ -47,7 +47,7 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 		
 		<div class="single-page__content">
 		<h2><?php the_title();?></h2>
-		<?php the_content(); ?>
+		<div class="single-lg__content-wysiwyg"><?php the_content(); ?></div>
 
 		<?php get_template_part( 'template-part-accordion' ); ?>
 
