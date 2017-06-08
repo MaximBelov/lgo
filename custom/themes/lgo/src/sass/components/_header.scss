@@ -23,6 +23,10 @@
 			}
 			.home-subhead {
 				margin-bottom: 40px;
+				a {
+					color: $white;
+					border-bottom: 1px solid rgba(255,255,255,0.5);
+				}
 			}
 		}
 		h1 {
@@ -117,6 +121,10 @@
 	.container {
 		>div {
 			padding: 15% 0% 5%;
+			a {
+				color: $white;
+				border-bottom: 1px solid rgba(255,255,255,0.5);
+			}
 			@media #{$medium-and-up} {
 			    padding: 10% 10% 5%;
 			    p,

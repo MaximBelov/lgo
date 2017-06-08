@@ -163,7 +163,7 @@ jQuery(document).ready(function($) {
 
     $('#menu-item-790 >ul >li:nth-last-child(2) a').focusout(function(){
       $('.menu-item-has-children ul').removeClass( "open-dropdown" );
-      console.log('heyyy');
+      // console.log('heyyy');
     });
 
     
