@@ -59,6 +59,13 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 			   'type' => 'post',
 			   'post_type' => 'page',
 			   'field_type' => 'select'
+			),
+			array(
+			   'id'   => $prefix . 'featured_page_4',
+			   'name' => __( 'Featured Page #4', 'textdomain' ),
+			   'type' => 'post',
+			   'post_type' => 'page',
+			   'field_type' => 'select'
 			)
 		),
 	);
@@ -88,7 +95,7 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 			   'type' => 'text',
 			),
 			array(
-			   'id'   => $prefix . 'cta_1_link',
+			   'id'   => $prefix . 'cta_2_link',
 			   'name' => __( 'CTA #2 Link', 'textdomain' ),
 			   'type' => 'text',
 			),

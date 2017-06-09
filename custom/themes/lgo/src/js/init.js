@@ -142,18 +142,18 @@ jQuery(document).ready(function($) {
     //   $(this).next('ul').toggleClass( "open-dropdown" );
     // });
 
-    $('.menu-after-dots').keypress(function(e){
-      if(e.which == 13){//Enter key pressed
-        $(this).next('ul').toggleClass( "open-dropdown" );
-      }
-    });
+    // $('.menu-after-dots').keypress(function(e){
+    //   if(e.which == 13){//Enter key pressed
+    //     $(this).next('ul').toggleClass( "open-dropdown" );
+    //   }
+    // });
 
     // $('.menu-item-has-children').hover(function(){
     //   $(this).children('ul').toggleClass( "open-dropdown" );
     // });
 
     $('.menu-item-has-children >a').focus(function(){
-      $(this).siblings('ul').addClass( "open-dropdown" );
+      $(this).next('ul').toggleClass( "open-dropdown" );
     });
 
     $('.menu-item-has-children >ul >li:last-child a').focusout(function(){
