@@ -187,7 +187,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					$postTitle = get_the_title($recent['ID']); ?>
 						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
 							<div class="grid-item__wrapper">
-								<p class="grid-item--2x1--label"><span>Activities</span></p>
+								<p class="grid-item--2x1--label"><span>News</span></p>
 								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
 							</div>
 						</a>
@@ -347,7 +347,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					$postTitle = get_the_title($recent['ID']); ?>
 						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
 							<div class="grid-item__wrapper">
-								<p class="grid-item--2x1--label"><span>Activities</span></p>
+								<p class="grid-item--2x1--label"><span>News</span></p>
 								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
 							</div>
 						</a>
@@ -375,7 +375,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					$postTitle = get_the_title($recent['ID']); ?>
 						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
 							<div class="grid-item__wrapper">
-								<p class="grid-item--2x1--label"><span>Activities</span></p>
+								<p class="grid-item--2x1--label"><span>News</span></p>
 								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
 							</div>
 						</a>
