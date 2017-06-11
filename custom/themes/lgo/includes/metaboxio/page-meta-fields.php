@@ -66,6 +66,34 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 			   'type' => 'post',
 			   'post_type' => 'page',
 			   'field_type' => 'select'
+			),
+			array(
+			   'id'   => $prefix . 'featured_page_5',
+			   'name' => __( 'Featured Page #5', 'textdomain' ),
+			   'type' => 'post',
+			   'post_type' => 'page',
+			   'field_type' => 'select'
+			),
+			array(
+			   'id'   => $prefix . 'featured_page_6',
+			   'name' => __( 'Featured Page #6', 'textdomain' ),
+			   'type' => 'post',
+			   'post_type' => 'page',
+			   'field_type' => 'select'
+			),
+			array(
+			   'id'   => $prefix . 'featured_page_7',
+			   'name' => __( 'Featured Page #7', 'textdomain' ),
+			   'type' => 'post',
+			   'post_type' => 'page',
+			   'field_type' => 'select'
+			),
+			array(
+			   'id'   => $prefix . 'featured_page_8',
+			   'name' => __( 'Featured Page #8', 'textdomain' ),
+			   'type' => 'post',
+			   'post_type' => 'page',
+			   'field_type' => 'select'
 			)
 		),
 	);

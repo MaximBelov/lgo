@@ -28,6 +28,10 @@ $feat1 = rwmb_meta( 'rw_featured_page_1' );
 $feat2 = rwmb_meta( 'rw_featured_page_2' );
 $feat3 = rwmb_meta( 'rw_featured_page_3' );
 $feat4 = rwmb_meta( 'rw_featured_page_4' );
+$feat5 = rwmb_meta( 'rw_featured_page_5' );
+$feat6 = rwmb_meta( 'rw_featured_page_6' );
+$feat7 = rwmb_meta( 'rw_featured_page_7' );
+$feat8 = rwmb_meta( 'rw_featured_page_8' );
 // $feat1ID = $feat1[0];
 // print_r($feat1);
 
@@ -37,6 +41,24 @@ $cta3 = rwmb_meta( 'rw_cta_3_title' );
 $cta1L = rwmb_meta( 'rw_cta_1_link' );
 $cta2L = rwmb_meta( 'rw_cta_2_link' );
 $cta3L = rwmb_meta( 'rw_cta_3_link' );
+
+$newsLabel = 'Recent News';
+
+// $random = rand(1,5);
+
+// if ($random == 1) {
+//     $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+// } else if ($random == 2) {
+//     $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+// } else if ($random == 3) {
+//     $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+// } else if ($random == 4) {
+//     $imgPath = '/src/images/banners/banner_staircase.jpg';
+// } else if ($random == 5) {
+//     $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+// } else {
+//     $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+// }
 
 ?>
 
@@ -68,15 +90,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 <div id="top-of-content" class="full-width-panel">
 	<div> <!-- Start of RP -->
 		<div class="full-width-inner-wrapper"> <!-- Start of RP inner -->
-			<!-- <h2>Ontario's Storyteller in chief</h2> -->
 			<div class="masonry-grid">
-				<!-- <a href="#" class="grid-item grid-item--4x2 wow fadeInUp">
-					<div class="grid-item__wrapper">
-						<div class="grid-item--4x2--content">
-							<h3>Use this tile style for featured static content</h3>
-						</div>
-					</div>
-				</a> -->
 				<?php if ($feat1) {
 				$args = array( 
 					'page_id' => $feat1
@@ -88,6 +102,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+
 					$random = rand(1,5);
 
 					if ($random == 1) {
@@ -137,6 +152,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+
 					$random = rand(1,5);
 
 					if ($random == 1) {
@@ -187,7 +203,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					$postTitle = get_the_title($recent['ID']); ?>
 						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
 							<div class="grid-item__wrapper">
-								<p class="grid-item--2x1--label"><span>News</span></p>
+								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
 								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
 							</div>
 						</a>
@@ -198,7 +214,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					<div class="grid-item__wrapper">
 						<h3 class="grid-item--1x1--label"><?php echo $cta1;?></h3>
 					</div>
-				</a><a href="http://facebook.com/LGLizDowdeswell" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp grid-item--facebook grid-item--social-link">
+				</a><a href="<?php echo $facebook;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp grid-item--facebook grid-item--social-link">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-facebook" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Facebook</h3>
@@ -221,7 +237,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
 					?>
-						<a href="https://twitter.com/LGLizDowdeswell/status/<?php echo $tweetURL;?>" target="_blank" class="grid-item grid-item--2x1 wow fadeInUp grid-item--twitter">
+						<a href="https://twitter.com/<?php echo $twitter;?>/status/<?php echo $tweetURL;?>" target="_blank" class="grid-item grid-item--2x1 wow fadeInUp grid-item--twitter">
 							<div class="grid-item__wrapper">
 								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 								<i class="fa fa-twitter" aria-hidden="true"></i>
@@ -247,6 +263,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+
 					$random = rand(1,5);
 
 					if ($random == 1) {
@@ -347,7 +364,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					$postTitle = get_the_title($recent['ID']); ?>
 						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
 							<div class="grid-item__wrapper">
-								<p class="grid-item--2x1--label"><span>News</span></p>
+								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
 								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
 							</div>
 						</a>
@@ -375,7 +392,7 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 					$postTitle = get_the_title($recent['ID']); ?>
 						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
 							<div class="grid-item__wrapper">
-								<p class="grid-item--2x1--label"><span>News</span></p>
+								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
 								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
 							</div>
 						</a>
@@ -384,23 +401,266 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 				?>
 				<a href="<?php echo $cta3L;?>" class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
 					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label"><?php echo $cta3;?></h3> </div>
-				</a><!-- <a href="#" class="grid-item grid-item--2x2 wow fadeInUp">
-					<div class="grid-item--overlay"></div>
-					<div class="grid-item__wrapper">
-						<h3 class="grid-item--2x2--label">Use this tile style for blog posts with a picture.</h3>
-					</div>
-				</a> -->
-			</div>
+				</a>
 
-			<div class="load-more-container">
-				<a align="center" href="<?php 
-					if(ICL_LANGUAGE_CODE=='fr'){
-						echo esc_url( get_permalink(478) );
-						$moretext = "Plus d'activités";
-					} else { 
-						echo esc_url( get_permalink(353) );
-						$moretext = 'More news & events';
-					} ?>" class="btn btn--accent"><?php echo $moretext;?></a>
+				<!-- ROW 2 -->
+				
+				<?php if ($feat6) {
+				$args = array( 
+					'page_id' => $feat6
+				);
+				// the query
+				$the_query = new WP_Query( $args ); ?>
+
+				<?php if ( $the_query->have_posts() ) : ?>
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					$random = rand(1,5);
+
+					if ($random == 1) {
+					    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+					} else if ($random == 2) {
+					    $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+					} else if ($random == 3) {
+					    $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+					} else if ($random == 4) {
+					    $imgPath = '/src/images/banners/banner_staircase.jpg';
+					} else if ($random == 5) {
+					    $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+					} else {
+					    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+					}
+
+					if($post->post_parent) {
+						$thelink = get_permalink($post->post_parent);
+					} else {
+						$thelink = get_permalink($post->ID);
+					}
+					?>
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+							<div class="grid-item--overlay"></div>
+							<div class="grid-item__wrapper">
+								<p class="grid-item--4x2--label"><span>About</span></p>
+								<div class="grid-item--4x2--content">
+									<h3><?php the_title();?></h3>
+									<p><?php the_excerpt();?></p>
+								</div>
+							</div>
+						</a>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+					<?php wp_reset_postdata(); ?>
+
+				<?php else : ?>
+				<?php endif; } ?>
+				<?php
+					$args = array( 
+						'post_type' => 'post',
+						'numberposts' => '1', 
+						'suppress_filters' => false,
+						'post_status' => 'publish',
+						'offset' => 3
+					);
+					$recent_posts = wp_get_recent_posts( $args );
+					foreach( $recent_posts as $recent ){
+					$postTitle = get_the_title($recent['ID']); ?>
+						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
+							<div class="grid-item__wrapper">
+								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
+								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
+							</div>
+						</a>
+					<?php }
+					wp_reset_query();
+				?>
+				<a href="https://instagram.com/<?php echo $instagram;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp grid-item--instagram grid-item--social-link">
+					<div class="grid-item__wrapper">
+						<i class="fa fa-instagram" aria-hidden="true"></i>
+						<h3 class="grid-item--1x1--label">Instagram</h3>
+					</div>
+				</a>
+				<?php 
+				// the Twitter query
+				$args = array(
+					'post_type' => 'tweet',
+					'posts_per_page' => 1,
+					'offset' => 1
+					// 'nopaging' => true
+				);
+				$the_query = new WP_Query( $args ); ?>
+
+				<?php if ( $the_query->have_posts() ) : ?>
+
+					<!-- pagination here -->
+
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
+					?>
+						<a href="https://twitter.com/<?php echo $twitter;?>/status/<?php echo $tweetURL;?>" target="_blank" class="grid-item grid-item--2x1 wow fadeInUp grid-item--twitter">
+							<div class="grid-item__wrapper">
+								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</div>
+						</a>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+
+					<!-- pagination here -->
+
+					<?php wp_reset_postdata(); ?>
+
+				<?php else : ?>
+				<?php endif; ?>
+				<?php if ($feat7) {
+				$args = array( 
+					'page_id' => $feat7
+				);
+				// the query
+				$the_query = new WP_Query( $args ); ?>
+
+				<?php if ( $the_query->have_posts() ) : ?>
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					$random = rand(1,5);
+
+					if ($random == 1) {
+					    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+					} else if ($random == 2) {
+					    $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+					} else if ($random == 3) {
+					    $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+					} else if ($random == 4) {
+					    $imgPath = '/src/images/banners/banner_staircase.jpg';
+					} else if ($random == 5) {
+					    $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+					} else {
+					    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+					}
+
+					if($post->post_parent) {
+						$thelink = get_permalink($post->post_parent);
+					} else {
+						$thelink = get_permalink($post->ID);
+					}
+					?>
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+							<div class="grid-item--overlay"></div>
+							<div class="grid-item__wrapper">
+								<p class="grid-item--4x2--label"><span>About</span></p>
+								<div class="grid-item--4x2--content">
+									<h3><?php the_title();?></h3>
+									<p><?php the_excerpt();?></p>
+								</div>
+							</div>
+						</a>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+					<?php wp_reset_postdata(); ?>
+
+				<?php else : ?>
+				<?php endif; } ?>
+				<?php if ($feat8) {
+				$args = array( 
+					'page_id' => $feat8
+				);
+				// the query
+				$the_query = new WP_Query( $args ); ?>
+
+				<?php if ( $the_query->have_posts() ) : ?>
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					$random = rand(1,5);
+
+					if ($random == 1) {
+					    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+					} else if ($random == 2) {
+					    $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+					} else if ($random == 3) {
+					    $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+					} else if ($random == 4) {
+					    $imgPath = '/src/images/banners/banner_staircase.jpg';
+					} else if ($random == 5) {
+					    $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+					} else {
+					    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+					}
+
+					if($post->post_parent) {
+						$thelink = get_permalink($post->post_parent);
+					} else {
+						$thelink = get_permalink($post->ID);
+					}
+					?>
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+							<div class="grid-item--overlay"></div>
+							<div class="grid-item__wrapper">
+								<p class="grid-item--4x2--label"><span>About</span></p>
+								<div class="grid-item--4x2--content">
+									<h3><?php the_title();?></h3>
+									<p><?php the_excerpt();?></p>
+								</div>
+							</div>
+						</a>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+					<?php wp_reset_postdata(); ?>
+
+				<?php else : ?>
+				<?php endif; } ?>
+				<?php
+					$args = array( 
+						'post_type' => 'post',
+						'numberposts' => '1', 
+						'suppress_filters' => false,
+						'post_status' => 'publish',
+						'offset' => 4
+					);
+					$recent_posts = wp_get_recent_posts( $args );
+					foreach( $recent_posts as $recent ){
+					$postTitle = get_the_title($recent['ID']); ?>
+						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
+							<div class="grid-item__wrapper">
+								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
+								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
+							</div>
+						</a>
+					<?php }
+					wp_reset_query();
+				?>
+				<a href="<?php echo $youtube;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp grid-item--youtube grid-item--social-link">
+					<div class="grid-item__wrapper">
+						<i class="fa fa-youtube-play" aria-hidden="true"></i>
+						<h3 class="grid-item--1x1--label">Youtube</h3>
+					</div>
+				</a>
+				<?php
+					$args = array( 
+						'post_type' => 'post',
+						'numberposts' => '1', 
+						'suppress_filters' => false,
+						'post_status' => 'publish',
+						'offset' => 5,
+					);
+					$recent_posts = wp_get_recent_posts( $args );
+					foreach( $recent_posts as $recent ){
+					$postTitle = get_the_title($recent['ID']); ?>
+						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
+							<div class="grid-item__wrapper">
+								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
+								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
+							</div>
+						</a>
+					<?php }
+					wp_reset_query();
+				?>
+				<!-- <div class="grid-item grid-item--filler"></div> -->
+				<div class="grid-item grid-item--filler">
+					<a href="/en/news" class="btn btn--accent">View more news</a>
+				</div>
 			</div>
 
 		</div> <!-- End of RP inner -->

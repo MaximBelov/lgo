@@ -2,68 +2,55 @@
 /**
 * Template Name: News
 */
-get_header(); 
+get_header(); ?>
 
-$heading   = rwmb_meta( 'rw_banner_heading' );
+<?php get_template_part( 'template-part-nav' ); ?>
+
+<?php if(have_posts()): while(have_posts()): the_post(); 
+$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); 
+
+$cta_copy   = rwmb_meta( 'rw_cta_blurb' );
+$cta_btns   = rwmb_meta( 'cta' );
 $subhead   = rwmb_meta( 'rw_banner_subheading' );
-
-$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
-
-if(get_option('lgo_option_name')){
-    $options = get_option( 'lgo_option_name' );
-} else {
-	$options = array(
-		"lgo_twitter" => "twitterusername"
-	);
-}
-$twitter = $options['lgo_twitter'];
-
 ?>
 
-<?php get_template_part( 'template-part-nav-transition' ); ?>
-
-<div id="skip-to-content" class="top-page-panel" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().'/src/images/background_default.svg'; } ?>);">
-	<div class="grad-overlay"></div>
-	<div class="container">
-		<div>
-			<h1><?php echo $heading;?></h1>
-			<div class="separator"></div>
-			<div class="home-subhead">
-				<?php echo $subhead;?>
-			</div>
-			<svg width="80px" height="45px" viewBox="508 585 80 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			    <desc>Lieutenant Governor Emblem</desc>
-			    <defs></defs>
-			    <polyline id="Path-2" stroke="#FFFFFF" stroke-width="3" fill="none" points="510 589.199219 546.746094 627.386719 586.171875 587"></polyline>
-			</svg>
-		</div>
+<div id="skip-to-content" class="scroll-panel page-panel page__bg__fixed single-page-container--whole">
+	<div class="left-compartment__bg" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().'/src/images/background_default.svg'; } ?>);">
 	</div>
-</div>
+	<div class="dark-overlay"></div>
+	<div class="right-compartment">
 
-<div class="full-width-panel">
-	<div> <!-- Start of RP -->
-		<div class="full-width-inner-wrapper"> <!-- Start of RP inner -->
+		<div class="news-inner-wrapper">
+			<h1><?php the_title();?></h1>
+			
+			<div class="news-categories">
+				<a href="/category/awards-and-honours" class="btn btn--accent">Awards and honours</a>
+				<a href="/category/community-events" class="btn btn--accent">Community events</a>
+				<a href="/category/constitutional-duties" class="btn btn--accent">Constitutional duties</a>
+				<a href="/category/mandate-themes" class="btn btn--accent">Mandate themes</a>
+				<a href="/category/welcoming-the-world" class="btn btn--accent">Welcoming the world</a>
+			</div>
 			
 			<div class="masonry-grid" id="activities-feed">
 				<?php 
 				// the Post query
 				$args = array(
-					'post_type' => array('post'),
+					'post_type' => array('post','tweet'),
 					'posts_per_page' => 30,
 					// 'nopaging' => true
 				);
 				$the_query = new WP_Query( $args ); ?>
-
+			
 				<?php if ( $the_query->have_posts() ) : ?>
-
+			
 					<!-- pagination here -->
-
+			
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
 						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
 						$random = rand(1,5);
-
+			
 						if ($random == 1) {
 						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
 						} else if ($random == 2) {
@@ -86,54 +73,37 @@ $twitter = $options['lgo_twitter'];
 						</a>
 					<?php endwhile; ?>
 					<!-- end of the loop -->
-
+			
 					<!-- pagination here -->
-
+			
 					<?php wp_reset_postdata(); ?>
-
+			
 				<?php else : ?>
 					<!-- <p><?php //_e( 'Sorry, no posts matched your criteria.' ); ?></p> -->
 				<?php endif; ?>
-				<?php 
-				// the Twitter query
-				$args = array(
-					'post_type' => 'tweet',
-					'posts_per_page' => 30,
-					// 'nopaging' => true
-				);
-				$the_query = new WP_Query( $args ); ?>
-
-				<?php if ( $the_query->have_posts() ) : ?>
-
-					<!-- pagination here -->
-
-					<!-- the loop -->
-					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
-					?>
-						<a href="https://twitter.com/LGLizDowdeswell/status/<?php echo $tweetURL;?>" target="_blank" class="grid-item grid-item--2x1 wow fadeInUp grid-item--twitter">
-							<div class="grid-item__wrapper">
-								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
-								<i class="fa fa-twitter" aria-hidden="true"></i>
-							</div>
-						</a>
-					<?php endwhile; ?>
-					<!-- end of the loop -->
-
-					<!-- pagination here -->
-
-					<?php wp_reset_postdata(); ?>
-
-				<?php else : ?>
-					<!-- <p><?php //_e( 'Sorry, no posts matched your criteria.' ); ?></p> -->
-				<?php endif; ?>
-
-				<div class="load-more-container">
-					<a align="center" href="http://twitter.com/<?php echo $twitter; ?>" target="_blank" class="btn btn--accent">Visit the twitter feed</a>
-				</div>
-
+			
 			</div>
-		</div> <!-- End of RP inner -->
-	</div> <!-- END OF RIGHT PANEL -->
+			
+			<div class="news-pagination">
+				<div class="news-pagination--inner"><?php
+					$big = 999999999; // need an unlikely integer
+					 
+					echo paginate_links( array(
+					    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+					    'format' => '?paged=%#%',
+					    'current' => max( 1, get_query_var('paged') ),
+					    'total' => $the_query->max_num_pages
+					) );
+					?>
+				</div>
+			</div>
+
+		</div>
+		
+
+   	</div> <!-- END OF RIGHT COMPARTMENT -->
 </div> <!-- END OF .page -->
+<?php endwhile; endif;  ?>
+
+
 <?php get_footer(); ?>
