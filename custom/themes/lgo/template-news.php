@@ -81,21 +81,21 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 				<?php else : ?>
 					<!-- <p><?php //_e( 'Sorry, no posts matched your criteria.' ); ?></p> -->
 				<?php endif; ?>
-			
-			</div>
-			
-			<div class="news-pagination">
-				<div class="news-pagination--inner"><?php
-					$big = 999999999; // need an unlikely integer
-					 
-					echo paginate_links( array(
-					    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-					    'format' => '?paged=%#%',
-					    'current' => max( 1, get_query_var('paged') ),
-					    'total' => $the_query->max_num_pages
-					) );
-					?>
+
+				<div class="news-pagination grid-item grid-item--filler">
+					<div class="news-pagination--inner"><?php
+						$big = 999999999; // need an unlikely integer
+						 
+						echo paginate_links( array(
+						    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+						    'format' => '?paged=%#%',
+						    'current' => max( 1, get_query_var('paged') ),
+						    'total' => $the_query->max_num_pages
+						) );
+						?>
+					</div>
 				</div>
+			
 			</div>
 
 		</div>

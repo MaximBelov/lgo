@@ -20,3 +20,6 @@
     <!-- <li><a href="https://www.instagram.com/<?php //echo $instagram; ?>" target="_blank" alt="Instagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li> -->
     <li><a href="<?php echo $youtube; ?>" target="_blank" alt="Youtube" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
 </ul>
+<div class="nav-mailchimp">
+	<a href="#">Sign up for updates</a>
+</div>
