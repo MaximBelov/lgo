@@ -24,7 +24,7 @@ if ($random == 1) {
 
 ?>
 
-<?php if (in_category('event')) { ?>
+<?php if (has_term( 'event', 'type' )) { ?>
 
 <div id="skip-to-content" class="scroll-panel page-panel page__bg__fixed single-lg single-event single-push-panel">
 
