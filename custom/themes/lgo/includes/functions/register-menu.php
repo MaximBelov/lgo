@@ -66,10 +66,15 @@ class Main_Menu_Walker extends Walker {
     $children = get_posts(array('post_type' => 'nav_menu_item', 'nopaging' => true, 'numberposts' => 1, 'meta_key' => '_menu_item_menu_item_parent', 'meta_value' => $item->ID));
     if (!empty($children)) {
       $classes[] = 'has-sub';
-      // $args = array('post_parent' => $item->ID);
-      // if( !empty(get_children($args)) ) {
-      //   $classes[] = 'has-grandkids';
-      // }
+    }
+    if ($depth == 0) {
+      $classes[] = 'first-level';
+    }
+    if ($depth == 1) {
+      $classes[] = 'second-level';
+    }
+    if ($depth == 2) {
+      $classes[] = 'third-level';
     }
     
     $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
@@ -114,27 +119,21 @@ class Main_Menu_Walker extends Walker {
         $item_output .= '</a>';
         $item_output .= $args->after;
       }
-    } else if (in_array('menu-item-object-service', $classes)) {
-		$serviceid= get_post_meta( $item->ID, '_menu_item_object_id', true );
-		$inactive = get_post_meta( $serviceid, 'rw_menu_inactive', false );
-		$inactiveurl = wp_get_attachment_url( $inactive[0] );
-		$active = get_post_meta( $serviceid, 'rw_menu_active', false );
-		$activeurl = wp_get_attachment_url( $active[0] );
-		$blurb = get_post_meta( $serviceid, 'rw_menu_blurb', false );
-	  	$item_output = $args->before;
-	  	$item_output .= '<a'. $attributes .' data-active="'.$activeurl.'" data-inactive="'.$inactiveurl.'"><img src="'.$inactiveurl.'"><span class="menu-sub-item-title"><span class="menu-title-highlight"></span><span class="the-sub-item-title">';
-	  	$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-	  	$item_output .= '</span></span><span class="menu-sub-item-blurb">'.$blurb[0].'</span></a>';
-	  	$item_output .= $args->after;
+    } else if (in_array('first-level', $classes) && in_array('has-sub', $classes)) {
+		  $item_output = $args->before;
+      $item_output .= '<span tabindex="0" class="dead-link" data-depth="'.$depth.'">';
+      $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+      $item_output .= '</span>';
+      $item_output .= $args->after;
     } else if (!empty($children)) { 
     	$item_output = $args->before;
-    	$item_output .= '<a'. $attributes .'><span>';
+    	$item_output .= '<a'. $attributes .'><span class="hey" data-depth="'.$depth.'">';
     	$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
     	$item_output .= '</span></a>';
     	$item_output .= $args->after;
     } else {
     	$item_output = $args->before;
-    	$item_output .= '<a'. $attributes .'><span>';
+    	$item_output .= '<a'. $attributes .'><span class="dead-link" data-depth="'.$depth.'">';
     	$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
     	$item_output .= '</span></a>';
     	$item_output .= $args->after;

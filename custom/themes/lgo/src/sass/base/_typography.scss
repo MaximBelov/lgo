@@ -270,18 +270,20 @@ abbr[title] {
 
 // NAVIGATION
 nav {
-    .current_page_item a {
+    .current_page_item a,
+    .current_page_item a span {
         font-weight: 700;
     }
     ul {
-        a {
+        a,
+        span {
             font-family: 'Dosis', sans-serif;
             color: $nav-links;
             text-transform: uppercase;
             &:hover {
                 // color: $blue;
                 // font-weight: bold !important;
-
+                cursor: pointer;
             }
         }
     }
@@ -292,22 +294,27 @@ nav {
     #nav-logo {
       .st0{
         fill: $slim-nav-links;
+        fill: $white;
       }
       .st1{
         fill:none;
         stroke: $slim-nav-links;
+        stroke: $white;
       }
     }
     nav {
         ul {
             a {
                 color: $slim-nav-links;
+                color: $white;
                 text-transform: uppercase;
                 &:hover {
                     color: $slim-nav-links;
+                    color: $white;
                 }
                 i {
                     color: $slim-nav-links;
+                    color: $white;
                 }
             }
         }
@@ -322,7 +329,8 @@ nav #menu-menu-principal {
     }
     >li {
         margin: 10px 0 15px;
-        >a {
+        >a,
+        >span {
             font-size: 22px;
             font-weight: 700;
             letter-spacing: 1.1px;

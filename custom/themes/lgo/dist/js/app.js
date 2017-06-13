@@ -942,18 +942,18 @@ jQuery(document).ready(function($) {
     //   $(this).next('ul').toggleClass( "open-dropdown" );
     // });
 
-    // $('.menu-after-dots').keypress(function(e){
-    //   if(e.which == 13){//Enter key pressed
-    //     $(this).next('ul').toggleClass( "open-dropdown" );
-    //   }
-    // });
-
     // $('.menu-item-has-children').hover(function(){
     //   $(this).children('ul').toggleClass( "open-dropdown" );
     // });
 
-    $('.menu-item-has-children >a').focus(function(){
+    $('.menu-item-has-children >span').click(function(){
       $(this).next('ul').toggleClass( "open-dropdown" );
+    });
+
+    $('.menu-item-has-children >span').keypress(function(e){
+      if(e.which == 13){//Enter key pressed
+        $(this).next('ul').toggleClass( "open-dropdown" );
+      }
     });
 
     $('.menu-item-has-children >ul >li:last-child a').focusout(function(){
@@ -961,10 +961,10 @@ jQuery(document).ready(function($) {
       console.log('heyyy');
     });
 
-    $('#menu-item-790 >ul >li:nth-last-child(2) a').focusout(function(){
-      $('.menu-item-has-children ul').removeClass( "open-dropdown" );
-      // console.log('heyyy');
-    });
+    // $('#menu-item-790 >ul >li:nth-last-child(2) a').focusout(function(){
+    //   $('.menu-item-has-children ul').removeClass( "open-dropdown" );
+    //   // console.log('heyyy');
+    // });
 
     
 

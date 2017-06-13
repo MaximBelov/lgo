@@ -46,17 +46,22 @@
         border: none;
         background: transparent;
         border-bottom: 2px solid $main-accent-trans;
+        border-bottom: 2px solid rgba(255,255,255,0.5);
         color: $main-accent;
+        color: $white;
         transition: all 0.5s ease;
         &::placeholder {
           color: $main-accent;
+          color: $white;
         }
       }
       i {
         color: $main-accent;
+        color: $white;
       }
       #searchsubmit {
         color: $main-accent;
+        color: $white;
         margin-left: 5px;
       }
     }

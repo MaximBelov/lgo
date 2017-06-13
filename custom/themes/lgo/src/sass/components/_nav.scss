@@ -120,7 +120,7 @@ a.skip-to:hover {
 .left-panel__navigation.slim-nav-transition-static.compress-slim-nav.on-hover {
   transform: translateX(0);
   background: $white;
-  // background: $grey;
+  background: $black;
   box-shadow: 10px 0 20px -2px rgba(0,0,0,0.1);
   nav {
     transform: translateX(0);
@@ -315,18 +315,22 @@ nav {
 
 .left-panel__navigation.slim-nav-transition.compress-slim-nav .translation-widget,
 .left-panel__navigation.slim-nav-transition-static.compress-slim-nav .translation-widget {
-  a {
+  a,span {
     color: $main-accent;
+    color: $white;
   }
   ul {
     li.wpml-ls-current-language {
       a{
         border-bottom: 1px solid $main-accent-trans;
+        border-bottom: 1px solid rgba(255,255,255,0.5);
       }
     }
-    >li.wpml-ls-item-fr a {
+    >li.wpml-ls-item-fr a,
+    >li.wpml-ls-item-fr span {
       &:after {
           background: $main-accent;
+          background: $white;
       }
     }
   }
