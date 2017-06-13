@@ -217,7 +217,9 @@ h3.grid-item--2x1--label {
     background: $white;
   }
   .single-lg__content.single-event__content {
-    padding: 100px;
+    @media #{$medium-and-up} {
+      padding: 100px;
+    }
     h2 {
       font-family: $sans-serif-font;
       font-weight: 300;
