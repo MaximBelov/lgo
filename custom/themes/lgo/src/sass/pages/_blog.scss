@@ -211,6 +211,29 @@ h3.grid-item--2x1--label {
   }
 }
 
+// EVENT TEMPLATE
+.single-lg.single-event {
+  .right-panel {
+    background: $white;
+  }
+  .single-lg__content.single-event__content {
+    padding: 100px;
+    h2 {
+      font-family: $sans-serif-font;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin-top: 0;
+      font-size: 40px;
+      line-height: 50px;
+      @media #{$medium-and-up} {
+        font-size: 35px;
+        line-height: 45px;
+        // margin-top: 30px;
+      }
+    }
+  }
+}
+
 
 // HIGHLIGHT SHARE
 /* @author: Xavier Damman (@xdamman) - http://github.com/xdamman/selection-sharer - @license: MIT */
