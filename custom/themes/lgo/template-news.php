@@ -22,20 +22,31 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 
 		<div class="news-inner-wrapper">
 			<h1><?php the_title();?></h1>
-			
-			<div class="news-categories">
-				<a href="/category/awards-and-honours" class="btn btn--accent">Awards and honours</a>
-				<a href="/category/community-events" class="btn btn--accent">Community events</a>
-				<a href="/category/constitutional-duties" class="btn btn--accent">Constitutional duties</a>
-				<a href="/category/mandate-themes" class="btn btn--accent">Mandate themes</a>
-				<a href="/category/welcoming-the-world" class="btn btn--accent">Welcoming the world</a>
-			</div>
+
+			<?php
+			if(ICL_LANGUAGE_CODE=='fr'){ 
+				$urlString= '/fr/category/'; 
+			} else {
+				$urlString= '/en/category/';
+			}
+			$terms = get_terms( array(
+			    'taxonomy' => 'category',
+			    'hide_empty' => false,
+			    'exclude' => 1
+			) ); 
+			if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+			    echo '<div class="news-categories">';
+			    foreach ( $terms as $term ) {
+			        echo '<a href="' . $urlString . $term->slug . '" class="btn btn--accent">'.$term->name.'</a>';
+			    }
+			    echo '</div>';
+			}?>
 			
 			<div class="masonry-grid" id="activities-feed">
 				<?php 
 				// the Post query
 				$args = array(
-					'post_type' => array('post','tweet'),
+					'post_type' => array('post'),
 					'posts_per_page' => 30,
 					// 'nopaging' => true
 				);
