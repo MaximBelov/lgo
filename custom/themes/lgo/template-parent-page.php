@@ -65,7 +65,7 @@ if ($random == 1) {
 	<div class="right-compartment">
 
 		<?php
-		if( '' !== get_post()->post_content || ! empty( $accordions) ) { ?>
+		if( get_post()->post_content !== '' || ! empty( $accordions) ) { ?>
 			<div class="parent-page-content">
 			<?php the_content(); ?>
 

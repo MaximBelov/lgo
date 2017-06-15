@@ -232,7 +232,9 @@ footer.page-footer {
 
 .full-width-panel.full-width-panel--pushed,
 .single-push-panel.single-push-panel--pushed {
-  transform: translateX(320px);
+  @media #{$large-and-up} {
+    transform: translateX(320px);
+  }
   // width: calc(100% - 340px); 
     //this compresses  the container
     // instead of just pushing it
@@ -391,6 +393,9 @@ footer.page-footer {
 
 .grid-item--4x2--content {
   vertical-align: bottom;
+  position: absolute; 
+  bottom: 40px; 
+  max-width: 90%;
   @media #{$large-and-up} {
     bottom: 0;
     position: absolute; 

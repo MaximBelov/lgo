@@ -87,15 +87,17 @@ button {
         padding: 5px;
         background: $main-accent;
         color: $white;
+        margin-left: 20px;
         &:hover {
             color: $main-accent;
             border: 2px solid $main-accent;
             background: $white;
         }
         @media #{$medium-and-up} {
-          position: absolute;
-          top: 90px;
-          left: 25px;
+            margin-left: 0;
+            position: absolute;
+            top: 90px;
+            left: 25px;
         }
     }
     .child-page-content {

@@ -147,7 +147,7 @@ jQuery(document).ready(function($) {
 
     $('.menu-item-has-children >ul >li:last-child a').focusout(function(){
       $('.menu-item-has-children ul').removeClass( "open-dropdown" );
-      console.log('heyyy');
+      // console.log('Drop down closed');
     });
 
     // $('#menu-item-790 >ul >li:nth-last-child(2) a').focusout(function(){

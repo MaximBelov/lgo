@@ -38,7 +38,7 @@ a.skip-to:hover {
   height: 100vh;
   padding: 15px 20px 50px 20px;
   z-index: 1000;
-  @media #{$small-and-down} {
+  @media #{$medium-and-down} {
     display: none;
   } 
   @media print {
@@ -59,17 +59,25 @@ a.skip-to:hover {
 .left-panel__navigation.slim-nav-transition,
 .left-panel__navigation.slim-nav-transition-static {
   transition: all 0.5s ease;
+  @media #{$medium-and-up} {
+    transition: all 0.5s ease;
+  } 
 }
 
 .slim-nav-label {
   transition: all 0.5s ease;
   display: none;
+  @media #{$medium-and-up} {
+    transition: all 0.5s ease;
+  } 
 }
 
 .left-panel__navigation.slim-nav-transition.compress-slim-nav,
 .left-panel__navigation.slim-nav-transition-static.compress-slim-nav {
   background: $black;
-  transform: translateX(-285px);
+  @media #{$medium-and-up} {
+    transform: translateX(-285px);
+  } 
   // &:hover {
   //   transform: translateX(0);
   //   background: $white;
@@ -88,8 +96,11 @@ a.skip-to:hover {
   }
 
   nav {
-    transition: all 0.7s ease;
-    transform: translateX(-400px);
+    @media #{$medium-and-up} {
+      transition: all 0.7s ease;
+      transform: translateX(-400px);
+    }
+
   }
 
   .slim-nav-label {
@@ -133,9 +144,14 @@ a.skip-to:hover {
 nav {
   background: transparent;
   box-shadow: none;
-  min-height: 400px;
-  max-height: 100 0px;
+  min-height: 200px;
+  max-height: 400px;
+  // overflow: scroll;
   overflow: scroll;
+  @media #{$medium-and-up} {
+      min-height: 400px;
+      max-height: 1000px;
+  }
   li {
     display: block;
     float: none !important;
