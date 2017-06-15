@@ -1,6 +1,5 @@
 <?php get_header(); 
 $random = rand(1,5);
-
 if ($random == 1) {
     $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
 } else if ($random == 2) {

@@ -1,7 +1,7 @@
 <div class="nav-mailchimp">
 	<?php 
 	if(ICL_LANGUAGE_CODE=='fr'){ ?>
-		<a href="#">Souscrire</a>
+		<a href="#">S'abonner</a>
 	<?php } else { ?>
 		<a href="#">Subscribe</a>
 	<?php } ?>
