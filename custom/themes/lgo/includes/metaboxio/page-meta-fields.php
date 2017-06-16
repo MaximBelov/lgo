@@ -40,7 +40,7 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	    'fields' => array(
 	        array(
 	           'id'   => $prefix . 'post_speech',
-	           'name' => __( 'Post includes speech', 'textdomain' ),
+	           'name' => __( 'Speech?', 'textdomain' ),
 	           'type' => 'checkbox',
 	           // 'options' => array(
 	           // 		'yes' => 'Yes',
@@ -48,13 +48,13 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	           // 	)
 	        ),
 	        array(
-	           'id'   => $prefix . 'post_template',
-	           'name' => __( 'Horizontal template', 'textdomain' ),
+	           'id'   => $prefix . 'post_media',
+	           'name' => __( 'Media document?', 'textdomain' ),
 	           'type' => 'checkbox',
 	        ),
 	        array(
-	           'id'   => $prefix . 'post_media',
-	           'name' => __( 'Media Document?', 'textdomain' ),
+	           'id'   => $prefix . 'post_template',
+	           'name' => __( 'Split template?', 'textdomain' ),
 	           'type' => 'checkbox',
 	        ),
 	    ),
