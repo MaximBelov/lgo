@@ -52,6 +52,11 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	           'name' => __( 'Horizontal template', 'textdomain' ),
 	           'type' => 'checkbox',
 	        ),
+	        array(
+	           'id'   => $prefix . 'post_media',
+	           'name' => __( 'Media Document?', 'textdomain' ),
+	           'type' => 'checkbox',
+	        ),
 	    ),
 	);
 

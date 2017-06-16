@@ -211,6 +211,25 @@ h3.grid-item--2x1--label {
   }
 }
 
+.single-lg__prev-next-links.regular-post-template {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .single-lg__next-link {
+    margin: 0;
+    text-align: right;
+  }
+  > div {
+    display: inline-block;
+    width: 45%
+  }
+  a {
+    border-bottom: none;
+  }
+}
+
+
+
 // EVENT TEMPLATE
 .single-lg.single-event {
   .right-panel {
