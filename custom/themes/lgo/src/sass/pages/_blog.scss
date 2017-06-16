@@ -157,7 +157,10 @@ h3.grid-item--2x1--label {
 }
 
 .news-inner-wrapper {
-  padding: 0px 100px 50px;
+  padding: 0px 20px;
+  @media #{$medium-and-up} {
+    padding: 0px 100px 50px;
+  }
   h1 {
     font-size: 45px;
     line-height: 55px;
@@ -188,6 +191,15 @@ h3.grid-item--2x1--label {
 }
 
 #activities-feed {
+  margin-top: 50px;
+  .grid-item--2x2.grid-item {
+    background-position: center center;
+    background-size: cover;
+    @media #{$small-and-down} {
+      height: 250px;
+      margin-bottom: 20px;
+    }
+  }
   .grid-item {
     h3.grid-item--2x2--label {
       font-weight: 400;

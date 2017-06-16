@@ -235,7 +235,7 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	);
 
 	$meta_boxes[] = array(
-		'title'  => __( 'Photo/Content Slider' ),
+		'title'  => __( 'Photo Gallery' ),
 		'post_types' => array('page', 'post'),
 		'exclude' => array(
 			'relation'        => 'OR',
@@ -243,27 +243,27 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 		),
 		'fields' => array(
 			array(
-				'id'     => 'slider_content',
+				'id'     => 'gallery_content',
 				'type'   => 'group',
 				'clone'  => true,
 				'sort_clone' => true,
 				'collapsible' => true,
-				'group_title' => array( 'field' => $prefix . 'stitle' ), // ID of the subfield
+				'group_title' => array( 'field' => $prefix . 'gal_title' ), // ID of the subfield
 				'save_state' => true,
 				'fields' => array(
 					array(
 						'name' => __( 'Title', 'rwmb' ),
-						'id'   => $prefix . 'stitle',
+						'id'   => $prefix . 'gal_title',
 						'type' => 'text',
 					),
 					array(
 						'name' => __( 'Image', 'rwmb' ),
-						'id'   => $prefix . 'sphoto',
+						'id'   => $prefix . 'gal_photo',
 						'type' => 'file_input',
 					),
 					array(
 						'name' => __( 'Content', 'rwmb' ),
-						'id'   => $prefix . 'scontent',
+						'id'   => $prefix . 'gal_content',
 						'type' => 'wysiwyg',
 					),
 				),

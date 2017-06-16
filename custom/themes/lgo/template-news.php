@@ -42,7 +42,7 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 			    echo '</div>';
 			}?>
 			
-			<div class="masonry-grid" id="activities-feed">
+			<div id="activities-feed">
 				<?php 
 				// the Post query
 				$args = array(

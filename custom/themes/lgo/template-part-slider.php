@@ -1,44 +1,34 @@
-<?php // Slider
-    $sliders = rwmb_meta( 'slider_content' );
+<?php // photo
+    $photos = rwmb_meta( 'gallery_content' );
+    // print_r($photos);
 
-    if ( ! empty( $sliders) ) { 
-        if (array_key_exists('rw_stitle' , $sliders[0] )) {
+    if ( ! empty( $photos) ) { 
+        if (array_key_exists('rw_gal_title' , $photos[0] )) {
             $test = true;
         } else {
             $test = false;
         }
     }
 
-    $total = count ( $sliders );
-    if ( ! empty( $sliders) && $test == true) { 
+    $total = count ( $photos );
+    if ( ! empty( $photos) && $test == true) { 
     $count=1; ?>
-    <div class="slideshow-container">
-    <?php foreach ( $sliders as $slider ) {
-        $title      = isset( $slider['rw_stitle'] ) ? $slider['rw_stitle'] : '';
-        $image = isset( $slider['rw_sphoto'] ) ? $slider['rw_sphoto'] : '';
-        $content    = wpautop(isset( $slider['rw_scontent'] ) ? $slider['rw_scontent'] : ''); ?>
-         <div class="mySlides fade">
-            <div class="js-slider__image">
-                <img src="<?php echo $image;?>" alt="<?php echo $title;?>">
-                <div class="numbertext"><?php echo $count;?> / <?php echo $total;?></div>
-            </div>
-            <div class="js-slider__content">
-                <h3 class="js-slider__header"><?php echo $title;?></h3>
-                <div><?php echo $content; ?></div>
-            </div>
-        </div>
-    <?php $count++;} //endforeach ?>
-        <a class="prev-s">&#10094;</a>
-        <a class="next-s">&#10095;</a>
-    </div> <!-- end of slider container -->
+    <div class="photo-gallery-container">
+    <?php foreach ( $photos as $photo ) {
+        $title      = isset( $photo['rw_gal_title'] ) ? $photo['rw_gal_title'] : '';
+        $image = isset( $photo['rw_gal_photo'] ) ? $photo['rw_gal_photo'] : '';
+        $content    = wpautop(isset( $photo['rw_gal_content'] ) ? $photo['rw_gal_content'] : ''); ?>
+         
+         <a href="#inline-<?php echo $count;?>" alt="<?php echo $title;?>" title="<?php echo $title;?>" data-lity><div style="background-image: url(<?php echo $image;?>);"></div></a>
 
-    <div style="text-align:center">
-    <?php 
-    $countTwo=1;
-    foreach ( $sliders as $slider ) { ?>
-          <span class="dot" onclick="currentSlide(<?php echo $countTwo;?>)"></span>  
-    <?php $countTwo++;} ?>
-    </div>
+         <div id="inline-<?php echo $count;?>" class="lity-hide">
+             <img src="<?php echo $image;?>" alt="<?php echo $title;?>">
+             <div class="gallery-lightbox-content">
+                 <?php echo $content;?>
+             </div>
+         </div>
+    <?php $count++;} //endforeach ?>
+    </div> <!-- end of photo container -->
 
     <?php }; //endif !empty 
 ?>
