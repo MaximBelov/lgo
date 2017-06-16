@@ -31,6 +31,31 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	);
 
 	$meta_boxes[] = array(
+	    'title'      => __( 'Post Options', 'textdomain' ),
+	    'post_types' => array( 'post'),
+	    'exclude' => array(
+	    	'relation'        => 'OR',
+	    	'template'        => array( 'template-splash-page.php' ),
+	    ),
+	    'fields' => array(
+	        array(
+	           'id'   => $prefix . 'post_speech',
+	           'name' => __( 'Post includes speech', 'textdomain' ),
+	           'type' => 'checkbox',
+	           // 'options' => array(
+	           // 		'yes' => 'Yes',
+	           // 		'no' => 'No'
+	           // 	)
+	        ),
+	        array(
+	           'id'   => $prefix . 'post_template',
+	           'name' => __( 'Horizontal template', 'textdomain' ),
+	           'type' => 'checkbox',
+	        ),
+	    ),
+	);
+
+	$meta_boxes[] = array(
 		'title'   => 'Home Feed Posts/Pages',
 		'post_types' => array( 'page'),
 		'include' => array(

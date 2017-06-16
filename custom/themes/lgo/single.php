@@ -5,6 +5,7 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 
 $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+$templateOpt = rwmb_meta( 'rw_post_template' );
 
 $random = rand(1,5);
 
@@ -24,7 +25,7 @@ if ($random == 1) {
 
 ?>
 
-<?php if (has_term( 'event', 'type' )) { ?>
+<?php if ($templateOpt == 1) { ?>
 
 <div id="skip-to-content" class="scroll-panel page-panel page__bg__fixed single-lg single-event single-push-panel">
 

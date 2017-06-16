@@ -469,7 +469,7 @@ h3.grid-item--1x1--label {
 .grid-item--2x2 {
   // background: rgba(0,0,0,0.3);
   border: 1px solid $white;
-  width: 48%;
+  width: 100%;
   height: 300px;
   @media #{$large-and-up} {
     width: 33%;
@@ -478,8 +478,10 @@ h3.grid-item--1x1--label {
 
 h3.grid-item--2x2--label {
   color: $white;
+  bottom: 25px;
+  position: absolute;
   @media #{$large-and-up} {
-    bottom: 0;
+    // bottom: 0;
     position: absolute; 
     bottom: 25px; 
     max-width: 80%;
