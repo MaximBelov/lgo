@@ -26,14 +26,14 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 			<ul class="tags-list">
 				<?php
 				$tags = get_tags();
-				$html = '<div class="post_tags">';
+				$html = '<ul class="post_tags">';
 				foreach ( $tags as $tag ) {
 					$tag_link = get_tag_link( $tag->term_id );
 							
 					$html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='tag-item-{$tag->slug}'>";
 					$html .= "{$tag->name} ({$tag->count})</a></li>";
 				}
-				$html .= '</div>';
+				$html .= '</ul>';
 				echo $html;
 				?>
 			</ul>

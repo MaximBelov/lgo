@@ -267,6 +267,13 @@ h3.grid-item--2x1--label {
   }
 }
 
+.post_tags {
+  padding: 0;
+  a {
+    color: $main-accent;
+  }
+}
+
 
 // HIGHLIGHT SHARE
 /* @author: Xavier Damman (@xdamman) - http://github.com/xdamman/selection-sharer - @license: MIT */
