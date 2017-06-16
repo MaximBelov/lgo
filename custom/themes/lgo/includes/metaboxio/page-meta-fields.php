@@ -38,20 +38,20 @@ function meta_box_group_accordion_register( $meta_boxes ) {
 	    	'template'        => array( 'template-splash-page.php' ),
 	    ),
 	    'fields' => array(
-	        array(
-	           'id'   => $prefix . 'post_speech',
-	           'name' => __( 'Speech?', 'textdomain' ),
-	           'type' => 'checkbox',
-	           // 'options' => array(
-	           // 		'yes' => 'Yes',
-	           // 		'no' => 'No'
-	           // 	)
-	        ),
-	        array(
-	           'id'   => $prefix . 'post_media',
-	           'name' => __( 'Media document?', 'textdomain' ),
-	           'type' => 'checkbox',
-	        ),
+	        // array(
+	        //    'id'   => $prefix . 'post_speech',
+	        //    'name' => __( 'Speech?', 'textdomain' ),
+	        //    'type' => 'checkbox',
+	        //    // 'options' => array(
+	        //    // 		'yes' => 'Yes',
+	        //    // 		'no' => 'No'
+	        //    // 	)
+	        // ),
+	        // array(
+	        //    'id'   => $prefix . 'post_media',
+	        //    'name' => __( 'Media document?', 'textdomain' ),
+	        //    'type' => 'checkbox',
+	        // ),
 	        array(
 	           'id'   => $prefix . 'post_template',
 	           'name' => __( 'Split template?', 'textdomain' ),

@@ -22,25 +22,6 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 
 		<div class="news-inner-wrapper">
 			<h1><?php the_title();?></h1>
-
-			<?php
-			if(ICL_LANGUAGE_CODE=='fr'){ 
-				$urlString= '/fr/category/'; 
-			} else {
-				$urlString= '/en/category/';
-			}
-			$terms = get_terms( array(
-			    'taxonomy' => 'category',
-			    'hide_empty' => false,
-			    'exclude' => 1
-			) ); 
-			if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-			    echo '<div class="news-categories">';
-			    foreach ( $terms as $term ) {
-			        echo '<a href="' . $urlString . $term->slug . '" class="btn btn--accent">'.$term->name.'</a>';
-			    }
-			    echo '</div>';
-			}?>
 			
 			<div id="activities-feed">
 				<?php 

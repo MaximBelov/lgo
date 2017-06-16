@@ -21,21 +21,16 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 	<div class="right-compartment">
 
 		<div class="news-inner-wrapper">
-			<h1><?php the_title();?></h1>
+			<h1>Media</h1>
 			
-			<div class="masonry-grid" id="activities-feed">
+			<div id="activities-feed">
 				<?php 
 				// the Post query
 				$args = array(
 					'post_type' => array('post'),
 					'posts_per_page' => 30,
+					'tag' => 'media'
 					// 'nopaging' => true
-					'meta_query' => array(
-						array(
-							'key'     => 'rw_post_media',
-							'value'   => 1,
-						),
-					),
 				);
 				$the_query = new WP_Query( $args ); ?>
 			
