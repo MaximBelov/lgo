@@ -35,7 +35,7 @@ a.skip-to:hover {
 .left-panel__navigation {
   position: fixed;
   width: 280px;
-  height: 100vh;
+  min-height: 100vh;
   padding: 15px 20px 50px 20px;
   z-index: 1000;
   @media #{$medium-and-down} {
@@ -100,7 +100,6 @@ a.skip-to:hover {
       transition: all 0.7s ease;
       transform: translateX(-400px);
     }
-
   }
 
   .slim-nav-label {
