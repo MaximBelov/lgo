@@ -276,6 +276,9 @@ h3.grid-item--2x1--label {
 
 .single-page__content.search-results-page.media-template,
 .single-page__content.search-results-page.speeches-template {
+  @media #{$small-and-down} {
+    padding: 50px;
+  }
   .search-results__single {
     margin-bottom: 15px;
   }
@@ -285,6 +288,7 @@ h3.grid-item--2x1--label {
     font-weight: 300;
     text-transform: uppercase;
     padding: 0;
+    margin-bottom: 20px;
     @media #{$medium-and-up} {
         font-size: 60px;
         line-height: 70px;
@@ -300,6 +304,10 @@ h3.grid-item--2x1--label {
   }
   .search-results__heading {
     position: relative;
+    font-family: $serif-font;
+    text-transform: none;
+    font-size: 25px;
+    line-height: 30px;
     &:before {
       content: "";
       width: 5px;
@@ -308,8 +316,14 @@ h3.grid-item--2x1--label {
       background: $black;
       position: absolute;
       left: -15px;
-      top: 45%;
+      top: 10px;
       opacity: 0.8;
+      @media #{$large-and-up} {
+        top: 10px;
+      }
+      @media #{$xlarge-and-up} {
+        top: 10px;
+      }
     }
   }
 }
