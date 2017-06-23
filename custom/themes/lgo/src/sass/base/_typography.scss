@@ -258,7 +258,8 @@ abbr[title] {
 
 // BLOG
 .news-content__body {
-  >p:first-child:first-letter {
+  // >p:first-child:first-letter,
+  span.drop-cap {
     // color: red;
     float: left;
     font-size: 500%;

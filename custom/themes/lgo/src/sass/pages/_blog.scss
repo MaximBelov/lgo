@@ -125,6 +125,7 @@ h3.grid-item--2x1--label {
   min-height: 400px;
   background: $grey;
   background-size: cover;
+  background-position: center center;
 }
 
 .news-content__titles {
@@ -147,12 +148,12 @@ h3.grid-item--2x1--label {
   background: $white;
   padding: 20px;
   width: 90%;
-  margin: -100px auto 0;
+  margin: 0 auto 0;
   @media #{$medium-and-up} {
     width: 60%;
     max-width: 950px;
     padding: 50px 100px;
-    margin: -200px auto 0;
+    margin: 0 auto 0;
   }
 }
 
@@ -270,6 +271,46 @@ h3.grid-item--2x1--label {
   padding: 0;
   a {
     color: $main-accent;
+  }
+}
+
+.single-page__content.search-results-page.media-template,
+.single-page__content.search-results-page.speeches-template {
+  .search-results__single {
+    margin-bottom: 15px;
+  }
+  h1 {
+    font-size: 45px;
+    line-height: 55px;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 0;
+    @media #{$medium-and-up} {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    @media #{$large-and-up} {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    @media #{$xlarge-and-up} {
+        font-size: 90px;
+        line-height: 100px;
+    }
+  }
+  .search-results__heading {
+    position: relative;
+    &:before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: $black;
+      position: absolute;
+      left: -15px;
+      top: 45%;
+      opacity: 0.8;
+    }
   }
 }
 
