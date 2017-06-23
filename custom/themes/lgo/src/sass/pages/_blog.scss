@@ -182,6 +182,13 @@ h3.grid-item--2x1--label {
         line-height: 100px;
     }
   }
+  #activities-feed .grid-item.grid-item--2x2 {
+    transition: all 0.5s ease;
+      &:hover,
+      &:focus {
+        filter: brightness(1.4);
+      }
+  }
 }
 
 .news-categories {
