@@ -60,7 +60,14 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x2 wow fadeInUp" style="background-image: url(<?php if (has_post_thumbnail()) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
-								<h3 class="grid-item--2x2--label"><?php the_title();?></h3>
+								<div class="grid-item__inner-wrapper">
+									<p class="grid-item__date"><?php if(ICL_LANGUAGE_CODE=='fr'){ ?>
+										<?php the_time('j F Y'); ?>
+									<?php } else { ?>
+										<?php the_time('F j, Y'); ?>
+									<?php } ?></p>
+									<h3 class="grid-item--2x2--label"><?php the_title();?></h3>
+								</div>
 							</div>
 						</a>
 					<?php endwhile; ?>

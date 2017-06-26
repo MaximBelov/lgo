@@ -184,10 +184,29 @@ h3.grid-item--2x1--label {
   }
   #activities-feed .grid-item.grid-item--2x2 {
     transition: all 0.5s ease;
-      &:hover,
-      &:focus {
-        filter: brightness(1.4);
+    &:hover,
+    &:focus {
+      filter: brightness(1.4);
+    }
+    .grid-item__inner-wrapper {
+      position: absolute;
+      bottom: 0px;
+      width: 80%;
+      p.grid-item__date {
+        font-family: $sans-serif-font;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 35px;
+        letter-spacing: 0.8px;
+        // opacity: 0.5;
       }
+      h3 {
+        position: relative;
+        margin-bottom: 5px;
+      }
+    }
   }
 }
 
