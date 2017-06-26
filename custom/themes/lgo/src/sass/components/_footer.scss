@@ -12,10 +12,13 @@ footer.navigation-footer {
 	font-size: 12px;
 	font-family: $sans-serif-font;
 	text-transform: uppercase;
-	opacity: 0.7;
-	position: absolute;
-	bottom: 80px;
+	opacity: 0.5;
+	// position: fixed;
+	// bottom: 80px;
 	z-index: 6000000;
+	@media #{$tall-and-up} {
+
+	}
 }
 
 .left-panel__navigation.slim-nav-transition.compress-slim-nav,
