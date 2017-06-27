@@ -73,6 +73,8 @@
     } else {
         $countCheck = 'odd-lg';
     }
+    $weight    = rwmb_meta( 'rw_lg_weight' );
+    $yos    = rwmb_meta( 'rw_lg_yos' );
 ?>
 
 <figure class="gallery-container__single-LG">
@@ -81,7 +83,7 @@
     	</div>
     </a>
 
-    <figcaption><a href="<?php echo the_permalink();?>"><?php echo the_title();?></a></figcaption>
+    <figcaption><a href="<?php echo the_permalink();?>"><?php echo the_title();?><br/><span class="lg__weight"><?php echo $weight;?></span><br/><span class="lg__yos"><?php echo $yos;?></span></a></figcaption>
 </figure>
 <?php $count++;endwhile; ?>
 

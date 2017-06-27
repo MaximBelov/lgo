@@ -17,6 +17,20 @@ function lgo_register_list( $meta_boxes ) {
                 'type'  => 'text',
                 'clone' => false,
             ),
+            array(
+                'name'  => __( 'Number (Weight)', 'textdomain' ),
+                'desc'  => '',
+                'id'    => $prefix . 'lg_weight',
+                'type'  => 'text',
+                'clone' => false,
+            ),
+            array(
+                'name'  => __( 'Years of Service', 'textdomain' ),
+                'desc'  => '',
+                'id'    => $prefix . 'lg_yos',
+                'type'  => 'text',
+                'clone' => false,
+            ),
         )
     );
 

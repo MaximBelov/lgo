@@ -35,5 +35,11 @@ div#gallery-container figure figcaption {
   a {
     color: $alt-black;
     border-bottom: none;
+    span.lg__weight,
+    span.lg__yos {
+      text-transform: none;
+      opacity: 0.7;
+      font-style: italic;
+    }
   }
 }

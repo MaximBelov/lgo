@@ -1,9 +1,9 @@
 <div class="nav-mailchimp">
 	<?php 
 	if(ICL_LANGUAGE_CODE=='fr'){ ?>
-		<a href="#">S'abonner</a>
+		<a href="http://eepurl.com/cUaOfT" target="_blank">S'abonner</a>
 	<?php } else { ?>
-		<a href="#">Subscribe</a>
+		<a href="http://eepurl.com/cUaOfT" target="_blank">Subscribe</a>
 	<?php } ?>
 </div>
 <ul class="nav-social">
