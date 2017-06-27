@@ -11,7 +11,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ful
 
 $cta_copy   = rwmb_meta( 'rw_cta_blurb' );
 $cta_btns   = rwmb_meta( 'cta' );
-$subhead   = rwmb_meta( 'rw_banner_subheading' );
+$subhead   	= rwmb_meta( 'rw_banner_subheading' );
 ?>
 
 <div id="skip-to-content" class="scroll-panel page-panel page__bg__fixed single-page-container--whole">
@@ -26,9 +26,12 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 			<div id="activities-feed">
 				<?php 
 				// the Post query
+				//Protect against arbitrary paged values
+				$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 				$args = array(
 					'post_type' => array('post'),
 					'posts_per_page' => 30,
+					'paged' => $paged,
 					// 'nopaging' => true
 				);
 				$the_query = new WP_Query( $args ); ?>

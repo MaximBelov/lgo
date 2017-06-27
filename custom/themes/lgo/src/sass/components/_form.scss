@@ -109,6 +109,11 @@ form {
   .gfield.gsection {
     margin-top: 0;
   }
+  .field_sublabel_below {
+    h2.gsection_title {
+      margin-top: 50px !important;
+    } 
+  }
   label {
     // font-family: $sans-serif-font;
   }
@@ -128,7 +133,8 @@ form {
     padding: 15px 20px;
     background: $white;
     color: $main-accent;
-    &:hover {
+    &:hover,
+    &:focus {
         color: $white;
         background: $main-accent;
         border: 2px solid $main-accent;

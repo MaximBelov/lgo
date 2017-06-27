@@ -10,6 +10,16 @@
 			   	height: 210px !important;
 			}
 		}
+		ol {
+			padding: 0;
+			margin: 0;
+			@media #{$small-and-down} {
+			    columns: 1 !important;
+			}
+			li {
+				margin-left: 20px;
+			}
+		}
 	}
 	button.js-accordion__header {
 		border:none;
@@ -37,15 +47,9 @@
 			right: 10px;
 			font-family: FontAwesome;
 			content: "\f0d7";
-			// color: $white;
 		}
 		&:focus {
 			background: darken($ll-grey, 10);
-			// outline:none;
-		    // border-color:#fff;
-		    // box-shadow:0 0 10px #fff;
-		    // border: none;
-		    // box-shadow: none;
 		}
 	}
 	.button.js-accordion__header[aria-expanded=true] {

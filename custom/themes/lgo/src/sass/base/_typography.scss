@@ -287,9 +287,19 @@ nav {
             color: $nav-links;
             text-transform: uppercase;
             &:hover {
-                // color: $blue;
+                // color: $main-accent;
+                // opacity: 0.5;
+                // border-bottom: 1px solid $white;
                 // font-weight: bold !important;
+                background: $white;
+                color: $main-accent;
                 cursor: pointer;
+                // background: $white;
+                // position: relative;
+                // left: 0.25em;
+                // padding-left: 0;
+                // box-shadow: 0.25em 0 0 $white,  
+                //             0.25em*-1 0 0 $white;
             }
         }
     }
@@ -332,6 +342,9 @@ nav #menu-menu-principal {
     .menu-item-active {
       color: $white;
       font-weight: bold;
+      &:hover {
+          color: $main-accent;
+      }
     }
     >li {
         margin: 10px 0 15px;
@@ -342,6 +355,9 @@ nav #menu-menu-principal {
             letter-spacing: 1.1px;
             &:hover {
                 // cursor: default;
+                background: $white;
+                color: $main-accent;
+                cursor: pointer;
             }
         }
         >ul {

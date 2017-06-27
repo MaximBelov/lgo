@@ -26,7 +26,8 @@ button {
     border: 2px solid $white;
     border-radius: 4px;
     padding: 15px 20px;
-    &:hover {
+    &:hover,
+    &:focus {
         color: $main-accent;
         border: 2px solid $main-accent;
     }
@@ -40,7 +41,8 @@ button {
     border: 2px solid $main-accent;
     border-radius: 4px;
     padding: 15px 20px;
-    &:hover {
+    &:hover,
+    &:focus {
         color: $white;
         border: 2px solid $main-accent;
         background: $main-accent;
@@ -72,7 +74,8 @@ button {
         }
         .btn.splash-page__fr,
         .btn.splash-page__en {
-            &:hover {
+            &:hover,
+            &:focus {
                 color: $main-accent;
                 background: $white;
                 border: 2px solid $white;
@@ -88,7 +91,8 @@ button {
         background: $main-accent;
         color: $white;
         margin-left: 20px;
-        &:hover {
+        &:hover,
+        &:focus {
             color: $main-accent;
             border: 2px solid $main-accent;
             background: $white;
@@ -108,7 +112,8 @@ button {
         background: $main-accent;
         color: $white;
         font-size: 14px;
-        &:hover {
+        &:hover,
+        &:focus {
             color: $main-accent;
             border: 2px solid $main-accent;
             background: $white;

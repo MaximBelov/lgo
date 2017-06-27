@@ -20,41 +20,85 @@ $subhead   = rwmb_meta( 'rw_banner_subheading' );
 	<div class="dark-overlay"></div>
 	<div class="right-compartment">
 
-		    <div class="single-page__content search-results-page media-template">
-		    <h1>Media</h1>
-		    <?php // Loop starts
-		    $args = array(
-		    	'post_type' => array('post'),
-		    	'posts_per_page' => 30,
-		    	'tag' => 'media'
-		    	// 'nopaging' => true
-		    );
+		<div class="news-inner-wrapper">
+			<h1>Media</h1>
+			
+			<div id="activities-feed">
+				<?php 
+				// the Post query
+				$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+				$args = array(
+					'post_type' => array('post'),
+					'posts_per_page' => 30,
+					'tag' => 'media',
+					'paged' => $paged,
+					// 'nopaging' => true
+				);
+				$the_query = new WP_Query( $args ); ?>
+			
+				<?php if ( $the_query->have_posts() ) : ?>
+			
+					<!-- pagination here -->
+			
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
+						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+						$random = rand(1,5);
+			
+						if ($random == 1) {
+						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+						} else if ($random == 2) {
+						    $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+						} else if ($random == 3) {
+						    $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+						} else if ($random == 4) {
+						    $imgPath = '/src/images/banners/banner_staircase.jpg';
+						} else if ($random == 5) {
+						    $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+						} else {
+						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+						}
+					?>
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);">
+							<div class="grid-item--overlay"></div>
+							<div class="grid-item__wrapper">
+								<p class="grid-item__date"><?php if(ICL_LANGUAGE_CODE=='fr'){ ?>
+										<?php the_time('j F Y'); ?>
+									<?php } else { ?>
+										<?php the_time('F j, Y'); ?>
+									<?php } ?></p>
+								<h3 class="grid-item--2x2--label"><?php the_title();?></h3>
+							</div>
+						</a>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+			
+					<!-- pagination here -->
+			
+					<?php wp_reset_postdata(); ?>
+			
+				<?php else : ?>
+					<!-- <p><?php //_e( 'Sorry, no posts matched your criteria.' ); ?></p> -->
+				<?php endif; ?>
 
-		    $the_query = new WP_Query( $args ); 
-		?>
+				<div class="news-pagination grid-item grid-item--filler">
+					<div class="news-pagination--inner"><?php
+						$big = 999999999; // need an unlikely integer
+						 
+						echo paginate_links( array(
+						    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+						    'format' => '?paged=%#%',
+						    'current' => max( 1, get_query_var('paged') ),
+						    'total' => $the_query->max_num_pages
+						) );
+						?>
+					</div>
+				</div>
+			
+			</div>
 
-		<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-		    <div class="search-results__single">
-		        <h2 class="search-results__heading"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?> <span>(<?php if(ICL_LANGUAGE_CODE=='fr'){ ?><?php the_time('j F Y'); ?><?php } else { ?><?php the_time('F j, Y'); ?><?php } ?>)</span></a></h2>
-		    </div>
-		
-		<?php endwhile; else: ?>
-
-		    <?php 
-		    if(ICL_LANGUAGE_CODE=='fr'){ 
-		        $another = 'Essayez une autre recherche'; 
-
-		    } else { 
-		        $another = 'Please try another search.';
-		    } ?>
-		    <p><?php echo $another;?></p>
-		   
-		<?php endif;  ?>
-
-		<?php //pagination(); ?>
-		<div class="search-pagination"><?php echo paginate_links( $args ); ?></div>
-
+		</div>
 		
 
    	</div> <!-- END OF RIGHT COMPARTMENT -->
