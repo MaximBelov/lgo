@@ -19,6 +19,12 @@ footer.navigation-footer {
 	@media #{$tall-and-up} {
 
 	}
+	a {
+		color: $white;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 
 .left-panel__navigation.slim-nav-transition.compress-slim-nav,
