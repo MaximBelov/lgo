@@ -452,7 +452,7 @@ footer.page-footer {
     width: 33%;
     i {
       position: absolute; 
-      bottom: 20px; 
+      bottom: 27px; 
       right: 10px;
     }
   }
@@ -474,6 +474,26 @@ h3.grid-item--1x1--label {
   }
   @media print {
     color: $black;
+  }
+}
+
+.grid-item--twitter {
+  h3.grid-item--2x1--label {
+    color: $white;
+    font-size: 18px;
+    line-height: 20px;
+    vertical-align: text-bottom;
+    @media #{$large-and-up} {
+      font-size: 20px;
+      line-height: 22px;
+      margin: 0;
+      position: absolute; 
+      bottom: 25px; 
+      max-width: 80%;
+    }
+    @media print {
+      color: $black;
+    }
   }
 }
 
