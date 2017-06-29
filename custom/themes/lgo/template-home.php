@@ -133,7 +133,6 @@ $newsLabel = 'News Feed';
 						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
-								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
 									<div><?php the_excerpt();?></div>
@@ -183,7 +182,6 @@ $newsLabel = 'News Feed';
 						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
-								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
 									<div><?php the_excerpt();?></div>
@@ -294,7 +292,6 @@ $newsLabel = 'News Feed';
 						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
-								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
 									<div><?php the_excerpt();?></div>
@@ -343,7 +340,6 @@ $newsLabel = 'News Feed';
 						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
-								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
 									<div><?php the_excerpt();?></div>
@@ -446,7 +442,6 @@ $newsLabel = 'News Feed';
 						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
-								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
 									<div><?php the_excerpt();?></div>
@@ -554,7 +549,6 @@ $newsLabel = 'News Feed';
 						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
-								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
 									<div><?php the_excerpt();?></div>
@@ -603,7 +597,6 @@ $newsLabel = 'News Feed';
 						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
-								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
 									<div><?php the_excerpt();?></div>
