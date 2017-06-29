@@ -39,14 +39,14 @@ $frCopy   	= rwmb_meta( 'rw_splash_fr_copy' );
 	<div class="grad-overlay"></div>
 	<div class="container">
 		<div>
-			<div class="splash-page__logo"><?php get_template_part( 'template-part-logo' ); ?></div>
+			<div class="splash-page__logo splash-logo-mobile"><?php get_template_part( 'template-part-logo' ); ?></div>
 			<div class="splash-section__EN">
 				<h1><span><?php if($eng) { echo $eng; } else {echo get_the_title();} ?></span></h1>
 				<p><?php echo $engCopy;?></p>
 				<div class="splash-page-buttons">
 					<a href="/en" class="btn splash-page__en">English</a>
 				</div>
-			</div><div class="splash-section__FR">
+			</div><div class="splash-page__logo splash-logo-dt"><?php get_template_part( 'template-part-logo' ); ?></div><div class="splash-section__FR">
 				<h1><span><?php if($fr) { echo $fr; } else {echo get_the_title();} ?></span></h1>
 				<p><?php echo $frCopy;?></p>
 				<div class="splash-page-buttons">
