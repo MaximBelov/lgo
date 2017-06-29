@@ -60,7 +60,7 @@ $subhead   	= rwmb_meta( 'rw_banner_subheading' );
 						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
 						}
 					?>
-						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x2 wow fadeInUp" style="background-image: url(<?php if (has_post_thumbnail()) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);">
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x2" style="background-image: url(<?php if (has_post_thumbnail()) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<div class="grid-item__inner-wrapper">
