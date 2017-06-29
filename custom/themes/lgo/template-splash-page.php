@@ -50,7 +50,7 @@ $frCopy   	= rwmb_meta( 'rw_splash_fr_copy' );
 				<h1><span><?php if($fr) { echo $fr; } else {echo get_the_title();} ?></span></h1>
 				<p><?php echo $frCopy;?></p>
 				<div class="splash-page-buttons">
-					<a href="/fr" class="btn splash-page__fr">FRANÇAIS</a>
+					<a lang=”fr-CA” href="/fr" class="btn splash-page__fr">FRANÇAIS</a>
 				</div>
 			</div>
 		</div>

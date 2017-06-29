@@ -3,8 +3,17 @@ jQuery(document).ready(function($) {
     //Init WOW.js with animate.css
     new WOW().init();
 
-    $('.js-accordion').accordion();
+    if( $('.js-accordion').length ) {
+      $('.js-accordion').accordion();
+    }
 
+    if( $('.grad-overlay').length ) {
+      console.log('here');
+    }
+
+    $('.wpml-ls-item-en a').attr('lang', 'en');
+    $('.wpml-ls-item-fr a').attr('lang', 'fr');
+    
     // Smooth Scroll
     $('a[href*="#"]')
       // Remove links that don't actually link to anything

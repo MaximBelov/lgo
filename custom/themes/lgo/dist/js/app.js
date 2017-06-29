@@ -814,8 +814,17 @@ jQuery(document).ready(function($) {
     //Init WOW.js with animate.css
     new WOW().init();
 
-    $('.js-accordion').accordion();
+    if( $('.js-accordion').length ) {
+      $('.js-accordion').accordion();
+    }
 
+    if( $('.grad-overlay').length ) {
+      console.log('here');
+    }
+
+    $('.wpml-ls-item-en a').attr('lang', 'en');
+    $('.wpml-ls-item-fr a').attr('lang', 'fr');
+    
     // Smooth Scroll
     $('a[href*="#"]')
       // Remove links that don't actually link to anything
@@ -852,45 +861,6 @@ jQuery(document).ready(function($) {
           }
         }
       });
-
-    // SLIDER
-
-    // if ( $('.slideshow-container').length ) {
-    //   var slideIndex = 1;
-    //   showSlides(slideIndex);
-
-    //   function plusSlides(n) {
-    //     showSlides(slideIndex += n);
-    //   }
-
-    //   $('.prev-s').click(function(){
-    //     plusSlides(-1);
-    //   });
-
-    //   $('.next-s').click(function(){
-    //     plusSlides(1);
-    //   });
-
-    //   function currentSlide(n) {
-    //     showSlides(slideIndex = n);
-    //   }
-
-    //   function showSlides(n) {
-    //     var i;
-    //     var slides = document.getElementsByClassName("mySlides");
-    //     var dots = document.getElementsByClassName("dot");
-    //     if (n > slides.length) {slideIndex = 1} 
-    //     if (n < 1) {slideIndex = slides.length}
-    //     for (i = 0; i < slides.length; i++) {
-    //         slides[i].style.display = "none"; 
-    //     }
-    //     for (i = 0; i < dots.length; i++) {
-    //         dots[i].className = dots[i].className.replace(" active-dot", "");
-    //     }
-    //     slides[slideIndex-1].style.display = "block"; 
-    //     dots[slideIndex-1].className += " active-dot";
-    //   }
-    // }
 
     // BANNER-BASED CODE
 

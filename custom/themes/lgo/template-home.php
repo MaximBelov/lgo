@@ -75,7 +75,7 @@ $newsLabel = 'Recent News';
 				<?php echo $subhead;?>
 			</div>
 			<a href="#top-of-content"><svg width="16px" height="29px" viewBox="0 0 16 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-				    <desc>Scroll Down</desc>
+				    <title><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'Faire défiler'; } else { echo 'Scroll'; } ?></title>
 				    <defs></defs>
 				    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 				        <g id="down-arrow-banner" transform="translate(-537.000000, -609.000000)">
@@ -125,7 +125,7 @@ $newsLabel = 'Recent News';
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--4x2--label"><span>About</span></p>
@@ -175,7 +175,7 @@ $newsLabel = 'Recent News';
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--4x2--label"><span>About</span></p>
@@ -201,7 +201,7 @@ $newsLabel = 'Recent News';
 					$recent_posts = wp_get_recent_posts( $args );
 					foreach( $recent_posts as $recent ){
 					$postTitle = get_the_title($recent['ID']); ?>
-						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
+						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1">
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
 								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
@@ -210,11 +210,11 @@ $newsLabel = 'Recent News';
 					<?php }
 					wp_reset_query();
 				?>
-				<a href="<?php echo $cta1L;?>" class="grid-item grid-item--1x1 grid-item grid-item--accent wow fadeInUp">
+				<a href="<?php echo $cta1L;?>" class="grid-item grid-item--1x1 grid-item grid-item--accent">
 					<div class="grid-item__wrapper">
 						<h3 class="grid-item--1x1--label"><?php echo $cta1;?></h3>
 					</div>
-				</a><a href="<?php echo $facebook;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp grid-item--facebook grid-item--social-link">
+				</a><a href="<?php echo $facebook;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--facebook grid-item--social-link">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-facebook" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Facebook</h3>
@@ -237,7 +237,7 @@ $newsLabel = 'Recent News';
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
 					?>
-						<a href="https://twitter.com/<?php echo $twitter;?>/status/<?php echo $tweetURL;?>" target="_blank" class="grid-item grid-item--2x1 wow fadeInUp grid-item--twitter">
+						<a href="https://twitter.com/<?php echo $twitter;?>/status/<?php echo $tweetURL;?>" target="_blank" class="grid-item grid-item--2x1 grid-item--twitter">
 							<div class="grid-item__wrapper">
 								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 								<i class="fa fa-twitter" aria-hidden="true"></i>
@@ -286,7 +286,7 @@ $newsLabel = 'Recent News';
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--4x2--label"><span>About</span></p>
@@ -335,7 +335,7 @@ $newsLabel = 'Recent News';
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--4x2--label"><span>About</span></p>
@@ -362,7 +362,7 @@ $newsLabel = 'Recent News';
 					$recent_posts = wp_get_recent_posts( $args );
 					foreach( $recent_posts as $recent ){
 					$postTitle = get_the_title($recent['ID']); ?>
-						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
+						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1">
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
 								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
@@ -371,12 +371,12 @@ $newsLabel = 'Recent News';
 					<?php }
 					wp_reset_query();
 				?>
-				<a href="http://twitter.com/LGLizDowdeswell" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp grid-item--twitter grid-item--social-link">
+				<a href="http://twitter.com/LGLizDowdeswell" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--twitter grid-item--social-link">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-twitter" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Twitter</h3>
 					</div>
-				</a><a href="<?php echo $cta2L;?>" class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
+				</a><a href="<?php echo $cta2L;?>" class="grid-item grid-item--1x1 grid-item--accent">
 					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label"><?php echo $cta2;?></h3> </div>
 				</a>
 				<?php
@@ -390,7 +390,7 @@ $newsLabel = 'Recent News';
 					$recent_posts = wp_get_recent_posts( $args );
 					foreach( $recent_posts as $recent ){
 					$postTitle = get_the_title($recent['ID']); ?>
-						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
+						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1">
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
 								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
@@ -399,7 +399,7 @@ $newsLabel = 'Recent News';
 					<?php }
 					wp_reset_query();
 				?>
-				<a href="<?php echo $cta3L;?>" class="grid-item grid-item--1x1 grid-item--accent wow fadeInUp">
+				<a href="<?php echo $cta3L;?>" class="grid-item grid-item--1x1 grid-item--accent">
 					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label"><?php echo $cta3;?></h3> </div>
 				</a>
 
@@ -438,7 +438,7 @@ $newsLabel = 'Recent News';
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--4x2--label"><span>About</span></p>
@@ -465,7 +465,7 @@ $newsLabel = 'Recent News';
 					$recent_posts = wp_get_recent_posts( $args );
 					foreach( $recent_posts as $recent ){
 					$postTitle = get_the_title($recent['ID']); ?>
-						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
+						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1">
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
 								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
@@ -474,7 +474,7 @@ $newsLabel = 'Recent News';
 					<?php }
 					wp_reset_query();
 				?>
-				<a href="https://instagram.com/<?php echo $instagram;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp grid-item--instagram grid-item--social-link">
+				<a href="https://instagram.com/<?php echo $instagram;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--instagram grid-item--social-link">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-instagram" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Instagram</h3>
@@ -498,7 +498,7 @@ $newsLabel = 'Recent News';
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
 					?>
-						<a href="https://twitter.com/<?php echo $twitter;?>/status/<?php echo $tweetURL;?>" target="_blank" class="grid-item grid-item--2x1 wow fadeInUp grid-item--twitter">
+						<a href="https://twitter.com/<?php echo $twitter;?>/status/<?php echo $tweetURL;?>" target="_blank" class="grid-item grid-item--2x1 grid-item--twitter">
 							<div class="grid-item__wrapper">
 								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 								<i class="fa fa-twitter" aria-hidden="true"></i>
@@ -546,7 +546,7 @@ $newsLabel = 'Recent News';
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--4x2--label"><span>About</span></p>
@@ -595,7 +595,7 @@ $newsLabel = 'Recent News';
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2 wow fadeInUp" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--4x2--label"><span>About</span></p>
@@ -622,7 +622,7 @@ $newsLabel = 'Recent News';
 					$recent_posts = wp_get_recent_posts( $args );
 					foreach( $recent_posts as $recent ){
 					$postTitle = get_the_title($recent['ID']); ?>
-						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
+						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1">
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
 								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
@@ -631,7 +631,7 @@ $newsLabel = 'Recent News';
 					<?php }
 					wp_reset_query();
 				?>
-				<a href="<?php echo $youtube;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey wow fadeInUp grid-item--youtube grid-item--social-link">
+				<a href="<?php echo $youtube;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--youtube grid-item--social-link">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-youtube-play" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Youtube</h3>
@@ -648,7 +648,7 @@ $newsLabel = 'Recent News';
 					$recent_posts = wp_get_recent_posts( $args );
 					foreach( $recent_posts as $recent ){
 					$postTitle = get_the_title($recent['ID']); ?>
-						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1 wow fadeInUp">
+						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1">
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
 								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>

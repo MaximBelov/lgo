@@ -256,7 +256,15 @@ h3.grid-item--2x1--label {
   flex-wrap: wrap;
   .single-lg__next-link {
     margin: 0;
+    // text-align: right;
+  }
+  .single-lg__prev-link {
     text-align: right;
+  }
+  .single-lg__prev-link.float-pagination-link {
+    width: 100%;
+    // text-align: left;
+    // float: right;
   }
   > div {
     display: inline-block;
@@ -351,6 +359,18 @@ h3.grid-item--2x1--label {
         top: 10px;
       }
     }
+  }
+}
+
+.featured-post-image {
+  position: relative;
+  text-align: center;
+  margin-bottom: 50px;
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 500px;
   }
 }
 

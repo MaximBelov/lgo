@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'fr'; } else { echo 'en'; } ?>">
 <head>
 <title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo('name') ?></title>
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/dist/images/favicon.ico" type="image/x-icon">
@@ -27,7 +27,9 @@
 
 <body <?php body_class(); ?>>
 
-<a href="#skip-to-content" class="skip-to" tabindex="1">Skip to content</a>
+<?php if (!is_page_template( 'template-splash-page.php' )) { ?>
+<a href="#skip-to-content" class="skip-to" tabindex="1"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'Aller au contenu'; } else { echo 'Skip to content'; } ?></a>
+<?php } ?>
 
 <?php if (!is_page_template( 'template-splash-page.php' )) { ?>
 <div tabindex="1" id="nav-icon3" class="nav-trigger">
