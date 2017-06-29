@@ -44,13 +44,13 @@ $frCopy   	= rwmb_meta( 'rw_splash_fr_copy' );
 				<h1><span><?php if($eng) { echo $eng; } else {echo get_the_title();} ?></span></h1>
 				<p><?php echo $engCopy;?></p>
 				<div class="splash-page-buttons">
-					<a href="/" class="btn splash-page__en">English</a>
+					<a href="/en" class="btn splash-page__en">English</a>
 				</div>
 			</div><div class="splash-page__logo splash-logo-dt"><?php get_template_part( 'template-part-logo' ); ?></div><div class="splash-section__FR">
 				<h1><span><?php if($fr) { echo $fr; } else {echo get_the_title();} ?></span></h1>
 				<p><?php echo $frCopy;?></p>
 				<div class="splash-page-buttons">
-					<a lang=”fr-CA” href="/" class="btn splash-page__fr">FRANÇAIS</a>
+					<a lang=”fr-CA” href="/fr" class="btn splash-page__fr">FRANÇAIS</a>
 				</div>
 			</div>
 		</div>
