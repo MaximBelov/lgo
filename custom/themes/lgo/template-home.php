@@ -136,7 +136,7 @@ $newsLabel = 'News Feed';
 								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
-									<p><?php the_excerpt();?></p>
+									<div><?php the_excerpt();?></div>
 								</div>
 							</div>
 						</a>
@@ -186,7 +186,7 @@ $newsLabel = 'News Feed';
 								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
-									<p><?php the_excerpt();?></p>
+									<div><?php the_excerpt();?></div>
 								</div>
 							</div>
 						</a>
@@ -297,7 +297,7 @@ $newsLabel = 'News Feed';
 								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
-									<p><?php the_excerpt();?></p>
+									<div><?php the_excerpt();?></div>
 								</div>
 							</div>
 						</a>
@@ -346,7 +346,7 @@ $newsLabel = 'News Feed';
 								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
-									<p><?php the_excerpt();?></p>
+									<div><?php the_excerpt();?></div>
 								</div>
 							</div>
 						</a>
@@ -449,7 +449,7 @@ $newsLabel = 'News Feed';
 								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
-									<p><?php the_excerpt();?></p>
+									<div><?php the_excerpt();?></div>
 								</div>
 							</div>
 						</a>
@@ -557,7 +557,7 @@ $newsLabel = 'News Feed';
 								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
-									<p><?php the_excerpt();?></p>
+									<div><?php the_excerpt();?></div>
 								</div>
 							</div>
 						</a>
@@ -606,7 +606,7 @@ $newsLabel = 'News Feed';
 								<p class="grid-item--4x2--label"><span><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'À Propos'; } else { echo 'About'; } ?></span></p>
 								<div class="grid-item--4x2--content">
 									<h3><?php the_title();?></h3>
-									<p><?php the_excerpt();?></p>
+									<div><?php the_excerpt();?></div>
 								</div>
 							</div>
 						</a>
