@@ -47,7 +47,7 @@
             <?php get_template_part( 'template-part-nav-social' ); ?>
             <footer class="navigation-footer">
             <a <?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'lang="fr"'; } else { echo 'land="en"'; } ?> href="<?php if(ICL_LANGUAGE_CODE=='fr'){ echo '/fr/accessibilite/'; } else { echo '/en/accessibility'; } ?>"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'Accessibilité'; } else { echo "Accessibility"; } ?></a><br/>
-            <a <?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'lang="fr"'; } else { echo 'land="en"'; } ?> href="<?php if(ICL_LANGUAGE_CODE=='fr'){ echo '/fr/droits-dauteur/'; } else { echo '/en/copyright-information/'; } ?>"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'Imprimeur de la Reine pour l’Ontario ©'; } else { echo "© Queen's Printer for Ontario, 2017"; } ?></a></footer>
+            <a <?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'lang="fr"'; } else { echo 'land="en"'; } ?> href="<?php if(ICL_LANGUAGE_CODE=='fr'){ echo '/fr/droits-dauteur/'; } else { echo '/en/copyright-information/'; } ?>"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo '© Imprimeur de la Reine pour l’Ontario'; } else { echo "© Queen's Printer for Ontario, 2017"; } ?></a></footer>
         </div>
     </nav>
 </div>
