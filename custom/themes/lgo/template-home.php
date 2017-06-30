@@ -194,25 +194,53 @@ $newsLabel = 'News Feed';
 
 				<?php else : ?>
 				<?php endif; } ?>
-				<?php
-					$args = array( 
-						'post_type' => 'post',
-						'numberposts' => '1', 
-						'suppress_filters' => false,
-						'post_status' => 'publish'
-					);
-					$recent_posts = wp_get_recent_posts( $args );
-					foreach( $recent_posts as $recent ){
-					$postTitle = get_the_title($recent['ID']); ?>
-						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1">
+				<?php 
+				// the POST query
+				$args = array(
+					'post_type' => 'post',
+					'posts_per_page' => 1,
+					// 'nopaging' => true 
+					// 'suppress_filters' => false,
+					// 'offset' => 1,
+					'post_status' => 'publish',
+					'post__in'  => get_option( 'sticky_posts' ),
+					'ignore_sticky_posts' => 1
+				);
+				$the_query = new WP_Query( $args ); ?>
+				<?php if ( $the_query->have_posts() ) : ?>
+					<!-- pagination here -->
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						$random = rand(1,5);
+
+						if ($random == 1) {
+						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+						} else if ($random == 2) {
+						    $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+						} else if ($random == 3) {
+						    $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+						} else if ($random == 4) {
+						    $imgPath = '/src/images/banners/banner_staircase.jpg';
+						} else if ($random == 5) {
+						    $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+						} else {
+						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+						}
+					?>
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
+							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
-								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
+								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 							</div>
 						</a>
-					<?php }
-					wp_reset_query();
-				?>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+					<!-- pagination here -->
+					<?php wp_reset_postdata(); ?>
+				<?php else : ?>
+				<?php endif; ?>
 				<a href="<?php echo $cta1L;?>" class="grid-item grid-item--1x1 grid-item grid-item--accent">
 					<div class="grid-item__wrapper">
 						<h3 class="grid-item--1x1--label"><?php echo $cta1;?></h3>
@@ -352,26 +380,53 @@ $newsLabel = 'News Feed';
 
 				<?php else : ?>
 				<?php endif; } ?>
-				<?php
-					$args = array( 
-						'post_type' => 'post',
-						'numberposts' => '1', 
-						'suppress_filters' => false,
-						'offset' => 1,
-						'post_status' => 'publish'
-					);
-					$recent_posts = wp_get_recent_posts( $args );
-					foreach( $recent_posts as $recent ){
-					$postTitle = get_the_title($recent['ID']); ?>
-						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1">
+				<?php 
+				// the POST query
+				$args = array(
+					'post_type' => 'post',
+					'posts_per_page' => 1,
+					// 'nopaging' => true 
+					// 'suppress_filters' => false,
+					'offset' => 2,
+					'post_status' => 'publish',
+					// 'post__in'  => get_option( 'sticky_posts' ),
+					'ignore_sticky_posts' => 1
+				);
+				$the_query = new WP_Query( $args ); ?>
+				<?php if ( $the_query->have_posts() ) : ?>
+					<!-- pagination here -->
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						$random = rand(1,5);
+
+						if ($random == 1) {
+						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+						} else if ($random == 2) {
+						    $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+						} else if ($random == 3) {
+						    $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+						} else if ($random == 4) {
+						    $imgPath = '/src/images/banners/banner_staircase.jpg';
+						} else if ($random == 5) {
+						    $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+						} else {
+						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+						}
+					?>
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
+							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
-								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
+								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 							</div>
 						</a>
-					<?php }
-					wp_reset_query();
-				?>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+					<!-- pagination here -->
+					<?php wp_reset_postdata(); ?>
+				<?php else : ?>
+				<?php endif; ?>
 				<a href="http://twitter.com/LGLizDowdeswell" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--twitter grid-item--social-link">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-twitter" aria-hidden="true"></i>
@@ -380,26 +435,53 @@ $newsLabel = 'News Feed';
 				</a><a href="<?php echo $cta2L;?>" class="grid-item grid-item--1x1 grid-item--accent">
 					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label"><?php echo $cta2;?></h3> </div>
 				</a>
-				<?php
-					$args = array( 
-						'post_type' => 'post',
-						'numberposts' => '1', 
-						'suppress_filters' => false,
-						'post_status' => 'publish',
-						'offset' => 2,
-					);
-					$recent_posts = wp_get_recent_posts( $args );
-					foreach( $recent_posts as $recent ){
-					$postTitle = get_the_title($recent['ID']); ?>
-						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1">
+				<?php 
+				// the POST query
+				$args = array(
+					'post_type' => 'post',
+					'posts_per_page' => 1,
+					// 'nopaging' => true 
+					// 'suppress_filters' => false,
+					'offset' => 3,
+					'post_status' => 'publish',
+					// 'post__in'  => get_option( 'sticky_posts' ),
+					'ignore_sticky_posts' => 1
+				);
+				$the_query = new WP_Query( $args ); ?>
+				<?php if ( $the_query->have_posts() ) : ?>
+					<!-- pagination here -->
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						$random = rand(1,5);
+
+						if ($random == 1) {
+						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+						} else if ($random == 2) {
+						    $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+						} else if ($random == 3) {
+						    $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+						} else if ($random == 4) {
+						    $imgPath = '/src/images/banners/banner_staircase.jpg';
+						} else if ($random == 5) {
+						    $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+						} else {
+						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+						}
+					?>
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
+							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
-								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
+								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 							</div>
 						</a>
-					<?php }
-					wp_reset_query();
-				?>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+					<!-- pagination here -->
+					<?php wp_reset_postdata(); ?>
+				<?php else : ?>
+				<?php endif; ?>
 				<a href="<?php echo $cta3L;?>" class="grid-item grid-item--1x1 grid-item--accent">
 					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label"><?php echo $cta3;?></h3> </div>
 				</a>
@@ -454,26 +536,53 @@ $newsLabel = 'News Feed';
 
 				<?php else : ?>
 				<?php endif; } ?>
-				<?php
-					$args = array( 
-						'post_type' => 'post',
-						'numberposts' => '1', 
-						'suppress_filters' => false,
-						'post_status' => 'publish',
-						'offset' => 3
-					);
-					$recent_posts = wp_get_recent_posts( $args );
-					foreach( $recent_posts as $recent ){
-					$postTitle = get_the_title($recent['ID']); ?>
-						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1">
+				<?php 
+				// the POST query
+				$args = array(
+					'post_type' => 'post',
+					'posts_per_page' => 1,
+					// 'nopaging' => true 
+					// 'suppress_filters' => false,
+					'offset' => 4,
+					'post_status' => 'publish',
+					// 'post__in'  => get_option( 'sticky_posts' ),
+					'ignore_sticky_posts' => 1
+				);
+				$the_query = new WP_Query( $args ); ?>
+				<?php if ( $the_query->have_posts() ) : ?>
+					<!-- pagination here -->
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						$random = rand(1,5);
+
+						if ($random == 1) {
+						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+						} else if ($random == 2) {
+						    $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+						} else if ($random == 3) {
+						    $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+						} else if ($random == 4) {
+						    $imgPath = '/src/images/banners/banner_staircase.jpg';
+						} else if ($random == 5) {
+						    $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+						} else {
+						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+						}
+					?>
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
+							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
-								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
+								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 							</div>
 						</a>
-					<?php }
-					wp_reset_query();
-				?>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+					<!-- pagination here -->
+					<?php wp_reset_postdata(); ?>
+				<?php else : ?>
+				<?php endif; ?>
 				<a href="https://instagram.com/<?php echo $instagram;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--instagram grid-item--social-link">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-instagram" aria-hidden="true"></i>
@@ -609,53 +718,106 @@ $newsLabel = 'News Feed';
 
 				<?php else : ?>
 				<?php endif; } ?>
-				<?php
-					$args = array( 
-						'post_type' => 'post',
-						'numberposts' => '1', 
-						'suppress_filters' => false,
-						'post_status' => 'publish',
-						'offset' => 4
-					);
-					$recent_posts = wp_get_recent_posts( $args );
-					foreach( $recent_posts as $recent ){
-					$postTitle = get_the_title($recent['ID']); ?>
-						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1">
+				<?php 
+				// the POST query
+				$args = array(
+					'post_type' => 'post',
+					'posts_per_page' => 1,
+					// 'nopaging' => true 
+					// 'suppress_filters' => false,
+					'offset' => 5,
+					'post_status' => 'publish',
+					// 'post__in'  => get_option( 'sticky_posts' ),
+					'ignore_sticky_posts' => 1
+				);
+				$the_query = new WP_Query( $args ); ?>
+				<?php if ( $the_query->have_posts() ) : ?>
+					<!-- pagination here -->
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						$random = rand(1,5);
+
+						if ($random == 1) {
+						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+						} else if ($random == 2) {
+						    $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+						} else if ($random == 3) {
+						    $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+						} else if ($random == 4) {
+						    $imgPath = '/src/images/banners/banner_staircase.jpg';
+						} else if ($random == 5) {
+						    $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+						} else {
+						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+						}
+					?>
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
+							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
-								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
+								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 							</div>
 						</a>
-					<?php }
-					wp_reset_query();
-				?>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+					<!-- pagination here -->
+					<?php wp_reset_postdata(); ?>
+				<?php else : ?>
+				<?php endif; ?>
 				<a href="<?php echo $youtube;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--youtube grid-item--social-link">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-youtube-play" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Youtube</h3>
 					</div>
 				</a>
-				<?php
-					$args = array( 
-						'post_type' => 'post',
-						'numberposts' => '1', 
-						'suppress_filters' => false,
-						'post_status' => 'publish',
-						'offset' => 5,
-					);
-					$recent_posts = wp_get_recent_posts( $args );
-					foreach( $recent_posts as $recent ){
-					$postTitle = get_the_title($recent['ID']); ?>
-						<a href="<?php echo get_permalink($recent['ID']);?>" class="grid-item grid-item--2x1">
+				<?php 
+				// the POST query
+				$args = array(
+					'post_type' => 'post',
+					'posts_per_page' => 1,
+					// 'nopaging' => true 
+					// 'suppress_filters' => false,
+					'offset' => 6,
+					'post_status' => 'publish',
+					// 'post__in'  => get_option( 'sticky_posts' ),
+					'ignore_sticky_posts' => 1
+				);
+				$the_query = new WP_Query( $args ); ?>
+				<?php if ( $the_query->have_posts() ) : ?>
+					<!-- pagination here -->
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						$random = rand(1,5);
+
+						if ($random == 1) {
+						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
+						} else if ($random == 2) {
+						    $imgPath = '/src/images/banners/banner_DukatPhotosLGOwineawards-2015.jpg';
+						} else if ($random == 3) {
+						    $imgPath = '/src/images/banners/banner_LGO_reception.jpg';
+						} else if ($random == 4) {
+						    $imgPath = '/src/images/banners/banner_staircase.jpg';
+						} else if ($random == 5) {
+						    $imgPath = '/src/images/banners/banner_Worldpride-Reception.jpg';
+						} else {
+						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
+						}
+					?>
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
+							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
-								<h3 class="grid-item--2x1--label"><?php echo $postTitle;?></h3>
+								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 							</div>
 						</a>
-					<?php }
-					wp_reset_query();
-				?>
-				<!-- <div class="grid-item grid-item--filler"></div> -->
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+					<!-- pagination here -->
+					<?php wp_reset_postdata(); ?>
+				<?php else : ?>
+				<?php endif; ?>
 				<div class="grid-item grid-item--filler">
 					<a href="/en/news" class="btn btn--accent">View more news</a>
 				</div>
