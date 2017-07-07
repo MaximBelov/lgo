@@ -23,8 +23,8 @@
 		$instagram = $options['lgo_instagram'];
 		$youtube = $options['lgo_youtube'];
 	?>
-    <li><a href="http://twitter.com/<?php echo $twitter; ?>" target="_blank" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span class= "hidden-element" >Twitter</span></a></li>
-    <li><a href="<?php echo $facebook; ?>" target="_blank" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span class= "hidden-element" >Facebook</span></a></li>
-    <li><a href="https://www.instagram.com/<?php echo $instagram; ?>" target="_blank" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i><span class= "hidden-element" >Instagram</span></a></li>
-    <li><a href="<?php echo $youtube; ?>" target="_blank" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a><span class= "hidden-element" >Youtube</span></li>
+    <li><a href="http://twitter.com/<?php echo $twitter; ?>" target="_blank" title="Twitter" class="opens-in-new-window"><i class="fa fa-twitter" aria-hidden="true"></i><span class="hidden-element">Twitter</span><span class="new-window-box"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo "S'ouvre dans un nouvel onglet"; } else { echo 'Opens in a new window'; }?></span></a></li>
+    <li><a href="<?php echo $facebook; ?>" target="_blank" title="Facebook" class="opens-in-new-window"><i class="fa fa-facebook" aria-hidden="true"></i><span class="hidden-element" >Facebook</span><span class="new-window-box"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo "S'ouvre dans un nouvel onglet"; } else { echo 'Opens in a new window'; }?></span></a></li>
+    <li><a href="https://www.instagram.com/<?php echo $instagram; ?>" target="_blank" title="Instagram" class="opens-in-new-window"><i class="fa fa-instagram" aria-hidden="true"></i><span class="hidden-element">Instagram</span><span class="new-window-box"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo "S'ouvre dans un nouvel onglet"; } else { echo 'Opens in a new window'; }?></span></a></li>
+    <li><a href="<?php echo $youtube; ?>" target="_blank" title="Youtube" class="opens-in-new-window"><i class="fa fa-youtube-play" aria-hidden="true"></i><span class="hidden-element">Youtube</span><span class="new-window-box"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo "S'ouvre dans un nouvel onglet"; } else { echo 'Opens in a new window'; }?></span></a></li>
 </ul>
