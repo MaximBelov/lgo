@@ -11,9 +11,9 @@ a {
 
 body {
     font-family: 'Rasa', serif;
-    font-color: $body-copy;
+    color: $body-copy;
     @media print {
-      font-color: $black;
+      color: $black;
     }
 }
 
