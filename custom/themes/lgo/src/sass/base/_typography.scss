@@ -388,7 +388,9 @@ nav #menu-menu-principal {
 }
 
 a.opens-in-new-window {
+    // display: none;
     span.new-window-box {
+        display: none;
         position: absolute;
         left: -9000px;
         width: 0;
@@ -409,8 +411,10 @@ a.opens-in-new-window {
 a.opens-in-new-window:hover,
 a.opens-in-new-window:focus,
 a.opens-in-new-window:active {
+    // display: none;
     position: relative;
     span.new-window-box {
+        display: none;
         position:absolute;
         top:1em; 
         left:1em; 

@@ -245,7 +245,7 @@ $newsLabel = 'News Feed';
 					<div class="grid-item__wrapper">
 						<h3 class="grid-item--1x1--label"><?php echo $cta1;?></h3>
 					</div>
-				</a><a href="<?php echo $facebook;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--facebook grid-item--social-link opens-in-new-window">
+				</a><a href="<?php echo $facebook;?>" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--facebook grid-item--social-link opens-in-new-window">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-facebook" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Facebook</h3>
@@ -269,7 +269,7 @@ $newsLabel = 'News Feed';
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
 					?>
-						<a href="https://twitter.com/<?php echo $twitter;?>/status/<?php echo $tweetURL;?>" target="_blank" class="grid-item grid-item--2x1 grid-item--twitter">
+						<a href="https://twitter.com/<?php echo $twitter;?>/status/<?php echo $tweetURL;?>" class="grid-item grid-item--2x1 grid-item--twitter">
 							<div class="grid-item__wrapper">
 								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 								<i class="fa fa-twitter" aria-hidden="true"></i>
@@ -428,7 +428,7 @@ $newsLabel = 'News Feed';
 					<?php wp_reset_postdata(); ?>
 				<?php else : ?>
 				<?php endif; ?>
-				<a href="http://twitter.com/LGLizDowdeswell" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--twitter grid-item--social-link opens-in-new-window">
+				<a href="http://twitter.com/LGLizDowdeswell" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--twitter grid-item--social-link opens-in-new-window">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-twitter" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Twitter</h3>
@@ -585,7 +585,7 @@ $newsLabel = 'News Feed';
 					<?php wp_reset_postdata(); ?>
 				<?php else : ?>
 				<?php endif; ?>
-				<a href="https://instagram.com/<?php echo $instagram;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--instagram grid-item--social-link opens-in-new-window">
+				<a href="https://instagram.com/<?php echo $instagram;?>" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--instagram grid-item--social-link opens-in-new-window">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-instagram" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Instagram</h3>
@@ -610,7 +610,7 @@ $newsLabel = 'News Feed';
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
 					?>
-						<a href="https://twitter.com/<?php echo $twitter;?>/status/<?php echo $tweetURL;?>" target="_blank" class="grid-item grid-item--2x1 grid-item--twitter">
+						<a href="https://twitter.com/<?php echo $twitter;?>/status/<?php echo $tweetURL;?>" class="grid-item grid-item--2x1 grid-item--twitter">
 							<div class="grid-item__wrapper">
 								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 								<i class="fa fa-twitter" aria-hidden="true"></i>
@@ -768,7 +768,7 @@ $newsLabel = 'News Feed';
 					<?php wp_reset_postdata(); ?>
 				<?php else : ?>
 				<?php endif; ?>
-				<a href="<?php echo $youtube;?>" target="_blank" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--youtube grid-item--social-link opens-in-new-window">
+				<a href="<?php echo $youtube;?>" class="grid-item grid-item--1x1 grid-item--llgrey grid-item--youtube grid-item--social-link opens-in-new-window">
 					<div class="grid-item__wrapper">
 						<i class="fa fa-youtube-play" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">YouTube</h3>
