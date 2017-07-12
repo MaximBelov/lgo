@@ -250,7 +250,7 @@ $newsLabel = 'News Feed';
 						<i class="fa fa-facebook" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Facebook</h3>
 					</div>
-					<span class="new-window-box"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo "S'ouvre dans un nouvel onglet"; } else { echo 'Opens in a new window'; }?></span>
+					
 				</a>
 				<?php 
 				// the Twitter query
@@ -433,7 +433,7 @@ $newsLabel = 'News Feed';
 						<i class="fa fa-twitter" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Twitter</h3>
 					</div>
-					<span class="new-window-box"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo "S'ouvre dans un nouvel onglet"; } else { echo 'Opens in a new window'; }?></span>
+					
 				</a><a href="<?php echo $cta2L;?>" class="grid-item grid-item--1x1 grid-item--accent">
 					<div class="grid-item__wrapper"><h3 class="grid-item--1x1--label"><?php echo $cta2;?></h3> </div>
 				</a>
@@ -590,7 +590,7 @@ $newsLabel = 'News Feed';
 						<i class="fa fa-instagram" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">Instagram</h3>
 					</div>
-					<span class="new-window-box"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo "S'ouvre dans un nouvel onglet"; } else { echo 'Opens in a new window'; }?></span>
+					
 				</a>
 				<?php 
 				// the Twitter query
@@ -773,7 +773,7 @@ $newsLabel = 'News Feed';
 						<i class="fa fa-youtube-play" aria-hidden="true"></i>
 						<h3 class="grid-item--1x1--label">YouTube</h3>
 					</div>
-					<span class="new-window-box"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo "S'ouvre dans un nouvel onglet"; } else { echo 'Opens in a new window'; }?></span>
+					
 				</a>
 				<?php 
 				// the POST query
