@@ -1,9 +1,9 @@
 <div class="nav-mailchimp">
 	<?php 
 	if(ICL_LANGUAGE_CODE=='fr'){ ?>
-		<a href="http://eepurl.com/cUaOfT">S'abonner<span class="new-window-box"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo "S'ouvre dans un nouvel onglet"; } else { echo 'Opens in a new window'; }?></span></a>
+		<a href="http://eepurl.com/cUaOfT">S'abonner</a>
 	<?php } else { ?>
-		<a href="http://eepurl.com/cUaOfT">Subscribe<span class="new-window-box"><?php if(ICL_LANGUAGE_CODE=='fr'){ echo "S'ouvre dans un nouvel onglet"; } else { echo 'Opens in a new window'; }?></span></a>
+		<a href="http://eepurl.com/cUaOfT">Subscribe</a>
 	<?php } ?>
 </div>
 <ul class="nav-social">
