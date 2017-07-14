@@ -9,8 +9,8 @@
 	<div class="right-compartment">
 		
 		<div class="single-page__content">
-		<h2>Whoops! This content is unavailable at the moment.</h2>
-		<p>Please try another page, or preform a search.</p>
+		<h2><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'Ce contenu n\'est pas disponible.'; } else { echo 'Whoops! This content is unavailable at the moment.'; } ?></h2>
+		<p><?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'Essayez une autre page ou recherche.'; } else { echo 'Please try another page, or perform a search.'; } ?></p>
 		</div>
 		
    	</div> <!-- END OF RIGHT COMPARTMENT -->
