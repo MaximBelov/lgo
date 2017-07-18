@@ -388,4 +388,29 @@ div#main-menu-ww {
   }
 }
 
+// FOR HTTPS
+.wpml-ls-legacy-list-horizontal {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    // padding-left: 15px;
+    li.wpml-ls-current-language {
+      a{
+        font-weight: bold;
+        border-bottom: 1px solid rgba(255,255,255,0.5);
+      }
+    }
+    >li.wpml-ls-item-fr a {
+      &:after {
+          content: '';
+          position: absolute;
+          width: 2px;
+          height: 17px;
+          left: -11px;
+          top: 0px;
+          background: $white;
+      }
+    }
+  }
+}
 
