@@ -6,7 +6,16 @@
  * @subpackage MB Custom Post Type
  */
 
-interface MB_CPT_Encoder_Interface {
+if ( ! interface_exists( 'MB_CPT_Encoder_Interface' ) ) {
 
-	public function encode( $data );
+	interface MB_CPT_Encoder_Interface {
+
+		/**
+		 * Encode data.
+		 *
+		 * @param  mixed $data Data need to be encoded.
+		 * @return string
+		 */
+		public function encode( $data );
+	}
 }
