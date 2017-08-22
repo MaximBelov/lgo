@@ -3,6 +3,10 @@
 .sass-cache/
 robots.txt
 node_modules/
+languages/
+languages/*
+cgi-bin/
+cgi-bin/*
 
 # Wordpress specific
 
