@@ -248,9 +248,9 @@ class GFFormList {
 
 		require_once( GFCommon::get_base_path() . '/form_detail.php' );
 
-		$form_json = rgpost( 'form' );
+		$form_json = rgpost( 'form', false );
 
-		$form = json_decode( $form_json, true );
+		$form = json_decode( stripslashes( $form_json ), true );
 
 		if ( empty( $form['title'] ) ) {
 			$result = array( 'error' => __( 'Please enter a form title.', 'gravityforms' ) );
