@@ -355,7 +355,7 @@ footer.page-footer {
   top: 0;
   bottom: 0;
   height: 100%;
-  background-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 100%);
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 100%);
 }
 
 .grid-item--4x2:first-child {
