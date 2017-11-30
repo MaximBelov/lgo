@@ -203,11 +203,12 @@ $newsLabel = "Events";
 					// 'suppress_filters' => false,
 					// 'offset' => 1,
 					'post_status' => 'publish',
-					'post__in'  => get_option( 'sticky_posts' ),
-					'ignore_sticky_posts' => 1
+					// 'post__in'  => get_option( 'sticky_posts' ),
+					// 'ignore_sticky_posts' => 1
 				);
-				$the_query = new WP_Query( $args ); ?>
-				<?php if ( $the_query->have_posts() ) : ?>
+				$the_query = new WP_Query( $args ); 
+				$count1 = 1;?>
+				<?php if ( $the_query->have_posts() ) :?>
 					<!-- pagination here -->
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
@@ -228,14 +229,17 @@ $newsLabel = "Events";
 						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
 						}
 					?>
-						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
+						<?php if ($count1 == 1) { ?>
+							<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
 								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 							</div>
-						</a>
-					<?php endwhile; ?>
+							</a>
+						<?php } ?>
+						
+					<?php $count1++; endwhile;?>
 					<!-- end of the loop -->
 					<!-- pagination here -->
 					<?php wp_reset_postdata(); ?>
@@ -385,15 +389,16 @@ $newsLabel = "Events";
 				// the POST query
 				$args = array(
 					'post_type' => 'post',
-					'posts_per_page' => 1,
+					'posts_per_page' => 2,
 					// 'nopaging' => true 
 					// 'suppress_filters' => false,
-					'offset' => 2,
+					// 'offset' => 1,
 					'post_status' => 'publish',
 					// 'post__in'  => get_option( 'sticky_posts' ),
-					'ignore_sticky_posts' => 1
+					// 'ignore_sticky_posts' => 1
 				);
-				$the_query = new WP_Query( $args ); ?>
+				$the_query = new WP_Query( $args ); 
+				$count2 = 1; ?>
 				<?php if ( $the_query->have_posts() ) : ?>
 					<!-- pagination here -->
 					<!-- the loop -->
@@ -415,6 +420,7 @@ $newsLabel = "Events";
 						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
 						}
 					?>
+						<?php if ($count2 == 2) { ?>
 						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
@@ -422,7 +428,8 @@ $newsLabel = "Events";
 								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 							</div>
 						</a>
-					<?php endwhile; ?>
+						<?php } ?>
+					<?php $count2++; endwhile; ?>
 					<!-- end of the loop -->
 					<!-- pagination here -->
 					<?php wp_reset_postdata(); ?>
@@ -441,15 +448,16 @@ $newsLabel = "Events";
 				// the POST query
 				$args = array(
 					'post_type' => 'post',
-					'posts_per_page' => 1,
+					'posts_per_page' => 3,
 					// 'nopaging' => true 
 					// 'suppress_filters' => false,
-					'offset' => 3,
+					// 'offset' => 2,
 					'post_status' => 'publish',
 					// 'post__in'  => get_option( 'sticky_posts' ),
-					'ignore_sticky_posts' => 1
+					// 'ignore_sticky_posts' => 1
 				);
-				$the_query = new WP_Query( $args ); ?>
+				$the_query = new WP_Query( $args );
+				$count3 = 1; ?>
 				<?php if ( $the_query->have_posts() ) : ?>
 					<!-- pagination here -->
 					<!-- the loop -->
@@ -471,6 +479,7 @@ $newsLabel = "Events";
 						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
 						}
 					?>
+						<?php if ($count3 == 3) { ?>
 						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
@@ -478,7 +487,8 @@ $newsLabel = "Events";
 								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 							</div>
 						</a>
-					<?php endwhile; ?>
+						<?php } ?>
+					<?php $count3++; endwhile; ?>
 					<!-- end of the loop -->
 					<!-- pagination here -->
 					<?php wp_reset_postdata(); ?>
@@ -542,15 +552,16 @@ $newsLabel = "Events";
 				// the POST query
 				$args = array(
 					'post_type' => 'post',
-					'posts_per_page' => 1,
+					'posts_per_page' => 4,
 					// 'nopaging' => true 
 					// 'suppress_filters' => false,
-					'offset' => 4,
+					// 'offset' => 4,
 					'post_status' => 'publish',
 					// 'post__in'  => get_option( 'sticky_posts' ),
-					'ignore_sticky_posts' => 1
+					// 'ignore_sticky_posts' => 1
 				);
-				$the_query = new WP_Query( $args ); ?>
+				$the_query = new WP_Query( $args ); 
+				$count4 = 1;?>
 				<?php if ( $the_query->have_posts() ) : ?>
 					<!-- pagination here -->
 					<!-- the loop -->
@@ -572,6 +583,7 @@ $newsLabel = "Events";
 						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
 						}
 					?>
+						<?php if ($count4 == 4) { ?>
 						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
@@ -579,7 +591,8 @@ $newsLabel = "Events";
 								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 							</div>
 						</a>
-					<?php endwhile; ?>
+						<?php } ?>
+					<?php $count4++; endwhile; ?>
 					<!-- end of the loop -->
 					<!-- pagination here -->
 					<?php wp_reset_postdata(); ?>
@@ -725,15 +738,16 @@ $newsLabel = "Events";
 				// the POST query
 				$args = array(
 					'post_type' => 'post',
-					'posts_per_page' => 1,
+					'posts_per_page' => 5,
 					// 'nopaging' => true 
 					// 'suppress_filters' => false,
-					'offset' => 5,
+					// 'offset' => 5,
 					'post_status' => 'publish',
 					// 'post__in'  => get_option( 'sticky_posts' ),
-					'ignore_sticky_posts' => 1
+					// 'ignore_sticky_posts' => 1
 				);
-				$the_query = new WP_Query( $args ); ?>
+				$the_query = new WP_Query( $args ); 
+				$count5 = 1;?>
 				<?php if ( $the_query->have_posts() ) : ?>
 					<!-- pagination here -->
 					<!-- the loop -->
@@ -755,6 +769,7 @@ $newsLabel = "Events";
 						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
 						}
 					?>
+						<?php if ($count5 == 5) { ?>
 						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
@@ -762,7 +777,8 @@ $newsLabel = "Events";
 								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 							</div>
 						</a>
-					<?php endwhile; ?>
+						<?php } ?>
+					<?php $count5++; endwhile; ?>
 					<!-- end of the loop -->
 					<!-- pagination here -->
 					<?php wp_reset_postdata(); ?>
@@ -779,15 +795,16 @@ $newsLabel = "Events";
 				// the POST query
 				$args = array(
 					'post_type' => 'post',
-					'posts_per_page' => 1,
+					'posts_per_page' => 6,
 					// 'nopaging' => true 
 					// 'suppress_filters' => false,
-					'offset' => 6,
+					// 'offset' => 6,
 					'post_status' => 'publish',
 					// 'post__in'  => get_option( 'sticky_posts' ),
-					'ignore_sticky_posts' => 1
+					// 'ignore_sticky_posts' => 1
 				);
-				$the_query = new WP_Query( $args ); ?>
+				$the_query = new WP_Query( $args ); 
+				$count6 = 1;?>
 				<?php if ( $the_query->have_posts() ) : ?>
 					<!-- pagination here -->
 					<!-- the loop -->
@@ -809,6 +826,7 @@ $newsLabel = "Events";
 						    $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
 						}
 					?>
+						<?php if ($count6 == 6) { ?>
 						<a href="<?php the_permalink();?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
@@ -816,7 +834,8 @@ $newsLabel = "Events";
 								<h3 class="grid-item--2x1--label"><?php the_title();?></h3>
 							</div>
 						</a>
-					<?php endwhile; ?>
+						<?php } ?>
+					<?php $count6++; endwhile; ?>
 					<!-- end of the loop -->
 					<!-- pagination here -->
 					<?php wp_reset_postdata(); ?>
