@@ -44,9 +44,9 @@ $cta3L = rwmb_meta( 'rw_cta_3_link' );
 
 
 if(ICL_LANGUAGE_CODE=='fr'){
-$newsLabel = "Fil D’Actualités";
+$newsLabel = "Événements";
 } else {
-$newsLabel = 'News Feed';
+$newsLabel = "Events";
 }
 
 // $random = rand(1,5);
