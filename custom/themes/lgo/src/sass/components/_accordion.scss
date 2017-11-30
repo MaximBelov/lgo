@@ -47,6 +47,9 @@
 		    font-size: 24px;
 		    line-height: 28px;
 		}
+		@media print {
+			background: darken($ll-grey, 10) !important;
+		}
 		&:after {
 			position: absolute;
 			top: 25%;
@@ -67,11 +70,15 @@
 			content: "\f0d8";
 		}
 	}
-	.js-accordion__panel {
+	.js-accordion__panel,
+	.js-accordion__panel.animated-accordion__panel{
 		@media print {
 			visibility: visible !important;
-			max-height: auto !important;
+			height: auto !important;
 			opacity: 1 !important;
+			display: block !important;
+			overflow: visible !important;
+			max-height: 1000vh !important;
 		}
 		.js-accordion__panel-wrapper {
 			padding: 40px;

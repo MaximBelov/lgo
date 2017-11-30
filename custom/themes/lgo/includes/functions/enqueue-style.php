@@ -10,7 +10,7 @@ function my_styles() {
 	wp_enqueue_style('animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', false);
 	wp_register_style('lity', get_template_directory_uri() . '/src/css/lity.min.css');
  	wp_enqueue_style( 'lity' );
-	wp_register_style('style', get_template_directory_uri() . '/style.css?v=1711301245p');
+	wp_register_style('style', get_template_directory_uri() . '/style.css?v=1711300106p');
  	wp_enqueue_style( 'style' );
 }
 
