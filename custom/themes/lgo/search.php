@@ -43,7 +43,19 @@ if ($random == 1) {
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
         <div class="search-results__single">
+            <p style="margin: 0;"><?php echo get_the_date('M j, Y', $post->ID); ?></p>
             <h2><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+            <?php
+            // Must be inside a loop.
+            
+            if ( has_post_thumbnail() ) {
+                the_post_thumbnail();
+            }
+            else {
+                echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) 
+                    . '/images/thumbnail-default.jpg" />';
+            }
+            ?>
             <p><?php echo wp_trim_words( get_the_content(), 30, '...' );?><a href="<?php the_permalink(); ?>" class="read-more-link"><i class="fa fa-link" aria-hidden="true"></i></a></p>
         </div>
     
