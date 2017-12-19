@@ -1039,13 +1039,13 @@ jQuery(document).ready(function($) {
           if ($("body").hasClass("lang-fr")) {
             var clip = urlBase.replace("/fr/", "/en/");
             $(".wpml-ls-item-fr a").attr("href", urlBase);
-            $(".wpml-ls-item-en a").attr("href", location.host+'/en/'+parentSlug);
+            $(".wpml-ls-item-en a").attr("href", location.protocol+'//'+location.host+'/en/'+parentSlug);
             // console.log('BOOM', childSlug);
           } else {
             // console.log('BOO', childSlug);
             // var parentSlug = $('#scroll-header').data("twpmlSlug");
             var clip = urlBase.replace("/en/", "/fr/");
-            $(".wpml-ls-item-fr a").attr("href", location.host+'/fr/'+parentSlug);
+            $(".wpml-ls-item-fr a").attr("href", location.protocol+'//'+location.host+'/fr/'+parentSlug);
             $(".wpml-ls-item-en a").attr("href", urlBase);
           }
         }
