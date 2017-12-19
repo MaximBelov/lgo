@@ -844,6 +844,12 @@ jQuery(document).ready(function($) {
           if (target.length) {
             // Only prevent default if animation is actually gonna happen
             event.preventDefault();
+            console.log(target.selector);
+            // console.log(location.protocol+'//'+location.host+location.pathname);
+            var urlString = location.protocol+'//'+location.host+location.pathname;
+            var noSlash = urlString.replace(/\/+$/, "");
+            console.log(noSlash);
+            window.history.pushState("object or string", "Title", noSlash+target.selector);
             $('html, body').animate({
               scrollTop: target.offset().top
             }, 500, function() {
@@ -999,7 +1005,7 @@ jQuery(document).ready(function($) {
       //SHOW SHARE PANEL
       if ( $( sharePanel.length >= 1 )) {
         if (scrollPos > (h*0.7)) {
-          sharePanel.addClass('scrolling-share');
+          sharePanel.addClass('scrolling-share'); 
         } else {
           sharePanel.removeClass('scrolling-share');
         } 

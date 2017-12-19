@@ -9,7 +9,7 @@ function my_scripts() {
 	wp_deregister_script('wp-embed');
 	//wp_deregister_script('jquery');
 	wp_enqueue_script('lity', get_template_directory_uri() . '/src/js/lity.min.js', array(), '', true);
-  	wp_enqueue_script('app', get_template_directory_uri() . '/dist/js/app.min.js', array(), '', true);
+  	wp_enqueue_script('app', get_template_directory_uri() . '/dist/js/app.min.js?v=1712190903a', array(), '', true);
 }
 
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
