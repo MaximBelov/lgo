@@ -87,14 +87,14 @@ if ($random == 1) {
 
 		<section class="news-content" id="skip-to-content">
 			<div class="news-content__titles">
+				<h1><?php the_title();?></h1>
 				<p class="news-content__date">
 					<?php if(ICL_LANGUAGE_CODE=='fr'){ ?>
-						<?php the_time('j F Y'); ?>
+						<?php the_time('j M Y'); ?>
 					<?php } else { ?>
 						<?php the_time('F j, Y'); ?>
 					<?php } ?>
 				</p>
-				<h1><?php the_title();?></h1>
 			</div>
 			<?php if ($thumbnail) { ?>
 			<div class="featured-post-image">

@@ -151,8 +151,9 @@ jQuery(document).ready(function($) {
 
     $(window).scroll(function() {
 
+
       // Change NAV active item CSS on scroll
-      if( $('.parent-page-layout').length ) {
+      if( $('.child-page-section').length ) {
         var cur_pos = $(this).scrollTop();
         sections.each(function() {
           var top = $(this).offset().top - 200,
@@ -165,11 +166,35 @@ jQuery(document).ready(function($) {
 
             $(this).addClass('menu-item-active');
             nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('menu-item-active');
+            var urlString = location.protocol+'//'+location.host+location.pathname;
+            var noSlash = urlString.replace(/\/+$/, "");
+            // console.log(noSlash);
+            window.history.pushState("object or string", "Title", noSlash+'#'+$(this).attr('id'));
             // var theBG = $(this).attr('data-child-bg');
             // // console.log(theBG);
             // $('.left-compartment__bg').css({'backgroundImage': 'url('+theBG+')'});
           }
         });
+
+        // check the language
+        var stringt = document.location.href
+        if (stringt.includes("#")) {
+          var hashNew = stringt.split('#')[1];
+          var baseID = "#" + hashNew;
+          var childSlug = $(baseID).data("childSlug");
+          var urlBase = location.protocol+'//'+location.host+location.pathname;
+          if ($("body").hasClass("lang-fr")) {
+            var clip = urlBase.replace("/fr/", "/en/");
+            $(".wpml-ls-item-fr a").attr("href", urlBase+baseID);
+            $(".wpml-ls-item-en a").attr("href", clip+"#"+childSlug);
+            // console.log('BOOM', childSlug);
+          } else {
+            // console.log('BOO', childSlug);
+            var clip = urlBase.replace("/en/", "/fr/");
+            $(".wpml-ls-item-fr a").attr("href", clip+"#"+childSlug);
+            $(".wpml-ls-item-en a").attr("href", urlBase+baseID);
+          }
+        }
       }
 
       //Nav logo change color on scroll

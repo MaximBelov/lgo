@@ -93,13 +93,24 @@ if ($random == 1) {
 				$the_query->the_post(); 
 
 			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' );
+
+			if(ICL_LANGUAGE_CODE=='fr'){
+				$tid = icl_object_id($post->ID,'post',false,'en');
+				$tslug = get_post_field( 'post_name', $tid );
+			} else {
+				$tid = icl_object_id($post->ID,'post',false,'fr');
+				$tslug = get_post_field( 'post_name', $tid );
+			}
+
 			?>
 
 			<div class="preload-background" style="background-image: url(<?php echo $thumb[0];?>);"></div>
 
+			<?php //echo $tslug;?>			
+
 			<?php if ($post->ID == 15 || $post->ID == 448 ) { ?>
 
-			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb[0];?>">
+			<div id="<?php echo $post->post_name;?>" class="child-page-section child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb[0];?>" data-child-slug="<?php echo $tslug;?>">
 				<?php
 				if ( current_user_can('administrator') ) { ?>
 					<a href="<?php echo get_edit_post_link( $post->ID );?>" class="btn btn--accent" id="edit-child-section">Edit</a>
@@ -120,7 +131,7 @@ if ($random == 1) {
 
 			<?php } else { ?>
 			
-			<div id="<?php echo $post->post_name;?>" class="child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb[0];?>">
+			<div id="<?php echo $post->post_name;?>" class="child-page-section child-page child-page-<?php echo $post->ID;?>" data-child-id="<?php echo $post->ID;?>" data-child-bg="<?php echo $thumb[0];?>" data-child-slug="<?php echo $tslug;?>">
 				<?php
 				if ( current_user_can('administrator') ) { ?>
 					<a href="<?php echo get_edit_post_link( $post->ID );?>" class="btn btn--accent" id="edit-child-section">Edit</a>
