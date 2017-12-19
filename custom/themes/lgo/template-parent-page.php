@@ -32,11 +32,21 @@ if ($random == 1) {
     $imgPath = '/src/images/banner_DukatPhotosLGOwineawards-2015.jpg';
 }
 
+if(ICL_LANGUAGE_CODE=='fr'){
+	$pid = icl_object_id($post->ID,'page',false,'en');
+} else {
+	$pid = icl_object_id($post->ID,'page',false,'fr');
+}
+
+// print_r($pid);
+$pslug = get_post_field( 'post_name', $pid );
+// print_r($pslug);
+
 ?>
 
 <?php get_template_part( 'template-part-nav' ); ?>
 
-<div id="scroll-header" class="top-page-panel parent-template" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);">
+<div id="scroll-header" class="top-page-panel parent-template" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);" data-twpml-slug="<?php echo $pslug;?>">
 	<div class="grad-overlay"></div>
 	<div class="container">
 		<div>
