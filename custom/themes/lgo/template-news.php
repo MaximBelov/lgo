@@ -43,14 +43,13 @@ $subhead   	= rwmb_meta( 'rw_banner_subheading' );
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 						$tweetURL = get_post_meta( get_the_ID(), 'tweet_id', true);
-						$thumbnail =get_the_post_thumbnail_url(get_the_ID(), 'large' );
-						$specialCrop = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'event-card' );
 						$random = rand(1,5);
+						$specialCrop = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'event-card' );
 
 						if ($specialCrop != false) {
-							print_r($specialCrop);
+							$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'event-card' );
 						} else {
-							print_r('no event card size');
+							$thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large' );
 						}
 			
 						if ($random == 1) {
