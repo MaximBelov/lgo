@@ -48,7 +48,7 @@ $subhead   	= rwmb_meta( 'rw_banner_subheading' );
 
 						if ($specialCrop != false) {
 							$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'Event Card' );
-							print_r($eventCard);
+							// print_r($eventCard);
 							$thumbnail = $eventCard[0];
 							// the_post_thumbnail( 'Event Card' ); 
 						} else {
