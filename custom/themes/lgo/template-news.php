@@ -52,7 +52,7 @@ $subhead   	= rwmb_meta( 'rw_banner_subheading' );
 							$thumbnail = get_the_post_thumbnail_url( 'event-card' );
 							// print_r(get_the_post_thumbnail_url( 'event-card' ));
 						} else {
-							$thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'medium' );
+							$thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large' );
 						}
 			
 						if ($random == 1) {
