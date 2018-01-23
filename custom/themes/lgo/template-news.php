@@ -47,12 +47,12 @@ $subhead   	= rwmb_meta( 'rw_banner_subheading' );
 						$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'event-card' );
 
 						if ($specialCrop != false) {
-							$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'Event Card' );
+							$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'event-card' );
 							// print_r($eventCard);
-							$thumbnail = $eventCard[0];
-							// the_post_thumbnail( 'Event Card' ); 
+							$thumbnail = get_the_post_thumbnail_url( 'event-card' );
+							// print_r(get_the_post_thumbnail_url( 'event-card' ));
 						} else {
-							$thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large' );
+							$thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'medium' );
 						}
 			
 						if ($random == 1) {
