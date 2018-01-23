@@ -50,6 +50,7 @@ $subhead   	= rwmb_meta( 'rw_banner_subheading' );
 							$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'event-card' );
 							// print_r($eventCard[0]);
 							$thumbnail = $eventCard[0];
+							the_post_thumbnail( 'event-card' ); 
 						} else {
 							$thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large' );
 						}
