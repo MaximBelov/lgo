@@ -51,7 +51,7 @@ $subhead   	= rwmb_meta( 'rw_banner_subheading' );
 							// print_r($eventCard);
 							// $thumbnail = get_the_post_thumbnail_url($post->ID, 'event-card' );
 							$thumbnail = $eventCard[0];
-							print_r($eventCard);
+							// print_r($eventCard);
 						} else {
 							$thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large' );
 						}
