@@ -10,7 +10,7 @@
     $TwitterCard = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID() ), 'twitter' );
     $TwitterThumbnail = $TwitterCard[0];
     $FBCard = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID() ), 'facebook' );
-    $FBThumbnail = $TwitterCard[0];
+    $FBThumbnail = $FBCard[0];
   } else if ($TwitterCrop != false) {
     $TwitterCard = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID() ), 'twitter' );
     $TwitterThumbnail = $TwitterCard[0];
@@ -18,7 +18,7 @@
   } else if($FBCrop != false) {
     $TwitterThumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large' );
     $FBCard = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID() ), 'facebook' );
-    $FBThumbnail = $TwitterCard[0];
+    $FBThumbnail = $FBCard[0];
   } else {
     $TwitterThumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large' );
     $FBThumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large' );
