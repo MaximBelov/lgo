@@ -2,6 +2,14 @@
 <html lang="<?php if(ICL_LANGUAGE_CODE=='fr'){ echo 'fr'; } else { echo 'en'; } ?>">
 <head>
 <title><?php wp_title(''); ?></title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/dist/images/favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css?family=Dosis:300,500,700|Rasa:400,500,600|Merriweather:400i" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1.0"/>
+<meta name="description" content="<?php bloginfo('description'); ?>" />
+<?php wp_head(); ?>
+<?php include_once("analyticstracking.php") ?>
 <?php if (is_single()) { 
   $TwitterCrop = wp_get_attachment_image( get_post_thumbnail_id( get_the_ID() ), 'twitter' );
   $FBCrop = wp_get_attachment_image( get_post_thumbnail_id( get_the_ID() ), 'facebook' );
@@ -36,14 +44,6 @@
   <meta name="twitter:creator" content="@LGLizDowdeswell" /> -->
   <meta name="twitter:image" content="<?php echo $TwitterThumbnail; ?>" />  
 <?php } ?>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/dist/images/favicon.ico" type="image/x-icon">
-<link href="https://fonts.googleapis.com/css?family=Dosis:300,500,700|Rasa:400,500,600|Merriweather:400i" rel="stylesheet">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1.0"/>
-<meta name="description" content="<?php bloginfo('description'); ?>" />
-<?php wp_head(); ?>
-<?php include_once("analyticstracking.php") ?>
 </head>
 <body <?php body_class(); ?>>
 <?php if (!is_page_template( 'template-splash-page.php' )) { ?>
