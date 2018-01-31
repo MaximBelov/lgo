@@ -114,8 +114,16 @@ $newsLabel = "Events";
 					<!-- pagination here -->
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						// $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'home-event' );
 						$random = rand(1,5);
+
+						if ($specialCrop != false) {
+							$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'home-event' );
+							$thumbnail = $eventCard[0];
+						} else {
+							$thumbnail = get_the_post_thumbnail_url(get_the_ID($post->ID ), 'large' );
+						}
 
 						if ($random == 1) {
 						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
@@ -132,7 +140,7 @@ $newsLabel = "Events";
 						}
 					?>
 						<?php if ($count1 == 1) { ?>
-							<a href="<?php the_permalink();?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
+							<a href="<?php the_permalink();?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
@@ -207,9 +215,18 @@ $newsLabel = "Events";
 				<?php if ( $the_query->have_posts() ) : ?>
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					// $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					// $random = rand(1,5);
 
+					$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'home-static' );
 					$random = rand(1,5);
+
+					if ($specialCrop != false) {
+						$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'home-static' );
+						$thumbnail = $eventCard[0];
+					} else {
+						$thumbnail = get_the_post_thumbnail_url(get_the_ID($post->ID ), 'large' );
+					}
 
 					if ($random == 1) {
 					    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
@@ -231,7 +248,7 @@ $newsLabel = "Events";
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<div class="grid-item--4x2--content">
@@ -307,8 +324,18 @@ $newsLabel = "Events";
 					<!-- pagination here -->
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						// $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						// $random = rand(1,5);
+
+						$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'home-event' );
 						$random = rand(1,5);
+
+						if ($specialCrop != false) {
+							$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'home-event' );
+							$thumbnail = $eventCard[0];
+						} else {
+							$thumbnail = get_the_post_thumbnail_url(get_the_ID($post->ID ), 'large' );
+						}
 
 						if ($random == 1) {
 						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
@@ -325,7 +352,7 @@ $newsLabel = "Events";
 						}
 					?>
 						<?php if ($count3 == 3) { ?>
-						<a href="<?php the_permalink();?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
@@ -357,8 +384,18 @@ $newsLabel = "Events";
 					<!-- pagination here -->
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						// $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						// $random = rand(1,5);
+
+						$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'home-event' );
 						$random = rand(1,5);
+
+						if ($specialCrop != false) {
+							$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'home-event' );
+							$thumbnail = $eventCard[0];
+						} else {
+							$thumbnail = get_the_post_thumbnail_url(get_the_ID($post->ID ), 'large' );
+						}
 
 						if ($random == 1) {
 						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
@@ -375,7 +412,7 @@ $newsLabel = "Events";
 						}
 					?>
 						<?php if ($count4 == 4) { ?>
-						<a href="<?php the_permalink();?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
@@ -399,9 +436,19 @@ $newsLabel = "Events";
 				<?php if ( $the_query->have_posts() ) : ?>
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					// $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
 
+					// $random = rand(1,5);
+
+					$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'home-static' );
 					$random = rand(1,5);
+
+					if ($specialCrop != false) {
+						$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'home-static' );
+						$thumbnail = $eventCard[0];
+					} else {
+						$thumbnail = get_the_post_thumbnail_url(get_the_ID($post->ID ), 'large' );
+					}
 
 					if ($random == 1) {
 					    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
@@ -423,7 +470,7 @@ $newsLabel = "Events";
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<div class="grid-item--4x2--content">
@@ -457,9 +504,19 @@ $newsLabel = "Events";
 				<?php if ( $the_query->have_posts() ) : ?>
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					// $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
 
+					// $random = rand(1,5);
+
+					$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'home-static' );
 					$random = rand(1,5);
+
+					if ($specialCrop != false) {
+						$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'home-static' );
+						$thumbnail = $eventCard[0];
+					} else {
+						$thumbnail = get_the_post_thumbnail_url(get_the_ID($post->ID ), 'large' );
+					}
 
 					if ($random == 1) {
 					    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
@@ -481,7 +538,7 @@ $newsLabel = "Events";
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<div class="grid-item--4x2--content">
@@ -519,8 +576,18 @@ $newsLabel = "Events";
 					<!-- pagination here -->
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						// $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						// $random = rand(1,5);
+
+						$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'home-event' );
 						$random = rand(1,5);
+
+						if ($specialCrop != false) {
+							$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'home-event' );
+							$thumbnail = $eventCard[0];
+						} else {
+							$thumbnail = get_the_post_thumbnail_url(get_the_ID($post->ID ), 'large' );
+						}
 
 						if ($random == 1) {
 						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
@@ -537,7 +604,7 @@ $newsLabel = "Events";
 						}
 					?>
 						<?php if ($count5 == 5) { ?>
-						<a href="<?php the_permalink();?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
@@ -561,8 +628,18 @@ $newsLabel = "Events";
 				<?php if ( $the_query->have_posts() ) : ?>
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					// $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					// $random = rand(1,5);
+
+					$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'home-static' );
 					$random = rand(1,5);
+
+					if ($specialCrop != false) {
+						$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'home-static' );
+						$thumbnail = $eventCard[0];
+					} else {
+						$thumbnail = get_the_post_thumbnail_url(get_the_ID($post->ID ), 'large' );
+					}
 
 					if ($random == 1) {
 					    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
@@ -584,7 +661,7 @@ $newsLabel = "Events";
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<div class="grid-item--4x2--content">
@@ -657,8 +734,18 @@ $newsLabel = "Events";
 					<!-- pagination here -->
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						// $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						// $random = rand(1,5);
+
+						$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'home-event' );
 						$random = rand(1,5);
+
+						if ($specialCrop != false) {
+							$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'home-event' );
+							$thumbnail = $eventCard[0];
+						} else {
+							$thumbnail = get_the_post_thumbnail_url(get_the_ID($post->ID ), 'large' );
+						}
 
 						if ($random == 1) {
 						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
@@ -675,7 +762,7 @@ $newsLabel = "Events";
 						}
 					?>
 						<?php if ($count6 == 6) { ?>
-						<a href="<?php the_permalink();?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
@@ -707,8 +794,18 @@ $newsLabel = "Events";
 					<!-- pagination here -->
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						// $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+						// $random = rand(1,5);
+
+						$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'home-event' );
 						$random = rand(1,5);
+
+						if ($specialCrop != false) {
+							$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'home-event' );
+							$thumbnail = $eventCard[0];
+						} else {
+							$thumbnail = get_the_post_thumbnail_url(get_the_ID($post->ID ), 'large' );
+						}
 
 						if ($random == 1) {
 						    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
@@ -725,7 +822,7 @@ $newsLabel = "Events";
 						}
 					?>
 						<?php if ($count7 == 7) { ?>
-						<a href="<?php the_permalink();?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
+						<a href="<?php the_permalink();?>" class="grid-item grid-item--4x2" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;background-repeat: no-repeat;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<p class="grid-item--2x1--label"><span><?php echo $newsLabel;?></span></p>
@@ -749,8 +846,18 @@ $newsLabel = "Events";
 				<?php if ( $the_query->have_posts() ) : ?>
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					// $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					// $random = rand(1,5);
+
+					$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'home-static' );
 					$random = rand(1,5);
+
+					if ($specialCrop != false) {
+						$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'home-static' );
+						$thumbnail = $eventCard[0];
+					} else {
+						$thumbnail = get_the_post_thumbnail_url(get_the_ID($post->ID ), 'large' );
+					}
 
 					if ($random == 1) {
 					    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
@@ -772,7 +879,7 @@ $newsLabel = "Events";
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<div class="grid-item--4x2--content">
@@ -804,8 +911,18 @@ $newsLabel = "Events";
 				<?php if ( $the_query->have_posts() ) : ?>
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					// $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					// $random = rand(1,5);
+
+					$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'home-static' );
 					$random = rand(1,5);
+
+					if ($specialCrop != false) {
+						$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'home-static' );
+						$thumbnail = $eventCard[0];
+					} else {
+						$thumbnail = get_the_post_thumbnail_url(get_the_ID($post->ID ), 'large' );
+					}
 
 					if ($random == 1) {
 					    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
@@ -827,7 +944,7 @@ $newsLabel = "Events";
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center; background-size: cover;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<div class="grid-item--4x2--content">
@@ -852,8 +969,18 @@ $newsLabel = "Events";
 				<?php if ( $the_query->have_posts() ) : ?>
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					// $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); 
+					// $random = rand(1,5);
+
+					$specialCrop = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'home-static' );
 					$random = rand(1,5);
+
+					if ($specialCrop != false) {
+						$eventCard = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'home-static' );
+						$thumbnail = $eventCard[0];
+					} else {
+						$thumbnail = get_the_post_thumbnail_url(get_the_ID($post->ID ), 'large' );
+					}
 
 					if ($random == 1) {
 					    $imgPath = '/src/images/banners/banner_AmbassadorsReception.jpg';
@@ -875,7 +1002,7 @@ $newsLabel = "Events";
 						$thelink = get_permalink($post->ID);
 					}
 					?>
-						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail[0]; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: left center;">
+						<a href="<?php echo $thelink; ?>" class="grid-item grid-item--2x1" style="background-image: url(<?php if ($thumbnail) { ?><?php echo $thumbnail; ?><?php } else { echo get_template_directory_uri().$imgPath; } ?>);background-position: center center;background-size: cover;">
 							<div class="grid-item--overlay"></div>
 							<div class="grid-item__wrapper">
 								<div class="grid-item--4x2--content">
