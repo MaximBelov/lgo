@@ -127,7 +127,7 @@ jQuery(document).ready(function($) {
     });
 
     if ($('.news-content').length) {
-      console.log('hiyaaaaaa pageeerrrr');
+      // console.log('on a single event');
       $('#menu-item-1624 >ul').addClass( "open-dropdown" );
       $('#menu-item-1631').addClass("current_page_item");
     }
