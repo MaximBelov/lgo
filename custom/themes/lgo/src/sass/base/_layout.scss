@@ -238,6 +238,8 @@ footer.page-footer {
   padding: 20px;
   @media #{$large-and-up} { 
     padding: 50px 100px 60px;
+    max-width: 1080px;
+    margin: 0 auto;
   }
 }
 
@@ -475,6 +477,15 @@ h3.grid-item--1x1--label {
   }
   @media print {
     color: $black;
+  }
+}
+
+.grid-item--4x2 {
+  h3.grid-item--2x1--label {
+    @media #{$large-and-up} {
+      font-size: 24px;
+      line-height: 26px;
+    }
   }
 }
 

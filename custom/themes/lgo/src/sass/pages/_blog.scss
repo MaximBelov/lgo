@@ -161,6 +161,8 @@ h3.grid-item--2x1--label {
   padding: 0px 20px;
   @media #{$medium-and-up} {
     padding: 0px 100px 50px;
+    max-width: 800px;
+    margin: 0 auto;
   }
   h1 {
     font-size: 45px;
