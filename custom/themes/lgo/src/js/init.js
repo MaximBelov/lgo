@@ -126,6 +126,12 @@ jQuery(document).ready(function($) {
       // console.log('Drop down closed');
     });
 
+    if ($('.news-content').length) {
+      console.log('hiyaaaaaa pageeerrrr');
+      $('#menu-item-1624 >ul').addClass( "open-dropdown" );
+      $('#menu-item-1631').addClass("current_page_item");
+    }
+
     // $('#menu-item-790 >ul >li:nth-last-child(2) a').focusout(function(){
     //   $('.menu-item-has-children ul').removeClass( "open-dropdown" );
     //   // console.log('heyyy');
