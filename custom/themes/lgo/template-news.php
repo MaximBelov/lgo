@@ -12,6 +12,9 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ful
 $cta_copy   = rwmb_meta( 'rw_cta_blurb' );
 $cta_btns   = rwmb_meta( 'cta' );
 $subhead   	= rwmb_meta( 'rw_banner_subheading' );
+
+
+// print_r($tax_query);
 ?>
 
 <div id="skip-to-content" class="scroll-panel page-panel page__bg__fixed single-page-container--whole">
@@ -22,19 +25,161 @@ $subhead   	= rwmb_meta( 'rw_banner_subheading' );
 
 		<div class="news-inner-wrapper">
 			<h1><?php the_title();?></h1>
+
+			<form method="get" action="<?php bloginfo( 'url' ); ?>/events/" class="events-filter">
+				<div id="filter-trigger">
+				<button type="button" aria-pressed="false" id="trigger-button">
+				Filter events by theme
+				</button>
+				</div>
+                <div id="show" class="hide-filters">  
+                    <div>
+                        <ul class="collapsible filter-container" data-collapsible="accordion">
+							<?php
+							/** The taxonomy we want to parse */
+							$taxonomy = "theme";
+							/** Get all taxonomy terms */
+							$terms = get_terms($taxonomy, array(
+									// "orderby"    => "count",
+									"hide_empty" => false
+								)
+							);
+							/** Get terms that have children */
+							$hierarchy = _get_term_hierarchy($taxonomy);
+								/** Loop through every term */
+								
+								foreach($terms as $term) {
+									//Skip term if it has children
+									if($term->parent) {
+										continue;
+									} 
+									// print_r($term);
+									echo '<li class="parent-list">';
+									echo '<span>'.$term->name.'</span>';    
+									/** If the term has children... */
+									if($hierarchy[$term->term_id]) {
+										/** display them */
+										echo '<ul>';
+										
+										foreach($hierarchy[$term->term_id] as $child) {
+											/** Get the term object by its ID */
+											$checked = array();
+											$checked = (isset($_GET[$term->slug]) ? $_GET[$term->slug] : null); 
+											$child = get_term($child, "theme");
+											if(!empty($checked) && in_array($child->term_id, $checked)) {
+												echo '<li><input type="checkbox" class="filled-in" name="'.$term->slug.'[]" value="'.$child->term_id.'" id="'.$child->slug.'" checked><label for="'.$child->slug.'"> '.$child->name.'</label></li>';
+											} else {
+												echo '<li><input type="checkbox" class="filled-in" name="'.$term->slug.'[]" value="'.$child->term_id.'" id="'.$child->slug.'"><label for="'.$child->slug.'"> '.$child->name.'</label></li>';
+											}											
+										}
+										echo '</ul>';
+									}
+									echo '</li>';
+								}
+							?>
+						</ul>
+						<div class="btn-apply">
+							<button type="submit" class="button button--small" id="apply-filter">Apply Filter</button>
+							<a href="<?php bloginfo( 'url' ); ?>/events/" class="button button--small reset-btn">Reset</a>
+						</div>
+                    </div>
+                </div>
+            </form>
 			
 			<div id="activities-feed">
 				<?php 
-				// the Post query
-				//Protect against arbitrary paged values
-				$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-				$args = array(
-					'post_type' => array('post'),
-					'posts_per_page' => 30,
-					'paged' => $paged,
-					// 'nopaging' => true
-				);
-				$the_query = new WP_Query( $args ); ?>
+
+				if (isset($_GET['people']) || isset($_GET['places']) || isset($_GET['culture']) || isset($_GET['government-institutions'])) {
+					// rewind_posts();
+
+					$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
+					$tax_query = array();
+
+					// $tax_query = array(
+					// 	'relation' => 'OR'
+					// );
+
+					// $people_arr = array(
+					// 	'relation' => 'OR'
+					// );
+
+					// $places_arr = array(
+					// 	'relation' => 'OR'
+					// );
+
+					// $culture_arr = array(
+					// 	'relation' => 'OR'
+					// );
+
+					// $gov_arr = array(
+					// 	'relation' => 'OR'
+					// );
+
+					$people  	= (isset($_GET['people'])) ? $_GET['people'] : 0;
+					$places    	= (isset($_GET['places'])) ? $_GET['places'] : 0;
+					$culture	= (isset($_GET['culture'])) ? $_GET['culture'] : 0;
+					$gov     	= (isset($_GET['government-institutions'])) ? $_GET['government-institutions'] : 0;
+
+					if($people) {
+						foreach ($people as $value) {
+							array_push($tax_query,$value);
+						}
+						
+					}
+
+					if($places) {
+						foreach ($places as $value) {
+							array_push($tax_query,$value);
+						}
+						
+					}
+
+					if($culture) {
+						foreach ($culture as $value) {
+							array_push($tax_query,$value);
+						}
+						
+					}
+
+					if($gov) {
+						foreach ($gov as $value) {
+							array_push($tax_query,$value);
+						}	
+					}
+
+					$args = array(
+						'post_type' => 'post',
+						'posts_per_page' => 17,
+						// 'orderby' => 'modified',
+						// 'order' => 'DESC',
+						'paged' => $paged,
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'theme',
+								'field'    => 'term_id',
+								'terms'    => $tax_query
+							),	
+						),
+					);
+
+					// print_r($tax_query);
+
+					$the_query = new WP_Query( $args );
+
+				} else {
+					// the Post query
+					//Protect against arbitrary paged values
+					$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+					$args = array(
+						'post_type' => array('post'),
+						'posts_per_page' => 30,
+						'paged' => $paged,
+						// 'nopaging' => true
+					);
+					$the_query = new WP_Query( $args ); 
+				}
+				?>
 			
 				<?php if ( $the_query->have_posts() ) : ?>
 			

@@ -948,7 +948,20 @@ jQuery(document).ready(function($) {
     //   // console.log('heyyy');
     // });
 
-    
+    $('#filter-trigger button').click(function(e){
+      $('#show').toggleClass('hide-filters');
+    });
+
+    // $('#trigger-button').keypress(function(e){
+    //   if(e.which == 13){//Enter key pressed
+    //     console.log('enter');
+    //     if ($( "#show" ).hasClass( "hide-filters" )) {
+    //       $('#show').removeClass('hide-filters');
+    //     } else {
+    //       $('#show').addClass('hide-filters');
+    //     }
+    //   }
+    // });
 
     // Activate Mobile Nav via click/enter
     $('.nav-trigger').click(function(){
