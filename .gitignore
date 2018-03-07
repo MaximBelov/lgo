@@ -3,8 +3,8 @@
 .sass-cache/
 robots.txt
 node_modules/
-languages/
-languages/*
+custom/languages/
+custom/languages/*
 cgi-bin/
 cgi-bin/*
 
