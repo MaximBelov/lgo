@@ -256,6 +256,9 @@ $subhead   	= rwmb_meta( 'rw_banner_subheading' );
 			</div>
 
 		</div>
+
+		<!-- <div class="news-inner-wrapper" id="vue-news-container">
+		</div> -->
 		
 
    	</div> <!-- END OF RIGHT COMPARTMENT -->
